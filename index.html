@@ -42,7 +42,7 @@
 
     <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "1559023835";
+    const serviceWorkerVersion = "164707065";
 
 
 
@@ -52,7 +52,7 @@
 </head>
 
 <body>
-<style>
+<!-- <style>
     
     body {
       background-color: #0A0A0A;
@@ -145,9 +145,24 @@
 
 
 
-</style>
+</style> -->
 <script>
-    function delay(time) {
+window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+</script>
+<!-- <script>
+      function delay(time) {
       return new Promise(resolve => setTimeout(resolve, time));
     }
 
@@ -162,23 +177,18 @@
         return engineInitializer.initializeEngine();
       }).then(async function (appRunner) {
         loaderContent.style.opacity = "0";
-        await delay(2);
         await appRunner.runApp();
       });
     });
-
-
-
-</script>
-<div class="main-content" id="loader-content">
-    <div class="loader">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <img loading="eager" src="main-icon.png"/>
-</div>
+</script> -->
+<!--<div class="main-content" id="loader-content">-->
+<!--    <div class="loader">-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--    </div>-->
+<!--    <img loading="lazy" src="main-icon.png"/>-->
+<!--</div>-->
 </body>
-
 </html>
