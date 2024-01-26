@@ -51,10 +51,10 @@ const RESOURCES = {"assets/asset/fonts/Afacad/Afacad-Italic-VariableFont_wght.tt
 "icons/Icon-512.png": "f4e6e5859c0c5b981da994d816b6854f",
 "icons/Icon-maskable-192.png": "c8d0c8fa46d5f3592a9f9f4dcc608201",
 "icons/Icon-maskable-512.png": "f4e6e5859c0c5b981da994d816b6854f",
-"index.html": "30db954f63fc6406d3cab1a51f3e0a0a",
-"/": "30db954f63fc6406d3cab1a51f3e0a0a",
+"index.html": "ae79fb67a29f9ddfd6a11467c5f53471",
+"/": "ae79fb67a29f9ddfd6a11467c5f53471",
 "main-icon.png": "a39ddc47bd15186e62d13644679475e1",
-"main.dart.js": "125de88e5c04bf60b7b393d5c43f5875",
+"main.dart.js": "8c7ceaf41fef2de53ef13f348e92f827",
 "manifest.json": "73dd58b34b064c5e50c6d31f66150d76",
 "version.json": "54d0bdd389f0cd61c12aecc828b814fd"};
 // The application shell files that are downloaded before a service worker can

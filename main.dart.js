@@ -66106,7 +66106,7 @@ if(q===$){s=r.gBA()
 r.k3!==$&&A.aE()
 q=r.k3=new A.a34(s)}return q},
 gBA(){var s,r=this.k4
-if(r===$){s=A.awF(A.a([A.a33("StartupView",!1,"/",null),A.a33("HomeView",!1,"/",null),A.a33("UnknownView",!1,"/404",null),A.a33("*#redirect",!0,"*","/404")],t.tl))
+if(r===$){s=A.awF(A.a([A.a33("StartupView",!1,"/",null),A.a33("HomeView",!1,"/showcase",null),A.a33("UnknownView",!1,"/404",null),A.a33("*#redirect",!0,"*","/404")],t.tl))
 this.k4!==$&&A.aE()
 this.k4=s
 r=s}return r},
@@ -72941,7 +72941,7 @@ B.ay=new A.v5(1,"opaque")
 B.h3=new A.v5(2,"translucent")
 B.DQ=new A.pw(null)
 B.X=new A.b0(B.aN,[],A.Y("b0<i,@>"))
-B.kN=new A.YE("HomeView","/")
+B.kN=new A.YE("HomeView","/showcase")
 B.DR=new A.px(null)
 B.DS=new A.v6(null)
 B.DT=new A.v9(null)
