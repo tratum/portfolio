@@ -29,7 +29,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
             ResponsiveWebLayout.buildDesktopLayout(
               context: context,
               quadHDLayout: SingleChildScrollView(
-                controller: _scrollController,
+                controller: viewModel.scrollController,
                 child: const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: Column(
@@ -53,14 +53,19 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       Project1(),
                       verticalSpaceMassive,
                       Project2(),
+                      verticalSpaceMassive,
+                      Project3(),
+                      verticalSpaceMassive,
+                      Project4(),
                       verticalSpaceSuperMassive,
-                      ProjectSkeleton(),
+                      ContactSection(),
+                      FooterSection(),
                     ],
                   ),
                 ),
               ),
               fullHDLayout: SingleChildScrollView(
-                controller: _scrollController,
+                controller: viewModel.scrollController,
                 child: const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: Column(
@@ -84,14 +89,21 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       Project1(),
                       verticalSpaceMassive,
                       Project2(),
+                      verticalSpaceMassive,
+                      Project3(),
+                      verticalSpaceMassive,
+                      Project4(
+
+                      ),
                       verticalSpaceSuperMassive,
-                      ProjectSkeleton(),
+                      ContactSection(),
+                      FooterSection(),
                     ],
                   ),
                 ),
               ),
               hdLayout: SingleChildScrollView(
-                controller: _scrollController,
+                controller: viewModel.scrollController,
                 child: const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: Column(
@@ -100,29 +112,67 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       SizedBox(
                         height: 150,
                       ),
-                      HomeSection(),
+                      HomeSection(
+                        totalLeftSpacing: horizontalSpaceSemiMassive,
+                        subTextPadding: 100,
+                      ),
                       SizedBox(
                         height: 90,
                       ),
                       TechStackSection(),
                       verticalSpaceSuperMassive,
-                      AboutMeSection(),
+                      AboutMeSection(
+                        totalLeftSpacing: horizontalSpaceSemiMassive,
+                        imgWidth: 650,
+                        imgHeight: 600,
+                        subTextFontSize: 28,
+                      ),
                       verticalSpaceSuperMassive,
-                      ProjectSection(),
+                      ProjectSection(
+                        totalLeftSpacing: horizontalSpaceSemiMassive,
+                      ),
                       SizedBox(
                         height: 90,
                       ),
-                      Project1(),
+                      Project1(
+                        totalLeftSpacing: horizontalSpaceSemiMassive,
+                        headingFontSize: 32,
+                        subTextFontSize: 28,
+                      ),
                       verticalSpaceMassive,
-                      Project2(),
+                      Project2(
+                        totalLeftSpacing: horizontalSpaceSemiMassive,
+                        headingLeftPadding: 120,
+                        headingFontSize: 32,
+                        subTextFontSize: 28,
+                      ),
+                      verticalSpaceMassive,
+                      Project3(
+                        totalLeftSpacing: horizontalSpaceSemiMassive,
+                        headerLeftSpacing: horizontalSpaceMassive,
+                        headingFontSize: 32,
+                        subTextFontSize: 28,
+                        imgWidth: 650,
+                      ),
+                      verticalSpaceMassive,
+                      Project4(
+                        headerLeftSpacing: 120,
+                        totalLeftSpacing: horizontalSpaceSemiMassive,
+                        headingFontSize: 32,
+                        subTextFontSize: 28,
+                        imgWidth: 620,
+                        subTextLeftSpacing: 40,
+                        iconLeftSpacing: horizontalSpaceMassive,
+                      ),
                       verticalSpaceSuperMassive,
-                      ProjectSkeleton(),
+                      ContactSection(),
+                      FooterSection(),
                     ],
                   ),
                 ),
               ),
               sdLayout: SingleChildScrollView(
-                controller: _scrollController,
+                controller: viewModel.scrollController,
                 child: const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: Column(
@@ -131,23 +181,62 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       SizedBox(
                         height: 150,
                       ),
-                      HomeSection(),
+                      HomeSection(
+                        totalLeftSpacing: horizontalSpaceLarge,
+                        circularFramePadding: horizontalSpaceLarge,
+                        subTextPadding: 50,
+                      ),
                       SizedBox(
                         height: 90,
                       ),
-                      TechStackSection(),
+                      TechStackSection(
+                        totalLeftSpacing: horizontalSpaceLarge,
+                      ),
                       verticalSpaceSuperMassive,
-                      AboutMeSection(),
+                      AboutMeSection(
+                        totalLeftSpacing: horizontalSpaceLarge,
+                        imgHeight: 440,
+                        imgWidth: 400,
+                      ),
                       verticalSpaceSuperMassive,
-                      ProjectSection(),
+                      ProjectSection(
+                        totalLeftSpacing: horizontalSpaceLarge,
+                      ),
                       SizedBox(
                         height: 90,
                       ),
-                      Project1(),
+                      Project1(
+                        iconLeftSpacing: horizontalSpaceSemiLarge,
+                        imgWidth: 400,
+                        imgHeight: 380,
+                      ),
                       verticalSpaceMassive,
-                      Project2(),
+                      Project2(
+                        imgHeight: 400,
+                        imgWidth: 380,
+                        headingLeftPadding: 80,
+                        totalLeftSpacing: horizontalSpaceLarge,
+                        iconLeftPadding: horizontalSpaceSuperMassive,
+                      ),
+                      verticalSpaceMassive,
+                      Project3(
+                        imgHeight: 400,
+                        imgWidth: 380,
+                        totalLeftSpacing: horizontalSpaceLarge,
+                        iconLeftSpacing: horizontalSpaceMassive,
+                        headerLeftSpacing: horizontalSpaceMassive,
+                      ),
+                      verticalSpaceMassive,
+                      Project4(
+                        imgHeight: 400,
+                        imgWidth: 380,
+                        totalLeftSpacing: horizontalSpaceLarge,
+                        iconLeftSpacing: horizontalSpaceMassive,
+                        headerLeftSpacing: 50,
+                      ),
                       verticalSpaceSuperMassive,
-                      ProjectSkeleton(),
+                      ContactSection(),
+                      FooterSection(),
                     ],
                   ),
                 ),
@@ -188,7 +277,8 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       ),
                       onTap: () {
                         ContentScrolling.autoScroll(
-                            scrollPosition: 0, conn: _scrollController);
+                            scrollPosition: 0,
+                            conn: viewModel.scrollController);
                       },
                     ),
                     horizontalSpaceSemiMedium,
@@ -207,7 +297,8 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       ),
                       onTap: () {
                         ContentScrolling.autoScroll(
-                            scrollPosition: 710, conn: _scrollController);
+                            scrollPosition: 710,
+                            conn: viewModel.scrollController);
                       },
                     ),
                     horizontalSpaceSemiMedium,
@@ -226,7 +317,8 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       ),
                       onTap: () {
                         ContentScrolling.autoScroll(
-                            scrollPosition: 1500, conn: _scrollController);
+                            scrollPosition: 1500,
+                            conn: viewModel.scrollController);
                       },
                     ),
                     horizontalSpaceSemiMedium,
@@ -243,6 +335,13 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                           ),
                         ),
                       ),
+                      onTap: () {
+                        ContentScrolling.autoScroll(
+                          scrollPosition: viewModel
+                              .scrollController.position.maxScrollExtent,
+                          conn: viewModel.scrollController,
+                        );
+                      },
                     ),
                   ],
                 ),
@@ -255,15 +354,31 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
         elevation: 20,
         backgroundColor: const Color(0XFF121212),
         onPressed: () {
-          ContentScrolling.autoScroll(
-            scrollPosition: _scrollController.position.maxScrollExtent,
-            conn: _scrollController,
-          );
+          if (viewModel.isAtBottom) {
+            ContentScrolling.autoScroll(
+              scrollPosition:
+                  viewModel.scrollController.position.minScrollExtent,
+              conn: viewModel.scrollController,
+            );
+          } else {
+            ContentScrolling.autoScroll(
+              scrollPosition:
+                  viewModel.scrollController.position.maxScrollExtent,
+              conn: viewModel.scrollController,
+            );
+          }
         },
-        child: const FaIcon(
-          FontAwesomeIcons.chevronDown,
-          size: 24,
-          color: Color(0XFFfafafa),
+        child: Center(
+          child: ScaleOnHover(
+            scale: 22,
+            child: FaIcon(
+              viewModel.isAtBottom
+                  ? FontAwesomeIcons.chevronUp
+                  : FontAwesomeIcons.chevronDown,
+              size: 18,
+              color: const Color(0XFFfafafa),
+            ),
+          ),
         ),
       ),
     );
