@@ -18,6 +18,8 @@ dependencies:
   flutter_svg:
   url_launcher:
   font_awesome_flutter:
+  responsive_web_layout:
+    path: D:/Coding/Flutter/Packages/responsiveLayout/responsive_web_layout
 
 dev_dependencies:
   build_runner: ^2.4.5
