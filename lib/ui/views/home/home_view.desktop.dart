@@ -6,6 +6,7 @@ import 'package:stacked/stacked.dart';
 import 'package:tratum_portfolio/ui/animation/bouncy_image_animation.dart';
 import 'package:tratum_portfolio/ui/animation/scale_animation_image.dart';
 import 'package:tratum_portfolio/ui/animation/scale_animation_svg.dart';
+import 'package:tratum_portfolio/ui/common/app_functions.dart';
 import 'package:tratum_portfolio/ui/common/ui_helpers.dart';
 import 'package:tratum_portfolio/ui/widgets/mouse_transforms/scale_on_hover.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -16,23 +17,6 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
   HomeViewDesktop({super.key});
 
   final ScrollController _scrollController = ScrollController();
-
-  Future<void> _urlRedirect(String url) async {
-    Uri uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
-    } else {
-      throw Exception('could not launch $uri');
-    }
-  }
-
-  void autoScroll(double scrollPosition) {
-    _scrollController.animateTo(
-      scrollPosition,
-      duration: const Duration(milliseconds: 850),
-      curve: Curves.easeInOut,
-    );
-  }
 
   @override
   Widget build(BuildContext context, HomeViewModel viewModel) {
@@ -98,16 +82,6 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                                     letterSpacing: 2,
                                   ),
                                 ),
-                                // const SizedBox(
-                                //   width: 25,
-                                // ),
-                                // Image.asset(
-                                //   'asset/image/namaste.png',
-                                //   semanticLabel: "Namaste From My Side",
-                                //   fit: BoxFit.fill,
-                                //   width: 110,
-                                //   height: 85,
-                                // ),
                                 const SizedBox(
                                   width: 25,
                                 ),
@@ -154,9 +128,11 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                                     width: 25,
                                   ),
                                   onTap: () async {
-                                    const url =
-                                        'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8';
-                                    return _urlRedirect(url);
+                                    return WebNavigator.openUrl(
+                                      url:
+                                          'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
+                                    );
+                                    // return _urlRedirect(url);
                                   })
                             ]),
                             verticalSpaceMedium,
@@ -170,9 +146,10 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                                     size: 36,
                                   ),
                                   onTap: () async {
-                                    const url =
-                                        "https://www.linkedin.com/in/saksham-rawat-dev";
-                                    _urlRedirect(url);
+                                    return WebNavigator.openUrl(
+                                      url:
+                                          "https://www.linkedin.com/in/saksham-rawat-dev",
+                                    );
                                   },
                                 ),
                                 horizontalSpaceMedium,
@@ -183,8 +160,8 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                                     size: 36,
                                   ),
                                   onTap: () async {
-                                    const url = "https://github.com/tratum";
-                                    _urlRedirect(url);
+                                    return WebNavigator.openUrl(
+                                        url: "https://github.com/tratum");
                                   },
                                 )
                               ],
@@ -250,9 +227,9 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                             ),
                           ),
                           onTap: () async {
-                            const url =
-                                "https://developer.mozilla.org/en-US/docs/Web/HTML";
-                            _urlRedirect(url);
+                            return WebNavigator.openUrl(
+                                url:
+                                    "https://developer.mozilla.org/en-US/docs/Web/HTML");
                           },
                         ),
                         horizontalSpaceMedium,
@@ -273,9 +250,9 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                             ),
                           ),
                           onTap: () async {
-                            const url =
-                                "https://developer.mozilla.org/en-US/docs/Web/CSS";
-                            _urlRedirect(url);
+                            return WebNavigator.openUrl(
+                                url:
+                                    "https://developer.mozilla.org/en-US/docs/Web/CSS");
                           },
                         ),
                         horizontalSpaceMedium,
@@ -296,8 +273,8 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                             ),
                           ),
                           onTap: () async {
-                            const url = "https://docs.python.org/3/";
-                            _urlRedirect(url);
+                            return WebNavigator.openUrl(
+                                url: "https://docs.python.org/3/");
                           },
                         ),
                         horizontalSpaceMedium,
@@ -322,8 +299,8 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                             ),
                           ),
                           onTap: () async {
-                            const url = "https://docs.flutter.dev/";
-                            _urlRedirect(url);
+                            return WebNavigator.openUrl(
+                                url: "https://docs.flutter.dev/");
                           },
                         ),
                         horizontalSpaceMedium,
@@ -345,8 +322,8 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                             ),
                           ),
                           onTap: () async {
-                            const url = "https://docs.oracle.com/en/java/";
-                            _urlRedirect(url);
+                            return WebNavigator.openUrl(
+                                url: "https://docs.oracle.com/en/java/");
                           },
                         ),
                         horizontalSpaceMedium,
@@ -368,8 +345,8 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                             ),
                           ),
                           onTap: () async {
-                            const url = "https://rasa.com/docs/";
-                            _urlRedirect(url);
+                            return WebNavigator.openUrl(
+                                url: "https://rasa.com/docs/");
                           },
                         ),
                         horizontalSpaceMedium,
@@ -390,9 +367,9 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                             ),
                           ),
                           onTap: () async {
-                            const url =
-                                "https://www.mongodb.com/docs/compass/current/";
-                            _urlRedirect(url);
+                            return WebNavigator.openUrl(
+                                url:
+                                    "https://www.mongodb.com/docs/compass/current/");
                           },
                         ),
                         horizontalSpaceMedium,
@@ -413,32 +390,12 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                             ),
                           ),
                           onTap: () async {
-                            const url = "https://dart.dev/guides";
-                            _urlRedirect(url);
+                            return WebNavigator.openUrl(
+                                url: "https://dart.dev/guides");
                           },
                         ),
-                        // Image.asset(
-                        //   "asset/image/scrollDown.png",
-                        //   height: 120,
-                        //   width: 120,
-                        // )
                       ],
                     ),
-                    // Row(
-                    //   children: [
-                    //     const Spacer(),
-                    //     GestureDetector(
-                    //       child: const BouncyImageAnimation(
-                    //         imgPath: "asset/image/scrollDown.png",
-                    //         height: 120,
-                    //         width: 120,
-                    //       ),
-                    //       onTap: (){
-                    //         autoScroll(300);
-                    //       },
-                    //     ),
-                    //   ]
-                    // ),
                     verticalSpaceSuperMassive,
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -628,7 +585,9 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                         )
                       ],
                     ),
-                    const SizedBox(height: 90,),
+                    const SizedBox(
+                      height: 90,
+                    ),
                     Row(
                       children: [
                         horizontalSpaceSuperMassive,
@@ -647,98 +606,104 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                               ),
                             ),
                             Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Row(
-                                  children: [
-                                    horizontalSpaceSuperMega,
-                                    Text(
-                                      "Notely",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontFamily: 'Afacad',
-                                        fontSize: 26,
-                                        fontWeight: FontWeight.w900,
-                                        color: Color(0XFF000000),
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Row(
+                                    children: [
+                                      horizontalSpaceSuperMega,
+                                      Text(
+                                        "Notely",
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontFamily: 'Afacad',
+                                          fontSize: 26,
+                                          fontWeight: FontWeight.w900,
+                                          color: Color(0XFF000000),
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                verticalSpaceLarge,
-                                const Text(
-                                  '''
+                                    ],
+                                  ),
+                                  verticalSpaceLarge,
+                                  const Text(
+                                    '''
                                   Notely is a cross-platform mobile application
                                   built using the Flutter framework and integrated
                                   with Firebase for backend support. It offers a
                                   seamless and intuitive interface for creating
                                   and managing notes and to-do lists.                          
                                   ''',
-                                  textAlign: TextAlign.justify,
-                                  style: TextStyle(
-                                    fontFamily: 'Afacad',
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w700,
-                                    color: Color(0XFF3C4A53),
+                                    textAlign: TextAlign.justify,
+                                    style: TextStyle(
+                                      fontFamily: 'Afacad',
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.w700,
+                                      color: Color(0XFF3C4A53),
+                                    ),
                                   ),
-                                ),
-                                verticalSpaceLarge,
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    horizontalSpaceSuperMassive,
-                                    GestureDetector(
-                                      child: const Row(
-                                        children: [
-                                          Text(
-                                            "Code",
-                                            style: TextStyle(
-                                              fontFamily: 'Afacad',
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.w900,
-                                              color: Color(0XFF3C4A53),
+                                  verticalSpaceLarge,
+                                  Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      horizontalSpaceSuperMassive,
+                                      GestureDetector(
+                                        child: const Row(
+                                          children: [
+                                            Text(
+                                              "Code",
+                                              style: TextStyle(
+                                                fontFamily: 'Afacad',
+                                                fontSize: 22,
+                                                fontWeight: FontWeight.w900,
+                                                color: Color(0XFF3C4A53),
+                                              ),
                                             ),
-                                          ),
-                                          horizontalSpaceTiny,
-                                          FaIcon(
-                                            FontAwesomeIcons.github,
-                                            color: Color(0XFF000000),
-                                            size: 26,
-                                          ),
-                                        ],
-                                      ),
-                                      onTap: (){
-                                        _urlRedirect("https://github.com/tratum/Notely");
-                                      },
-                                    ),
-                                    const SizedBox(width: 110,),
-                                    GestureDetector(
-                                      child: const Row(
-                                        children: [
-                                          Text(
-                                            "Demo",
-                                            style: TextStyle(
-                                              fontFamily: 'Afacad',
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.w900,
-                                              color: Color(0XFF3C4A53),
+                                            horizontalSpaceTiny,
+                                            FaIcon(
+                                              FontAwesomeIcons.github,
+                                              color: Color(0XFF000000),
+                                              size: 26,
                                             ),
-                                          ),
-                                          horizontalSpaceTiny,
-                                          Icon(
-                                            Icons.open_in_new,
-                                            color: Color(0XFF000000),
-                                            size: 24,
-                                          ),
-                                        ],
+                                          ],
+                                        ),
+                                        onTap: () async {
+                                          return WebNavigator.openUrl(
+                                              url:
+                                                  "https://github.com/tratum/Notely");
+                                        },
                                       ),
-                                      onTap: (){
-                                        _urlRedirect("https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing");
-                                      },
-                                    ),
-                                  ],
-                                ),
-                              ]
-                            ),
+                                      const SizedBox(
+                                        width: 110,
+                                      ),
+                                      GestureDetector(
+                                        child: const Row(
+                                          children: [
+                                            Text(
+                                              "Demo",
+                                              style: TextStyle(
+                                                fontFamily: 'Afacad',
+                                                fontSize: 22,
+                                                fontWeight: FontWeight.w900,
+                                                color: Color(0XFF3C4A53),
+                                              ),
+                                            ),
+                                            horizontalSpaceTiny,
+                                            Icon(
+                                              Icons.open_in_new,
+                                              color: Color(0XFF000000),
+                                              size: 24,
+                                            ),
+                                          ],
+                                        ),
+                                        onTap: () async {
+                                          return WebNavigator.openUrl(
+                                              url:
+                                                  "https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing");
+                                        },
+                                      ),
+                                    ],
+                                  ),
+                                ]),
                           ],
                         ),
                       ],
@@ -756,7 +721,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding:  EdgeInsets.only(left: 360),
+                                      padding: EdgeInsets.only(left: 360),
                                       child: Text(
                                         "Heading",
                                         textAlign: TextAlign.center,
@@ -787,8 +752,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                                         ),
                                       ),
                                     ),
-                                  ]
-                              ),
+                                  ]),
                             ),
                             Container(
                               height: 400,
@@ -796,7 +760,8 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 image: const DecorationImage(
-                                  image: AssetImage("asset/image/deskSetup.png"),
+                                  image:
+                                      AssetImage("asset/image/deskSetup.png"),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -860,7 +825,8 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                         ),
                       ),
                       onTap: () {
-                        autoScroll(0);
+                        ContentScrolling.autoScroll(
+                            scrollPosition: 0, conn: _scrollController);
                       },
                     ),
                     horizontalSpaceSemiMedium,
@@ -878,7 +844,8 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                         ),
                       ),
                       onTap: () {
-                        autoScroll(710);
+                        ContentScrolling.autoScroll(
+                            scrollPosition: 710, conn: _scrollController);
                       },
                     ),
                     horizontalSpaceSemiMedium,
@@ -896,7 +863,8 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                         ),
                       ),
                       onTap: () {
-                        autoScroll(1500);
+                        ContentScrolling.autoScroll(
+                            scrollPosition: 1500, conn: _scrollController);
                       },
                     ),
                     horizontalSpaceSemiMedium,
@@ -921,19 +889,21 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
           ],
         ),
       ),
-      // floatingActionButton: Visibility(
-      //   visible: _scrollController.offset <= 0,
-      //   child: FloatingActionButton(
-      //     elevation: 0,
-      //     backgroundColor: const Color(0XFFfafafa),
-      //     onPressed: () {},
-      //     child: const FaIcon(
-      //       FontAwesomeIcons.chevronDown,
-      //       size: 38,
-      //       color: Color(0XFF6A8292),
-      //     ),
-      //   ),
-      // ),
+      floatingActionButton: FloatingActionButton(
+        elevation: 20,
+        backgroundColor: const Color(0XFF121212),
+        onPressed: () {
+          ContentScrolling.autoScroll(
+            scrollPosition: _scrollController.position.maxScrollExtent,
+            conn: _scrollController,
+          );
+        },
+        child: const FaIcon(
+          FontAwesomeIcons.chevronDown,
+          size: 24,
+          color: Color(0XFFfafafa),
+        ),
+      ),
     );
   }
 //
