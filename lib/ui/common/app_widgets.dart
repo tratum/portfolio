@@ -718,7 +718,68 @@ class Project2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Row(
+      children: [
+        horizontalSpaceLarge,
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(right: 140),
+              child: Column(
+                  crossAxisAlignment:
+                  CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 360),
+                      child: Text(
+                        "Heading",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Afacad',
+                          fontSize: 22,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0XFF3C4A53),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 50),
+                      child: Text(
+                        '''
+                                      This is a multiline text example in Flutter. You can use 
+                                      triple single quotes or triple double quotes to create
+                                      multiline strings in Dart. This allows you to write text
+                                      across multiple lines without the need for explicit line
+                                      breaks.
+                                      ''',
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontFamily: 'Afacad',
+                          fontSize: 22,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0XFF3C4A53),
+                        ),
+                      ),
+                    ),
+                  ]),
+            ),
+            Container(
+              height: 400,
+              width: 550,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                image: const DecorationImage(
+                  image:
+                  AssetImage("asset/image/deskSetup.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
   }
 }
 class ProjectSkeleton extends StatelessWidget {
@@ -744,9 +805,3 @@ class ProjectSkeleton extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
