@@ -12,6 +12,7 @@ class HomeSection extends StatelessWidget {
   final Widget circularFramePadding;
   final double headerFontSize;
   final double subTextPadding;
+
   const HomeSection({
     Key? key,
     this.totalLeftSpacing = horizontalSpaceMassive,
@@ -180,6 +181,7 @@ class HomeSection extends StatelessWidget {
 
 class TechStackSection extends StatelessWidget {
   final Widget totalLeftSpacing;
+
   const TechStackSection({
     Key? key,
     this.totalLeftSpacing = horizontalSpaceMassive,
@@ -391,6 +393,7 @@ class AboutMeSection extends StatelessWidget {
   final double imgHeight;
   final double imgWidth;
   final double subTextFontSize;
+
   const AboutMeSection({
     Key? key,
     this.totalLeftSpacing = horizontalSpaceMassive,
@@ -490,6 +493,7 @@ class AboutMeSection extends StatelessWidget {
 
 class ProjectSection extends StatelessWidget {
   final Widget totalLeftSpacing;
+
   const ProjectSection({
     Key? key,
     this.totalLeftSpacing = horizontalSpaceSuperMassive,
@@ -550,6 +554,7 @@ class Project1 extends StatelessWidget {
   final double imgWidth;
   final double headingFontSize;
   final double subTextFontSize;
+
   const Project1(
       {Key? key,
       this.totalLeftSpacing = horizontalSpaceSuperMassive,
@@ -712,6 +717,7 @@ class Project2 extends StatelessWidget {
   final Widget iconLeftPadding;
   final double headingFontSize;
   final double subTextFontSize;
+
   const Project2({
     Key? key,
     this.imgHeight = 400,
@@ -834,6 +840,7 @@ class Project3 extends StatelessWidget {
   final Widget headerLeftSpacing;
   final double headingFontSize;
   final double subTextFontSize;
+
   const Project3(
       {Key? key,
       this.imgWidth = 400,
@@ -998,6 +1005,7 @@ class Project4 extends StatelessWidget {
   final double subTextLeftSpacing;
   final double headingFontSize;
   final double subTextFontSize;
+
   const Project4(
       {Key? key,
       this.imgWidth = 400,
@@ -1141,6 +1149,7 @@ class ContactSection extends StatelessWidget {
   final double totalLeftPadding;
   final double headingFontSize;
   final double subTextFontSize;
+
   const ContactSection({
     Key? key,
     this.headingFontSize = 30,
@@ -1156,7 +1165,7 @@ class ContactSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "CONTACT ME",
+            "CONTACT",
             style: TextStyle(
               fontFamily: 'Afacad',
               fontSize: headingFontSize,
@@ -1216,31 +1225,31 @@ class ContactSection extends StatelessWidget {
               ),
               horizontalSpaceLarge,
               GestureDetector(
-                onTap: () async{
+                onTap: () async {
                   return WebNavigator.openUrl(
                     url: 'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
                   );
                 },
-                  child: const ScaleOnHover(
-                scale: 12,
-                child: Row(children: [
-                  Icon(
-                    Icons.map_outlined,
-                    size: 42,
-                    color: Color(0XFF00A86B),
-                  ),
-                  horizontalSpaceTiny,
-                  Text(
-                    "Jaipur, Rajasthan, India",
-                    style: TextStyle(
-                      fontFamily: 'Afacad',
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                      color: Color(0XFF121212),
+                child: const ScaleOnHover(
+                  scale: 12,
+                  child: Row(children: [
+                    Icon(
+                      Icons.map_outlined,
+                      size: 42,
+                      color: Color(0XFF00A86B),
                     ),
-                  ),
-                ]),
-              ),
+                    horizontalSpaceTiny,
+                    Text(
+                      "Jaipur, Rajasthan, India",
+                      style: TextStyle(
+                        fontFamily: 'Afacad',
+                        fontSize: 24,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0XFF121212),
+                      ),
+                    ),
+                  ]),
+                ),
               ),
             ],
           ),
@@ -1259,13 +1268,14 @@ class FooterSection extends StatelessWidget {
     return Container(
       color: const Color(0XFF000000),
       child: Padding(
-        padding: const EdgeInsets.only(left: 120,right: 120),
+        padding: const EdgeInsets.only(left: 120, right: 120),
         child: Column(
           children: [
             verticalSpaceLarge,
             Row(
               children: [
-                const Text("tratum Copyright © 2024 tratum-All Rights Reserved || Designed by tratum",
+                const Text(
+                  "tratum Copyright © 2024 tratum-All Rights Reserved || Designed by tratum",
                   style: TextStyle(
                     color: Color(0xffffffff),
                     fontFamily: 'Afacad',
@@ -1275,7 +1285,7 @@ class FooterSection extends StatelessWidget {
                 ),
                 const Spacer(),
                 GestureDetector(
-                  onTap: () async{
+                  onTap: () async {
                     return WebNavigator.openUrl(
                       url: 'https://github.com/tratum',
                     );
@@ -1325,4 +1335,3 @@ class FooterSection extends StatelessWidget {
     );
   }
 }
-

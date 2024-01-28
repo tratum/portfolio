@@ -11,7 +11,6 @@ import 'package:tratum_portfolio/ui/common/ui_helpers.dart';
 import 'package:tratum_portfolio/ui/widgets/mouse_transforms/scale_on_hover.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:responsive_web_layout/responsive_web_layout.dart';
-
 import '../../common/app_widgets.dart';
 import 'home_viewmodel.dart';
 
@@ -92,9 +91,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       verticalSpaceMassive,
                       Project3(),
                       verticalSpaceMassive,
-                      Project4(
-
-                      ),
+                      Project4(),
                       verticalSpaceSuperMassive,
                       ContactSection(),
                       FooterSection(),

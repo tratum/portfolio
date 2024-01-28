@@ -71,6 +71,7 @@ class WebNavigator {
       throw Exception('Could not launch $uri');
     }
   }
+
   static Future<void> launchEmail(String email) async {
     final Uri emailUri = Uri(
       scheme: 'mailto',

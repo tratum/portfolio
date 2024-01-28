@@ -47,17 +47,17 @@ flutter:
       fonts:
         - asset: asset/fonts/Yatra_One/YatraOne-Regular.ttf
 
-    - family: Anton
-      fonts:
-        - asset: asset/fonts/Anton/Anton-Regular.ttf
-
-    - family: NotoSans
-      fonts:
-        - asset: asset/fonts/Noto_Sans/NotoSans-VariableFont_wdth,wght.ttf
-        - asset: asset/fonts/Noto_Sans/NotoSans-Italic-VariableFont_wdth,wght.ttf
-
-    - family: Kanit
-      fonts:
-        - asset: asset/fonts/Kanit/Kanit-ExtraBold.ttf
-        - asset: asset/fonts/Kanit/Kanit-Black.ttf
+#    - family: Anton
+#      fonts:
+#        - asset: asset/fonts/Anton/Anton-Regular.ttf
+#
+#    - family: NotoSans
+#      fonts:
+#        - asset: asset/fonts/Noto_Sans/NotoSans-VariableFont_wdth,wght.ttf
+#        - asset: asset/fonts/Noto_Sans/NotoSans-Italic-VariableFont_wdth,wght.ttf
+#
+#    - family: Kanit
+#      fonts:
+#        - asset: asset/fonts/Kanit/Kanit-ExtraBold.ttf
+#        - asset: asset/fonts/Kanit/Kanit-Black.ttf
 
