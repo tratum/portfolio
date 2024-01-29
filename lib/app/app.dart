@@ -10,7 +10,7 @@ import 'package:tratum_portfolio/ui/views/unknown/unknown_view.dart';
 @StackedApp(
   routes: [
     CustomRoute(page: StartupView, initial: true),
-    CustomRoute(page: HomeView),
+    CustomRoute(page: HomeView, path: '/',deferredLoading: true),
     // @stacked-route
 
     CustomRoute(page: UnknownView, path: '/404'),

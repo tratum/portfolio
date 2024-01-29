@@ -56,7 +56,7 @@ class StackedRouterWeb extends _i5.RootStackRouter {
         ),
         _i5.RouteConfig(
           HomeViewRoute.name,
-          path: '/showcase',
+          path: '/',
         ),
         _i5.RouteConfig(
           UnknownViewRoute.name,
@@ -89,7 +89,7 @@ class HomeViewRoute extends _i5.PageRouteInfo<void> {
   const HomeViewRoute()
       : super(
           HomeViewRoute.name,
-          path: '/showcase',
+          path: '/',
         );
 
   static const String name = 'HomeView';

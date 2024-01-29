@@ -21,38 +21,62 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
               context: context,
               quadHDLayout: SingleChildScrollView(
                 controller: viewModel.scrollController,
-                child: const Padding(
-                  padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: 150,
-                      ),
-                      HomeSection(),
-                      SizedBox(
-                        height: 90,
-                      ),
-                      TechStackSection(),
-                      verticalSpaceSuperMassive,
-                      AboutMeSection(),
-                      verticalSpaceSuperMassive,
-                      ProjectSection(),
-                      SizedBox(
-                        height: 90,
-                      ),
-                      Project1(),
-                      verticalSpaceMassive,
-                      Project2(),
-                      verticalSpaceMassive,
-                      Project3(),
-                      verticalSpaceMassive,
-                      Project4(),
-                      verticalSpaceSuperMassive,
-                      ContactSection(),
-                      FooterSection(),
-                    ],
-                  ),
+                child: const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 150,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: HomeSection(),
+                    ),
+                    SizedBox(
+                      height: 90,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: TechStackSection(),
+                    ),
+                    verticalSpaceSuperMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: AboutMeSection(),
+                    ),
+                    verticalSpaceSuperMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: ProjectSection(),
+                    ),
+                    SizedBox(
+                      height: 90,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project1(),
+                    ),
+                    verticalSpaceMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project2(),
+                    ),
+                    verticalSpaceMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project3(),
+                    ),
+                    verticalSpaceMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project4(),
+                    ),
+                    verticalSpaceSuperMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: ContactSection(),
+                    ),
+                    FooterSection(),
+                  ],
                 ),
               ),
               fullHDLayout: SingleChildScrollView(
@@ -93,58 +117,79 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
               ),
               hdLayout: SingleChildScrollView(
                 controller: viewModel.scrollController,
-                child: const Padding(
-                  padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: 150,
-                      ),
-                      HomeSection(
+                child: const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 150,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: HomeSection(
                         totalLeftSpacing: horizontalSpaceSemiMassive,
                         subTextPadding: 100,
                       ),
-                      SizedBox(
-                        height: 90,
-                      ),
-                      TechStackSection(),
-                      verticalSpaceSuperMassive,
-                      AboutMeSection(
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: TechStackSection(),
+                    ),
+                    verticalSpaceSuperMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: AboutMeSection(
                         totalLeftSpacing: horizontalSpaceSemiMassive,
                         imgWidth: 650,
                         imgHeight: 600,
                         subTextFontSize: 28,
                       ),
-                      verticalSpaceSuperMassive,
-                      ProjectSection(
+                    ),
+                    verticalSpaceSuperMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: ProjectSection(
                         totalLeftSpacing: horizontalSpaceSemiMassive,
                       ),
-                      SizedBox(
-                        height: 90,
-                      ),
-                      Project1(
+                    ),
+                    SizedBox(
+                      height: 90,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project1(
                         totalLeftSpacing: horizontalSpaceSemiMassive,
                         headingFontSize: 32,
                         subTextFontSize: 28,
                       ),
-                      verticalSpaceMassive,
-                      Project2(
+                    ),
+                    verticalSpaceMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project2(
                         totalLeftSpacing: horizontalSpaceSemiMassive,
                         headingLeftPadding: 120,
                         headingFontSize: 32,
                         subTextFontSize: 28,
                       ),
-                      verticalSpaceMassive,
-                      Project3(
+                    ),
+                    verticalSpaceMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project3(
                         totalLeftSpacing: horizontalSpaceSemiMassive,
                         headerLeftSpacing: horizontalSpaceMassive,
                         headingFontSize: 32,
                         subTextFontSize: 28,
                         imgWidth: 650,
                       ),
-                      verticalSpaceMassive,
-                      Project4(
+                    ),
+                    verticalSpaceMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project4(
                         headerLeftSpacing: 120,
                         totalLeftSpacing: horizontalSpaceSemiMassive,
                         headingFontSize: 32,
@@ -153,81 +198,108 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                         subTextLeftSpacing: 40,
                         iconLeftSpacing: horizontalSpaceMassive,
                       ),
-                      verticalSpaceSuperMassive,
-                      ContactSection(),
-                      FooterSection(),
-                    ],
-                  ),
+                    ),
+                    verticalSpaceSuperMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: ContactSection(),
+                    ),
+                    FooterSection(),
+                  ],
                 ),
               ),
               sdLayout: SingleChildScrollView(
                 controller: viewModel.scrollController,
-                child: const Padding(
-                  padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: 150,
-                      ),
-                      HomeSection(
+                child: const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 150,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: HomeSection(
                         totalLeftSpacing: horizontalSpaceLarge,
                         circularFramePadding: horizontalSpaceLarge,
                         subTextPadding: 50,
                       ),
-                      SizedBox(
-                        height: 90,
-                      ),
-                      TechStackSection(
+                    ),
+                    SizedBox(
+                      height: 90,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: TechStackSection(
                         totalLeftSpacing: horizontalSpaceLarge,
                       ),
-                      verticalSpaceSuperMassive,
-                      AboutMeSection(
+                    ),
+                    verticalSpaceSuperMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: AboutMeSection(
                         totalLeftSpacing: horizontalSpaceLarge,
                         imgHeight: 440,
                         imgWidth: 400,
                       ),
-                      verticalSpaceSuperMassive,
-                      ProjectSection(
+                    ),
+                    verticalSpaceSuperMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: ProjectSection(
                         totalLeftSpacing: horizontalSpaceLarge,
                       ),
-                      SizedBox(
-                        height: 90,
-                      ),
-                      Project1(
+                    ),
+                    SizedBox(
+                      height: 90,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project1(
                         iconLeftSpacing: horizontalSpaceSemiLarge,
                         imgWidth: 400,
                         imgHeight: 380,
                       ),
-                      verticalSpaceMassive,
-                      Project2(
+                    ),
+                    verticalSpaceMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project2(
                         imgHeight: 400,
                         imgWidth: 380,
                         headingLeftPadding: 80,
                         totalLeftSpacing: horizontalSpaceLarge,
                         iconLeftPadding: horizontalSpaceSuperMassive,
                       ),
-                      verticalSpaceMassive,
-                      Project3(
+                    ),
+                    verticalSpaceMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project3(
                         imgHeight: 400,
                         imgWidth: 380,
                         totalLeftSpacing: horizontalSpaceLarge,
                         iconLeftSpacing: horizontalSpaceMassive,
                         headerLeftSpacing: horizontalSpaceMassive,
                       ),
-                      verticalSpaceMassive,
-                      Project4(
+                    ),
+                    verticalSpaceMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project4(
                         imgHeight: 400,
                         imgWidth: 380,
                         totalLeftSpacing: horizontalSpaceLarge,
                         iconLeftSpacing: horizontalSpaceMassive,
                         headerLeftSpacing: 50,
                       ),
-                      verticalSpaceSuperMassive,
-                      ContactSection(),
-                      FooterSection(),
-                    ],
-                  ),
+                    ),
+                    verticalSpaceSuperMassive,
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: ContactSection(),
+                    ),
+                    FooterSection(),
+                  ],
                 ),
               ),
             ),

@@ -150,16 +150,16 @@ class HomeSection extends StatelessWidget {
           children: [
             ScaleSvgAnimation(
               imgPath: 'https://tratum.github.io/cloud-asset-storage/svg/circular-frame-vector.svg',
-              height: 320,
-              width: 320,
+              height: 430,
+              width: 430,
             ),
             Positioned(
-              top: 30,
-              left: 63,
+              top: 60,
+              left: 65,
               child: ScaleImgAnimation(
                 imgPath: "https://tratum.github.io/cloud-asset-storage/images/profile_photo-circular.png",
-                height: 250,
-                width: 240,
+                height: 310,
+                width: 300,
               ),
             ),
           ],
@@ -191,7 +191,7 @@ class HomeSectionMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
+      // mainAxisSize: MainAxisSize.min,
       children: [
         Row(
           children: [

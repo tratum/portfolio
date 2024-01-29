@@ -132,7 +132,12 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
               children: [
                 Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                  child: HomeSectionMobile(),
+                  child: HomeSectionMobile(
+                    imgWidth: 220,
+                    imgHeight: 230,
+                    topStackImageValue: 42,
+                    leftStackImageValue: 50,
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
@@ -181,10 +186,10 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
                   child: HomeSectionMobile(
                     headerLeftPadding: horizontalSpaceSmall,
                     iconLeftPadding: horizontalSpaceSmall,
-                    leftStackImageValue: 62,
-                    topStackImageValue: 30,
-                    imgHeight: 250,
-                    imgWidth: 240,
+                    leftStackImageValue: 54,
+                    topStackImageValue: 45,
+                    imgHeight: 230,
+                    imgWidth: 220,
                   ),
                 ),
                 Padding(

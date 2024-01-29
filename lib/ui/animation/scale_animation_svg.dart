@@ -8,12 +8,12 @@ class ScaleSvgAnimation extends StatefulWidget {
   final Duration duration;
 
   const ScaleSvgAnimation({
-    super.key,
+    Key? key,
     required this.imgPath,
     required this.height,
     required this.width,
     this.duration = const Duration(seconds: 5),
-  });
+  }) : super(key: key);
 
   @override
   State<ScaleSvgAnimation> createState() => _ScaleSvgAnimationState();
@@ -29,8 +29,8 @@ class _ScaleSvgAnimationState extends State<ScaleSvgAnimation>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2),
-      reverseDuration: const Duration(seconds: 2),
+      duration: widget.duration,
+      reverseDuration: widget.duration,
     )..repeat(reverse: true);
 
     _scaleAnimation = Tween<double>(begin: 1.0, end: 1.1).animate(_controller);
@@ -39,17 +39,23 @@ class _ScaleSvgAnimationState extends State<ScaleSvgAnimation>
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-        animation: _controller,
-        builder: (context, child) {
-          return ScaleTransition(
+      animation: _controller,
+      builder: (context, child) {
+        return SizedBox(
+          height: widget.height,
+          width: widget.width,
+          child: ScaleTransition(
             scale: _scaleAnimation,
             child: SvgPicture.network(
               widget.imgPath,
               height: widget.height,
               width: widget.width,
+              alignment: Alignment.center,
             ),
-          );
-        });
+          ),
+        );
+      },
+    );
   }
 
   @override
