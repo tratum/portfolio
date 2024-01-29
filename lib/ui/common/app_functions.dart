@@ -11,35 +11,36 @@ class ImageView {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+            contentPadding:
+                const EdgeInsets.only(top: 12, left: 22, right: 22, bottom: 22),
             content: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.only(right: 24),
-                child: Column(
-                  children: [
-                    Stack(
-                      children: [
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Icon(
-                              Icons.close_rounded,
-                              size: 26,
-                              color: Color(0xff121212),
-                            ),
-                          ),
-                        ),
-                      ],
+              child: Column(
+                children: [
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Icon(
+                        Icons.close_rounded,
+                        size: 26,
+                        color: Color(0xff121212),
+                      ),
                     ),
-                    verticalSpaceMedium,
-                    Image.asset(
+                  ),
+                  verticalSpaceSmall,
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(15),
+                    child: Image.network(
                       imgPath,
                       fit: BoxFit.contain,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           );

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 const double _tinySize = 5.0;
 const double _smallSize = 10.0;
+const double _semiSmallSize = 15;
 const double _mediumSize = 25.0;
 const double _semimediumSize = 30.0;
 const double _largeSize = 50.0;
@@ -15,6 +16,7 @@ const double _megaSize = 250.0;
 const double _superMegaSize = 320.0;
 
 const Widget horizontalSpaceTiny = SizedBox(width: _tinySize);
+const Widget horizontalSpaceSemiSmall = SizedBox(width: _semiSmallSize);
 const Widget horizontalSpaceSmall = SizedBox(width: _smallSize);
 const Widget horizontalSpaceMedium = SizedBox(width: _mediumSize);
 const Widget horizontalSpaceSemiMedium = SizedBox(width: _semimediumSize);
@@ -27,6 +29,7 @@ const Widget horizontalSpaceMega = SizedBox(width: _megaSize);
 const Widget horizontalSpaceSuperMega = SizedBox(width: _superMegaSize);
 
 const Widget verticalSpaceTiny = SizedBox(height: _tinySize);
+const Widget verticalSpaceSemiSmall = SizedBox(height: _semiSmallSize);
 const Widget verticalSpaceSmall = SizedBox(height: _smallSize);
 const Widget verticalSpaceMedium = SizedBox(height: _mediumSize);
 const Widget verticalSpaceSemiMedium = SizedBox(height: _semimediumSize);

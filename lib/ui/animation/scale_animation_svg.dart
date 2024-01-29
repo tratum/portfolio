@@ -43,7 +43,7 @@ class _ScaleSvgAnimationState extends State<ScaleSvgAnimation>
         builder: (context, child) {
           return ScaleTransition(
             scale: _scaleAnimation,
-            child: SvgPicture.asset(
+            child: SvgPicture.network(
               widget.imgPath,
               height: widget.height,
               width: widget.width,

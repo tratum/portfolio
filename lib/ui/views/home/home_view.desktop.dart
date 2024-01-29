@@ -1,16 +1,11 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:responsive_web_layout/responsive_web_layout.dart';
 import 'package:stacked/stacked.dart';
-import 'package:tratum_portfolio/ui/animation/bouncy_image_animation.dart';
-import 'package:tratum_portfolio/ui/animation/scale_animation_image.dart';
-import 'package:tratum_portfolio/ui/animation/scale_animation_svg.dart';
 import 'package:tratum_portfolio/ui/common/app_functions.dart';
 import 'package:tratum_portfolio/ui/common/ui_helpers.dart';
 import 'package:tratum_portfolio/ui/widgets/mouse_transforms/scale_on_hover.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:responsive_web_layout/responsive_web_layout.dart';
+
 import '../../common/app_widgets.dart';
 import 'home_viewmodel.dart';
 

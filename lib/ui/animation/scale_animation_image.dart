@@ -42,8 +42,10 @@ class _ScaleImgAnimationState extends State<ScaleImgAnimation>
         builder: (context, child) {
           return ScaleTransition(
             scale: _scaleAnimation,
-            child: Image.asset(
+            child: Image.network(
               widget.imgPath,
+              cacheHeight: widget.height.toInt(),
+              cacheWidth:widget.width.toInt(),
               height: widget.height,
               width: widget.width,
             ),
