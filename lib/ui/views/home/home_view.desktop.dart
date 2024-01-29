@@ -5,14 +5,11 @@ import 'package:stacked/stacked.dart';
 import 'package:tratum_portfolio/ui/common/app_functions.dart';
 import 'package:tratum_portfolio/ui/common/ui_helpers.dart';
 import 'package:tratum_portfolio/ui/widgets/mouse_transforms/scale_on_hover.dart';
-
 import '../../common/app_widgets.dart';
 import 'home_viewmodel.dart';
 
 class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
-  HomeViewDesktop({super.key});
-
-  final ScrollController _scrollController = ScrollController();
+  const HomeViewDesktop({super.key});
 
   @override
   Widget build(BuildContext context, HomeViewModel viewModel) {

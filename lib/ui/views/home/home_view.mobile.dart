@@ -181,10 +181,10 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
                   child: HomeSectionMobile(
                     headerLeftPadding: horizontalSpaceSmall,
                     iconLeftPadding: horizontalSpaceSmall,
-                    leftStackImageValue: 55,
-                    topStackImageValue: 45,
-                    imgHeight: 230,
-                    imgWidth: 220,
+                    leftStackImageValue: 62,
+                    topStackImageValue: 30,
+                    imgHeight: 250,
+                    imgWidth: 240,
                   ),
                 ),
                 Padding(
