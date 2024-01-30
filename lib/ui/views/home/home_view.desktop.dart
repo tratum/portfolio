@@ -313,7 +313,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    const Text(
+                    const SelectableText(
                       'tratum.dev',
                       style: TextStyle(
                           fontFamily: 'Yatra',

@@ -33,7 +33,7 @@ class HomeSection extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 totalLeftSpacing,
-                Text(
+                SelectableText(
                   "F u l l - S t a c k",
                   style: TextStyle(
                     fontFamily: 'Afacad',
@@ -49,7 +49,7 @@ class HomeSection extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 totalLeftSpacing,
-                Text(
+                SelectableText(
                   "D e v",
                   style: TextStyle(
                     fontFamily: 'Afacad',
@@ -76,7 +76,7 @@ class HomeSection extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(left: subTextPadding),
-              child: const Text(
+              child: const SelectableText(
                 "Hi, I'm Saksham Rawat. A passionate Full-Stack",
                 style: TextStyle(
                   fontFamily: 'Afacad',
@@ -88,7 +88,7 @@ class HomeSection extends StatelessWidget {
             ),
             Row(children: [
               totalLeftSpacing,
-              const Text(
+              const SelectableText(
                 "Developer based in Jaipur, India",
                 style: TextStyle(
                   fontFamily: 'Afacad',
@@ -196,7 +196,7 @@ class HomeSectionMobile extends StatelessWidget {
         Row(
           children: [
             headerLeftPadding,
-            Text(
+            SelectableText(
               "F u l l - S t a c k",
               style: TextStyle(
                 fontFamily: 'Afacad',
@@ -212,7 +212,7 @@ class HomeSectionMobile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             headerLeftPadding,
-            Text(
+            SelectableText(
               "D e v",
               style: TextStyle(
                 fontFamily: 'Afacad',
@@ -337,7 +337,7 @@ class TechStackSection extends StatelessWidget {
     return Row(
       children: [
         totalLeftSpacing,
-        const Text("Tech Stack",
+        const SelectableText("Tech Stack",
             style: TextStyle(
               fontFamily: 'Afacad',
               fontSize: 26,
@@ -559,7 +559,7 @@ class TechStackSectionMobile extends StatelessWidget {
         verticalSpaceMedium,
         Row(
           children: [
-            const Text("Tech Stack",
+            const SelectableText("Tech Stack",
                 style: TextStyle(
                   fontFamily: 'Afacad',
                   fontSize: 26,
@@ -815,7 +815,7 @@ class AboutMeSection extends StatelessWidget {
           flex: 1,
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const Text("About Me :",
+            const SelectableText("About Me :",
                 style: TextStyle(
                   fontFamily: 'Afacad',
                   fontSize: 32,
@@ -850,21 +850,21 @@ class AboutMeSection extends StatelessWidget {
               ),
             ),
             verticalSpaceTiny,
-            Text(
+                SelectableText(
               "I possess an immense Zeal for crafting seamless digital experiences through writing a clean and optimized code. With a strong belief in the power of teamwork, I value open communication and diverse perspectives. Eager to contribute my skills and enthusiasm to innovative projects, I look forward to fostering a collaborative spirit while delivering a coding excellence.",
               style: TextStyle(
                 fontFamily: 'Afacad',
                 fontSize: subTextFontSize,
                 fontWeight: FontWeight.w700,
                 color: const Color(0XFF3C4A53),
+                overflow: TextOverflow.visible,
               ),
-              overflow: TextOverflow.visible,
               textAlign: TextAlign.justify,
             ),
             const SizedBox(
               height: 30,
             ),
-            Text(
+                SelectableText(
               "Let's Build Something Extraordinary !!!!",
               style: TextStyle(
                 fontFamily: 'Afacad',
@@ -896,7 +896,7 @@ class AboutMeSectionMobile extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              const Text(
+              const SelectableText(
                 "About Me :",
                 style: TextStyle(
                   fontFamily: 'Afacad',
@@ -955,7 +955,7 @@ class AboutMeSectionMobile extends StatelessWidget {
                 ),
               ),
               verticalSpaceLarge,
-              const Text(
+              const SelectableText(
                 "Let's Build Something Extraordinary Together !!",
                 style: TextStyle(
                   fontFamily: 'Afacad',
@@ -989,7 +989,7 @@ class ProjectSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             totalLeftSpacing,
-            const Text(
+            const SelectableText(
               "Portfolio: ",
               style: TextStyle(
                 fontFamily: 'Afacad',
@@ -1006,7 +1006,7 @@ class ProjectSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             totalLeftSpacing,
-            const Text(
+            const SelectableText(
               "Every project represents an original work of development.",
               style: TextStyle(
                 fontFamily: 'Afacad',
@@ -1041,7 +1041,7 @@ class ProjectSectionMobile extends StatelessWidget {
         const Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            SelectableText(
               "Portfolio: ",
               style: TextStyle(
                 fontFamily: 'Afacad',
@@ -1148,7 +1148,7 @@ class Project1 extends StatelessWidget {
                         Row(
                           children: [
                             horizontalSpaceSuperMassive,
-                            Text(
+                            SelectableText(
                               "Notely",
                               textAlign: TextAlign.center,
                               style: TextStyle(
@@ -1163,15 +1163,15 @@ class Project1 extends StatelessWidget {
                         verticalSpaceLarge,
                         Padding(
                           padding: const EdgeInsets.only(left: 60, right: 60),
-                          child: Text(
+                          child: SelectableText(
                             "Notely is a cross-platform mobile application built using the Flutter framework and integrated with Firebase for backend support. It offers a seamless and intuitive interface for creating and managing notes and to-do lists.",
-                            overflow: TextOverflow.visible,
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontFamily: 'Afacad',
                               fontSize: subTextFontSize,
                               fontWeight: FontWeight.w700,
                               color: const Color(0XFF3C4A53),
+                              overflow: TextOverflow.visible,
                             ),
                           ),
                         ),
@@ -1185,7 +1185,7 @@ class Project1 extends StatelessWidget {
                             GestureDetector(
                               child: Row(
                                 children: [
-                                  Text(
+                                  SelectableText(
                                     "Code",
                                     style: TextStyle(
                                       fontFamily: 'Afacad',
@@ -1213,7 +1213,7 @@ class Project1 extends StatelessWidget {
                             GestureDetector(
                               child: Row(
                                 children: [
-                                  Text(
+                                  SelectableText(
                                     "Demo",
                                     style: TextStyle(
                                       fontFamily: 'Afacad',
@@ -1266,7 +1266,7 @@ class Project1Mobile extends StatelessWidget {
         ),
         const Align(
           alignment: Alignment.center,
-          child: Text(
+          child: SelectableText(
             "Notely",
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -1308,15 +1308,15 @@ class Project1Mobile extends StatelessWidget {
                 children: [
                   const Align(
                     alignment: Alignment.center,
-                    child: Text(
+                    child: SelectableText(
                       "Notely is a cross-platform mobile application built using the Flutter framework and integrated with Firebase for backend support. It offers a seamless and intuitive interface for creating and managing notes and to-do lists.",
-                      overflow: TextOverflow.visible,
                       textAlign: TextAlign.justify,
                       style: TextStyle(
                         fontFamily: 'Afacad',
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
                         color: Color(0XFF3C4A53),
+                        overflow: TextOverflow.visible,
                       ),
                     ),
                   ),
@@ -1331,7 +1331,7 @@ class Project1Mobile extends StatelessWidget {
                         GestureDetector(
                           child: const Row(
                             children: [
-                              Text(
+                              SelectableText(
                                 "Code",
                                 style: TextStyle(
                                   fontFamily: 'Afacad',
@@ -1359,7 +1359,7 @@ class Project1Mobile extends StatelessWidget {
                         GestureDetector(
                           child: const Row(
                             children: [
-                              Text(
+                              SelectableText(
                                 "Demo",
                                 style: TextStyle(
                                   fontFamily: 'Afacad',
@@ -1425,7 +1425,7 @@ class Project2 extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.only(left: headingLeftPadding),
-          child: Text(
+          child: SelectableText(
             "Smart Apple Ripeness Detection System",
             style: TextStyle(
               fontFamily: 'Afacad',
@@ -1444,7 +1444,7 @@ class Project2 extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(top: 50, left: 50),
-                    child: Text(
+                    child: SelectableText(
                       "Apple Maturity Detection System leverages YOLOv8 and CNNs to automate ripeness assessment of an Apple. It employs a comprehensive dataset from Kaggle and the web, enhancing accuracy in real-world applications like sorting machines and consumer apps.",
                       textAlign: TextAlign.justify,
                       style: TextStyle(
@@ -1452,8 +1452,8 @@ class Project2 extends StatelessWidget {
                         fontSize: subTextFontSize,
                         fontWeight: FontWeight.w700,
                         color: const Color(0XFF3C4A53),
+                        overflow: TextOverflow.visible,
                       ),
-                      overflow: TextOverflow.visible,
                     ),
                   ),
                   const SizedBox(
@@ -1466,7 +1466,7 @@ class Project2 extends StatelessWidget {
                       GestureDetector(
                         child: Row(
                           children: [
-                            Text(
+                            SelectableText(
                               "Code",
                               style: TextStyle(
                                 fontFamily: 'Afacad',
@@ -1535,15 +1535,15 @@ class Project2Mobile extends StatelessWidget {
         const Row(
           children: [
             Expanded(
-              child: Text(
+              child: SelectableText(
                 "Smart Apple Ripeness Detection System",
                 style: TextStyle(
                   fontFamily: 'Afacad',
                   fontSize: 24,
                   fontWeight: FontWeight.w900,
                   color: Color(0XFF000000),
+                  overflow: TextOverflow.visible,
                 ),
-                overflow: TextOverflow.visible,
                 textAlign: TextAlign.start,
               ),
             ),
@@ -1580,7 +1580,7 @@ class Project2Mobile extends StatelessWidget {
                 children: [
                   const Align(
                     alignment: Alignment.center,
-                    child: Text(
+                    child: SelectableText(
                       "Apple Maturity Detection System leverages YOLOv8 and CNNs to automate ripeness assessment of an Apple. It employs a comprehensive dataset from Kaggle and the web, enhancing accuracy in real-world applications like sorting machines and consumer apps.",
                       textAlign: TextAlign.justify,
                       style: TextStyle(
@@ -1588,8 +1588,8 @@ class Project2Mobile extends StatelessWidget {
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
                         color: Color(0XFF3C4A53),
+                        overflow: TextOverflow.visible,
                       ),
-                      overflow: TextOverflow.visible,
                     ),
                   ),
                   const SizedBox(
@@ -1601,7 +1601,7 @@ class Project2Mobile extends StatelessWidget {
                       child: Row(
                         children: [
                           Spacer(),
-                          Text(
+                          SelectableText(
                             "Code",
                             style: TextStyle(
                               fontFamily: 'Afacad',
@@ -1696,7 +1696,7 @@ class Project3 extends StatelessWidget {
                         Row(
                           children: [
                             headerLeftSpacing,
-                            Text(
+                            SelectableText(
                               "Wanderlust Expeditions",
                               textAlign: TextAlign.center,
                               style: TextStyle(
@@ -1711,15 +1711,15 @@ class Project3 extends StatelessWidget {
                         verticalSpaceLarge,
                         Padding(
                           padding: const EdgeInsets.only(left: 60, right: 60),
-                          child: Text(
+                          child: SelectableText(
                             "WanderLust Expeditions is a Travel Recommendation Website that beckons adventure seekers to explore the diverse tapestry of Bharat's destinations. Powered by Flutter for seamless cross-platform experience, it leverages GitHub Pages for backend management, employing web scraping and JSON for curated travel insights.",
-                            overflow: TextOverflow.visible,
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontFamily: 'Afacad',
                               fontSize: subTextFontSize,
                               fontWeight: FontWeight.w700,
                               color: const Color(0XFF3C4A53),
+                              overflow: TextOverflow.visible,
                             ),
                           ),
                         ),
@@ -1733,7 +1733,7 @@ class Project3 extends StatelessWidget {
                             GestureDetector(
                               child: Row(
                                 children: [
-                                  Text(
+                                  SelectableText(
                                     "Code",
                                     style: TextStyle(
                                       fontFamily: 'Afacad',
@@ -1762,7 +1762,7 @@ class Project3 extends StatelessWidget {
                             GestureDetector(
                               child: Row(
                                 children: [
-                                  Text(
+                                  SelectableText(
                                     "Demo",
                                     style: TextStyle(
                                       fontFamily: 'Afacad',
@@ -1815,7 +1815,7 @@ class Project3Mobile extends StatelessWidget {
         ),
         const Align(
           alignment: Alignment.center,
-          child: Text(
+          child: SelectableText(
             "Wanderlust Expeditions",
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -1857,15 +1857,16 @@ class Project3Mobile extends StatelessWidget {
                 children: [
                   const Align(
                     alignment: Alignment.center,
-                    child: Text(
+                    child: SelectableText(
                       "WanderLust Expeditions is a Travel Recommendation Website that beckons adventure seekers to explore the diverse tapestry of Bharat's destinations. Powered by Flutter for seamless cross-platform experience, it leverages GitHub Pages for backend management, employing web scraping and JSON for curated travel insights.",
-                      overflow: TextOverflow.visible,
+
                       textAlign: TextAlign.justify,
                       style: TextStyle(
                         fontFamily: 'Afacad',
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
                         color: Color(0XFF3C4A53),
+                        overflow: TextOverflow.visible,
                       ),
                     ),
                   ),
@@ -1880,7 +1881,7 @@ class Project3Mobile extends StatelessWidget {
                         GestureDetector(
                           child: const Row(
                             children: [
-                              Text(
+                              SelectableText(
                                 "Code",
                                 style: TextStyle(
                                   fontFamily: 'Afacad',
@@ -1909,7 +1910,7 @@ class Project3Mobile extends StatelessWidget {
                         GestureDetector(
                           child: const Row(
                             children: [
-                              Text(
+                              SelectableText(
                                 "Demo",
                                 style: TextStyle(
                                   fontFamily: 'Afacad',
@@ -1977,7 +1978,7 @@ class Project4 extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.only(left: headerLeftSpacing),
-          child: Text(
+          child: SelectableText(
             "ClimaTrend: ARIMA-Based Weather Forecasting",
             style: TextStyle(
               fontFamily: 'Afacad',
@@ -1996,7 +1997,7 @@ class Project4 extends StatelessWidget {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(top: 50, left: subTextLeftSpacing),
-                    child: Text(
+                    child: SelectableText(
                       "Forecasting average temperatures in major Indian cities with Weather Prediction using ARIMA Model. Leveraging time series analysis and machine learning, the project utilizes Python, Pandas, and StatsModels for data manipulation, ARIMA modeling, and evaluation. Hardware and software requirements ensure seamless execution.",
                       textAlign: TextAlign.justify,
                       style: TextStyle(
@@ -2004,8 +2005,8 @@ class Project4 extends StatelessWidget {
                         fontSize: subTextFontSize,
                         fontWeight: FontWeight.w700,
                         color: const Color(0XFF3C4A53),
+                        overflow: TextOverflow.visible,
                       ),
-                      overflow: TextOverflow.visible,
                     ),
                   ),
                   const SizedBox(
@@ -2018,7 +2019,7 @@ class Project4 extends StatelessWidget {
                       GestureDetector(
                         child: Row(
                           children: [
-                            Text(
+                            SelectableText(
                               "Code",
                               style: TextStyle(
                                 fontFamily: 'Afacad',
@@ -2087,15 +2088,15 @@ class Project4Mobile extends StatelessWidget {
         const Row(
           children: [
             Expanded(
-              child: Text(
+              child: SelectableText(
                 "ClimaTrend: ARIMA-Based Weather Forecasting",
                 style: TextStyle(
                   fontFamily: 'Afacad',
                   fontSize: 24,
                   fontWeight: FontWeight.w900,
                   color: Color(0XFF000000),
+                  overflow: TextOverflow.visible,
                 ),
-                overflow: TextOverflow.visible,
                 textAlign: TextAlign.start,
               ),
             ),
@@ -2132,7 +2133,7 @@ class Project4Mobile extends StatelessWidget {
                 children: [
                   const Align(
                     alignment: Alignment.center,
-                    child: Text(
+                    child: SelectableText(
                       "Forecasting average temperatures in major Indian cities with Weather Prediction using ARIMA Model. Leveraging time series analysis and machine learning, the project utilizes Python, Pandas, and StatsModels for data manipulation, ARIMA modeling, and evaluation. Hardware and software requirements ensure seamless execution.",
                       textAlign: TextAlign.justify,
                       style: TextStyle(
@@ -2140,8 +2141,8 @@ class Project4Mobile extends StatelessWidget {
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
                         color: Color(0XFF3C4A53),
+                        overflow: TextOverflow.visible,
                       ),
-                      overflow: TextOverflow.visible,
                     ),
                   ),
                   const SizedBox(
@@ -2153,7 +2154,7 @@ class Project4Mobile extends StatelessWidget {
                       child: Row(
                         children: [
                           Spacer(),
-                          Text(
+                          SelectableText(
                             "Code",
                             style: TextStyle(
                               fontFamily: 'Afacad',
@@ -2209,7 +2210,7 @@ class ContactSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          SelectableText(
             "CONTACT",
             style: TextStyle(
               fontFamily: 'Afacad',
@@ -2221,7 +2222,7 @@ class ContactSection extends StatelessWidget {
           verticalSpaceSmall,
           Row(
             children: [
-              Text(
+              SelectableText(
                 "Drop a Hello, Let's Collaborate and Grow!",
                 style: TextStyle(
                   fontFamily: 'Afacad',
@@ -2257,7 +2258,7 @@ class ContactSection extends StatelessWidget {
                         color: Color(0XFF3498db),
                       ),
                       horizontalSpaceTiny,
-                      Text(
+                      SelectableText(
                         "tratum.connect@gmail.com",
                         style: TextStyle(
                           fontFamily: 'Afacad',
@@ -2286,7 +2287,7 @@ class ContactSection extends StatelessWidget {
                       color: Color(0XFF00A86B),
                     ),
                     horizontalSpaceTiny,
-                    Text(
+                    SelectableText(
                       "Jaipur, Rajasthan, India",
                       style: TextStyle(
                         fontFamily: 'Afacad',
@@ -2315,7 +2316,7 @@ class ContactMobileSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        const SelectableText(
           "CONTACT",
           style: TextStyle(
             fontFamily: 'Afacad',
@@ -2374,7 +2375,7 @@ class ContactMobileSection extends StatelessWidget {
                     color: Color(0XFF3498db),
                   ),
                   horizontalSpaceTiny,
-                  Text(
+                  SelectableText(
                     "tratum.connect@gmail.com",
                     style: TextStyle(
                       fontFamily: 'Afacad',
@@ -2406,7 +2407,7 @@ class ContactMobileSection extends StatelessWidget {
                   color: Color(0XFF00A86B),
                 ),
                 horizontalSpaceTiny,
-                Text(
+                SelectableText(
                   "Jaipur, Rajasthan, India",
                   style: TextStyle(
                     fontFamily: 'Afacad',
@@ -2439,7 +2440,7 @@ class FooterSection extends StatelessWidget {
             verticalSpaceLarge,
             Row(
               children: [
-                const Text(
+                const SelectableText(
                   "tratum Copyright © 2024 tratum-All Rights Reserved || Designed by tratum",
                   style: TextStyle(
                     color: Color(0xffffffff),
@@ -2510,13 +2511,15 @@ class FooterSectionMobile extends StatelessWidget {
                     Expanded(
                       child: Padding(
                         padding: EdgeInsets.only(left: 18, right: 18),
-                        child: Text(
-                          "tratum Copyright © 2024 tratum All Rights Reserved",
-                          style: TextStyle(
-                            color: Color(0xffffffff),
-                            fontFamily: 'Afacad',
-                            fontSize: 18,
-                            fontWeight: FontWeight.w900,
+                        child: Center(
+                          child: SelectableText(
+                            "tratum Copyright © 2024 tratum All Rights Reserved",
+                            style: TextStyle(
+                              color: Color(0xffffffff),
+                              fontFamily: 'Afacad',
+                              fontSize: 18,
+                              fontWeight: FontWeight.w900,
+                            ),
                           ),
                         ),
                       ),
@@ -2529,7 +2532,7 @@ class FooterSectionMobile extends StatelessWidget {
                     Spacer(),
                     Padding(
                       padding: EdgeInsets.only(left: 18, right: 18),
-                      child: Text(
+                      child: SelectableText(
                         "Designed by tratum",
                         style: TextStyle(
                           color: Color(0xffffffff),

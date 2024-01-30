@@ -17,7 +17,7 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0XFFfafafa),
-        title: const Text(
+        title: const SelectableText(
           'tratum.dev',
           style: TextStyle(
             fontFamily: 'Yatra',

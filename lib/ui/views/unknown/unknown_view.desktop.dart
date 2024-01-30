@@ -16,7 +16,7 @@ class UnknownViewDesktop extends ViewModelWidget<UnknownViewModel> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            SelectableText(
               '404',
               style: TextStyle(
                 color: Colors.white,
@@ -27,7 +27,7 @@ class UnknownViewDesktop extends ViewModelWidget<UnknownViewModel> {
               ),
             ),
             verticalSpaceSmall,
-            Text(
+            SelectableText(
               'PAGE NOT FOUND',
               style: TextStyle(
                 color: Colors.white,

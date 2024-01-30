@@ -37,7 +37,7 @@ class ImageView {
                     borderRadius: BorderRadius.circular(15),
                     child: Image.network(
                       imgPath,
-                      fit: BoxFit.contain,
+                      fit: BoxFit.fill,
                     ),
                   ),
                 ],

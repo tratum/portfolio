@@ -35,16 +35,15 @@ class NoticeSheet extends StackedView<NoticeSheetModel> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
+          SelectableText(
             request.title!,
             style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
           ),
           verticalSpaceTiny,
-          Text(
+          SelectableText(
             request.description!,
-            style: const TextStyle(fontSize: 14, color: kcMediumGrey),
+            style: const TextStyle(fontSize: 14, color: kcMediumGrey,),
             maxLines: 3,
-            softWrap: true,
           ),
           verticalSpaceLarge,
         ],

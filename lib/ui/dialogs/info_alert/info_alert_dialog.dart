@@ -40,18 +40,17 @@ class InfoAlertDialog extends StackedView<InfoAlertDialogModel> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      SelectableText(
                         request.title!,
                         style: const TextStyle(
                             fontSize: 16, fontWeight: FontWeight.w900),
                       ),
                       verticalSpaceTiny,
-                      Text(
+                      SelectableText(
                         request.description!,
                         style:
                             const TextStyle(fontSize: 14, color: kcMediumGrey),
                         maxLines: 3,
-                        softWrap: true,
                       ),
                     ],
                   ),
@@ -66,7 +65,7 @@ class InfoAlertDialog extends StackedView<InfoAlertDialogModel> {
                     ),
                   ),
                   alignment: Alignment.center,
-                  child: const Text(
+                  child: const SelectableText(
                     '⭐️',
                     style: TextStyle(fontSize: 30),
                   ),
@@ -86,7 +85,7 @@ class InfoAlertDialog extends StackedView<InfoAlertDialogModel> {
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: const Text(
+                child: const SelectableText(
                   'Got it',
                   style: TextStyle(
                     color: Colors.white,
