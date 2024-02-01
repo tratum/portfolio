@@ -28,8 +28,8 @@ const RESOURCES = {"assets/asset/fonts/Afacad/Afacad-Italic-VariableFont_wght.tt
 "icons/Icon-512.png": "98067fd94e9d6ceca7e1110f1f6a4e55",
 "icons/Icon-maskable-192.png": "a1c3357d18c6203783994e9912c8edda",
 "icons/Icon-maskable-512.png": "98067fd94e9d6ceca7e1110f1f6a4e55",
-"index.html": "e969a179a95103d6508efffd8276fa90",
-"/": "e969a179a95103d6508efffd8276fa90",
+"index.html": "2d11df780c1a02476aa958ebcb242476",
+"/": "2d11df780c1a02476aa958ebcb242476",
 "main.dart.js": "c0448381b5ab87e5463d4fca16c30935",
 "manifest.json": "73dd58b34b064c5e50c6d31f66150d76",
 "version.json": "e18f313d22fd2cb75897b8179d48f9a0"};
