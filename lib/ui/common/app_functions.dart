@@ -1,3 +1,5 @@
+import 'dart:ui_web';
+import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:tratum_portfolio/ui/common/ui_helpers.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -84,5 +86,32 @@ class WebNavigator {
     } else {
       throw 'Could not launch $emailUri';
     }
+  }
+}
+
+class PdfViewer {
+  static void registerPdfIframeView(double height,double width) {
+    platformViewRegistry.registerViewFactory(
+      'pdf-iframe-view',
+          (int viewId) => IFrameElement()
+        ..width = width.toString()
+        ..height = height.toString()
+        ..style.width = '100%'
+        ..style.height = '100%'
+        ..name = 'Resume'
+        ..src = 'https://tratum.github.io/cloud-asset-storage/pdf/Resume.pdf',
+    );
+  }
+  static void registerPdfIframeViewMobile(double height,double width) {
+    platformViewRegistry.registerViewFactory(
+      'pdf-iframe-view-mobile',
+          (int viewId) => IFrameElement()
+        ..width = width.toString()
+        ..height = height.toString()
+        ..style.width = '100%'
+        ..style.height = '100%'
+        ..name = 'Resume'
+        ..src = 'https://docs.google.com/gview?url=https://tratum.github.io/cloud-asset-storage/pdf/Resume.pdf&embedded=true',
+    );
   }
 }

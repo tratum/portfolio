@@ -81,64 +81,96 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
               ),
               fullHDLayout: SingleChildScrollView(
                 controller: viewModel.scrollController,
-                child: const Padding(
-                  padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: 150,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 150,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: HomeSection(),
+                    ),
+                    const SizedBox(
+                      height: 90,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: TechStackSection(),
+                    ),
+                    verticalSpaceSuperMassive,
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: AboutMeSection(),
+                    ),
+                    verticalSpaceSuperMassive,
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: ProjectSection(),
+                    ),
+                    const SizedBox(
+                      height: 90,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project1(),
+                    ),
+                    verticalSpaceMassive,
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project2(),
+                    ),
+                    verticalSpaceMassive,
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project3(),
+                    ),
+                    verticalSpaceMassive,
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project4(),
+                    ),
+                    verticalSpaceMassive,
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: PdfViewWidget(
+                        totalLeftSpacing: horizontalSpaceSemiMassive,
+                        pdfViewWidth: MediaQuery.of(context).size.width/1.2,
                       ),
-                      HomeSection(),
-                      SizedBox(
-                        height: 90,
-                      ),
-                      TechStackSection(),
-                      verticalSpaceSuperMassive,
-                      AboutMeSection(),
-                      verticalSpaceSuperMassive,
-                      ProjectSection(),
-                      SizedBox(
-                        height: 90,
-                      ),
-                      Project1(),
-                      verticalSpaceMassive,
-                      Project2(),
-                      verticalSpaceMassive,
-                      Project3(),
-                      verticalSpaceMassive,
-                      Project4(),
-                      verticalSpaceSuperMassive,
-                      ContactSection(),
-                      FooterSection(),
-                    ],
-                  ),
+                    ),
+                    verticalSpaceMega,
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: ContactSection(),
+                    ),
+                    const FooterSection(),
+                  ],
                 ),
               ),
               hdLayout: SingleChildScrollView(
                 controller: viewModel.scrollController,
-                child: const Column(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 150,
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: HomeSection(
                         totalLeftSpacing: horizontalSpaceSemiMassive,
                         subTextPadding: 100,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: TechStackSection(),
                     ),
                     verticalSpaceSuperMassive,
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: AboutMeSection(
                         totalLeftSpacing: horizontalSpaceSemiMassive,
@@ -148,16 +180,16 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       ),
                     ),
                     verticalSpaceSuperMassive,
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: ProjectSection(
                         totalLeftSpacing: horizontalSpaceSemiMassive,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 90,
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: Project1(
                         totalLeftSpacing: horizontalSpaceSemiMassive,
@@ -166,7 +198,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       ),
                     ),
                     verticalSpaceMassive,
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: Project2(
                         totalLeftSpacing: horizontalSpaceSemiMassive,
@@ -176,7 +208,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       ),
                     ),
                     verticalSpaceMassive,
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: Project3(
                         totalLeftSpacing: horizontalSpaceSemiMassive,
@@ -187,7 +219,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       ),
                     ),
                     verticalSpaceMassive,
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: Project4(
                         headerLeftSpacing: 120,
@@ -201,22 +233,30 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                     ),
                     verticalSpaceSuperMassive,
                     Padding(
+                      padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: PdfViewWidget(
+                        totalLeftSpacing: horizontalSpaceSemiMassive,
+                        pdfViewWidth: MediaQuery.of(context).size.width/1.2,
+                      ),
+                    ),
+                    verticalSpaceMega,
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: ContactSection(),
                     ),
-                    FooterSection(),
+                    const FooterSection(),
                   ],
                 ),
               ),
               sdLayout: SingleChildScrollView(
                 controller: viewModel.scrollController,
-                child: const Column(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 150,
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: HomeSection(
                         totalLeftSpacing: horizontalSpaceLarge,
@@ -224,17 +264,17 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                         subTextPadding: 50,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 90,
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: TechStackSection(
                         totalLeftSpacing: horizontalSpaceLarge,
                       ),
                     ),
                     verticalSpaceSuperMassive,
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: AboutMeSection(
                         totalLeftSpacing: horizontalSpaceLarge,
@@ -243,16 +283,16 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       ),
                     ),
                     verticalSpaceSuperMassive,
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: ProjectSection(
                         totalLeftSpacing: horizontalSpaceLarge,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 90,
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: Project1(
                         iconLeftSpacing: horizontalSpaceSemiLarge,
@@ -261,7 +301,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       ),
                     ),
                     verticalSpaceMassive,
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: Project2(
                         imgHeight: 400,
@@ -272,7 +312,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       ),
                     ),
                     verticalSpaceMassive,
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: Project3(
                         imgHeight: 400,
@@ -283,7 +323,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       ),
                     ),
                     verticalSpaceMassive,
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: Project4(
                         imgHeight: 400,
@@ -295,10 +335,18 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                     ),
                     verticalSpaceSuperMassive,
                     Padding(
+                      padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: PdfViewWidget(
+                        totalLeftSpacing: horizontalSpaceSemiMassive,
+                        pdfViewWidth: MediaQuery.of(context).size.width/1.2,
+                      ),
+                    ),
+                    verticalSpaceMega,
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: ContactSection(),
                     ),
-                    FooterSection(),
+                    const FooterSection(),
                   ],
                 ),
               ),
@@ -380,6 +428,27 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                         ContentScrolling.autoScroll(
                             scrollPosition: 1500,
                             conn: viewModel.scrollController);
+                      },
+                    ),
+                    horizontalSpaceSemiMedium,
+                    GestureDetector(
+                      child: const ScaleOnHover(
+                        scale: 12,
+                        child: Text(
+                          'Resume',
+                          style: TextStyle(
+                            fontFamily: 'Afacad',
+                            fontSize: 22,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 1.5,
+                          ),
+                        ),
+                      ),
+                      onTap: () {
+                        ContentScrolling.autoScroll(
+                          scrollPosition: 5000,
+                          conn: viewModel.scrollController,
+                        );
                       },
                     ),
                     horizontalSpaceSemiMedium,

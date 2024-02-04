@@ -70,8 +70,41 @@
 </head>
 
 <body>
-<!-- <style>
-    
+<!-- <script>
+window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+</script> -->
+<!-- <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBIouqXVh0tklDRclYi9hcdVBcE9hFHUNA",
+    authDomain: "portfolio-c08e5.firebaseapp.com",
+    projectId: "portfolio-c08e5",
+    storageBucket: "portfolio-c08e5.appspot.com",
+    messagingSenderId: "4816446660",
+    appId: "1:4816446660:web:24255a4725a333534a1591"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script> -->
+<style>
     body {
       background-color: #0A0A0A;
       height: 100vh;
@@ -95,10 +128,10 @@
     }
 
     img {
-      width: 245px;
-      height: 200px;
+      width: 300px;
+      height: 80px;
       position: absolute;
-      top: 48%;
+      top: 49%;
       transform: translateY(-50%);
     }
 
@@ -109,8 +142,8 @@
 
     .loader {
       position: relative;
-      width: 250px;
-      height: 250px;
+      width: 360px;
+      height: 360px;
       border-radius: 50%;
       background: linear-gradient(#f07e6e, #84cdfa, #5ad1cd);
       animation: animate 1.2s linear infinite;
@@ -160,63 +193,8 @@
       background: #191919;
       border-radius: 50%;
     }
-
-
-
-</style> -->
+</style>
 <script>
-window.addEventListener('load', function(ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
-            appRunner.runApp();
-          });
-        }
-      });
-    });
-
-
-
-
-
-
-
-
-
-</script>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyBIouqXVh0tklDRclYi9hcdVBcE9hFHUNA",
-    authDomain: "portfolio-c08e5.firebaseapp.com",
-    projectId: "portfolio-c08e5",
-    storageBucket: "portfolio-c08e5.appspot.com",
-    messagingSenderId: "4816446660",
-    appId: "1:4816446660:web:24255a4725a333534a1591"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-
-
-
-
-
-
-
-
-
-</script>
-<!-- <script>
       function delay(time) {
       return new Promise(resolve => setTimeout(resolve, time));
     }
@@ -235,15 +213,15 @@ window.addEventListener('load', function(ev) {
         await appRunner.runApp();
       });
     });
-</script> -->
-<!--<div class="main-content" id="loader-content">-->
-<!--    <div class="loader">-->
-<!--        <span></span>-->
-<!--        <span></span>-->
-<!--        <span></span>-->
-<!--        <span></span>-->
-<!--    </div>-->
-<!--    <img loading="lazy" src="main-icon.png"/>-->
-<!--</div>-->
+</script>
+<div class="main-content" id="loader-content">
+   <div class="loader">
+       <span></span>
+       <span></span>
+       <span></span>
+       <span></span>
+   </div>
+   <img loading="eager" src="https://tratum.github.io/cloud-asset-storage/images/portfolio_github_preview_white.png"/>
+</div>
 </body>
 </html>

@@ -4,7 +4,6 @@ import 'package:responsive_web_layout/responsive_web_layout.dart';
 import 'package:stacked/stacked.dart';
 import 'package:tratum_portfolio/ui/common/app_widgets.dart';
 import 'package:tratum_portfolio/ui/common/ui_helpers.dart';
-
 import '../../common/app_functions.dart';
 import '../../widgets/mouse_transforms/scale_on_hover.dart';
 import 'home_viewmodel.dart';
@@ -101,6 +100,27 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
                 title: const ScaleOnHover(
                   scale: 12,
                   child: Text(
+                    'Resume',
+                    style: TextStyle(
+                      fontFamily: 'Afacad',
+                      fontSize: 22,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  ContentScrolling.autoScroll(
+                    scrollPosition: 4750,
+                    conn: viewModel.scrollController,
+                  );
+                },
+              ),
+              verticalSpaceSemiMedium,
+              ListTile(
+                title: const ScaleOnHover(
+                  scale: 12,
+                  child: Text(
                     'Contact',
                     style: TextStyle(
                       fontFamily: 'Afacad',
@@ -127,10 +147,10 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
           context: context,
           largeMobileLayout: SingleChildScrollView(
             controller: viewModel.scrollController,
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: HomeSectionMobile(
                     imgWidth: 220,
@@ -139,49 +159,57 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
                     leftStackImageValue: 50,
                   ),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: TechStackSectionMobile(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: AboutMeSectionMobile(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: ProjectSectionMobile(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: Project1Mobile(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: Project2Mobile(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: Project3Mobile(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: Project4Mobile(),
                 ),
-                verticalSpaceMassive,
                 Padding(
+                  padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
+                  child: PdfViewMobileWidget(
+                    totalLeftSpacing: horizontalSpaceTiny,
+                    pdfViewHeight: 580,
+                    pdfViewWidth: MediaQuery.of(context).size.width/1.2,
+                  ),
+                ),
+                verticalSpaceMassive,
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: ContactMobileSection(),
                 ),
-                FooterSectionMobile(),
+                const FooterSectionMobile(),
               ],
             ),
           ),
           mediumMobileLayout: SingleChildScrollView(
             controller: viewModel.scrollController,
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: HomeSectionMobile(
                     headerLeftPadding: horizontalSpaceSmall,
@@ -192,49 +220,57 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
                     imgWidth: 220,
                   ),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: TechStackSectionMobile(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: AboutMeSectionMobile(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: ProjectSectionMobile(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: Project1Mobile(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: Project2Mobile(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: Project3Mobile(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: Project4Mobile(),
                 ),
-                verticalSpaceMassive,
                 Padding(
+                  padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
+                  child: PdfViewMobileWidget(
+                    totalLeftSpacing: horizontalSpaceTiny,
+                    pdfViewHeight: 580,
+                    pdfViewWidth: MediaQuery.of(context).size.width/1.2,
+                  ),
+                ),
+                verticalSpaceMassive,
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: ContactMobileSection(),
                 ),
-                FooterSectionMobile(),
+                const FooterSectionMobile(),
               ],
             ),
           ),
           smallMobileLayout: SingleChildScrollView(
             controller: viewModel.scrollController,
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: HomeSectionMobile(
                     headerLeftPadding: horizontalSpaceTiny,
@@ -246,42 +282,50 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
                     headerFontSize: 38,
                   ),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 13, 16),
                   child: TechStackSectionMobile(
-                    totalLeftSpacing: horizontalSpaceSemiSmall,
+                    totalLeftSpacing: horizontalSpaceTiny,
                   ),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: AboutMeSectionMobile(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: ProjectSectionMobile(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: Project1Mobile(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: Project2Mobile(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: Project3Mobile(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: Project4Mobile(),
                 ),
-                verticalSpaceMassive,
                 Padding(
+                  padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
+                  child: PdfViewMobileWidget(
+                    totalLeftSpacing: horizontalSpaceTiny,
+                    pdfViewHeight: 580,
+                    pdfViewWidth: MediaQuery.of(context).size.width/1.2,
+                  ),
+                ),
+                verticalSpaceMassive,
+                const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                   child: ContactMobileSection(),
                 ),
-                FooterSectionMobile(),
+                const FooterSectionMobile(),
               ],
             ),
           ),

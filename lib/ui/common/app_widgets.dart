@@ -238,7 +238,7 @@ class HomeSectionMobile extends StatelessWidget {
           height: 15,
         ),
         RichText(
-            text: TextSpan(
+          text: TextSpan(
               style: const TextStyle(
                 fontFamily: 'Afacad',
                 fontSize: 20,
@@ -250,26 +250,26 @@ class HomeSectionMobile extends StatelessWidget {
                   text: "Hi, I'm Saksham Rawat. A passionate Full-Stack Developer based in Jaipur, India",
                 ),
                 WidgetSpan(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 8.0,top: 8.0),
-                      child: GestureDetector(
-                          child: Image.network(
-                            "https://tratum.github.io/cloud-asset-storage/images/pin.png",
-                            cacheWidth: 28,
-                            cacheHeight: 28,
-                            height: 25,
-                            width: 25,
-                          ),
-                          onTap: () async {
-                            return WebNavigator.openUrl(
-                              url: 'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
-                            );
-                            // return _urlRedirect(url);
-                          }),
-                    ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 8.0,top: 8.0),
+                    child: GestureDetector(
+                        child: Image.network(
+                          "https://tratum.github.io/cloud-asset-storage/images/pin.png",
+                          cacheWidth: 28,
+                          cacheHeight: 28,
+                          height: 25,
+                          width: 25,
+                        ),
+                        onTap: () async {
+                          return WebNavigator.openUrl(
+                            url: 'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
+                          );
+                          // return _urlRedirect(url);
+                        }),
+                  ),
                 ),
               ]
-            ),
+          ),
         ),
         verticalSpaceMedium,
         Row(
@@ -814,7 +814,7 @@ class AboutMeSection extends StatelessWidget {
         Expanded(
           flex: 1,
           child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const SelectableText("About Me :",
                 style: TextStyle(
                   fontFamily: 'Afacad',
@@ -850,7 +850,7 @@ class AboutMeSection extends StatelessWidget {
               ),
             ),
             verticalSpaceTiny,
-                SelectableText(
+            SelectableText(
               "I possess an immense Zeal for crafting seamless digital experiences through writing a clean and optimized code. With a strong belief in the power of teamwork, I value open communication and diverse perspectives. Eager to contribute my skills and enthusiasm to innovative projects, I look forward to fostering a collaborative spirit while delivering a coding excellence.",
               style: TextStyle(
                 fontFamily: 'Afacad',
@@ -864,7 +864,7 @@ class AboutMeSection extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-                SelectableText(
+            SelectableText(
               "Let's Build Something Extraordinary !!!!",
               style: TextStyle(
                 fontFamily: 'Afacad',
@@ -894,78 +894,78 @@ class AboutMeSectionMobile extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-              const SelectableText(
-                "About Me :",
-                style: TextStyle(
-                  fontFamily: 'Afacad',
-                  fontSize: 24,
-                  fontWeight: FontWeight.w900,
-                  color: Color(0XFF00B9E8),
-                ),
-              ),
-                verticalSpaceMedium,
-                GestureDetector(
-                  onTap: () async {
-                    return ImageView.showImageDialog(
-                        context: context, imgPath: "https://tratum.github.io/cloud-asset-storage/images/deskSetup.png");
-                  },
-                  child: Container(
-                    height: 150,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                        image: NetworkImage("https://tratum.github.io/cloud-asset-storage/images/deskSetup.png"),
-                        fit: BoxFit.cover,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SelectableText(
+                    "About Me :",
+                    style: TextStyle(
+                      fontFamily: 'Afacad',
+                      fontSize: 24,
+                      fontWeight: FontWeight.w900,
+                      color: Color(0XFF00B9E8),
+                    ),
+                  ),
+                  verticalSpaceMedium,
+                  GestureDetector(
+                    onTap: () async {
+                      return ImageView.showImageDialog(
+                          context: context, imgPath: "https://tratum.github.io/cloud-asset-storage/images/deskSetup.png");
+                    },
+                    child: Container(
+                      height: 150,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        image: const DecorationImage(
+                          image: NetworkImage("https://tratum.github.io/cloud-asset-storage/images/deskSetup.png"),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              verticalSpaceMedium,
-              RichText(
-                text: const TextSpan(
-                  style: TextStyle(
-                    fontFamily: 'Afacad',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                    color: Color(0XFF3C4A53),
-                  ),
-                  children: [
-                    TextSpan(
-                      text: "Namaste ( ",
-                    ),
-                    TextSpan(
-                      text: "nam·aste",
+                  verticalSpaceMedium,
+                  RichText(
+                    text: const TextSpan(
                       style: TextStyle(
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0XFF000000),
+                        fontFamily: 'Afacad',
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0XFF3C4A53),
                       ),
-                    ),
-                    TextSpan(
-                      text: " ) As a Junior Full Stack Developer",
-                    ),
-                    TextSpan(
-                      text:
+                      children: [
+                        TextSpan(
+                          text: "Namaste ( ",
+                        ),
+                        TextSpan(
+                          text: "nam·aste",
+                          style: TextStyle(
+                            fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0XFF000000),
+                          ),
+                        ),
+                        TextSpan(
+                          text: " ) As a Junior Full Stack Developer",
+                        ),
+                        TextSpan(
+                          text:
                           "I possess an immense Zeal for crafting seamless digital experiences through writing a clean and optimized code. With a strong belief in the power of teamwork, I value open communication and diverse perspectives. Eager to contribute my skills and enthusiasm to innovative projects, I look forward to fostering a collaborative spirit while delivering a coding excellence.",
-                    )
-                  ],
-                ),
-              ),
-              verticalSpaceLarge,
-              const SelectableText(
-                "Let's Build Something Extraordinary Together !!",
-                style: TextStyle(
-                  fontFamily: 'Afacad',
-                  fontSize: 22,
-                  fontWeight: FontWeight.w800,
-                  color: Color(0XFFE53935),
-                  letterSpacing: 1.5,
-                ),
-              ),
-            ]),
+                        )
+                      ],
+                    ),
+                  ),
+                  verticalSpaceLarge,
+                  const SelectableText(
+                    "Let's Build Something Extraordinary Together !!",
+                    style: TextStyle(
+                      fontFamily: 'Afacad',
+                      fontSize: 22,
+                      fontWeight: FontWeight.w800,
+                      color: Color(0XFFE53935),
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                ]),
           ),
         ],
       ),
@@ -1069,7 +1069,7 @@ class ProjectSectionMobile extends StatelessWidget {
                   children: [
                     const TextSpan(
                       text:
-                          'Every project represents an unique piece of development   ',
+                      'Every project represents an unique piece of development   ',
                     ),
                     WidgetSpan(
                       child: Image.network(
@@ -1102,13 +1102,13 @@ class Project1 extends StatelessWidget {
 
   const Project1(
       {Key? key,
-      this.totalLeftSpacing = horizontalSpaceSuperMassive,
-      this.headerLeftSpacing = horizontalSpaceSuperMassive,
-      this.iconLeftSpacing = horizontalSpaceMassive,
-      this.imgHeight = 400,
-      this.imgWidth = 550,
-      this.headingFontSize = 26,
-      this.subTextFontSize = 22})
+        this.totalLeftSpacing = horizontalSpaceSuperMassive,
+        this.headerLeftSpacing = horizontalSpaceSuperMassive,
+        this.iconLeftSpacing = horizontalSpaceMassive,
+        this.imgHeight = 400,
+        this.imgWidth = 550,
+        this.headingFontSize = 26,
+        this.subTextFontSize = 22})
       : super(key: key);
 
   @override
@@ -1233,7 +1233,7 @@ class Project1 extends StatelessWidget {
                               onTap: () async {
                                 return WebNavigator.openUrl(
                                     url:
-                                        "https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing");
+                                    "https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing");
                               },
                             ),
                           ],
@@ -1379,7 +1379,7 @@ class Project1Mobile extends StatelessWidget {
                           onTap: () async {
                             return WebNavigator.openUrl(
                                 url:
-                                    "https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing");
+                                "https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing");
                           },
                         ),
                       ],
@@ -1486,7 +1486,7 @@ class Project2 extends StatelessWidget {
                         onTap: () async {
                           return WebNavigator.openUrl(
                               url:
-                                  "https://github.com/tratum/apple_maturity_detection");
+                              "https://github.com/tratum/apple_maturity_detection");
                         },
                       ),
                     ],
@@ -1623,7 +1623,7 @@ class Project2Mobile extends StatelessWidget {
                     onTap: () async {
                       return WebNavigator.openUrl(
                           url:
-                              "https://github.com/tratum/apple_maturity_detection");
+                          "https://github.com/tratum/apple_maturity_detection");
                     },
                   ),
                 ],
@@ -1650,13 +1650,13 @@ class Project3 extends StatelessWidget {
 
   const Project3(
       {Key? key,
-      this.imgWidth = 400,
-      this.imgHeight = 600,
-      this.iconLeftSpacing = horizontalSpaceSuperMassive,
-      this.totalLeftSpacing = horizontalSpaceMassive,
-      this.headerLeftSpacing = horizontalSpaceSuperMassive,
-      this.headingFontSize = 26,
-      this.subTextFontSize = 22})
+        this.imgWidth = 400,
+        this.imgHeight = 600,
+        this.iconLeftSpacing = horizontalSpaceSuperMassive,
+        this.totalLeftSpacing = horizontalSpaceMassive,
+        this.headerLeftSpacing = horizontalSpaceSuperMassive,
+        this.headingFontSize = 26,
+        this.subTextFontSize = 22})
       : super(key: key);
 
   @override
@@ -1753,7 +1753,7 @@ class Project3 extends StatelessWidget {
                               onTap: () async {
                                 return WebNavigator.openUrl(
                                     url:
-                                        "https://github.com/tratum/wanderlust-expeditions");
+                                    "https://github.com/tratum/wanderlust-expeditions");
                               },
                             ),
                             const SizedBox(
@@ -1782,7 +1782,7 @@ class Project3 extends StatelessWidget {
                               onTap: () async {
                                 return WebNavigator.openUrl(
                                     url:
-                                        "https://tratum.github.io/wanderlust-expeditions/");
+                                    "https://tratum.github.io/wanderlust-expeditions/");
                               },
                             ),
                           ],
@@ -1901,7 +1901,7 @@ class Project3Mobile extends StatelessWidget {
                           onTap: () async {
                             return WebNavigator.openUrl(
                                 url:
-                                    "https://github.com/tratum/wanderlust-expeditions");
+                                "https://github.com/tratum/wanderlust-expeditions");
                           },
                         ),
                         const SizedBox(
@@ -1930,7 +1930,7 @@ class Project3Mobile extends StatelessWidget {
                           onTap: () async {
                             return WebNavigator.openUrl(
                                 url:
-                                    "https://tratum.github.io/wanderlust-expeditions/");
+                                "https://tratum.github.io/wanderlust-expeditions/");
                           },
                         ),
                       ],
@@ -1961,14 +1961,14 @@ class Project4 extends StatelessWidget {
 
   const Project4(
       {Key? key,
-      this.imgWidth = 400,
-      this.imgHeight = 600,
-      this.iconLeftSpacing = horizontalSpaceSuperMassive,
-      this.totalLeftSpacing = horizontalSpaceMassive,
-      this.headerLeftSpacing = 200,
-      this.subTextLeftSpacing = 50,
-      this.headingFontSize = 26,
-      this.subTextFontSize = 22})
+        this.imgWidth = 400,
+        this.imgHeight = 600,
+        this.iconLeftSpacing = horizontalSpaceSuperMassive,
+        this.totalLeftSpacing = horizontalSpaceMassive,
+        this.headerLeftSpacing = 200,
+        this.subTextLeftSpacing = 50,
+        this.headingFontSize = 26,
+        this.subTextFontSize = 22})
       : super(key: key);
 
   @override
@@ -2039,7 +2039,7 @@ class Project4 extends StatelessWidget {
                         onTap: () async {
                           return WebNavigator.openUrl(
                               url:
-                                  "https://github.com/tratum/weather_prediction");
+                              "https://github.com/tratum/weather_prediction");
                         },
                       ),
                     ],
@@ -2603,6 +2603,116 @@ class ProjectSkeleton extends StatelessWidget {
           color: Colors.black.withOpacity(0.04),
           height: 500,
           width: MediaQuery.of(context).size.width / 2.1,
+        ),
+      ],
+    );
+  }
+}
+
+class PdfViewWidget extends StatelessWidget {
+  final Widget totalLeftSpacing;
+  final double pdfViewHeight;
+  final double pdfViewWidth;
+  const PdfViewWidget({
+    Key? key,
+    this.totalLeftSpacing = horizontalSpaceSuperMassive,
+    this.pdfViewHeight=800,
+    this.pdfViewWidth=800,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final pdfView = HtmlElementView(
+      key: UniqueKey(),
+      viewType: 'pdf-iframe-view',
+    );
+    return Column(
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            totalLeftSpacing,
+            const SelectableText(
+              "Resume",
+              style: TextStyle(
+                fontFamily: 'Afacad',
+                fontSize: 34,
+                fontWeight: FontWeight.w700,
+                color: Color(0XFF00B9E8),
+                letterSpacing: 2.5,
+              ),
+            ),
+          ],
+        ),
+        verticalSpaceLarge,
+        Row(
+          children: [
+            const Spacer(),
+            Align(
+              alignment: Alignment.center,
+              child: SizedBox(
+                width: pdfViewWidth,
+                height: pdfViewHeight,
+                child: pdfView,
+              ),
+            ),
+            const Spacer(),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class PdfViewMobileWidget extends StatelessWidget {
+  final Widget totalLeftSpacing;
+  final double pdfViewHeight;
+  final double pdfViewWidth;
+  const PdfViewMobileWidget({
+    Key? key,
+    this.totalLeftSpacing = horizontalSpaceSuperMassive,
+    this.pdfViewHeight=800,
+    this.pdfViewWidth=800,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final pdfView = HtmlElementView(
+      key: UniqueKey(),
+      viewType: 'pdf-iframe-view-mobile',
+    );
+    return Column(
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            totalLeftSpacing,
+            const SelectableText(
+              "Resume",
+              style: TextStyle(
+                fontFamily: 'Afacad',
+                fontSize: 34,
+                fontWeight: FontWeight.w700,
+                color: Color(0XFF00B9E8),
+                letterSpacing: 2.5,
+              ),
+            ),
+          ],
+        ),
+        verticalSpaceLarge,
+        Row(
+          children: [
+            const Spacer(),
+            Align(
+              alignment: Alignment.center,
+              child: SizedBox(
+                width: pdfViewWidth,
+                height: pdfViewHeight,
+                child: pdfView,
+              ),
+            ),
+            const Spacer(),
+          ],
         ),
       ],
     );

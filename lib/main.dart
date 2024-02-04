@@ -5,6 +5,7 @@ import 'package:tratum_portfolio/app/app.bottomsheets.dart';
 import 'package:tratum_portfolio/app/app.dialogs.dart';
 import 'package:tratum_portfolio/app/app.locator.dart';
 import 'package:tratum_portfolio/app/app.router.dart';
+import 'package:tratum_portfolio/ui/common/app_functions.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 Future<void> main() async {
@@ -21,6 +22,8 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    PdfViewer.registerPdfIframeView(MediaQuery.of(context).size.height/2, MediaQuery.of(context).size.width/2);
+    PdfViewer.registerPdfIframeViewMobile(MediaQuery.of(context).size.height/2, MediaQuery.of(context).size.width/2);
     return ResponsiveApp(
       builder: (_) => MaterialApp.router(
         title: "tratum.dev",
