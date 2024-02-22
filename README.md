@@ -1,7 +1,7 @@
 # tratum_portfolio
 Migrated the Project to use Android v2 embeddings and it's using the <br>
 latest flutter framework `>=3.3.0 <4.0.0`, <br>
-flutter `3.19` and dart `3.3.0` <br>
+flutter `3.19` and <br> dart `3.3.0`
 
 
 ## Getting Started
