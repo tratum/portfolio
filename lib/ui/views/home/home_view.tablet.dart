@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_web_layout/responsive_web_layout.dart';
 import 'package:stacked/stacked.dart';
-
 import 'home_viewmodel.dart';
 
 class HomeViewTablet extends ViewModelWidget<HomeViewModel> {
@@ -8,6 +8,11 @@ class HomeViewTablet extends ViewModelWidget<HomeViewModel> {
 
   @override
   Widget build(BuildContext context, HomeViewModel viewModel) {
-    return const Placeholder();
+    return Scaffold(
+      body: ResponsiveWebLayout.buildTabletLayout(
+          context: context, highResTabletLayout: const Placeholder(),
+          standardTabletLayout: const Placeholder(),
+      ),
+    );
   }
 }
