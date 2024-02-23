@@ -90,59 +90,94 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                     ),
                     const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                      child: HomeSection(),
+                      child: HomeSection(
+                        subTextFontSize: 36,
+                      ),
                     ),
                     const SizedBox(
                       height: 90,
                     ),
                     const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                      child: TechStackSection(),
+                      child: TechStackSection(
+                        headingFontSize: 42,
+                      ),
                     ),
                     verticalSpaceSuperMassive,
                     const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                      child: AboutMeSection(),
+                      child: AboutMeSection(
+                        headingFontSize: 42,
+                        subTextFontSize: 36,
+                      ),
                     ),
                     verticalSpaceSuperMassive,
                     const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                      child: ProjectSection(),
+                      child: ProjectSection(
+                        headingFontSize: 42,
+                        subHeadingFontSize: 36,
+                      ),
                     ),
                     const SizedBox(
                       height: 90,
                     ),
                     const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                      child: Project1(),
-                    ),
-                    verticalSpaceMassive,
-                    const Padding(
-                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                      child: Project2(),
-                    ),
-                    verticalSpaceMassive,
-                    const Padding(
-                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                      child: Project3(),
-                    ),
-                    verticalSpaceMassive,
-                    const Padding(
-                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                      child: Project4(),
-                    ),
-                    verticalSpaceMassive,
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
-                      child: PdfViewWidget(
-                        totalLeftSpacing: horizontalSpaceSemiMassive,
-                        pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
+                      child: Project1(
+                        headingFontSize: 40,
+                        subTextFontSize: 36,
+                        imgWidth: 800,
+                        imgHeight: 500,
                       ),
                     ),
                     verticalSpaceMega,
                     const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                      child: ContactSection(),
+                      child: Project2(
+                        headingFontSize: 40,
+                        subTextFontSize: 36,
+                        imgWidth: 800,
+                        imgHeight: 500,
+                      ),
+                    ),
+                    verticalSpaceMega,
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project3(
+                        headingFontSize: 40,
+                        subTextFontSize: 36,
+                        imgWidth: 800,
+                        imgHeight: 500,
+                      ),
+                    ),
+                    verticalSpaceMega,
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Project4(
+                        headingFontSize: 40,
+                        subTextFontSize: 36,
+                        imgWidth: 800,
+                        imgHeight: 500,
+                      ),
+                    ),
+                    verticalSpaceSuperMega,
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: Resume(
+                        totalLeftSpacing: horizontalSpaceSemiMassive,
+                        pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
+                        headingFontSize: 42,
+                      ),
+                    ),
+                    verticalSpaceMega,
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                      child: ContactSection(
+                        headingFontSize: 42,
+                        imgHeight: 42,
+                        imgWidth: 42,
+                      ),
                     ),
                     const FooterSection(),
                   ],
@@ -203,7 +238,6 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: Project2(
                         totalLeftSpacing: horizontalSpaceSemiMassive,
-                        headingLeftPadding: 120,
                         headingFontSize: 32,
                         subTextFontSize: 28,
                       ),
@@ -235,7 +269,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                     verticalSpaceSuperMassive,
                     Padding(
                       padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
-                      child: PdfViewWidget(
+                      child: Resume(
                         totalLeftSpacing: horizontalSpaceSemiMassive,
                         pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
                       ),
@@ -263,6 +297,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                         totalLeftSpacing: horizontalSpaceLarge,
                         subTextPadding: 50,
                         circularRightPadding: 1,
+                        subTextFontSize: 26,
                       ),
                     ),
                     const SizedBox(
@@ -279,7 +314,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: AboutMeSection(
                         totalLeftSpacing: horizontalSpaceLarge,
-                        imgHeight: 440,
+                        imgHeight: 520,
                         imgWidth: 400,
                       ),
                     ),
@@ -296,9 +331,10 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                     const Padding(
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: Project1(
-                        iconLeftSpacing: horizontalSpaceSemiLarge,
                         imgWidth: 400,
-                        imgHeight: 380,
+                        imgHeight: 420,
+                        headingFontSize: 30,
+                        subTextFontSize: 26,
                       ),
                     ),
                     verticalSpaceMassive,
@@ -306,10 +342,10 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: Project2(
                         imgHeight: 400,
-                        imgWidth: 380,
-                        headingLeftPadding: 80,
+                        imgWidth: 420,
                         totalLeftSpacing: horizontalSpaceLarge,
-                        iconLeftPadding: horizontalSpaceSuperMassive,
+                        headingFontSize: 30,
+                        subTextFontSize: 26,
                       ),
                     ),
                     verticalSpaceMassive,
@@ -317,10 +353,12 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: Project3(
                         imgHeight: 400,
-                        imgWidth: 380,
+                        imgWidth: 420,
                         totalLeftSpacing: horizontalSpaceLarge,
                         iconLeftSpacing: horizontalSpaceMassive,
                         headerLeftSpacing: horizontalSpaceMassive,
+                        headingFontSize: 30,
+                        subTextFontSize: 26,
                       ),
                     ),
                     verticalSpaceMassive,
@@ -328,16 +366,18 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: Project4(
                         imgHeight: 400,
-                        imgWidth: 380,
+                        imgWidth: 420,
                         totalLeftSpacing: horizontalSpaceLarge,
                         iconLeftSpacing: horizontalSpaceMassive,
-                        headerLeftSpacing: 50,
+                        headerLeftSpacing: 80,
+                        headingFontSize: 30,
+                        subTextFontSize: 26,
                       ),
                     ),
                     verticalSpaceSuperMassive,
                     Padding(
                       padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
-                      child: PdfViewWidget(
+                      child: Resume(
                         totalLeftSpacing: horizontalSpaceSemiMassive,
                         pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
                       ),
@@ -366,7 +406,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       'tratum.dev',
                       style: TextStyle(
                           fontFamily: 'Yatra',
-                          fontSize: 26,
+                          fontSize: 32,
                           fontWeight: FontWeight.w600,
                           letterSpacing: 1,
                           color: Color(0XFF353839)),
@@ -379,7 +419,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                           'Home',
                           style: TextStyle(
                             fontFamily: 'Afacad',
-                            fontSize: 22,
+                            fontSize: 26,
                             fontWeight: FontWeight.w600,
                             letterSpacing: 1.5,
                           ),
@@ -399,7 +439,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                           'About',
                           style: TextStyle(
                             fontFamily: 'Afacad',
-                            fontSize: 22,
+                            fontSize: 26,
                             fontWeight: FontWeight.w600,
                             letterSpacing: 1.5,
                           ),
@@ -419,7 +459,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                           'Projects',
                           style: TextStyle(
                             fontFamily: 'Afacad',
-                            fontSize: 22,
+                            fontSize: 26,
                             fontWeight: FontWeight.w600,
                             letterSpacing: 1.5,
                           ),
@@ -439,7 +479,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                           'Resume',
                           style: TextStyle(
                             fontFamily: 'Afacad',
-                            fontSize: 22,
+                            fontSize: 26,
                             fontWeight: FontWeight.w600,
                             letterSpacing: 1.5,
                           ),
@@ -460,7 +500,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                           'Contact',
                           style: TextStyle(
                             fontFamily: 'Afacad',
-                            fontSize: 22,
+                            fontSize: 26,
                             fontWeight: FontWeight.w600,
                             letterSpacing: 1.5,
                           ),

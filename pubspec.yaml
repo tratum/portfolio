@@ -75,3 +75,7 @@ flutter:
     - family: Yatra
       fonts:
         - asset: asset/fonts/Yatra_One/YatraOne-Regular.ttf
+
+    - family: RussoOne
+      fonts:
+        - asset: asset/fonts/RussoOne/RussoOne-Regular.ttf

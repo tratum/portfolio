@@ -189,7 +189,7 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
-                  child: PdfViewMobileWidget(
+                  child: ResumeMobile(
                     totalLeftSpacing: horizontalSpaceTiny,
                     pdfViewHeight: 580,
                     pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
@@ -252,7 +252,7 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
-                  child: PdfViewMobileWidget(
+                  child: ResumeMobile(
                     totalLeftSpacing: horizontalSpaceTiny,
                     pdfViewHeight: 580,
                     pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
@@ -316,7 +316,7 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
-                  child: PdfViewMobileWidget(
+                  child: ResumeMobile(
                     totalLeftSpacing: horizontalSpaceTiny,
                     pdfViewHeight: 580,
                     pdfViewWidth: MediaQuery.of(context).size.width / 1.2,

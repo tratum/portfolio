@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tratum_portfolio/extensions/hover_extensions.dart';
-
 import '../animation/scale_animation_image.dart';
 import '../animation/scale_animation_svg.dart';
 import '../common/ui_helpers.dart';
@@ -14,6 +13,7 @@ class HomeSection extends StatelessWidget {
   final double circularRightPadding;
   final double headerFontSize;
   final double subTextPadding;
+  final double subTextFontSize;
 
   const HomeSection({
     super.key,
@@ -21,6 +21,7 @@ class HomeSection extends StatelessWidget {
     this.circularRightPadding = 150,
     this.headerFontSize = 68,
     this.subTextPadding = 250,
+    this.subTextFontSize = 32,
   });
 
   @override
@@ -79,27 +80,26 @@ class HomeSection extends StatelessWidget {
             Row(
               children: [
                 totalLeftSpacing,
-                const SelectableText(
+                SelectableText(
                   "Hi, I'm Saksham Rawat. A passionate Full-Stack",
                   style: TextStyle(
                     fontFamily: 'Afacad',
-                    fontSize: 26,
+                    fontSize: subTextFontSize,
                     fontWeight: FontWeight.w500,
-                    color: Color(0XFF6A8292),
+                    color: const Color(0XFF6A8292),
                   ),
                 ),
               ],
             ),
-            Row(
-              children: [
+            Row(children: [
               totalLeftSpacing,
-              const SelectableText(
+              SelectableText(
                 "Developer based in Jaipur, India",
                 style: TextStyle(
                   fontFamily: 'Afacad',
-                  fontSize: 26,
+                  fontSize: subTextFontSize,
                   fontWeight: FontWeight.w500,
-                  color: Color(0XFF6A8292),
+                  color: const Color(0XFF6A8292),
                 ),
               ),
               horizontalSpaceSmall,
@@ -154,31 +154,35 @@ class HomeSection extends StatelessWidget {
                 totalLeftSpacing,
                 ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(const Color(0XFF000000))
-                  ),
+                      backgroundColor:
+                          MaterialStateProperty.all(const Color(0XFF000000))),
                   onPressed: () {
                     WebNavigator.launchEmail("tratum.connect@gmail.com");
                   },
-                    child: const Center(
-                      child: Padding(
-                        padding: EdgeInsets.all(8),
-                        child: Row(
-                          children: [
-                            Text(
-                              "Let's Connect",
-                              style: TextStyle(
-                                fontFamily: 'Afacad',
-                                fontSize: 30,
-                                fontWeight: FontWeight.w900,
-                                color: Color(0xFFFFFFFF),
-                              ),
+                  child: const Center(
+                    child: Padding(
+                      padding: EdgeInsets.all(8),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Let's Connect",
+                            style: TextStyle(
+                              fontFamily: 'Afacad',
+                              fontSize: 28,
+                              fontWeight: FontWeight.w900,
+                              color: Color(0xFFFFFFFF),
                             ),
-                            horizontalSpaceSemiSmall,
-                            Icon(Icons.send_sharp,size: 30,color: Color(0xFFFFFFFF),),
-                          ],
-                        ),
+                          ),
+                          horizontalSpaceSemiSmall,
+                          Icon(
+                            Icons.send_sharp,
+                            size: 28,
+                            color: Color(0xFFFFFFFF),
+                          ),
+                        ],
                       ),
                     ),
+                  ),
                 ).scaleOnHover(scale: 12),
               ],
             )
@@ -373,10 +377,12 @@ class HomeSectionMobile extends StatelessWidget {
 
 class TechStackSection extends StatelessWidget {
   final Widget totalLeftSpacing;
+  final double headingFontSize;
 
   const TechStackSection({
     super.key,
     this.totalLeftSpacing = horizontalSpaceMassive,
+    this.headingFontSize = 34,
   });
 
   @override
@@ -384,12 +390,12 @@ class TechStackSection extends StatelessWidget {
     return Row(
       children: [
         totalLeftSpacing,
-        const SelectableText("Tech Stack",
+        SelectableText("Tech Stack",
             style: TextStyle(
               fontFamily: 'Afacad',
-              fontSize: 26,
+              fontSize: headingFontSize,
               fontWeight: FontWeight.w700,
-              color: Color(0XFF1B1B1B),
+              color: const Color(0XFF1B1B1B),
             )),
         horizontalSpaceMedium,
         Container(
@@ -830,6 +836,7 @@ class AboutMeSection extends StatelessWidget {
   final Widget totalLeftSpacing;
   final double imgHeight;
   final double imgWidth;
+  final double headingFontSize;
   final double subTextFontSize;
 
   const AboutMeSection({
@@ -837,6 +844,7 @@ class AboutMeSection extends StatelessWidget {
     this.totalLeftSpacing = horizontalSpaceMassive,
     this.imgHeight = 550,
     this.imgWidth = 700,
+    this.headingFontSize = 34,
     this.subTextFontSize = 22,
   });
 
@@ -864,13 +872,16 @@ class AboutMeSection extends StatelessWidget {
           flex: 1,
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const SelectableText("About Me :",
-                style: TextStyle(
-                  fontFamily: 'Afacad',
-                  fontSize: 32,
-                  fontWeight: FontWeight.w900,
-                  color: Color(0XFF00B9E8),
-                )),
+            SelectableText(
+              "About Me :",
+              style: TextStyle(
+                fontFamily: 'RussoOne',
+                fontSize: headingFontSize,
+                fontWeight: FontWeight.w400,
+                letterSpacing: 1.2,
+                color: const Color(0XFF000000),
+              ),
+            ),
             verticalSpaceMedium,
             RichText(
               text: TextSpan(
@@ -917,11 +928,12 @@ class AboutMeSection extends StatelessWidget {
             SelectableText(
               "Let's Build Something Extraordinary !!!!",
               style: TextStyle(
-                fontFamily: 'Afacad',
-                fontSize: subTextFontSize,
-                fontWeight: FontWeight.w800,
-                color: const Color(0XFF353839),
-                letterSpacing: 2,
+                fontFamily: 'RussoOne',
+                fontSize: subTextFontSize + 2,
+                fontWeight: FontWeight.w400,
+                fontStyle: FontStyle.italic,
+                color: const Color(0XFFE53935),
+                letterSpacing: 1.2,
               ),
             ),
           ]),
@@ -1027,11 +1039,14 @@ class AboutMeSectionMobile extends StatelessWidget {
 
 class ProjectSection extends StatelessWidget {
   final Widget totalLeftSpacing;
+  final double headingFontSize;
+  final double subHeadingFontSize;
 
-  const ProjectSection({
-    super.key,
-    this.totalLeftSpacing = horizontalSpaceSuperMassive,
-  });
+  const ProjectSection(
+      {super.key,
+      this.totalLeftSpacing = horizontalSpaceSuperMassive,
+      this.headingFontSize = 34,
+      this.subHeadingFontSize = 28});
 
   @override
   Widget build(BuildContext context) {
@@ -1041,14 +1056,14 @@ class ProjectSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             totalLeftSpacing,
-            const SelectableText(
+            SelectableText(
               "Portfolio: ",
               style: TextStyle(
-                fontFamily: 'Afacad',
-                fontSize: 34,
-                fontWeight: FontWeight.w700,
-                color: Color(0XFF00B9E8),
-                letterSpacing: 2.5,
+                fontFamily: 'RussoOne',
+                fontSize: headingFontSize,
+                fontWeight: FontWeight.w400,
+                letterSpacing: 1.2,
+                color: const Color(0XFF000000),
               ),
             ),
           ],
@@ -1058,13 +1073,13 @@ class ProjectSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             totalLeftSpacing,
-            const SelectableText(
+            SelectableText(
               "Every project represents an original work of development.",
               style: TextStyle(
                 fontFamily: 'Afacad',
-                fontSize: 28,
+                fontSize: subHeadingFontSize,
                 fontWeight: FontWeight.w700,
-                color: Color(0XFF3C4A53),
+                color: const Color(0XFF3C4A53),
               ),
             ),
             horizontalSpaceSmall,
@@ -1145,8 +1160,6 @@ class ProjectSectionMobile extends StatelessWidget {
 
 class Project1 extends StatelessWidget {
   final Widget totalLeftSpacing;
-  final Widget headerLeftSpacing;
-  final Widget iconLeftSpacing;
   final double imgHeight;
   final double imgWidth;
   final double headingFontSize;
@@ -1155,8 +1168,6 @@ class Project1 extends StatelessWidget {
   const Project1(
       {super.key,
       this.totalLeftSpacing = horizontalSpaceSuperMassive,
-      this.headerLeftSpacing = horizontalSpaceSuperMassive,
-      this.iconLeftSpacing = horizontalSpaceMassive,
       this.imgHeight = 400,
       this.imgWidth = 550,
       this.headingFontSize = 26,
@@ -1164,143 +1175,153 @@ class Project1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        Row(
-          children: [
-            horizontalSpaceMassive,
-            Expanded(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+        horizontalSpaceLarge,
+        GestureDetector(
+          onTap: () async {
+            return ImageView.showImageDialog(
+                context: context,
+                imgPath:
+                    "https://tratum.github.io/cloud-asset-storage/images/project1.png");
+          },
+          child: Container(
+            height: imgHeight,
+            width: imgWidth,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5), // Shadow color
+                  spreadRadius: 5, // Spread radius
+                  blurRadius: 7, // Blur radius
+                  offset: const Offset(0, 3), // Offset position
+                ),
+              ],
+              image: const DecorationImage(
+                image: NetworkImage(
+                    "https://tratum.github.io/cloud-asset-storage/images/project1.png"),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+        totalLeftSpacing,
+        Expanded(
+          child: Column(
+            children: [
+              Row(
                 children: [
-                  GestureDetector(
-                    onTap: () async {
-                      return ImageView.showImageDialog(
-                          context: context,
-                          imgPath:
-                              "https://tratum.github.io/cloud-asset-storage/images/project1.png");
+                  const Spacer(),
+                  SelectableText(
+                    "Notely",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'RussoOne',
+                      fontSize: headingFontSize,
+                      fontWeight: FontWeight.w100,
+                      letterSpacing: 1.2,
+                      color: const Color(0XFF000000),
+                    ),
+                  ),
+                  const Spacer(),
+                ],
+              ),
+              verticalSpaceLarge,
+              Padding(
+                padding: const EdgeInsets.only(left: 60, right: 60),
+                child: SelectableText(
+                  "Notely is a cross-platform mobile application built using the Flutter framework and integrated with Firebase for backend support. It offers a seamless and intuitive interface for creating and managing notes and to-do lists.",
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(
+                    fontFamily: 'Afacad',
+                    fontSize: subTextFontSize,
+                    fontWeight: FontWeight.w700,
+                    color: const Color(0XFF3C4A53),
+                    overflow: TextOverflow.visible,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 80,
+              ),
+              Row(
+                children: [
+                  const Spacer(),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(const Color(0XFF000000))),
+                    onPressed: () async {
+                      return WebNavigator.openUrl(
+                          url: "https://github.com/tratum/Notely");
                     },
-                    child: Container(
-                      height: imgHeight,
-                      width: imgWidth,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        image: const DecorationImage(
-                          image: NetworkImage(
-                              "https://tratum.github.io/cloud-asset-storage/images/project1.png"),
-                          fit: BoxFit.cover,
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Code",
+                              style: TextStyle(
+                                fontFamily: 'Afacad',
+                                fontSize: subTextFontSize + 2,
+                                fontWeight: FontWeight.w900,
+                                color: const Color(0xFFFFFFFF),
+                              ),
+                            ),
+                            horizontalSpaceSemiSmall,
+                            const FaIcon(
+                              FontAwesomeIcons.github,
+                              size: 32,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                  ),
-                  const SizedBox(width: 20),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
+                  ).scaleOnHover(scale: 12),
+                  const Spacer(),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(const Color(0XFF000000))),
+                    onPressed: () async {
+                      return WebNavigator.openUrl(
+                          url:
+                              "https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing");
+                    },
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Row(
                           children: [
-                            horizontalSpaceSuperMassive,
-                            SelectableText(
-                              "Notely",
-                              textAlign: TextAlign.center,
+                            Text(
+                              "Demo",
                               style: TextStyle(
                                 fontFamily: 'Afacad',
-                                fontSize: headingFontSize,
+                                fontSize: subTextFontSize + 2,
                                 fontWeight: FontWeight.w900,
-                                color: const Color(0XFF000000),
+                                color: const Color(0xFFFFFFFF),
                               ),
+                            ),
+                            horizontalSpaceSemiSmall,
+                            const Icon(
+                              Icons.open_in_new,
+                              size: 32,
+                              color: Color(0xFFFFFFFF),
                             ),
                           ],
                         ),
-                        verticalSpaceLarge,
-                        Padding(
-                          padding: const EdgeInsets.only(left: 60, right: 60),
-                          child: SelectableText(
-                            "Notely is a cross-platform mobile application built using the Flutter framework and integrated with Firebase for backend support. It offers a seamless and intuitive interface for creating and managing notes and to-do lists.",
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                              fontFamily: 'Afacad',
-                              fontSize: subTextFontSize,
-                              fontWeight: FontWeight.w700,
-                              color: const Color(0XFF3C4A53),
-                              overflow: TextOverflow.visible,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 90,
-                        ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            iconLeftSpacing,
-                            GestureDetector(
-                              child: Row(
-                                children: [
-                                  SelectableText(
-                                    "Code",
-                                    style: TextStyle(
-                                      fontFamily: 'Afacad',
-                                      fontSize: subTextFontSize,
-                                      fontWeight: FontWeight.w900,
-                                      color: const Color(0XFF3C4A53),
-                                    ),
-                                  ),
-                                  horizontalSpaceTiny,
-                                  const FaIcon(
-                                    FontAwesomeIcons.github,
-                                    color: Color(0XFF000000),
-                                    size: 26,
-                                  ),
-                                ],
-                              ),
-                              onTap: () async {
-                                return WebNavigator.openUrl(
-                                    url: "https://github.com/tratum/Notely");
-                              },
-                            ),
-                            const SizedBox(
-                              width: 110,
-                            ),
-                            GestureDetector(
-                              child: Row(
-                                children: [
-                                  SelectableText(
-                                    "Demo",
-                                    style: TextStyle(
-                                      fontFamily: 'Afacad',
-                                      fontSize: subTextFontSize,
-                                      fontWeight: FontWeight.w900,
-                                      color: const Color(0XFF3C4A53),
-                                    ),
-                                  ),
-                                  horizontalSpaceTiny,
-                                  const Icon(
-                                    Icons.open_in_new,
-                                    color: Color(0XFF000000),
-                                    size: 24,
-                                  ),
-                                ],
-                              ),
-                              onTap: () async {
-                                return WebNavigator.openUrl(
-                                    url:
-                                        "https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing");
-                              },
-                            ),
-                          ],
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
+                  ).scaleOnHover(scale: 12),
+                  const Spacer(),
                 ],
               ),
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: 90,
+            ],
+          ),
         ),
       ],
     );
@@ -1458,8 +1479,6 @@ class Project2 extends StatelessWidget {
   final Widget totalLeftSpacing;
   final double imgHeight;
   final double imgWidth;
-  final double headingLeftPadding;
-  final Widget iconLeftPadding;
   final double headingFontSize;
   final double subTextFontSize;
 
@@ -1467,114 +1486,125 @@ class Project2 extends StatelessWidget {
     super.key,
     this.imgHeight = 400,
     this.imgWidth = 600,
-    this.headingLeftPadding = 260,
     this.totalLeftSpacing = horizontalSpaceMassive,
-    this.iconLeftPadding = horizontalSpaceMega,
     this.headingFontSize = 26,
     this.subTextFontSize = 22,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Row(
       children: [
-        Padding(
-          padding: EdgeInsets.only(left: headingLeftPadding),
-          child: SelectableText(
-            "Smart Apple Ripeness Detection System",
-            style: TextStyle(
-              fontFamily: 'Afacad',
-              fontSize: headingFontSize,
-              fontWeight: FontWeight.w900,
-              color: const Color(0XFF000000),
-            ),
-          ),
-        ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            totalLeftSpacing,
-            Expanded(
-              child: Column(
+        Expanded(
+          child: Column(
+            children: [
+              Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 50, left: 50),
-                    child: SelectableText(
-                      "Apple Maturity Detection System leverages YOLOv8 and CNNs to automate ripeness assessment of an Apple. It employs a comprehensive dataset from Kaggle and the web, enhancing accuracy in real-world applications like sorting machines and consumer apps.",
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        fontFamily: 'Afacad',
-                        fontSize: subTextFontSize,
-                        fontWeight: FontWeight.w700,
-                        color: const Color(0XFF3C4A53),
-                        overflow: TextOverflow.visible,
-                      ),
+                  const Spacer(),
+                  SelectableText(
+                    "Apple Ripeness Detection",
+                    style: TextStyle(
+                      fontFamily: 'RussoOne',
+                      fontSize: headingFontSize,
+                      fontWeight: FontWeight.w100,
+                      letterSpacing: 1.2,
+                      color: const Color(0XFF000000),
                     ),
                   ),
-                  const SizedBox(
-                    height: 90,
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      iconLeftPadding,
-                      GestureDetector(
-                        child: Row(
-                          children: [
-                            SelectableText(
-                              "Code",
-                              style: TextStyle(
-                                fontFamily: 'Afacad',
-                                fontSize: subTextFontSize,
-                                fontWeight: FontWeight.w900,
-                                color: const Color(0XFF3C4A53),
-                              ),
-                            ),
-                            horizontalSpaceTiny,
-                            const FaIcon(
-                              FontAwesomeIcons.github,
-                              color: Color(0XFF000000),
-                              size: 26,
-                            ),
-                          ],
-                        ),
-                        onTap: () async {
-                          return WebNavigator.openUrl(
-                              url:
-                                  "https://github.com/tratum/apple_maturity_detection");
-                        },
-                      ),
-                    ],
-                  ),
+                  const Spacer(),
                 ],
               ),
-            ),
-            horizontalSpaceLarge,
-            GestureDetector(
-              onTap: () async {
-                return ImageView.showImageDialog(
-                    context: context,
-                    imgPath:
-                        "https://tratum.github.io/cloud-asset-storage/images/project2.jpg");
-              },
-              child: Container(
-                height: imgHeight,
-                width: imgWidth, // Fixed width for the image
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  image: const DecorationImage(
-                    image: NetworkImage(
-                        "https://tratum.github.io/cloud-asset-storage/images/project2.jpg"),
-                    fit: BoxFit.cover,
+              Padding(
+                padding: const EdgeInsets.only(top: 50, left: 50),
+                child: SelectableText(
+                  "Apple Ripeness Detection System leverages YOLOv8 and CNNs to automate ripeness assessment of an Apple. It employs a comprehensive dataset from Kaggle and the web, enhancing accuracy in real-world applications like sorting machines and consumer apps.",
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(
+                    fontFamily: 'Afacad',
+                    fontSize: subTextFontSize,
+                    fontWeight: FontWeight.w700,
+                    color: const Color(0XFF3C4A53),
+                    overflow: TextOverflow.visible,
                   ),
                 ),
               ),
-            ),
-            totalLeftSpacing,
-          ],
+              const SizedBox(
+                height: 80,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Spacer(),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(const Color(0XFF000000))),
+                    onPressed: () async {
+                      return WebNavigator.openUrl(
+                          url:
+                              "https://github.com/tratum/apple_maturity_detection");
+                    },
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Code",
+                              style: TextStyle(
+                                fontFamily: 'Afacad',
+                                fontSize: subTextFontSize + 2,
+                                fontWeight: FontWeight.w900,
+                                color: const Color(0xFFFFFFFF),
+                              ),
+                            ),
+                            horizontalSpaceSemiSmall,
+                            const FaIcon(
+                              FontAwesomeIcons.github,
+                              size: 32,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ).scaleOnHover(scale: 12),
+                  const Spacer(),
+                ],
+              ),
+            ],
+          ),
         ),
-        verticalSpaceLarge,
+        totalLeftSpacing,
+        GestureDetector(
+          onTap: () async {
+            return ImageView.showImageDialog(
+                context: context,
+                imgPath:
+                    "https://tratum.github.io/cloud-asset-storage/images/project2.jpg");
+          },
+          child: Container(
+            height: imgHeight,
+            width: imgWidth, // Fixed width for the image
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5), // Shadow color
+                  spreadRadius: 5, // Spread radius
+                  blurRadius: 7, // Blur radius
+                  offset: const Offset(0, 3), // Offset position
+                ),
+              ],
+              image: const DecorationImage(
+                image: NetworkImage(
+                    "https://tratum.github.io/cloud-asset-storage/images/project2.jpg"),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+        horizontalSpaceLarge,
       ],
     );
   }
@@ -1722,144 +1752,154 @@ class Project3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        Row(
-          children: [
-            totalLeftSpacing,
-            Expanded(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+        horizontalSpaceLarge,
+        GestureDetector(
+          onTap: () async {
+            return ImageView.showImageDialog(
+                context: context,
+                imgPath:
+                "https://tratum.github.io/cloud-asset-storage/images/project3.png");
+          },
+          child: Container(
+            height: imgHeight,
+            width: imgWidth,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5), // Shadow color
+                  spreadRadius: 5, // Spread radius
+                  blurRadius: 7, // Blur radius
+                  offset: const Offset(0, 3), // Offset position
+                ),
+              ],
+              image: const DecorationImage(
+                image: NetworkImage(
+                    "https://tratum.github.io/cloud-asset-storage/images/project3.png"),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+        totalLeftSpacing,
+        Expanded(
+          child: Column(
+            children: [
+              Row(
                 children: [
-                  GestureDetector(
-                    onTap: () async {
-                      return ImageView.showImageDialog(
-                          context: context,
-                          imgPath:
-                              "https://tratum.github.io/cloud-asset-storage/images/project3.png");
+                  const Spacer(),
+                  SelectableText(
+                    "Wanderlust Expeditions",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'RussoOne',
+                      fontSize: headingFontSize,
+                      fontWeight: FontWeight.w100,
+                      letterSpacing: 1.2,
+                      color: const Color(0XFF000000),
+                    ),
+                  ),
+                  const Spacer(),
+                ],
+              ),
+              verticalSpaceLarge,
+              Padding(
+                padding: const EdgeInsets.only(left: 60, right: 60),
+                child: SelectableText(
+                  "WanderLust Expeditions is a Travel Recommendation Website that beckons adventure seekers to explore the diverse tapestry of Bharat's destinations. Powered by Flutter for seamless cross-platform experience, it leverages GitHub Pages for backend management, employing web scraping and JSON for curated travel insights.",
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(
+                    fontFamily: 'Afacad',
+                    fontSize: subTextFontSize,
+                    fontWeight: FontWeight.w700,
+                    color: const Color(0XFF3C4A53),
+                    overflow: TextOverflow.visible,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 80,
+              ),
+              Row(
+                children: [
+                  const Spacer(),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor:
+                        MaterialStateProperty.all(const Color(0XFF000000))),
+                    onPressed: () async {
+                      return WebNavigator.openUrl(
+                                  url:
+                                      "https://github.com/tratum/wanderlust-expeditions");
                     },
-                    child: Container(
-                      height: imgHeight,
-                      width: imgWidth,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        image: const DecorationImage(
-                          image: NetworkImage(
-                              "https://tratum.github.io/cloud-asset-storage/images/project3.png"),
-                          fit: BoxFit.cover,
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Code",
+                              style: TextStyle(
+                                fontFamily: 'Afacad',
+                                fontSize: subTextFontSize + 2,
+                                fontWeight: FontWeight.w900,
+                                color: const Color(0xFFFFFFFF),
+                              ),
+                            ),
+                            horizontalSpaceSemiSmall,
+                            const FaIcon(
+                              FontAwesomeIcons.github,
+                              size: 32,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                  ),
-                  const SizedBox(width: 20),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
+                  ).scaleOnHover(scale: 12),
+                  const Spacer(),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor:
+                        MaterialStateProperty.all(const Color(0XFF000000))),
+                    onPressed: () async {
+                      return WebNavigator.openUrl(
+                        url: "https://tratum.github.io/wanderlust-expeditions/",
+                      );
+                    },
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Row(
                           children: [
-                            headerLeftSpacing,
-                            SelectableText(
-                              "Wanderlust Expeditions",
-                              textAlign: TextAlign.center,
+                            Text(
+                              "Demo",
                               style: TextStyle(
                                 fontFamily: 'Afacad',
-                                fontSize: headingFontSize,
+                                fontSize: subTextFontSize + 2,
                                 fontWeight: FontWeight.w900,
-                                color: const Color(0XFF000000),
+                                color: const Color(0xFFFFFFFF),
                               ),
+                            ),
+                            horizontalSpaceSemiSmall,
+                            const Icon(
+                              Icons.open_in_new,
+                              size: 32,
+                              color: Color(0xFFFFFFFF),
                             ),
                           ],
                         ),
-                        verticalSpaceLarge,
-                        Padding(
-                          padding: const EdgeInsets.only(left: 60, right: 60),
-                          child: SelectableText(
-                            "WanderLust Expeditions is a Travel Recommendation Website that beckons adventure seekers to explore the diverse tapestry of Bharat's destinations. Powered by Flutter for seamless cross-platform experience, it leverages GitHub Pages for backend management, employing web scraping and JSON for curated travel insights.",
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                              fontFamily: 'Afacad',
-                              fontSize: subTextFontSize,
-                              fontWeight: FontWeight.w700,
-                              color: const Color(0XFF3C4A53),
-                              overflow: TextOverflow.visible,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 90,
-                        ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            iconLeftSpacing,
-                            GestureDetector(
-                              child: Row(
-                                children: [
-                                  SelectableText(
-                                    "Code",
-                                    style: TextStyle(
-                                      fontFamily: 'Afacad',
-                                      fontSize: subTextFontSize,
-                                      fontWeight: FontWeight.w900,
-                                      color: const Color(0XFF3C4A53),
-                                    ),
-                                  ),
-                                  horizontalSpaceTiny,
-                                  const FaIcon(
-                                    FontAwesomeIcons.github,
-                                    color: Color(0XFF000000),
-                                    size: 26,
-                                  ),
-                                ],
-                              ),
-                              onTap: () async {
-                                return WebNavigator.openUrl(
-                                    url:
-                                        "https://github.com/tratum/wanderlust-expeditions");
-                              },
-                            ),
-                            const SizedBox(
-                              width: 110,
-                            ),
-                            GestureDetector(
-                              child: Row(
-                                children: [
-                                  SelectableText(
-                                    "Demo",
-                                    style: TextStyle(
-                                      fontFamily: 'Afacad',
-                                      fontSize: subTextFontSize,
-                                      fontWeight: FontWeight.w900,
-                                      color: const Color(0XFF3C4A53),
-                                    ),
-                                  ),
-                                  horizontalSpaceTiny,
-                                  const Icon(
-                                    Icons.open_in_new,
-                                    color: Color(0XFF000000),
-                                    size: 24,
-                                  ),
-                                ],
-                              ),
-                              onTap: () async {
-                                return WebNavigator.openUrl(
-                                    url:
-                                        "https://tratum.github.io/wanderlust-expeditions/");
-                              },
-                            ),
-                          ],
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
+                  ).scaleOnHover(scale: 12),
+                  const Spacer(),
                 ],
               ),
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: 90,
+            ],
+          ),
         ),
       ],
     );
@@ -2037,105 +2077,118 @@ class Project4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Row(
       children: [
-        Padding(
-          padding: EdgeInsets.only(left: headerLeftSpacing),
-          child: SelectableText(
-            "ClimaTrend: ARIMA-Based Weather Forecasting",
-            style: TextStyle(
-              fontFamily: 'Afacad',
-              fontSize: headingFontSize,
-              fontWeight: FontWeight.w900,
-              color: const Color(0XFF000000),
-            ),
-          ),
-        ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            totalLeftSpacing,
-            Expanded(
-              child: Column(
+        Expanded(
+          child: Column(
+            children: [
+              Row(
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 50, left: subTextLeftSpacing),
-                    child: SelectableText(
-                      "Forecasting average temperatures in major Indian cities with Weather Prediction using ARIMA Model. Leveraging time series analysis and machine learning, the project utilizes Python, Pandas, and StatsModels for data manipulation, ARIMA modeling, and evaluation. Hardware and software requirements ensure seamless execution.",
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        fontFamily: 'Afacad',
-                        fontSize: subTextFontSize,
-                        fontWeight: FontWeight.w700,
-                        color: const Color(0XFF3C4A53),
-                        overflow: TextOverflow.visible,
-                      ),
+                  const Spacer(),
+                  SelectableText(
+                    "ClimaTrend",
+                    style: TextStyle(
+                      fontFamily: 'RussoOne',
+                      fontSize: headingFontSize,
+                      fontWeight: FontWeight.w100,
+                      letterSpacing: 1.2,
+                      color: const Color(0XFF000000),
                     ),
                   ),
-                  const SizedBox(
-                    height: 90,
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      iconLeftSpacing,
-                      GestureDetector(
-                        child: Row(
-                          children: [
-                            SelectableText(
-                              "Code",
-                              style: TextStyle(
-                                fontFamily: 'Afacad',
-                                fontSize: subTextFontSize,
-                                fontWeight: FontWeight.w900,
-                                color: const Color(0XFF3C4A53),
-                              ),
-                            ),
-                            horizontalSpaceTiny,
-                            const FaIcon(
-                              FontAwesomeIcons.github,
-                              color: Color(0XFF000000),
-                              size: 26,
-                            ),
-                          ],
-                        ),
-                        onTap: () async {
-                          return WebNavigator.openUrl(
-                              url:
-                                  "https://github.com/tratum/weather_prediction");
-                        },
-                      ),
-                    ],
-                  ),
+                  const Spacer(),
                 ],
               ),
-            ),
-            totalLeftSpacing,
-            GestureDetector(
-              onTap: () async {
-                return ImageView.showImageDialog(
-                    context: context,
-                    imgPath:
-                        "https://tratum.github.io/cloud-asset-storage/images/project4.jpeg");
-              },
-              child: Container(
-                height: imgHeight,
-                width: imgWidth,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  image: const DecorationImage(
-                    image: NetworkImage(
-                        "https://tratum.github.io/cloud-asset-storage/images/project4.jpeg"),
-                    fit: BoxFit.cover,
+              Padding(
+                padding: const EdgeInsets.only(top: 50, left: 50),
+                child: SelectableText(
+                  "ARIMA-Based Weather Forecasting of average temperatures in major Indian cities with Weather Prediction using ARIMA Model. Leveraging time series analysis and machine learning, the project utilizes Python, Pandas, and StatsModels for data manipulation, ARIMA modeling, and evaluation. Hardware and software requirements ensure seamless execution.",
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(
+                    fontFamily: 'Afacad',
+                    fontSize: subTextFontSize,
+                    fontWeight: FontWeight.w700,
+                    color: const Color(0XFF3C4A53),
+                    overflow: TextOverflow.visible,
                   ),
                 ),
               ),
-            ),
-            totalLeftSpacing,
-          ],
+              const SizedBox(
+                height: 80,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Spacer(),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor:
+                        MaterialStateProperty.all(const Color(0XFF000000))),
+                    onPressed: () async {
+                      return WebNavigator.openUrl(
+                          url:
+                          "https://github.com/tratum/weather_prediction");
+                    },
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Code",
+                              style: TextStyle(
+                                fontFamily: 'Afacad',
+                                fontSize: subTextFontSize + 2,
+                                fontWeight: FontWeight.w900,
+                                color: const Color(0xFFFFFFFF),
+                              ),
+                            ),
+                            horizontalSpaceSemiSmall,
+                            const FaIcon(
+                              FontAwesomeIcons.github,
+                              size: 32,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ).scaleOnHover(scale: 12),
+                  const Spacer(),
+                ],
+              ),
+            ],
+          ),
         ),
-        verticalSpaceLarge,
+        totalLeftSpacing,
+        GestureDetector(
+          onTap: () async {
+            return ImageView.showImageDialog(
+                context: context,
+                imgPath:
+                "https://tratum.github.io/cloud-asset-storage/images/project4.jpeg");
+          },
+          child: Container(
+            height: imgHeight,
+            width: imgWidth, // Fixed width for the image
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5), // Shadow color
+                  spreadRadius: 5, // Spread radius
+                  blurRadius: 7, // Blur radius
+                  offset: const Offset(0, 3), // Offset position
+                ),
+              ],
+              image: const DecorationImage(
+                image: NetworkImage(
+                    "https://tratum.github.io/cloud-asset-storage/images/project4.jpeg"),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+        horizontalSpaceLarge,
       ],
     );
   }
@@ -2265,12 +2318,16 @@ class ContactSection extends StatelessWidget {
   final double totalLeftPadding;
   final double headingFontSize;
   final double subTextFontSize;
+  final double imgHeight;
+  final double imgWidth;
 
   const ContactSection({
     super.key,
-    this.headingFontSize = 30,
+    this.headingFontSize = 34,
     this.subTextFontSize = 24,
     this.totalLeftPadding = 120,
+    this.imgHeight = 30,
+    this.imgWidth = 30,
   });
 
   @override
@@ -2281,12 +2338,13 @@ class ContactSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SelectableText(
-            "CONTACT",
+            "Let's build together",
             style: TextStyle(
-              fontFamily: 'Afacad',
+              fontFamily: 'RussoOne',
               fontSize: headingFontSize,
-              fontWeight: FontWeight.w900,
-              color: const Color(0XFF00B9E8),
+              fontWeight: FontWeight.w400,
+              letterSpacing: 1.2,
+              color: const Color(0XFF000000),
             ),
           ),
           verticalSpaceSmall,
@@ -2325,13 +2383,13 @@ class ContactSection extends StatelessWidget {
                   color: const Color(0XFF121212),
                 ),
               ),
-              horizontalSpaceSmall,
+              horizontalSpaceTiny,
               Image.network(
                 "https://tratum.github.io/cloud-asset-storage/images/pointingDown.png",
                 cacheWidth: 28,
                 cacheHeight: 28,
-                height: 30,
-                width: 30,
+                height: imgHeight,
+                width: imgWidth,
               ),
             ],
           ),
@@ -2340,7 +2398,8 @@ class ContactSection extends StatelessWidget {
             children: [
               ElevatedButton(
                 style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(const Color(0XFF000000)),
+                  backgroundColor:
+                      MaterialStateProperty.all(const Color(0XFF000000)),
                 ),
                 onPressed: () {
                   WebNavigator.launchEmail("tratum.connect@gmail.com");
@@ -2350,7 +2409,11 @@ class ContactSection extends StatelessWidget {
                   child: Center(
                     child: Row(
                       children: [
-                        FaIcon(FontAwesomeIcons.envelopeOpen,size: 26,color: Color(0xFFFFFFFF),),
+                        FaIcon(
+                          FontAwesomeIcons.envelopeOpen,
+                          size: 24,
+                          color: Color(0xFFFFFFFF),
+                        ),
                         horizontalSpaceSemiSmall,
                         Text(
                           "tratum.connect@gmail.com",
@@ -2358,7 +2421,7 @@ class ContactSection extends StatelessWidget {
                             fontFamily: 'Afacad',
                             fontSize: 24,
                             fontWeight: FontWeight.w700,
-                            color: Color(0xFFFFFFFF),
+                            color: Color(0xFFDE3163),
                           ),
                         ),
                       ],
@@ -2394,33 +2457,68 @@ class ContactSection extends StatelessWidget {
               //   ),
               // ),
               horizontalSpaceLarge,
-              GestureDetector(
-                onTap: () async {
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(const Color(0XFF000000)),
+                ),
+                onPressed: () async {
                   return WebNavigator.openUrl(
                     url: 'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
                   );
                 },
-                child: const ScaleOnHover(
-                  scale: 12,
-                  child: Row(children: [
-                    Icon(
-                      Icons.map_outlined,
-                      size: 42,
-                      color: Color(0XFF00A86B),
+                child: const Padding(
+                  padding: EdgeInsets.all(12),
+                  child: Center(
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.map_outlined,
+                          size: 26,
+                          color: Color(0xFFFFFFFF),
+                        ),
+                        horizontalSpaceSemiSmall,
+                        Text(
+                          "Jaipur, Rajasthan, India",
+                          style: TextStyle(
+                            fontFamily: 'Afacad',
+                            fontSize: 24,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xFFD0F0C0),
+                          ),
+                        ),
+                      ],
                     ),
-                    horizontalSpaceTiny,
-                    SelectableText(
-                      "Jaipur, Rajasthan, India",
-                      style: TextStyle(
-                        fontFamily: 'Afacad',
-                        fontSize: 24,
-                        fontWeight: FontWeight.w700,
-                        color: Color(0XFF121212),
-                      ),
-                    ),
-                  ]),
+                  ),
                 ),
-              ),
+              ).scaleOnHover(scale: 12),
+              // GestureDetector(
+              //   onTap: () async {
+              //     return WebNavigator.openUrl(
+              //       url: 'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
+              //     );
+              //   },
+              //   child: const ScaleOnHover(
+              //     scale: 12,
+              //     child: Row(children: [
+              //       Icon(
+              //         Icons.map_outlined,
+              //         size: 42,
+              //         color: Color(0XFF00A86B),
+              //       ),
+              //       horizontalSpaceTiny,
+              //       SelectableText(
+              //         "Jaipur, Rajasthan, India",
+              //         style: TextStyle(
+              //           fontFamily: 'Afacad',
+              //           fontSize: 24,
+              //           fontWeight: FontWeight.w700,
+              //           color: Color(0XFF121212),
+              //         ),
+              //       ),
+              //     ]),
+              //   ),
+              // ),
             ],
           ),
           verticalSpaceSemiLarge,
@@ -2731,16 +2829,18 @@ class ProjectSkeleton extends StatelessWidget {
   }
 }
 
-class PdfViewWidget extends StatelessWidget {
+class Resume extends StatelessWidget {
   final Widget totalLeftSpacing;
   final double pdfViewHeight;
   final double pdfViewWidth;
+  final double headingFontSize;
 
-  const PdfViewWidget({
+  const Resume({
     super.key,
     this.totalLeftSpacing = horizontalSpaceSuperMassive,
     this.pdfViewHeight = 800,
     this.pdfViewWidth = 800,
+    this.headingFontSize = 34,
   });
 
   @override
@@ -2755,14 +2855,14 @@ class PdfViewWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             totalLeftSpacing,
-            const SelectableText(
+            SelectableText(
               "Resume",
               style: TextStyle(
-                fontFamily: 'Afacad',
-                fontSize: 34,
-                fontWeight: FontWeight.w700,
-                color: Color(0XFF00B9E8),
-                letterSpacing: 2.5,
+                fontFamily: 'RussoOne',
+                fontSize: headingFontSize,
+                fontWeight: FontWeight.w400,
+                letterSpacing: 1.2,
+                color: const Color(0XFF000000),
               ),
             ),
           ],
@@ -2787,12 +2887,12 @@ class PdfViewWidget extends StatelessWidget {
   }
 }
 
-class PdfViewMobileWidget extends StatelessWidget {
+class ResumeMobile extends StatelessWidget {
   final Widget totalLeftSpacing;
   final double pdfViewHeight;
   final double pdfViewWidth;
 
-  const PdfViewMobileWidget({
+  const ResumeMobile({
     super.key,
     this.totalLeftSpacing = horizontalSpaceSuperMassive,
     this.pdfViewHeight = 800,
