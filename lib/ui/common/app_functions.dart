@@ -85,8 +85,8 @@ class WebNavigator {
     // } else {
     //   throw 'Could not launch $emailUri';
     // }
-    final String subject = Uri.encodeComponent('Your Subject Here');
-    final String body = Uri.encodeComponent('Your email body here');
+    final String subject = Uri.encodeComponent('Subject');
+    final String body = Uri.encodeComponent('Body');
     final String url = 'mailto:$recipientEmail?subject=$subject&body=$body';
     final Uri email = Uri.parse(url);
     if (await canLaunchUrl(email)) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tratum_portfolio/extensions/hover_extensions.dart';
 
 import '../animation/scale_animation_image.dart';
 import '../animation/scale_animation_svg.dart';
@@ -10,15 +11,15 @@ import 'app_functions.dart';
 
 class HomeSection extends StatelessWidget {
   final Widget totalLeftSpacing;
-  final Widget circularFramePadding;
+  final double circularRightPadding;
   final double headerFontSize;
   final double subTextPadding;
 
   const HomeSection({
     super.key,
     this.totalLeftSpacing = horizontalSpaceMassive,
+    this.circularRightPadding = 150,
     this.headerFontSize = 68,
-    this.circularFramePadding = horizontalSpaceMega,
     this.subTextPadding = 250,
   });
 
@@ -89,7 +90,8 @@ class HomeSection extends StatelessWidget {
                 ),
               ],
             ),
-            Row(children: [
+            Row(
+              children: [
               totalLeftSpacing,
               const SelectableText(
                 "Developer based in Jaipur, India",
@@ -146,28 +148,65 @@ class HomeSection extends StatelessWidget {
                 )
               ],
             ),
+            verticalSpaceLarge,
+            Row(
+              children: [
+                totalLeftSpacing,
+                ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(const Color(0XFF000000))
+                  ),
+                  onPressed: () {
+                    WebNavigator.launchEmail("tratum.connect@gmail.com");
+                  },
+                    child: const Center(
+                      child: Padding(
+                        padding: EdgeInsets.all(8),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Let's Connect",
+                              style: TextStyle(
+                                fontFamily: 'Afacad',
+                                fontSize: 30,
+                                fontWeight: FontWeight.w900,
+                                color: Color(0xFFFFFFFF),
+                              ),
+                            ),
+                            horizontalSpaceSemiSmall,
+                            Icon(Icons.send_sharp,size: 30,color: Color(0xFFFFFFFF),),
+                          ],
+                        ),
+                      ),
+                    ),
+                ).scaleOnHover(scale: 12),
+              ],
+            )
           ],
         ),
-        circularFramePadding,
-        const Stack(
-          children: [
-            ScaleSvgAnimation(
-              imgPath:
-                  'https://tratum.github.io/cloud-asset-storage/svg/circular-frame-vector.svg',
-              height: 430,
-              width: 430,
-            ),
-            Positioned(
-              top: 60,
-              left: 65,
-              child: ScaleImgAnimation(
+        const Spacer(),
+        Padding(
+          padding: EdgeInsets.only(right: circularRightPadding),
+          child: const Stack(
+            children: [
+              ScaleSvgAnimation(
                 imgPath:
-                    "https://tratum.github.io/cloud-asset-storage/images/profile_photo-circular.png",
-                height: 310,
-                width: 300,
+                    'https://tratum.github.io/cloud-asset-storage/svg/circular-frame-vector.svg',
+                height: 430,
+                width: 430,
               ),
-            ),
-          ],
+              Positioned(
+                top: 60,
+                left: 65,
+                child: ScaleImgAnimation(
+                  imgPath:
+                      "https://tratum.github.io/cloud-asset-storage/images/profile_photo-circular.png",
+                  height: 310,
+                  width: 300,
+                ),
+              ),
+            ],
+          ),
         ),
       ],
     );
@@ -2254,7 +2293,31 @@ class ContactSection extends StatelessWidget {
           Row(
             children: [
               SelectableText(
-                "Drop a Hello, Let's Collaborate and Grow!",
+                "I'm always open to new projects and opportunities.",
+                style: TextStyle(
+                  fontFamily: 'Afacad',
+                  fontSize: subTextFontSize,
+                  fontWeight: FontWeight.w900,
+                  color: const Color(0XFF121212),
+                ),
+              ),
+              horizontalSpaceTiny,
+              SelectableText(
+                "Drop a Hello,",
+                style: TextStyle(
+                  fontFamily: 'Afacad',
+                  fontSize: subTextFontSize,
+                  fontWeight: FontWeight.w900,
+                  color: const Color(0XFF121212),
+                ),
+              ),
+            ],
+          ),
+          verticalSpaceSmall,
+          Row(
+            children: [
+              SelectableText(
+                "Let's Collaborate and Grow!",
                 style: TextStyle(
                   fontFamily: 'Afacad',
                   fontSize: subTextFontSize,
@@ -2269,39 +2332,67 @@ class ContactSection extends StatelessWidget {
                 cacheHeight: 28,
                 height: 30,
                 width: 30,
-              )
+              ),
             ],
           ),
           verticalSpaceLarge,
           Row(
             children: [
-              GestureDetector(
-                onTap: () {
+              ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(const Color(0XFF000000)),
+                ),
+                onPressed: () {
                   WebNavigator.launchEmail("tratum.connect@gmail.com");
                 },
-                child: const ScaleOnHover(
-                  scale: 12,
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.mail_outline_rounded,
-                        size: 42,
-                        color: Color(0XFF3498db),
-                      ),
-                      horizontalSpaceTiny,
-                      SelectableText(
-                        "tratum.connect@gmail.com",
-                        style: TextStyle(
-                          fontFamily: 'Afacad',
-                          fontSize: 24,
-                          fontWeight: FontWeight.w700,
-                          color: Color(0XFF121212),
+                child: const Padding(
+                  padding: EdgeInsets.all(12),
+                  child: Center(
+                    child: Row(
+                      children: [
+                        FaIcon(FontAwesomeIcons.envelopeOpen,size: 26,color: Color(0xFFFFFFFF),),
+                        horizontalSpaceSemiSmall,
+                        Text(
+                          "tratum.connect@gmail.com",
+                          style: TextStyle(
+                            fontFamily: 'Afacad',
+                            fontSize: 24,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xFFFFFFFF),
+                          ),
                         ),
-                      )
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
+              ).scaleOnHover(scale: 12),
+              // GestureDetector(
+              //   onTap: () {
+              //     WebNavigator.launchEmail("tratum.connect@gmail.com");
+              //   },
+              //   child: const ScaleOnHover(
+              //     scale: 12,
+              //     child: Row(
+              //       children: [
+              //         Icon(
+              //           Icons.mail_outline_rounded,
+              //           size: 42,
+              //           color: Color(0XFF3498db),
+              //         ),
+              //         horizontalSpaceTiny,
+              //         Text(
+              //           "tratum.connect@gmail.com",
+              //           style: TextStyle(
+              //             fontFamily: 'Afacad',
+              //             fontSize: 24,
+              //             fontWeight: FontWeight.w700,
+              //             color: Color(0XFF121212),
+              //           ),
+              //         )
+              //       ],
+              //     ),
+              //   ),
+              // ),
               horizontalSpaceLarge,
               GestureDetector(
                 onTap: () async {

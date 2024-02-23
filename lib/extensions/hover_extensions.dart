@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
 import '../ui/widgets/mouse_transforms/scale_on_hover.dart';
 import '../ui/widgets/mouse_transforms/translate_on_hover.dart';
 

@@ -335,6 +335,7 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
       ),
       floatingActionButton: FloatingActionButton(
         elevation: 20,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
         backgroundColor: const Color(0XFF121212),
         onPressed: () {
           if (viewModel.isAtBottom) {

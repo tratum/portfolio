@@ -10,8 +10,9 @@ class HomeViewTablet extends ViewModelWidget<HomeViewModel> {
   Widget build(BuildContext context, HomeViewModel viewModel) {
     return Scaffold(
       body: ResponsiveWebLayout.buildTabletLayout(
-          context: context, highResTabletLayout: const Placeholder(),
-          standardTabletLayout: const Placeholder(),
+        context: context,
+        highResTabletLayout: const Placeholder(),
+        standardTabletLayout: const Placeholder(),
       ),
     );
   }

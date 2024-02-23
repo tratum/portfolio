@@ -261,8 +261,8 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
                       padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                       child: HomeSection(
                         totalLeftSpacing: horizontalSpaceLarge,
-                        circularFramePadding: horizontalSpaceLarge,
                         subTextPadding: 50,
+                        circularRightPadding: 1,
                       ),
                     ),
                     const SizedBox(
@@ -483,6 +483,7 @@ class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
       ),
       floatingActionButton: FloatingActionButton(
         elevation: 20,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
         backgroundColor: const Color(0XFF121212),
         onPressed: () {
           if (viewModel.isAtBottom) {
