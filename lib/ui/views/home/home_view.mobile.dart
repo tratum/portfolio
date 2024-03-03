@@ -6,7 +6,7 @@ import '../../common/app_functions.dart';
 import '../../common/app_widgets.dart';
 import '../../common/ui_helpers.dart';
 import '../../widgets/mouse_transforms/scale_on_hover.dart';
-import 'home_viewmodel.dart';
+import 'home_view_model.dart';
 
 class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
   const HomeViewMobile({super.key});
@@ -14,8 +14,10 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
   @override
   Widget build(BuildContext context, HomeViewModel viewModel) {
     return Scaffold(
+      backgroundColor: const Color(0XFFFFFFFF),
       appBar: AppBar(
-        backgroundColor: const Color(0XFFfafafa),
+        surfaceTintColor: const Color(0XFFFFFFFF),
+        backgroundColor: const Color(0XFFFFFFFF),
         title: const SelectableText(
           'tratum.dev',
           style: TextStyle(
@@ -27,12 +29,14 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
           ),
         ),
         elevation: 20,
-        shadowColor: const Color(0XFFfafafa),
+        // shadowColor: const Color(0XFFfafafa),
         iconTheme: const IconThemeData(
           color: Color(0XFF353839),
         ),
       ),
       endDrawer: Drawer(
+        backgroundColor: const Color(0XFFFFFFFF),
+        surfaceTintColor: const Color(0XFFFFFFFF),
         width: 180,
         child: Padding(
           padding: const EdgeInsets.only(left: 28, top: 28),
@@ -198,7 +202,7 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
                 verticalSpaceMassive,
                 const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                  child: ContactMobileSection(),
+                  child: ContactSectionMobile(),
                 ),
                 const FooterSectionMobile(),
               ],
@@ -261,7 +265,7 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
                 verticalSpaceMassive,
                 const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                  child: ContactMobileSection(),
+                  child: ContactSectionMobile(),
                 ),
                 const FooterSectionMobile(),
               ],
@@ -325,7 +329,7 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
                 verticalSpaceMassive,
                 const Padding(
                   padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                  child: ContactMobileSection(),
+                  child: ContactSectionMobile(),
                 ),
                 const FooterSectionMobile(),
               ],

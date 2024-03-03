@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_web_layout/responsive_web_layout.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../common/app_functions.dart';
 import '../../common/app_widgets.dart';
 import '../../common/ui_helpers.dart';
 import '../../widgets/mouse_transforms/scale_on_hover.dart';
-import 'home_viewmodel.dart';
+import 'home_view_model.dart';
 
 class HomeViewDesktop extends ViewModelWidget<HomeViewModel> {
   const HomeViewDesktop({super.key});

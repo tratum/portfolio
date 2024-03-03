@@ -243,6 +243,7 @@ class HomeSectionMobile extends StatelessWidget {
       // mainAxisSize: MainAxisSize.min,
       children: [
         Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             headerLeftPadding,
             SelectableText(
@@ -349,7 +350,48 @@ class HomeSectionMobile extends StatelessWidget {
             )
           ],
         ),
-        verticalSpaceMedium,
+        verticalSpaceSemiMedium,
+        Row(
+          children: [
+            ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor:
+                  MaterialStateProperty.all(
+                    const Color(0XFF000000),
+                  ),
+              ),
+              onPressed: () {
+                WebNavigator.launchEmail("tratum.connect@gmail.com");
+              },
+              child: FittedBox(
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Let's Connect",
+                        style: TextStyle(
+                          fontFamily: 'Afacad',
+                          fontSize: headerFontSize - 22,
+                          fontWeight: FontWeight.w900,
+                          color: const Color(0xFFFFFFFF),
+                        ),
+                      ),
+                      horizontalSpaceSemiSmall,
+                      const Icon(
+                        Icons.send_sharp,
+                        size: 28,
+                        color: Color(0xFFFFFFFF),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ).scaleOnHover(scale: 12),
+            const Spacer(),
+          ],
+        ),
+        verticalSpaceLarge,
         Stack(
           children: [
             const ScaleSvgAnimation(
@@ -926,7 +968,7 @@ class AboutMeSection extends StatelessWidget {
               height: 30,
             ),
             SelectableText(
-              "Let's Build Something Extraordinary !!!!",
+              "Let's Build Something Extraordinary Together !!!!",
               style: TextStyle(
                 fontFamily: 'RussoOne',
                 fontSize: subTextFontSize + 2,
@@ -960,10 +1002,11 @@ class AboutMeSectionMobile extends StatelessWidget {
               const SelectableText(
                 "About Me :",
                 style: TextStyle(
-                  fontFamily: 'Afacad',
-                  fontSize: 24,
-                  fontWeight: FontWeight.w900,
-                  color: Color(0XFF00B9E8),
+                  fontFamily: 'RussoOne',
+                  fontSize: 32,
+                  fontWeight: FontWeight.w400,
+                  letterSpacing: 1.2,
+                  color: Color(0XFF000000),
                 ),
               ),
               verticalSpaceMedium,
@@ -1111,11 +1154,11 @@ class ProjectSectionMobile extends StatelessWidget {
             SelectableText(
               "Portfolio: ",
               style: TextStyle(
-                fontFamily: 'Afacad',
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-                color: Color(0XFF00B9E8),
-                letterSpacing: 2.5,
+                fontFamily: 'RussoOne',
+                fontSize: 32,
+                fontWeight: FontWeight.w400,
+                letterSpacing: 1.2,
+                color: Color(0XFF000000),
               ),
             ),
           ],
@@ -1344,10 +1387,11 @@ class Project1Mobile extends StatelessWidget {
             "Notely",
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontFamily: 'Afacad',
+              fontFamily: 'RussoOne',
               fontSize: 24,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.w100,
               color: Color(0XFF000000),
+              letterSpacing: 1.2,
             ),
           ),
         ),
@@ -1398,67 +1442,83 @@ class Project1Mobile extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 80,
                   ),
                   Align(
                     alignment: Alignment.center,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        GestureDetector(
-                          child: const Row(
-                            children: [
-                              SelectableText(
-                                "Code",
-                                style: TextStyle(
-                                  fontFamily: 'Afacad',
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w900,
-                                  color: Color(0XFF3C4A53),
-                                ),
-                              ),
-                              horizontalSpaceTiny,
-                              FaIcon(
-                                FontAwesomeIcons.github,
-                                color: Color(0XFF000000),
-                                size: 26,
-                              ),
-                            ],
-                          ),
-                          onTap: () async {
+                        const Spacer(),
+                        ElevatedButton(
+                          style: ButtonStyle(
+                              backgroundColor:
+                              MaterialStateProperty.all(const Color(0XFF000000))),
+                          onPressed: () async {
                             return WebNavigator.openUrl(
                                 url: "https://github.com/tratum/Notely");
                           },
-                        ),
-                        const SizedBox(
-                          width: 40,
-                        ),
-                        GestureDetector(
-                          child: const Row(
-                            children: [
-                              SelectableText(
-                                "Demo",
-                                style: TextStyle(
-                                  fontFamily: 'Afacad',
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w900,
-                                  color: Color(0XFF3C4A53),
-                                ),
+                          child: const Center(
+                            child: Padding(
+                              padding: EdgeInsets.all(8),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    "Code",
+                                    style: TextStyle(
+                                      fontFamily: 'Afacad',
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.w900,
+                                      color: Color(0xFFFFFFFF),
+                                    ),
+                                  ),
+                                  horizontalSpaceSemiSmall,
+                                  FaIcon(
+                                    FontAwesomeIcons.github,
+                                    size: 26,
+                                    color: Color(0xFFFFFFFF),
+                                  ),
+                                ],
                               ),
-                              horizontalSpaceTiny,
-                              Icon(
-                                Icons.open_in_new,
-                                color: Color(0XFF000000),
-                                size: 24,
-                              ),
-                            ],
+                            ),
                           ),
-                          onTap: () async {
+                        ).scaleOnHover(scale: 12),
+                        const Spacer(),
+                        ElevatedButton(
+                          style: ButtonStyle(
+                              backgroundColor:
+                              MaterialStateProperty.all(const Color(0XFF000000))),
+                          onPressed: () async {
                             return WebNavigator.openUrl(
                                 url:
-                                    "https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing");
+                                "https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing");
                           },
-                        ),
+                          child: const Center(
+                            child: Padding(
+                              padding: EdgeInsets.all(8),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    "Demo",
+                                    style: TextStyle(
+                                      fontFamily: 'Afacad',
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.w900,
+                                      color: Color(0xFFFFFFFF),
+                                    ),
+                                  ),
+                                  horizontalSpaceSemiSmall,
+                                  Icon(
+                                    Icons.open_in_new,
+                                    size: 26,
+                                    color: Color(0xFFFFFFFF),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ).scaleOnHover(scale: 12),
+                        const Spacer(),
                       ],
                     ),
                   ),
@@ -1627,11 +1687,11 @@ class Project2Mobile extends StatelessWidget {
               child: SelectableText(
                 "Smart Apple Ripeness Detection System",
                 style: TextStyle(
-                  fontFamily: 'Afacad',
+                  fontFamily: 'RussoOne',
                   fontSize: 24,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w100,
                   color: Color(0XFF000000),
-                  overflow: TextOverflow.visible,
+                  letterSpacing: 1.2,
                 ),
                 textAlign: TextAlign.start,
               ),
@@ -1685,38 +1745,48 @@ class Project2Mobile extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 80,
                   ),
-                  GestureDetector(
-                    child: const Align(
-                      alignment: Alignment.center,
-                      child: Row(
-                        children: [
-                          Spacer(),
-                          SelectableText(
-                            "Code",
-                            style: TextStyle(
-                              fontFamily: 'Afacad',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w900,
-                              color: Color(0XFF3C4A53),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Spacer(),
+                      ElevatedButton(
+                        style: ButtonStyle(
+                            backgroundColor:
+                            MaterialStateProperty.all(const Color(0XFF000000))),
+                        onPressed: () async {
+                          return WebNavigator.openUrl(
+                              url:
+                              "https://github.com/tratum/apple_maturity_detection");
+                        },
+                        child: const Center(
+                          child: Padding(
+                            padding: EdgeInsets.all(8),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "Code",
+                                  style: TextStyle(
+                                    fontFamily: 'Afacad',
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w900,
+                                    color: Color(0xFFFFFFFF),
+                                  ),
+                                ),
+                                horizontalSpaceSemiSmall,
+                                FaIcon(
+                                  FontAwesomeIcons.github,
+                                  size: 26,
+                                  color: Color(0xFFFFFFFF),
+                                ),
+                              ],
                             ),
                           ),
-                          horizontalSpaceTiny,
-                          FaIcon(
-                            FontAwesomeIcons.github,
-                            color: Color(0XFF000000),
-                            size: 26,
-                          ),
-                          Spacer(),
-                        ],
-                      ),
-                    ),
-                    onTap: () async {
-                      return WebNavigator.openUrl(
-                          url:
-                              "https://github.com/tratum/apple_maturity_detection");
-                    },
+                        ),
+                      ).scaleOnHover(scale: 12),
+                      const Spacer(),
+                    ],
                   ),
                 ],
               ),
@@ -1922,10 +1992,11 @@ class Project3Mobile extends StatelessWidget {
             "Wanderlust Expeditions",
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontFamily: 'Afacad',
+              fontFamily: 'RussoOne',
               fontSize: 24,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.w100,
               color: Color(0XFF000000),
+              letterSpacing: 1.2,
             ),
           ),
         ),
@@ -1955,94 +2026,101 @@ class Project3Mobile extends StatelessWidget {
         const SizedBox(
           height: 40,
         ),
-        Row(
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Align(
-                    alignment: Alignment.center,
-                    child: SelectableText(
-                      "WanderLust Expeditions is a Travel Recommendation Website that beckons adventure seekers to explore the diverse tapestry of Bharat's destinations. Powered by Flutter for seamless cross-platform experience, it leverages GitHub Pages for backend management, employing web scraping and JSON for curated travel insights.",
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        fontFamily: 'Afacad',
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        color: Color(0XFF3C4A53),
-                        overflow: TextOverflow.visible,
+            const Align(
+              alignment: Alignment.center,
+              child: SelectableText(
+                "WanderLust Expeditions is a Travel Recommendation Website that beckons adventure seekers to explore the diverse tapestry of Bharat's destinations. Powered by Flutter for seamless cross-platform experience, it leverages GitHub Pages for backend management, employing web scraping and JSON for curated travel insights.",
+                textAlign: TextAlign.justify,
+                style: TextStyle(
+                  fontFamily: 'Afacad',
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
+                  color: Color(0XFF3C4A53),
+                  overflow: TextOverflow.visible,
+                ),
+              ),
+            ),
+            const SizedBox(height: 80,),
+            Row(
+              children: [
+                const Spacer(),
+                ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor:
+                      MaterialStateProperty.all(
+                          const Color(0XFF000000),
+                      ),
+                  ),
+                  onPressed: () async {
+                    return WebNavigator.openUrl(
+                        url:
+                        "https://github.com/tratum/wanderlust-expeditions");
+                  },
+                  child: const Center(
+                    child: Padding(
+                      padding: EdgeInsets.all(8),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Code",
+                            style: TextStyle(
+                              fontFamily: 'Afacad',
+                              fontSize: 22,
+                              fontWeight: FontWeight.w900,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                          ),
+                          horizontalSpaceSemiSmall,
+                          FaIcon(
+                            FontAwesomeIcons.github,
+                            size: 26,
+                            color: Color(0xFFFFFFFF),
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        GestureDetector(
-                          child: const Row(
-                            children: [
-                              SelectableText(
-                                "Code",
-                                style: TextStyle(
-                                  fontFamily: 'Afacad',
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w900,
-                                  color: Color(0XFF3C4A53),
-                                ),
-                              ),
-                              horizontalSpaceTiny,
-                              FaIcon(
-                                FontAwesomeIcons.github,
-                                color: Color(0XFF000000),
-                                size: 26,
-                              ),
-                            ],
+                ).scaleOnHover(scale: 12),
+                const Spacer(),
+                ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor:
+                      MaterialStateProperty.all(const Color(0XFF000000))),
+                  onPressed: () async {
+                    return WebNavigator.openUrl(
+                      url: "https://tratum.github.io/wanderlust-expeditions/",
+                    );
+                  },
+                  child: const Center(
+                    child: Padding(
+                      padding: EdgeInsets.all(8),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Demo",
+                            style: TextStyle(
+                              fontFamily: 'Afacad',
+                              fontSize: 22,
+                              fontWeight: FontWeight.w900,
+                              color: Color(0xFFFFFFFF),
+                            ),
                           ),
-                          onTap: () async {
-                            return WebNavigator.openUrl(
-                                url:
-                                    "https://github.com/tratum/wanderlust-expeditions");
-                          },
-                        ),
-                        const SizedBox(
-                          width: 40,
-                        ),
-                        GestureDetector(
-                          child: const Row(
-                            children: [
-                              SelectableText(
-                                "Demo",
-                                style: TextStyle(
-                                  fontFamily: 'Afacad',
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w900,
-                                  color: Color(0XFF3C4A53),
-                                ),
-                              ),
-                              horizontalSpaceTiny,
-                              Icon(
-                                Icons.open_in_new,
-                                color: Color(0XFF000000),
-                                size: 24,
-                              ),
-                            ],
+                          horizontalSpaceSemiSmall,
+                          Icon(
+                            Icons.open_in_new,
+                            size: 26,
+                            color: Color(0xFFFFFFFF),
                           ),
-                          onTap: () async {
-                            return WebNavigator.openUrl(
-                                url:
-                                    "https://tratum.github.io/wanderlust-expeditions/");
-                          },
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ],
-              ),
+                ).scaleOnHover(scale: 12),
+                const Spacer(),
+              ],
             ),
           ],
         ),
@@ -2209,15 +2287,14 @@ class Project4Mobile extends StatelessWidget {
           children: [
             Expanded(
               child: SelectableText(
-                "ClimaTrend: ARIMA-Based Weather Forecasting",
+                "ClimaTrend",
                 style: TextStyle(
-                  fontFamily: 'Afacad',
+                  fontFamily: 'RussoOne',
                   fontSize: 24,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w100,
+                  letterSpacing: 1.2,
                   color: Color(0XFF000000),
-                  overflow: TextOverflow.visible,
                 ),
-                textAlign: TextAlign.start,
               ),
             ),
           ],
@@ -2248,62 +2325,62 @@ class Project4Mobile extends StatelessWidget {
         const SizedBox(
           height: 40,
         ),
-        Row(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Align(
-                    alignment: Alignment.center,
-                    child: SelectableText(
-                      "Forecasting average temperatures in major Indian cities with Weather Prediction using ARIMA Model. Leveraging time series analysis and machine learning, the project utilizes Python, Pandas, and StatsModels for data manipulation, ARIMA modeling, and evaluation. Hardware and software requirements ensure seamless execution.",
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        fontFamily: 'Afacad',
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        color: Color(0XFF3C4A53),
-                        overflow: TextOverflow.visible,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  GestureDetector(
-                    child: const Align(
-                      alignment: Alignment.center,
-                      child: Row(
-                        children: [
-                          Spacer(),
-                          SelectableText(
-                            "Code",
-                            style: TextStyle(
-                              fontFamily: 'Afacad',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w900,
-                              color: Color(0XFF3C4A53),
-                            ),
-                          ),
-                          horizontalSpaceTiny,
-                          FaIcon(
-                            FontAwesomeIcons.github,
-                            color: Color(0XFF000000),
-                            size: 26,
-                          ),
-                          Spacer(),
-                        ],
-                      ),
-                    ),
-                    onTap: () async {
-                      return WebNavigator.openUrl(
-                          url: "https://github.com/tratum/weather_prediction");
-                    },
-                  ),
-                ],
-              ),
+        const Align(
+          alignment: Alignment.center,
+          child: SelectableText(
+            "Forecasting average temperatures in major Indian cities with Weather Prediction using ARIMA Model. Leveraging time series analysis and machine learning, the project utilizes Python, Pandas, and StatsModels for data manipulation, ARIMA modeling, and evaluation. Hardware and software requirements ensure seamless execution.",
+            textAlign: TextAlign.justify,
+            style: TextStyle(
+              fontFamily: 'Afacad',
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+              color: Color(0XFF3C4A53),
+              overflow: TextOverflow.visible,
             ),
+          ),
+        ),
+        const SizedBox(
+          height: 80,
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Spacer(),
+            ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor:
+                  MaterialStateProperty.all(const Color(0XFF000000))),
+              onPressed: () async {
+                return WebNavigator.openUrl(
+                    url:
+                    "https://github.com/tratum/weather_prediction");
+              },
+              child: const Center(
+                child: Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Code",
+                        style: TextStyle(
+                          fontFamily: 'Afacad',
+                          fontSize: 22,
+                          fontWeight: FontWeight.w900,
+                          color: Color(0xFFFFFFFF),
+                        ),
+                      ),
+                      horizontalSpaceSemiSmall,
+                      FaIcon(
+                        FontAwesomeIcons.github,
+                        size: 26,
+                        color: Color(0xFFFFFFFF),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ).scaleOnHover(scale: 12),
+            const Spacer(),
           ],
         ),
         const SizedBox(
@@ -2528,119 +2605,143 @@ class ContactSection extends StatelessWidget {
   }
 }
 
-class ContactMobileSection extends StatelessWidget {
-  const ContactMobileSection({super.key});
+class ContactSectionMobile extends StatelessWidget {
+  const ContactSectionMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
         const SelectableText(
-          "CONTACT",
+          "Let's build together",
           style: TextStyle(
-            fontFamily: 'Afacad',
-            fontSize: 24,
-            fontWeight: FontWeight.w900,
-            color: Color(0XFF00B9E8),
+            fontFamily: 'RussoOne',
+            fontSize: 32,
+            fontWeight: FontWeight.w400,
+            letterSpacing: 1.2,
+            color: Color(0XFF000000),
           ),
         ),
         verticalSpaceSmall,
-        Row(
-          children: [
-            Expanded(
-              child: RichText(
-                text: TextSpan(
-                    style: const TextStyle(
-                      fontFamily: 'Afacad',
-                      fontSize: 18,
-                      fontWeight: FontWeight.w900,
-                      color: Color(0XFF121212),
-                    ),
-                    children: [
-                      const TextSpan(
-                        text: "Drop a Hello, Let's Collaborate and Grow !!",
-                      ),
-                      WidgetSpan(
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 8, top: 8),
-                          child: Image.network(
-                            "https://tratum.github.io/cloud-asset-storage/images/pointingDown.png",
-                            cacheWidth: 28,
-                            cacheHeight: 28,
-                            height: 30,
-                            width: 30,
-                          ),
-                        ),
-                      ),
-                    ]),
-              ),
-            ),
-          ],
-        ),
-        verticalSpaceMedium,
-        Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: GestureDetector(
-            onTap: () {
-              WebNavigator.launchEmail("tratum.connect@gmail.com");
-            },
-            child: const ScaleOnHover(
-              scale: 12,
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.mail_outline_rounded,
-                    size: 32,
-                    color: Color(0XFF3498db),
-                  ),
-                  horizontalSpaceTiny,
-                  SelectableText(
-                    "tratum.connect@gmail.com",
-                    style: TextStyle(
-                      fontFamily: 'Afacad',
-                      fontSize: 18,
-                      fontWeight: FontWeight.w700,
-                      color: Color(0XFF121212),
-                    ),
-                  )
-                ],
-              ),
+        const Flexible(
+          child: SelectableText(
+            "I'm always open to new projects and opportunities.",
+            textAlign: TextAlign.start,
+            style: TextStyle(
+              fontFamily: 'Afacad',
+              fontSize: 18,
+              fontWeight: FontWeight.w900,
+              color: Color(0XFF121212),
+              overflow: TextOverflow.visible,
+
             ),
           ),
         ),
         verticalSpaceSmall,
-        Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: GestureDetector(
-            onTap: () async {
-              return WebNavigator.openUrl(
-                url: 'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
-              );
-            },
-            child: const ScaleOnHover(
-              scale: 12,
-              child: Row(children: [
-                Icon(
-                  Icons.map_outlined,
-                  size: 32,
-                  color: Color(0XFF00A86B),
-                ),
-                horizontalSpaceTiny,
-                SelectableText(
-                  "Jaipur, Rajasthan, India",
+        Flexible(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Flexible(
+                child: SelectableText(
+                  "Drop a Hello, Let's Collaborate and Grow!",
+                  textAlign: TextAlign.start,
                   style: TextStyle(
                     fontFamily: 'Afacad',
                     fontSize: 18,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w900,
                     color: Color(0XFF121212),
                   ),
                 ),
-              ]),
-            ),
+              ),
+              horizontalSpaceTiny,
+              Image.network(
+                "https://tratum.github.io/cloud-asset-storage/images/pointingDown.png",
+                cacheWidth: 28,
+                cacheHeight: 28,
+                height: 30,
+                width: 30,
+              ),
+            ],
           ),
         ),
-        verticalSpaceSemiMedium,
+        verticalSpaceLarge,
+        ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor:
+            MaterialStateProperty.all(const Color(0XFF000000)),
+          ),
+          onPressed: () {
+            WebNavigator.launchEmail("tratum.connect@gmail.com");
+          },
+          child: const FittedBox(
+            child: Padding(
+              padding: EdgeInsets.all(12),
+              child: Center(
+                child: Row(
+                  children: [
+                    FaIcon(
+                      FontAwesomeIcons.envelopeOpen,
+                      size: 24,
+                      color: Color(0xFFFFFFFF),
+                    ),
+                    horizontalSpaceSemiSmall,
+                    Text(
+                      "tratum.connect@gmail.com",
+                      style: TextStyle(
+                        fontFamily: 'Afacad',
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xFFDE3163),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ).scaleOnHover(scale: 12),
+        verticalSpaceLarge,
+        ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor:
+            MaterialStateProperty.all(const Color(0XFF000000)),
+          ),
+          onPressed: () async {
+            return WebNavigator.openUrl(
+              url: 'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
+            );
+          },
+          child: const FittedBox(
+            child: Padding(
+              padding: EdgeInsets.all(12),
+              child: Center(
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.map_outlined,
+                      size: 26,
+                      color: Color(0xFFFFFFFF),
+                    ),
+                    horizontalSpaceSemiSmall,
+                    Text(
+                      "Jaipur, Rajasthan, India",
+                      style: TextStyle(
+                        fontFamily: 'Afacad',
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xFFD0F0C0),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ).scaleOnHover(scale: 12),
+        verticalSpaceSemiLarge,
       ],
     );
   }
@@ -2661,7 +2762,7 @@ class FooterSection extends StatelessWidget {
             Row(
               children: [
                 const SelectableText(
-                  "tratum Copyright © 2024 tratum-All Rights Reserved || Designed by tratum",
+                  "© 2024 Saksham Rawat, Designed by Tratum",
                   style: TextStyle(
                     color: Color(0xffffffff),
                     fontFamily: 'Afacad',
@@ -2722,61 +2823,39 @@ class FooterSectionMobile extends StatelessWidget {
       child: Column(
         children: [
           verticalSpaceSemiMedium,
-          const Align(
-            alignment: Alignment.center,
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 18, right: 18),
-                        child: Center(
-                          child: SelectableText(
-                            "tratum Copyright © 2024 tratum All Rights Reserved",
-                            style: TextStyle(
-                              color: Color(0xffffffff),
-                              fontFamily: 'Afacad',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w900,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                verticalSpaceSmall,
-                Row(
-                  children: [
-                    Spacer(),
-                    Padding(
-                      padding: EdgeInsets.only(left: 18, right: 18),
-                      child: SelectableText(
-                        "Designed by tratum",
-                        style: TextStyle(
-                          color: Color(0xffffffff),
-                          fontFamily: 'Afacad',
-                          fontSize: 18,
-                          fontWeight: FontWeight.w900,
-                        ),
-                      ),
-                    ),
-                    Spacer(),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          verticalSpaceSemiMedium,
           Row(
             children: [
-              const Spacer(),
+              const Padding(
+                padding: EdgeInsets.only(left: 18),
+                child: Center(
+                  child: SelectableText(
+                    "© 2024 Saksham Rawat",
+                    style: TextStyle(
+                      color: Color(0xffffffff),
+                      fontFamily: 'Afacad',
+                      fontSize: 18,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                ),
+              ),
+              horizontalSpaceMedium,
+              GestureDetector(
+                child: const FaIcon(
+                  FontAwesomeIcons.github,
+                  color: Color(0XFFFFFFFF),
+                  size: 28,
+                ),
+                onTap: () async {
+                  return WebNavigator.openUrl(url: "https://github.com/tratum");
+                },
+              ),
+              horizontalSpaceMedium,
               GestureDetector(
                 child: const FaIcon(
                   FontAwesomeIcons.linkedin,
                   color: Color(0XFFFFFFFF),
-                  size: 36,
+                  size: 28,
                 ),
                 onTap: () async {
                   return WebNavigator.openUrl(
@@ -2784,21 +2863,41 @@ class FooterSectionMobile extends StatelessWidget {
                   );
                 },
               ),
-              horizontalSpaceSemiLarge,
-              GestureDetector(
-                child: const FaIcon(
-                  FontAwesomeIcons.github,
-                  color: Color(0XFFFFFFFF),
-                  size: 36,
-                ),
-                onTap: () async {
-                  return WebNavigator.openUrl(url: "https://github.com/tratum");
-                },
-              ),
               const Spacer(),
             ],
           ),
           verticalSpaceSemiMedium,
+          // verticalSpaceSemiMedium,
+          // Row(
+          //   children: [
+          //     const Spacer(),
+          //     GestureDetector(
+          //       child: const FaIcon(
+          //         FontAwesomeIcons.github,
+          //         color: Color(0XFFFFFFFF),
+          //         size: 36,
+          //       ),
+          //       onTap: () async {
+          //         return WebNavigator.openUrl(url: "https://github.com/tratum");
+          //       },
+          //     ),
+          //     horizontalSpaceSemiLarge,
+          //     GestureDetector(
+          //       child: const FaIcon(
+          //         FontAwesomeIcons.linkedin,
+          //         color: Color(0XFFFFFFFF),
+          //         size: 36,
+          //       ),
+          //       onTap: () async {
+          //         return WebNavigator.openUrl(
+          //           url: "https://www.linkedin.com/in/saksham-rawat-dev",
+          //         );
+          //       },
+          //     ),
+          //     const Spacer(),
+          //   ],
+          // ),
+          // verticalSpaceSemiMedium,
         ],
       ),
     );
@@ -2914,11 +3013,11 @@ class ResumeMobile extends StatelessWidget {
             const SelectableText(
               "Resume",
               style: TextStyle(
-                fontFamily: 'Afacad',
-                fontSize: 34,
-                fontWeight: FontWeight.w700,
-                color: Color(0XFF00B9E8),
-                letterSpacing: 2.5,
+                fontFamily: 'RussoOne',
+                fontSize: 32,
+                fontWeight: FontWeight.w400,
+                letterSpacing: 1.2,
+                color: Color(0XFF000000),
               ),
             ),
           ],

@@ -5,7 +5,7 @@ import 'package:stacked/stacked.dart';
 import 'home_view.desktop.dart';
 import 'home_view.mobile.dart';
 import 'home_view.tablet.dart';
-import 'home_viewmodel.dart';
+import 'home_view_model.dart';
 
 class HomeView extends StackedView<HomeViewModel> {
   const HomeView({super.key});
