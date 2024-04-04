@@ -355,10 +355,9 @@ class HomeSectionMobile extends StatelessWidget {
           children: [
             ElevatedButton(
               style: ButtonStyle(
-                  backgroundColor:
-                  MaterialStateProperty.all(
-                    const Color(0XFF000000),
-                  ),
+                backgroundColor: MaterialStateProperty.all(
+                  const Color(0XFF000000),
+                ),
               ),
               onPressed: () {
                 WebNavigator.launchEmail("tratum.connect@gmail.com");
@@ -1087,7 +1086,7 @@ class ProjectSection extends StatelessWidget {
 
   const ProjectSection(
       {super.key,
-      this.totalLeftSpacing = horizontalSpaceSuperMassive,
+      this.totalLeftSpacing = horizontalSpaceMassive,
       this.headingFontSize = 34,
       this.subHeadingFontSize = 28});
 
@@ -1210,9 +1209,9 @@ class Project1 extends StatelessWidget {
 
   const Project1(
       {super.key,
-      this.totalLeftSpacing = horizontalSpaceSuperMassive,
+      this.totalLeftSpacing = horizontalSpaceMassive,
       this.imgHeight = 400,
-      this.imgWidth = 550,
+      this.imgWidth = 600,
       this.headingFontSize = 26,
       this.subTextFontSize = 22});
 
@@ -1221,7 +1220,7 @@ class Project1 extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        horizontalSpaceLarge,
+        horizontalSpaceSemiMassive,
         GestureDetector(
           onTap: () async {
             return ImageView.showImageDialog(
@@ -1452,8 +1451,8 @@ class Project1Mobile extends StatelessWidget {
                         const Spacer(),
                         ElevatedButton(
                           style: ButtonStyle(
-                              backgroundColor:
-                              MaterialStateProperty.all(const Color(0XFF000000))),
+                              backgroundColor: MaterialStateProperty.all(
+                                  const Color(0XFF000000))),
                           onPressed: () async {
                             return WebNavigator.openUrl(
                                 url: "https://github.com/tratum/Notely");
@@ -1486,12 +1485,12 @@ class Project1Mobile extends StatelessWidget {
                         const Spacer(),
                         ElevatedButton(
                           style: ButtonStyle(
-                              backgroundColor:
-                              MaterialStateProperty.all(const Color(0XFF000000))),
+                              backgroundColor: MaterialStateProperty.all(
+                                  const Color(0XFF000000))),
                           onPressed: () async {
                             return WebNavigator.openUrl(
                                 url:
-                                "https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing");
+                                    "https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing");
                           },
                           child: const Center(
                             child: Padding(
@@ -1641,7 +1640,7 @@ class Project2 extends StatelessWidget {
             return ImageView.showImageDialog(
                 context: context,
                 imgPath:
-                    "https://tratum.github.io/cloud-asset-storage/images/project2.jpg");
+                    "https://tratum.github.io/cloud-asset-storage/images/project2.webp");
           },
           child: Container(
             height: imgHeight,
@@ -1658,7 +1657,7 @@ class Project2 extends StatelessWidget {
               ],
               image: const DecorationImage(
                 image: NetworkImage(
-                    "https://tratum.github.io/cloud-asset-storage/images/project2.jpg"),
+                    "https://tratum.github.io/cloud-asset-storage/images/project2.webp"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -1706,7 +1705,7 @@ class Project2Mobile extends StatelessWidget {
             return ImageView.showImageDialog(
                 context: context,
                 imgPath:
-                    "https://tratum.github.io/cloud-asset-storage/images/project2.jpg");
+                    "https://tratum.github.io/cloud-asset-storage/images/project2.webp");
           },
           child: Container(
             height: 150,
@@ -1715,7 +1714,7 @@ class Project2Mobile extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               image: const DecorationImage(
                 image: NetworkImage(
-                    "https://tratum.github.io/cloud-asset-storage/images/project2.jpg"),
+                    "https://tratum.github.io/cloud-asset-storage/images/project2.webp"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -1753,12 +1752,12 @@ class Project2Mobile extends StatelessWidget {
                       const Spacer(),
                       ElevatedButton(
                         style: ButtonStyle(
-                            backgroundColor:
-                            MaterialStateProperty.all(const Color(0XFF000000))),
+                            backgroundColor: MaterialStateProperty.all(
+                                const Color(0XFF000000))),
                         onPressed: () async {
                           return WebNavigator.openUrl(
                               url:
-                              "https://github.com/tratum/apple_maturity_detection");
+                                  "https://github.com/tratum/apple_maturity_detection");
                         },
                         child: const Center(
                           child: Padding(
@@ -1831,7 +1830,7 @@ class Project3 extends StatelessWidget {
             return ImageView.showImageDialog(
                 context: context,
                 imgPath:
-                "https://tratum.github.io/cloud-asset-storage/images/project3.webp");
+                    "https://tratum.github.io/cloud-asset-storage/images/project3.webp");
           },
           child: Container(
             height: imgHeight,
@@ -1899,11 +1898,11 @@ class Project3 extends StatelessWidget {
                   ElevatedButton(
                     style: ButtonStyle(
                         backgroundColor:
-                        MaterialStateProperty.all(const Color(0XFF000000))),
+                            MaterialStateProperty.all(const Color(0XFF000000))),
                     onPressed: () async {
                       return WebNavigator.openUrl(
-                                  url:
-                                      "https://github.com/tratum/wanderlust-expeditions");
+                          url:
+                              "https://github.com/tratum/wanderlust-expeditions");
                     },
                     child: Center(
                       child: Padding(
@@ -1934,7 +1933,7 @@ class Project3 extends StatelessWidget {
                   ElevatedButton(
                     style: ButtonStyle(
                         backgroundColor:
-                        MaterialStateProperty.all(const Color(0XFF000000))),
+                            MaterialStateProperty.all(const Color(0XFF000000))),
                     onPressed: () async {
                       return WebNavigator.openUrl(
                         url: "https://tratum.github.io/wanderlust-expeditions/",
@@ -2043,21 +2042,22 @@ class Project3Mobile extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 80,),
+            const SizedBox(
+              height: 80,
+            ),
             Row(
               children: [
                 const Spacer(),
                 ElevatedButton(
                   style: ButtonStyle(
-                      backgroundColor:
-                      MaterialStateProperty.all(
-                          const Color(0XFF000000),
-                      ),
+                    backgroundColor: MaterialStateProperty.all(
+                      const Color(0XFF000000),
+                    ),
                   ),
                   onPressed: () async {
                     return WebNavigator.openUrl(
                         url:
-                        "https://github.com/tratum/wanderlust-expeditions");
+                            "https://github.com/tratum/wanderlust-expeditions");
                   },
                   child: const Center(
                     child: Padding(
@@ -2088,7 +2088,7 @@ class Project3Mobile extends StatelessWidget {
                 ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor:
-                      MaterialStateProperty.all(const Color(0XFF000000))),
+                          MaterialStateProperty.all(const Color(0XFF000000))),
                   onPressed: () async {
                     return WebNavigator.openUrl(
                       url: "https://tratum.github.io/wanderlust-expeditions/",
@@ -2200,11 +2200,10 @@ class Project4 extends StatelessWidget {
                   ElevatedButton(
                     style: ButtonStyle(
                         backgroundColor:
-                        MaterialStateProperty.all(const Color(0XFF000000))),
+                            MaterialStateProperty.all(const Color(0XFF000000))),
                     onPressed: () async {
                       return WebNavigator.openUrl(
-                          url:
-                          "https://github.com/tratum/weather_prediction");
+                          url: "https://github.com/tratum/weather_prediction");
                     },
                     child: Center(
                       child: Padding(
@@ -2243,7 +2242,7 @@ class Project4 extends StatelessWidget {
             return ImageView.showImageDialog(
                 context: context,
                 imgPath:
-                "https://tratum.github.io/cloud-asset-storage/images/project4.jpeg");
+                    "https://tratum.github.io/cloud-asset-storage/images/project4.webp");
           },
           child: Container(
             height: imgHeight,
@@ -2260,7 +2259,7 @@ class Project4 extends StatelessWidget {
               ],
               image: const DecorationImage(
                 image: NetworkImage(
-                    "https://tratum.github.io/cloud-asset-storage/images/project4.jpeg"),
+                    "https://tratum.github.io/cloud-asset-storage/images/project4.webp"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -2307,7 +2306,7 @@ class Project4Mobile extends StatelessWidget {
             return ImageView.showImageDialog(
                 context: context,
                 imgPath:
-                    "https://tratum.github.io/cloud-asset-storage/images/project4.jpeg");
+                    "https://tratum.github.io/cloud-asset-storage/images/project4.webp");
           },
           child: Container(
             height: 150,
@@ -2316,7 +2315,7 @@ class Project4Mobile extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               image: const DecorationImage(
                 image: NetworkImage(
-                    "https://tratum.github.io/cloud-asset-storage/images/project4.jpeg"),
+                    "https://tratum.github.io/cloud-asset-storage/images/project4.webp"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -2349,11 +2348,10 @@ class Project4Mobile extends StatelessWidget {
             ElevatedButton(
               style: ButtonStyle(
                   backgroundColor:
-                  MaterialStateProperty.all(const Color(0XFF000000))),
+                      MaterialStateProperty.all(const Color(0XFF000000))),
               onPressed: () async {
                 return WebNavigator.openUrl(
-                    url:
-                    "https://github.com/tratum/weather_prediction");
+                    url: "https://github.com/tratum/weather_prediction");
               },
               child: const Center(
                 child: Padding(
@@ -2635,7 +2633,6 @@ class ContactSectionMobile extends StatelessWidget {
               fontWeight: FontWeight.w900,
               color: Color(0XFF121212),
               overflow: TextOverflow.visible,
-
             ),
           ),
         ),
@@ -2670,8 +2667,7 @@ class ContactSectionMobile extends StatelessWidget {
         verticalSpaceLarge,
         ElevatedButton(
           style: ButtonStyle(
-            backgroundColor:
-            MaterialStateProperty.all(const Color(0XFF000000)),
+            backgroundColor: MaterialStateProperty.all(const Color(0XFF000000)),
           ),
           onPressed: () {
             WebNavigator.launchEmail("tratum.connect@gmail.com");
@@ -2706,8 +2702,7 @@ class ContactSectionMobile extends StatelessWidget {
         verticalSpaceLarge,
         ElevatedButton(
           style: ButtonStyle(
-            backgroundColor:
-            MaterialStateProperty.all(const Color(0XFF000000)),
+            backgroundColor: MaterialStateProperty.all(const Color(0XFF000000)),
           ),
           onPressed: () async {
             return WebNavigator.openUrl(

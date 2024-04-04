@@ -19,6 +19,7 @@
     <meta charset="UTF-8">
     <meta content="IE=Edge" http-equiv="X-UA-Compatible">
     <meta name="author" content="tratum(Saksham Rawat)">
+    <meta flt-viewport="" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=6.0">
     <meta content="This portfolio website is not just a digital footprint but a testament to the artistry and innovation that defines tratum.dev's i.e. my coding prowess." name="description">
 
     <meta property="og:title" content="Tratum.dev">
@@ -41,6 +42,7 @@
 
     <title>tratum.dev</title>
     <link href="manifest.json" rel="manifest">
+    <link rel="preload" href="main.dart.js" as="script">
 
     <script>
     // The value below is injected by flutter build, do not touch.
@@ -49,6 +51,10 @@
     </script>
     <!-- This script adds the flutter initialization JS code -->
     <script defer src="flutter.js"></script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.js';
+    </script>
 </head>
 <body>
 <div class="main-content" id="loader-content">
@@ -150,13 +156,12 @@
       border-radius: 50%;
     }
 </style>
-<script>
+<script defer>
       function delay(time) {
       return new Promise(resolve => setTimeout(resolve, time));
     }
     window.addEventListener('load', function(ev) {
-    var loaderContent = document.querySelector('#loader-content');
-      // Download main.dart.js
+    var loaderContent = document.getElementById('loader-content');
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,

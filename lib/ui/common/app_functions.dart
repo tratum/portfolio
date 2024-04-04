@@ -114,14 +114,15 @@ class PdfViewer {
 
   static void registerPdfIframeViewMobile(double height, double width) {
     platformViewRegistry.registerViewFactory(
-      'pdf-iframe-view-mobile',
-      (int viewId) => IFrameElement()
-        ..width = width.toString()
-        ..height = height.toString()
-        ..style.width = '100%'
-        ..style.height = '100%'
-        ..name = 'Resume'
-        ..src = 'https://mozilla.github.io/pdf.js/web/viewer.html?file=https://tratum.github.io/cloud-asset-storage/pdf/Resume.pdf'
-    );
+        'pdf-iframe-view-mobile',
+        (int viewId) => IFrameElement()
+          ..title = "Resume"
+          ..width = width.toString()
+          ..height = height.toString()
+          ..style.width = '100%'
+          ..style.height = '100%'
+          ..name = 'Resume'
+          ..src =
+              'https://mozilla.github.io/pdf.js/web/viewer.html?file=https://tratum.github.io/cloud-asset-storage/pdf/Resume.pdf');
   }
 }
