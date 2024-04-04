@@ -102,6 +102,7 @@ class PdfViewer {
     platformViewRegistry.registerViewFactory(
       'pdf-iframe-view',
       (int viewId) => IFrameElement()
+        ..title = "Resume"
         ..width = width.toString()
         ..height = height.toString()
         ..style.width = '100%'

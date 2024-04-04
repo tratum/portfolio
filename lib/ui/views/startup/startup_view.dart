@@ -29,7 +29,7 @@ class StartupView extends StackedView<StartupViewModel> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.network(
-              'https://tratum.github.io/cloud-asset-storage/images/portfolio_github_preview.png',
+              'https://tratum.github.io/cloud-asset-storage/images/portfolio_github_preview.webp',
               color: const Color(0XFF000000),
               width: MediaQuery.of(context).size.height / 4,
               height: MediaQuery.of(context).size.height / 4,

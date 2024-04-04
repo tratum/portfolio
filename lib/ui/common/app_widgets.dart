@@ -105,7 +105,7 @@ class HomeSection extends StatelessWidget {
               horizontalSpaceSmall,
               GestureDetector(
                   child: Image.network(
-                    "https://tratum.github.io/cloud-asset-storage/images/pin.png",
+                    "https://tratum.github.io/cloud-asset-storage/images/pin.webp",
                     cacheWidth: 28,
                     cacheHeight: 28,
                     height: 25,
@@ -204,7 +204,7 @@ class HomeSection extends StatelessWidget {
                 left: 65,
                 child: ScaleImgAnimation(
                   imgPath:
-                      "https://tratum.github.io/cloud-asset-storage/images/profile_photo-circular.png",
+                      "https://tratum.github.io/cloud-asset-storage/images/profile_photo-circular.webp",
                   height: 310,
                   width: 300,
                 ),
@@ -305,7 +305,7 @@ class HomeSectionMobile extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 8.0, top: 8.0),
                     child: GestureDetector(
                         child: Image.network(
-                          "https://tratum.github.io/cloud-asset-storage/images/pin.png",
+                          "https://tratum.github.io/cloud-asset-storage/images/pin.webp",
                           cacheWidth: 28,
                           cacheHeight: 28,
                           height: 25,
@@ -405,7 +405,7 @@ class HomeSectionMobile extends StatelessWidget {
               left: leftStackImageValue,
               child: ScaleImgAnimation(
                 imgPath:
-                    "https://tratum.github.io/cloud-asset-storage/images/profile_photo-circular.png",
+                    "https://tratum.github.io/cloud-asset-storage/images/profile_photo-circular.webp",
                 height: imgHeight,
                 width: imgWidth,
               ),
@@ -500,7 +500,7 @@ class TechStackSection extends StatelessWidget {
             ),
             child: Center(
               child: Image.network(
-                "https://tratum.github.io/cloud-asset-storage/images/python.png",
+                "https://tratum.github.io/cloud-asset-storage/images/python.webp",
                 cacheWidth: 34,
                 cacheHeight: 34,
                 height: 34,
@@ -526,7 +526,7 @@ class TechStackSection extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(left: 11),
                 child: Image.network(
-                  "https://tratum.github.io/cloud-asset-storage/images/flutter.png",
+                  "https://tratum.github.io/cloud-asset-storage/images/flutter.webp",
                   cacheWidth: 28,
                   cacheHeight: 28,
                   height: 28,
@@ -550,7 +550,7 @@ class TechStackSection extends StatelessWidget {
             ),
             child: Center(
               child: Image.network(
-                "https://tratum.github.io/cloud-asset-storage/images/java.png",
+                "https://tratum.github.io/cloud-asset-storage/images/java.webp",
                 cacheWidth: 28,
                 cacheHeight: 28,
                 height: 34,
@@ -575,7 +575,7 @@ class TechStackSection extends StatelessWidget {
             ),
             child: Center(
               child: Image.network(
-                "https://tratum.github.io/cloud-asset-storage/images/rasa.png",
+                "https://tratum.github.io/cloud-asset-storage/images/rasa.webp",
                 cacheWidth: 38,
                 cacheHeight: 38,
                 height: 38,
@@ -599,7 +599,7 @@ class TechStackSection extends StatelessWidget {
             ),
             child: Center(
               child: Image.network(
-                "https://tratum.github.io/cloud-asset-storage/images/mongodb.png",
+                "https://tratum.github.io/cloud-asset-storage/images/mongodb.webp",
                 cacheWidth: 28,
                 cacheHeight: 28,
                 height: 34,
@@ -623,7 +623,7 @@ class TechStackSection extends StatelessWidget {
             ),
             child: Center(
               child: Image.network(
-                'https://tratum.github.io/cloud-asset-storage/images/dart.png',
+                'https://tratum.github.io/cloud-asset-storage/images/dart.webp',
                 cacheHeight: 34,
                 cacheWidth: 34,
                 height: 34,
@@ -728,7 +728,7 @@ class TechStackSectionMobile extends StatelessWidget {
                 ),
                 child: Center(
                   child: Image.network(
-                    "https://tratum.github.io/cloud-asset-storage/images/python.png",
+                    "https://tratum.github.io/cloud-asset-storage/images/python.webp",
                     cacheWidth: 34,
                     cacheHeight: 34,
                     height: 34,
@@ -754,7 +754,7 @@ class TechStackSectionMobile extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 11),
                     child: Image.network(
-                      "https://tratum.github.io/cloud-asset-storage/images/flutter.png",
+                      "https://tratum.github.io/cloud-asset-storage/images/flutter.webp",
                       cacheWidth: 28,
                       cacheHeight: 28,
                       height: 28,
@@ -778,7 +778,7 @@ class TechStackSectionMobile extends StatelessWidget {
                 ),
                 child: Center(
                   child: Image.network(
-                    "https://tratum.github.io/cloud-asset-storage/images/java.png",
+                    "https://tratum.github.io/cloud-asset-storage/images/java.webp",
                     cacheWidth: 28,
                     cacheHeight: 28,
                     height: 34,
@@ -803,7 +803,7 @@ class TechStackSectionMobile extends StatelessWidget {
                 ),
                 child: Center(
                   child: Image.network(
-                    "https://tratum.github.io/cloud-asset-storage/images/rasa.png",
+                    "https://tratum.github.io/cloud-asset-storage/images/rasa.webp",
                     cacheWidth: 38,
                     cacheHeight: 38,
                     height: 38,
@@ -831,7 +831,7 @@ class TechStackSectionMobile extends StatelessWidget {
                 ),
                 child: Center(
                   child: Image.network(
-                    "https://tratum.github.io/cloud-asset-storage/images/mongodb.png",
+                    "https://tratum.github.io/cloud-asset-storage/images/mongodb.webp",
                     cacheWidth: 28,
                     cacheHeight: 28,
                     height: 34,
@@ -855,7 +855,7 @@ class TechStackSectionMobile extends StatelessWidget {
                 ),
                 child: Center(
                   child: Image.network(
-                    "https://tratum.github.io/cloud-asset-storage/images/dart.png",
+                    "https://tratum.github.io/cloud-asset-storage/images/dart.webp",
                     cacheHeight: 34,
                     cacheWidth: 34,
                     height: 34,
@@ -904,7 +904,7 @@ class AboutMeSection extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 image: const DecorationImage(
                   image: NetworkImage(
-                      "https://tratum.github.io/cloud-asset-storage/images/deskSetup.png"),
+                      "https://tratum.github.io/cloud-asset-storage/images/deskSetup.webp"),
                   fit: BoxFit.cover,
                 )),
           ),
@@ -1015,7 +1015,7 @@ class AboutMeSectionMobile extends StatelessWidget {
                   return ImageView.showImageDialog(
                       context: context,
                       imgPath:
-                          "https://tratum.github.io/cloud-asset-storage/images/deskSetup.png");
+                          "https://tratum.github.io/cloud-asset-storage/images/deskSetup.webp");
                 },
                 child: Container(
                   height: 150,
@@ -1024,7 +1024,7 @@ class AboutMeSectionMobile extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     image: const DecorationImage(
                       image: NetworkImage(
-                          "https://tratum.github.io/cloud-asset-storage/images/deskSetup.png"),
+                          "https://tratum.github.io/cloud-asset-storage/images/deskSetup.webp"),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -1127,7 +1127,7 @@ class ProjectSection extends StatelessWidget {
             ),
             horizontalSpaceSmall,
             Image.network(
-              "https://tratum.github.io/cloud-asset-storage/images/glowingStar.png",
+              "https://tratum.github.io/cloud-asset-storage/images/glowingStar.webp",
               cacheWidth: 28,
               cacheHeight: 28,
               height: 40,
@@ -1183,7 +1183,7 @@ class ProjectSectionMobile extends StatelessWidget {
                     ),
                     WidgetSpan(
                       child: Image.network(
-                        "https://tratum.github.io/cloud-asset-storage/images/glowingStar.png",
+                        "https://tratum.github.io/cloud-asset-storage/images/glowingStar.webp",
                         cacheWidth: 28,
                         cacheHeight: 28,
                         height: 25,
@@ -1227,7 +1227,7 @@ class Project1 extends StatelessWidget {
             return ImageView.showImageDialog(
                 context: context,
                 imgPath:
-                    "https://tratum.github.io/cloud-asset-storage/images/project1.png");
+                    "https://tratum.github.io/cloud-asset-storage/images/project1.webp");
           },
           child: Container(
             height: imgHeight,
@@ -1244,7 +1244,7 @@ class Project1 extends StatelessWidget {
               ],
               image: const DecorationImage(
                 image: NetworkImage(
-                    "https://tratum.github.io/cloud-asset-storage/images/project1.png"),
+                    "https://tratum.github.io/cloud-asset-storage/images/project1.webp"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -1403,7 +1403,7 @@ class Project1Mobile extends StatelessWidget {
             return ImageView.showImageDialog(
                 context: context,
                 imgPath:
-                    "https://tratum.github.io/cloud-asset-storage/images/project1.png");
+                    "https://tratum.github.io/cloud-asset-storage/images/project1.webp");
           },
           child: Container(
             height: 150,
@@ -1412,7 +1412,7 @@ class Project1Mobile extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               image: const DecorationImage(
                 image: NetworkImage(
-                    "https://tratum.github.io/cloud-asset-storage/images/project1.png"),
+                    "https://tratum.github.io/cloud-asset-storage/images/project1.webp"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -1831,7 +1831,7 @@ class Project3 extends StatelessWidget {
             return ImageView.showImageDialog(
                 context: context,
                 imgPath:
-                "https://tratum.github.io/cloud-asset-storage/images/project3.png");
+                "https://tratum.github.io/cloud-asset-storage/images/project3.webp");
           },
           child: Container(
             height: imgHeight,
@@ -1848,7 +1848,7 @@ class Project3 extends StatelessWidget {
               ],
               image: const DecorationImage(
                 image: NetworkImage(
-                    "https://tratum.github.io/cloud-asset-storage/images/project3.png"),
+                    "https://tratum.github.io/cloud-asset-storage/images/project3.webp"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -2008,7 +2008,7 @@ class Project3Mobile extends StatelessWidget {
             return ImageView.showImageDialog(
                 context: context,
                 imgPath:
-                    "https://tratum.github.io/cloud-asset-storage/images/project3.png");
+                    "https://tratum.github.io/cloud-asset-storage/images/project3.webp");
           },
           child: Container(
             height: 150,
@@ -2017,7 +2017,7 @@ class Project3Mobile extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               image: const DecorationImage(
                 image: NetworkImage(
-                    "https://tratum.github.io/cloud-asset-storage/images/project3.png"),
+                    "https://tratum.github.io/cloud-asset-storage/images/project3.webp"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -2462,7 +2462,7 @@ class ContactSection extends StatelessWidget {
               ),
               horizontalSpaceTiny,
               Image.network(
-                "https://tratum.github.io/cloud-asset-storage/images/pointingDown.png",
+                "https://tratum.github.io/cloud-asset-storage/images/pointingDown.webp",
                 cacheWidth: 28,
                 cacheHeight: 28,
                 height: imgHeight,
@@ -2658,7 +2658,7 @@ class ContactSectionMobile extends StatelessWidget {
               ),
               horizontalSpaceTiny,
               Image.network(
-                "https://tratum.github.io/cloud-asset-storage/images/pointingDown.png",
+                "https://tratum.github.io/cloud-asset-storage/images/pointingDown.webp",
                 cacheWidth: 28,
                 cacheHeight: 28,
                 height: 30,

@@ -9,11 +9,11 @@ import 'app/app.locator.dart';
 import 'app/app.router.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
   setPathUrlStrategy();
   await setupLocator(stackedRouter: stackedRouter);
   setupDialogUi();
   setupBottomSheetUi();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MainApp());
 }
 
