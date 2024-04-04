@@ -121,8 +121,7 @@ class PdfViewer {
         ..style.width = '100%'
         ..style.height = '100%'
         ..name = 'Resume'
-        ..src =
-            'https://docs.google.com/gview?url=https://tratum.github.io/cloud-asset-storage/pdf/Resume.pdf&embedded=true',
+        ..src = 'https://mozilla.github.io/pdf.js/web/viewer.html?file=https://tratum.github.io/cloud-asset-storage/pdf/Resume.pdf'
     );
   }
 }
