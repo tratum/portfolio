@@ -85314,7 +85314,7 @@ s.width="100%"
 s=r.style
 s.height="100%"
 r.name="Resume"
-r.src="https://docs.google.com/gview?url=https://tratum.github.io/cloud-asset-storage/pdf/Resume.pdf&embedded=true"
+r.src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://tratum.github.io/cloud-asset-storage/pdf/Resume.pdf"
 return r},
 $S:184}
 A.po.prototype={
