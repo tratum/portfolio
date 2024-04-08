@@ -1,6 +1,7 @@
 {
   "name": "tratum.dev",
   "short_name": "tratum.dev",
+  "id": "/portfolio/",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#0175C2",
