@@ -50,6 +50,7 @@ Widget spaceDivider = const Column(
 );
 
 Widget horizontalSpace(double width) => SizedBox(width: width);
+
 Widget verticalSpace(double height) => SizedBox(height: height);
 
 double getScreenWidth(BuildContext context) =>

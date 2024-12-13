@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import 'app/app.functions.dart';
 import 'routes/route.404/404.layout.dart';
-import 'routes/route.home/home.layout.dart';
+import 'routes/route.home/home.view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
