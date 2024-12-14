@@ -627,7 +627,7 @@ class _MobileHomeLayoutState extends State<MobileHomeLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0XFFFFFFFF),
+      backgroundColor: Color(0XFFfafafa),
       appBar: AppBar(
         surfaceTintColor: const Color(0XFFFFFFFF),
         backgroundColor: const Color(0XFFFFFFFF),
@@ -1016,7 +1016,146 @@ class _TabletHomeLayoutState extends State<TabletHomeLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Placeholder(),
+      backgroundColor: Color(0XFFfafafa),
+      body: SafeArea(
+        child: Stack(
+          children: [
+            ResponsiveWebLayout.buildTabletLayout(
+              context: context,
+              highResTabletLayout: SingleChildScrollView(
+                controller: _sController,
+                child: Column(),
+              ),
+              standardTabletLayout: SingleChildScrollView(
+                controller: _sController,
+                child: Column(),
+              ),
+            ),
+            Positioned(
+              top: 0,
+              left: 110,
+              right: 40,
+              child: Container(
+                color: const Color(0XFFfafafa),
+                padding: const EdgeInsets.fromLTRB(22, 22, 22, 22),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    const SelectableText(
+                      'tratum.dev',
+                      style: TextStyle(
+                          fontFamily: 'Yatra',
+                          fontSize: 38,
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: 1,
+                          color: Color(0XFF353839)),
+                    ),
+                    const Spacer(),
+                    GestureDetector(
+                      child: const ScaleOnHover(
+                        scale: 12,
+                        child: Text(
+                          'Home',
+                          style: TextStyle(
+                            fontFamily: 'Afacad',
+                            fontSize: 28,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 1.5,
+                          ),
+                        ),
+                      ),
+                      onTap: () {
+                        ContentScrolling.autoScroll(
+                            scrollPosition: 0, conn: _sController);
+                      },
+                    ),
+                    horizontalSpaceMediumPlus,
+                    GestureDetector(
+                      child: const ScaleOnHover(
+                        scale: 12,
+                        child: Text(
+                          'About',
+                          style: TextStyle(
+                            fontFamily: 'Afacad',
+                            fontSize: 28,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 1.5,
+                          ),
+                        ),
+                      ),
+                      onTap: () {
+                        ContentScrolling.autoScroll(
+                            scrollPosition: 710, conn: _sController);
+                      },
+                    ),
+                    horizontalSpaceMediumPlus,
+                    GestureDetector(
+                      child: const ScaleOnHover(
+                        scale: 12,
+                        child: Text(
+                          'Projects',
+                          style: TextStyle(
+                            fontFamily: 'Afacad',
+                            fontSize: 28,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 1.5,
+                          ),
+                        ),
+                      ),
+                      onTap: () {
+                        ContentScrolling.autoScroll(
+                            scrollPosition: 1500, conn: _sController);
+                      },
+                    ),
+                    horizontalSpaceMediumPlus,
+                    GestureDetector(
+                      child: const ScaleOnHover(
+                        scale: 12,
+                        child: Text(
+                          'Resume',
+                          style: TextStyle(
+                            fontFamily: 'Afacad',
+                            fontSize: 28,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 1.5,
+                          ),
+                        ),
+                      ),
+                      onTap: () {
+                        ContentScrolling.autoScroll(
+                          scrollPosition: 5000,
+                          conn: _sController,
+                        );
+                      },
+                    ),
+                    horizontalSpaceMediumPlus,
+                    GestureDetector(
+                      child: const ScaleOnHover(
+                        scale: 12,
+                        child: Text(
+                          'Contact',
+                          style: TextStyle(
+                            fontFamily: 'Afacad',
+                            fontSize: 28,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 1.5,
+                          ),
+                        ),
+                      ),
+                      onTap: () {
+                        ContentScrolling.autoScroll(
+                          scrollPosition: _sController.position.maxScrollExtent,
+                          conn: _sController,
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         elevation: 20,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
