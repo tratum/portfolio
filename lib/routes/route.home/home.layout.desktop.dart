@@ -88,44 +88,53 @@ class DesktopHomeSection extends StatelessWidget {
               Row(
                 children: [
                   totalLeftSpacing,
-                  SelectableText(
-                    "Hi, I'm Saksham Rawat. A passionate Full-Stack",
-                    style: TextStyle(
-                      fontFamily: 'Afacad',
-                      fontSize: subTextFontSize,
-                      fontWeight: FontWeight.w500,
-                      color: const Color(0XFF6A8292),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width/2,
+                    child: Wrap(
+                      runSpacing: 4.0, // Optional spacing between lines
+                      children: [
+                        totalLeftSpacing,
+                        RichText(
+                          text: TextSpan(
+                            style: TextStyle(
+                              fontFamily: 'Afacad',
+                              fontSize: subTextFontSize,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0XFF6A8292),
+                            ),
+                            children: [
+                              const TextSpan(
+                                text:
+                                    "Hi, I'm Saksham Rawat. A passionate Full-Stack Developer based in Jaipur, India",
+                              ),
+                              WidgetSpan(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 8.0),
+                                  child: GestureDetector(
+                                    child: Image.network(
+                                      "https://tratum.github.io/cloud-asset-storage/images/pin.webp",
+                                      cacheWidth: 28,
+                                      cacheHeight: 28,
+                                      height: 38,
+                                      width: 38,
+                                    ),
+                                    onTap: () async {
+                                      return WebNavigator.openUrl(
+                                        url:
+                                            'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
               ),
-              Row(children: [
-                totalLeftSpacing,
-                SelectableText(
-                  "Developer based in Jaipur, India",
-                  style: TextStyle(
-                    fontFamily: 'Afacad',
-                    fontSize: subTextFontSize,
-                    fontWeight: FontWeight.w500,
-                    color: const Color(0XFF6A8292),
-                  ),
-                ),
-                horizontalSpaceSmall,
-                GestureDetector(
-                    child: Image.network(
-                      "https://tratum.github.io/cloud-asset-storage/images/pin.webp",
-                      cacheWidth: 28,
-                      cacheHeight: 28,
-                      height: 25,
-                      width: 25,
-                    ),
-                    onTap: () async {
-                      return WebNavigator.openUrl(
-                        url: 'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
-                      );
-                      // return _urlRedirect(url);
-                    })
-              ]),
               verticalSpaceMedium,
               Row(
                 children: [

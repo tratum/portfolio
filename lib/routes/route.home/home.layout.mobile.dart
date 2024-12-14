@@ -200,24 +200,13 @@ class MobileTechStackSection extends StatelessWidget {
     return Column(
       children: [
         verticalSpaceMedium,
-        Row(
-          children: [
-            const SelectableText("Tech Stack",
-                style: TextStyle(
-                  fontFamily: 'Afacad',
-                  fontSize: 26,
-                  fontWeight: FontWeight.w700,
-                  color: Color(0XFF1B1B1B),
-                )),
-            // totalLeftSpacing,
-            // Container(
-            //   height: 26,
-            //   width: 3,
-            //   color: const Color(0XFF1B1B1B),
-            // ),
-            // totalLeftSpacing,
-          ],
-        ),
+        const SelectableText("Tech Stack",
+            style: TextStyle(
+              fontFamily: 'Afacad',
+              fontSize: 26,
+              fontWeight: FontWeight.w700,
+              color: Color(0XFF1B1B1B),
+            )),
         verticalSpaceMedium,
         Wrap(
           spacing: 22.5,

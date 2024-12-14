@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_web_layout/responsive_web_layout.dart';
-
+import '../../routes/route.home/home.layout.tablet.dart';
 import '../../app/app.constants.dart';
 import '../../app/app.functions.dart';
 import '../../app/app.hover.extensions.dart';
@@ -132,7 +132,10 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     DesktopHomeSection(
-                      subTextFontSize: 36,
+                      subTextFontSize: 42,
+                      profileWidth: 680,
+                      profileHeight: 700,
+                      totalRightSpacing: horizontalSpace(180),
                     ),
                     const SizedBox(
                       height: 90,
@@ -230,10 +233,10 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                   children: [
                     DesktopHomeSection(
                       totalLeftSpacing: horizontalSpaceExtraLarge,
-                      totalRightSpacing: SizedBox(
-                        width: 50,
-                      ),
-                      subTextPadding: 100,
+                      subTextFontSize: 42,
+                      profileWidth: 680,
+                      profileHeight: 730,
+                      totalRightSpacing: horizontalSpaceExtraLarge,
                     ),
                     const SizedBox(
                       height: 40,
@@ -1017,143 +1020,171 @@ class _TabletHomeLayoutState extends State<TabletHomeLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0XFFfafafa),
-      body: SafeArea(
-        child: Stack(
+      appBar: AppBar(
+        surfaceTintColor: const Color(0XFFFFFFFF),
+        backgroundColor: const Color(0XFFFFFFFF),
+        title: Row(
           children: [
-            ResponsiveWebLayout.buildTabletLayout(
-              context: context,
-              highResTabletLayout: SingleChildScrollView(
-                controller: _sController,
-                child: Column(),
-              ),
-              standardTabletLayout: SingleChildScrollView(
-                controller: _sController,
-                child: Column(),
-              ),
-            ),
-            Positioned(
-              top: 0,
-              left: 110,
-              right: 40,
-              child: Container(
-                color: const Color(0XFFfafafa),
-                padding: const EdgeInsets.fromLTRB(22, 22, 22, 22),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    const SelectableText(
-                      'tratum.dev',
-                      style: TextStyle(
-                          fontFamily: 'Yatra',
-                          fontSize: 38,
-                          fontWeight: FontWeight.w600,
-                          letterSpacing: 1,
-                          color: Color(0XFF353839)),
-                    ),
-                    const Spacer(),
-                    GestureDetector(
-                      child: const ScaleOnHover(
-                        scale: 12,
-                        child: Text(
-                          'Home',
-                          style: TextStyle(
-                            fontFamily: 'Afacad',
-                            fontSize: 28,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 1.5,
-                          ),
-                        ),
-                      ),
-                      onTap: () {
-                        ContentScrolling.autoScroll(
-                            scrollPosition: 0, conn: _sController);
-                      },
-                    ),
-                    horizontalSpaceMediumPlus,
-                    GestureDetector(
-                      child: const ScaleOnHover(
-                        scale: 12,
-                        child: Text(
-                          'About',
-                          style: TextStyle(
-                            fontFamily: 'Afacad',
-                            fontSize: 28,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 1.5,
-                          ),
-                        ),
-                      ),
-                      onTap: () {
-                        ContentScrolling.autoScroll(
-                            scrollPosition: 710, conn: _sController);
-                      },
-                    ),
-                    horizontalSpaceMediumPlus,
-                    GestureDetector(
-                      child: const ScaleOnHover(
-                        scale: 12,
-                        child: Text(
-                          'Projects',
-                          style: TextStyle(
-                            fontFamily: 'Afacad',
-                            fontSize: 28,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 1.5,
-                          ),
-                        ),
-                      ),
-                      onTap: () {
-                        ContentScrolling.autoScroll(
-                            scrollPosition: 1500, conn: _sController);
-                      },
-                    ),
-                    horizontalSpaceMediumPlus,
-                    GestureDetector(
-                      child: const ScaleOnHover(
-                        scale: 12,
-                        child: Text(
-                          'Resume',
-                          style: TextStyle(
-                            fontFamily: 'Afacad',
-                            fontSize: 28,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 1.5,
-                          ),
-                        ),
-                      ),
-                      onTap: () {
-                        ContentScrolling.autoScroll(
-                          scrollPosition: 5000,
-                          conn: _sController,
-                        );
-                      },
-                    ),
-                    horizontalSpaceMediumPlus,
-                    GestureDetector(
-                      child: const ScaleOnHover(
-                        scale: 12,
-                        child: Text(
-                          'Contact',
-                          style: TextStyle(
-                            fontFamily: 'Afacad',
-                            fontSize: 28,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 1.5,
-                          ),
-                        ),
-                      ),
-                      onTap: () {
-                        ContentScrolling.autoScroll(
-                          scrollPosition: _sController.position.maxScrollExtent,
-                          conn: _sController,
-                        );
-                      },
-                    ),
-                  ],
-                ),
+            horizontalSpace(70),
+            const SelectableText(
+              'tratum.dev',
+              style: TextStyle(
+                fontFamily: 'Yatra',
+                fontSize: 38,
+                fontWeight: FontWeight.w600,
+                letterSpacing: 1,
+                color: Color(0XFF353839),
               ),
             ),
           ],
+        ),
+        // shadowColor: const Color(0XFFfafafa),
+        iconTheme: const IconThemeData(
+          color: Color(0XFF353839),
+        ),
+      ),
+      endDrawer: Drawer(
+        backgroundColor: const Color(0XFFFFFFFF),
+        surfaceTintColor: const Color(0XFFFFFFFF),
+        width: 240,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 28, top: 28),
+          child: ListView(
+            children: [
+              verticalSpaceLarge,
+              ListTile(
+                title: const ScaleOnHover(
+                  scale: 12,
+                  child: Text(
+                    'Home',
+                    style: TextStyle(
+                      fontFamily: 'Afacad',
+                      fontSize: 28,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  ContentScrolling.autoScroll(
+                      scrollPosition: 0, conn: _sController);
+                },
+              ),
+              verticalSpaceMediumPlus,
+              ListTile(
+                title: const ScaleOnHover(
+                  scale: 12,
+                  child: Text(
+                    'About',
+                    style: TextStyle(
+                      fontFamily: 'Afacad',
+                      fontSize: 28,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  ContentScrolling.autoScroll(
+                      scrollPosition: 1050, conn: _sController);
+                },
+              ),
+              verticalSpaceMediumPlus,
+              ListTile(
+                title: const ScaleOnHover(
+                  scale: 12,
+                  child: Text(
+                    'Projects',
+                    style: TextStyle(
+                      fontFamily: 'Afacad',
+                      fontSize: 28,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  ContentScrolling.autoScroll(
+                      scrollPosition: 1780, conn: _sController);
+                },
+              ),
+              verticalSpaceMediumPlus,
+              ListTile(
+                title: const ScaleOnHover(
+                  scale: 12,
+                  child: Text(
+                    'Resume',
+                    style: TextStyle(
+                      fontFamily: 'Afacad',
+                      fontSize: 28,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  ContentScrolling.autoScroll(
+                    scrollPosition: 4750,
+                    conn: _sController,
+                  );
+                },
+              ),
+              verticalSpaceMediumPlus,
+              ListTile(
+                title: const ScaleOnHover(
+                  scale: 12,
+                  child: Text(
+                    'Contact',
+                    style: TextStyle(
+                      fontFamily: 'Afacad',
+                      fontSize: 28,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  ContentScrolling.autoScroll(
+                    scrollPosition: _sController.position.maxScrollExtent,
+                    conn: _sController,
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+      body: SafeArea(
+        child: ResponsiveWebLayout.buildTabletLayout(
+          context: context,
+          highResTabletLayout: SingleChildScrollView(
+            controller: _sController,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [],
+            ),
+          ),
+          standardTabletLayout: SingleChildScrollView(
+            controller: _sController,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TabletHomeSection(
+                  totalLeftSpacing: horizontalSpaceLarge,
+                  headerFontSize: 42,
+                  subTextFontSize: 24,
+                  profileHeight: 320,
+                  profileWidth: 285,
+                  totalRightSpacing: horizontalSpaceLarge,
+                ),
+                verticalSpaceLarge,
+                TabletTechStackSection(
+                  headingFontSize: 34,
+                  totalLeftSpacing: horizontalSpaceLarge,
+                ),
+              ],
+            ),
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
