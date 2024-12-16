@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio/app/app.widgets.dart';
-import '../../app/app.hover.extensions.dart';
+
 import '../../app/app.constants.dart';
 import '../../app/app.functions.dart';
+import '../../app/app.hover.extensions.dart';
+import '../../app/app.widgets.dart';
 
 class TabletHomeSection extends StatelessWidget {
   final Widget totalLeftSpacing;
@@ -87,7 +88,7 @@ class TabletHomeSection extends StatelessWidget {
                 children: [
                   totalLeftSpacing,
                   SizedBox(
-                    width: MediaQuery.of(context).size.width/2,
+                    width: MediaQuery.of(context).size.width / 2,
                     child: Wrap(
                       runSpacing: 4.0, // Optional spacing between lines
                       children: [
@@ -103,7 +104,7 @@ class TabletHomeSection extends StatelessWidget {
                             children: [
                               const TextSpan(
                                 text:
-                                "Hi, I'm Saksham Rawat. A passionate Full-Stack Developer based in Jaipur, India",
+                                    "Hi, I'm Saksham Rawat. A passionate Full-Stack Developer based in Jaipur, India",
                               ),
                               WidgetSpan(
                                 child: Padding(
@@ -119,7 +120,7 @@ class TabletHomeSection extends StatelessWidget {
                                     onTap: () async {
                                       return WebNavigator.openUrl(
                                         url:
-                                        'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
+                                            'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
                                       );
                                     },
                                   ),
@@ -233,35 +234,65 @@ class TabletTechStackSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Row(
-          children: [
-            totalLeftSpacing,
-            SelectableText("Tech Stack",
-                style: TextStyle(
-                  fontFamily: 'Afacad',
-                  fontSize: headingFontSize,
-                  fontWeight: FontWeight.w700,
-                  color: const Color(0XFF1B1B1B),
-                )),
-          ],
+        totalLeftSpacing,
+        SelectableText(
+          "Tech Stack",
+          style: TextStyle(
+            fontFamily: 'Afacad',
+            fontSize: headingFontSize,
+            fontWeight: FontWeight.w900,
+            color: const Color(0XFF1B1B1B),
+          ),
         ),
-        verticalSpaceMediumPlus,
-        Row(
-          children: [
-            totalLeftSpacing,
-            Flexible(
-              child: Wrap(
-                spacing: 20,
-                runSpacing: 18,
-                alignment: WrapAlignment.start,
-                children: devTechStack.map((item) => techStackBuilder(item)).toList(),
-              ),
+        horizontalSpaceMedium,
+        Container(
+          height: 26,
+          width: 3,
+          color: const Color(0XFF1B1B1B),
+        ),
+        horizontalSpaceMedium,
+        Expanded(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children:
+              devTechStack.map((item) => techStackBuilder(item)).toList(),
             ),
-        ]
+          ),
         ),
       ],
     );
+    //   Column(
+    //   children: [
+    //     Row(
+    //       children: [
+    //         totalLeftSpacing,
+    //         SelectableText("Tech Stack",
+    //             style: TextStyle(
+    //               fontFamily: 'Afacad',
+    //               fontSize: headingFontSize,
+    //               fontWeight: FontWeight.w700,
+    //               color: const Color(0XFF1B1B1B),
+    //             )),
+    //       ],
+    //     ),
+    //     verticalSpaceMediumPlus,
+    //     Row(children: [
+    //       totalLeftSpacing,
+    //       Flexible(
+    //         child: Wrap(
+    //           spacing: 20,
+    //           runSpacing: 18,
+    //           alignment: WrapAlignment.start,
+    //           children:
+    //               devTechStack.map((item) => techStackBuilder(item)).toList(),
+    //         ),
+    //       ),
+    //     ]),
+    //   ],
+    // );
   }
 }
