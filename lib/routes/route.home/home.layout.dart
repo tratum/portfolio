@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_web_layout/responsive_web_layout.dart';
@@ -18,44 +20,34 @@ class DesktopHomeLayout extends StatefulWidget {
 
 class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
   final ScrollController _sController = ScrollController();
-  bool _scroller = false;
+  final GlobalKey _homeSectionKey = GlobalKey();
+  final GlobalKey _techStackSectionKey = GlobalKey();
+  final GlobalKey _aboutMeSectionKey = GlobalKey();
+  final GlobalKey _projectSectionKey = GlobalKey();
+  final GlobalKey _resumeSectionKey = GlobalKey();
+  final GlobalKey _contactSectionKey = GlobalKey();
+  final GlobalKey _footerSectionKey = GlobalKey();
 
-  void _sListener() {
+  bool _scroller = true;
+
+  bool _isFooterVisible() {
+    final position = _sController.position.pixels;
     final maxScroll = _sController.position.maxScrollExtent;
-    final currentScroll = _sController.offset;
+    return position >= (maxScroll - 50);
+  }
 
-    setState(() {
-      _scroller = currentScroll >= maxScroll;
+  void _autoScroll(GlobalKey key) {
+    Future.delayed(Duration(milliseconds: 100), () {
+      if (key.currentContext != null) {
+        Scrollable.ensureVisible(
+          key.currentContext!,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeInOut,
+        );
+      } else {
+        log("The widget with the key $key is not available yet.");
+      }
     });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _sController.addListener(_sListener);
-  }
-
-  @override
-  void dispose() {
-    _sController.removeListener(_sListener);
-    _sController.dispose();
-    super.dispose();
-  }
-
-  void _autoScroll() {
-    if (_scroller) {
-      _sController.animateTo(
-        _sController.position.minScrollExtent,
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.easeOut,
-      );
-    } else {
-      _sController.animateTo(
-        _sController.position.maxScrollExtent,
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.easeOut,
-      );
-    }
   }
 
   @override
@@ -70,9 +62,11 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
               child: ResponsiveWebLayout.buildDesktopLayout(
                 context: context,
                 quadHDLayout: ListView(
+                  cacheExtent: double.infinity,
                   controller: _sController,
                   children: [
                     DesktopHomeSection(
+                      key: _homeSectionKey,
                       headerFontSize: 86,
                       subTextFontSize: 48,
                       iconSize: 56,
@@ -80,39 +74,57 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                       profileHeight: 840,
                     ),
                     DesktopTechStackSection(
+                      key: _techStackSectionKey,
                       sectionSpace: 90,
                     ),
                     DesktopAboutMeSection(
+                      key: _aboutMeSectionKey,
                       sectionSpace: 200,
                     ),
                     DesktopProjectSection(
+                      key: _projectSectionKey,
                       sectionSpace: 200,
                       textToProjectSpacing: verticalSpace(90),
                     ),
+                    DesktopResume(
+                      key: _resumeSectionKey,
+                      sectionSpace: 320,
+                      totalLeftSpacing: horizontalSpaceExtraLarge,
+                      pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
+                      headingFontSize: 42,
+                    ),
                     DesktopContactSection(
+                      key: _contactSectionKey,
                       sectionSpace: 200,
                     ),
-                    DesktopFooterSection(),
+                    DesktopFooterSection(
+                      key: _footerSectionKey,
+                    ),
                   ],
                 ),
                 fullHDLayout: ListView(
+                  cacheExtent: double.infinity,
                   controller: _sController,
                   children: [
                     DesktopHomeSection(
+                      key: _homeSectionKey,
                       subTextFontSize: 42,
                       profileWidth: 680,
                       profileHeight: 700,
                     ),
                     DesktopTechStackSection(
+                      key: _techStackSectionKey,
                       sectionSpace: 90,
                       headingFontSize: 42,
                     ),
                     DesktopAboutMeSection(
+                      key: _aboutMeSectionKey,
                       sectionSpace: 200,
                       headingFontSize: 42,
                       subTextFontSize: 36,
                     ),
                     DesktopProjectSection(
+                      key: _projectSectionKey,
                       sectionSpace: 200,
                       imgWidth: 800,
                       imgHeight: 500,
@@ -124,24 +136,30 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                       textToProjectSpacing: verticalSpace(90),
                     ),
                     DesktopResume(
+                      key: _resumeSectionKey,
                       sectionSpace: 320,
                       totalLeftSpacing: horizontalSpaceExtraLarge,
                       pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
                       headingFontSize: 42,
                     ),
                     DesktopContactSection(
+                      key: _contactSectionKey,
                       sectionSpace: 250,
                       headingFontSize: 42,
                       imgHeight: 42,
                       imgWidth: 42,
                     ),
-                    const DesktopFooterSection(),
+                    DesktopFooterSection(
+                      key: _footerSectionKey,
+                    ),
                   ],
                 ),
                 hdLayout: ListView(
+                  cacheExtent: double.infinity,
                   controller: _sController,
                   children: [
                     DesktopHomeSection(
+                      key: _homeSectionKey,
                       totalLeftSpacing: horizontalSpaceExtraLarge,
                       iconSize: 46,
                       subTextFontSize: 38,
@@ -149,10 +167,12 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                       profileHeight: 730,
                     ),
                     DesktopTechStackSection(
+                      key: _techStackSectionKey,
                       sectionSpace: 40,
                       headingFontSize: 42,
                     ),
                     DesktopAboutMeSection(
+                      key: _aboutMeSectionKey,
                       sectionSpace: 200,
                       headingFontSize: 42,
                       totalLeftSpacing: horizontalSpaceExtraLarge,
@@ -161,6 +181,7 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                       subTextFontSize: 28,
                     ),
                     DesktopProjectSection(
+                      key: _projectSectionKey,
                       sectionSpace: 200,
                       totalLeftSpacing: horizontalSpaceExtraLarge,
                       headingFontSize: 42,
@@ -172,23 +193,29 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                       textToProjectSpacing: verticalSpace(90),
                     ),
                     DesktopResume(
+                      key: _resumeSectionKey,
                       headingFontSize: 42,
                       sectionSpace: 200,
                       totalLeftSpacing: horizontalSpaceExtraLarge,
                       pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
                     ),
                     DesktopContactSection(
+                      key: _contactSectionKey,
                       sectionSpace: 250,
                       headingFontSize: 42,
                       subHeadingFontSize: 38,
                     ),
-                    const DesktopFooterSection(),
+                    DesktopFooterSection(
+                      key: _footerSectionKey,
+                    ),
                   ],
                 ),
                 sdLayout: ListView(
+                  cacheExtent: double.infinity,
                   controller: _sController,
                   children: [
                     DesktopHomeSection(
+                      key: _homeSectionKey,
                       totalLeftSpacing: horizontalSpaceLarge,
                       profileWidth: 400,
                       profileHeight: 420,
@@ -197,16 +224,19 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                       subTextFontSize: 26,
                     ),
                     DesktopTechStackSection(
+                      key: _techStackSectionKey,
                       totalLeftSpacing: horizontalSpaceLarge,
                       sectionSpace: 90,
                     ),
                     DesktopAboutMeSection(
+                      key: _aboutMeSectionKey,
                       totalLeftSpacing: horizontalSpaceLarge,
                       sectionSpace: 200,
                       imgHeight: 520,
                       imgWidth: 400,
                     ),
                     DesktopProjectSection(
+                      key: _projectSectionKey,
                       sectionSpace: 200,
                       totalLeftSpacing: horizontalSpaceLarge,
                       textToProjectSpacing: verticalSpace(90),
@@ -217,14 +247,18 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                       projectSpacing: verticalSpaceMassive,
                     ),
                     DesktopResume(
+                      key: _resumeSectionKey,
                       sectionSpace: 200,
                       totalLeftSpacing: horizontalSpaceExtraLarge,
                       pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
                     ),
                     DesktopContactSection(
+                      key: _contactSectionKey,
                       sectionSpace: 250,
                     ),
-                    const DesktopFooterSection(),
+                    DesktopFooterSection(
+                      key: _footerSectionKey,
+                    ),
                   ],
                 ),
               ),
@@ -262,10 +296,7 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                           ),
                         ),
                       ),
-                      onTap: () {
-                        ContentScrolling.autoScroll(
-                            scrollPosition: 0, conn: _sController);
-                      },
+                      onTap: () => _autoScroll(_homeSectionKey),
                     ),
                     horizontalSpaceMediumPlus,
                     GestureDetector(
@@ -281,10 +312,7 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                           ),
                         ),
                       ),
-                      onTap: () {
-                        ContentScrolling.autoScroll(
-                            scrollPosition: 710, conn: _sController);
-                      },
+                      onTap: () => _autoScroll(_aboutMeSectionKey),
                     ),
                     horizontalSpaceMediumPlus,
                     GestureDetector(
@@ -300,10 +328,7 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                           ),
                         ),
                       ),
-                      onTap: () {
-                        ContentScrolling.autoScroll(
-                            scrollPosition: 1500, conn: _sController);
-                      },
+                      onTap: () => _autoScroll(_projectSectionKey),
                     ),
                     horizontalSpaceMediumPlus,
                     GestureDetector(
@@ -319,12 +344,7 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                           ),
                         ),
                       ),
-                      onTap: () {
-                        ContentScrolling.autoScroll(
-                          scrollPosition: 5000,
-                          conn: _sController,
-                        );
-                      },
+                      onTap: () => _autoScroll(_resumeSectionKey),
                     ),
                     horizontalSpaceMediumPlus,
                     GestureDetector(
@@ -340,12 +360,7 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                           ),
                         ),
                       ),
-                      onTap: () {
-                        ContentScrolling.autoScroll(
-                          scrollPosition: _sController.position.maxScrollExtent,
-                          conn: _sController,
-                        );
-                      },
+                      onTap: () => _autoScroll(_contactSectionKey),
                     ),
                   ],
                 ),
@@ -358,14 +373,26 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
         elevation: 20,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
         backgroundColor: const Color(0XFF121212),
-        onPressed: _autoScroll,
+        onPressed: () {
+          if (_isFooterVisible()) {
+            _autoScroll(_homeSectionKey);
+            setState(() {
+              _scroller = false;
+            });
+          } else {
+            _autoScroll(_footerSectionKey);
+            setState(() {
+              _scroller = true;
+            });
+          }
+        },
         child: Center(
           child: ScaleOnHover(
             scale: 22,
             child: FaIcon(
               _scroller
-                  ? FontAwesomeIcons.chevronUp
-                  : FontAwesomeIcons.chevronDown,
+                  ? FontAwesomeIcons.chevronDown
+                  : FontAwesomeIcons.chevronUp,
               size: 18,
               color: const Color(0XFFfafafa),
             ),
@@ -385,44 +412,34 @@ class MobileHomeLayout extends StatefulWidget {
 
 class _MobileHomeLayoutState extends State<MobileHomeLayout> {
   final ScrollController _sController = ScrollController();
-  bool _scroller = false;
+  final GlobalKey _homeSectionKey = GlobalKey();
+  final GlobalKey _techStackSectionKey = GlobalKey();
+  final GlobalKey _aboutMeSectionKey = GlobalKey();
+  final GlobalKey _projectSectionKey = GlobalKey();
+  final GlobalKey _resumeSectionKey = GlobalKey();
+  final GlobalKey _contactSectionKey = GlobalKey();
+  final GlobalKey _footerSectionKey = GlobalKey();
 
-  void _sListener() {
+  bool _scroller = true;
+
+  bool _isFooterVisible() {
+    final position = _sController.position.pixels;
     final maxScroll = _sController.position.maxScrollExtent;
-    final currentScroll = _sController.offset;
+    return position >= (maxScroll - 50);
+  }
 
-    setState(() {
-      _scroller = currentScroll >= maxScroll;
+  void _autoScroll(GlobalKey key) {
+    Future.delayed(Duration(milliseconds: 100), () {
+      if (key.currentContext != null) {
+        Scrollable.ensureVisible(
+          key.currentContext!,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeInOut,
+        );
+      } else {
+        log("The widget with the key $key is not available yet.");
+      }
     });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _sController.addListener(_sListener);
-  }
-
-  @override
-  void dispose() {
-    _sController.removeListener(_sListener);
-    _sController.dispose();
-    super.dispose();
-  }
-
-  void _autoScroll() {
-    if (_scroller) {
-      _sController.animateTo(
-        _sController.position.minScrollExtent,
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.easeOut,
-      );
-    } else {
-      _sController.animateTo(
-        _sController.position.maxScrollExtent,
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.easeOut,
-      );
-    }
   }
 
   @override
@@ -475,10 +492,7 @@ class _MobileHomeLayoutState extends State<MobileHomeLayout> {
                     ),
                   ),
                 ),
-                onTap: () {
-                  ContentScrolling.autoScroll(
-                      scrollPosition: 0, conn: _sController);
-                },
+                onTap: () => _autoScroll(_homeSectionKey),
               ),
               verticalSpaceMediumPlus,
               ListTile(
@@ -494,10 +508,7 @@ class _MobileHomeLayoutState extends State<MobileHomeLayout> {
                     ),
                   ),
                 ),
-                onTap: () {
-                  ContentScrolling.autoScroll(
-                      scrollPosition: 1050, conn: _sController);
-                },
+                onTap: () => _autoScroll(_aboutMeSectionKey),
               ),
               verticalSpaceMediumPlus,
               ListTile(
@@ -513,10 +524,7 @@ class _MobileHomeLayoutState extends State<MobileHomeLayout> {
                     ),
                   ),
                 ),
-                onTap: () {
-                  ContentScrolling.autoScroll(
-                      scrollPosition: 1780, conn: _sController);
-                },
+                onTap: () => _autoScroll(_projectSectionKey),
               ),
               verticalSpaceMediumPlus,
               ListTile(
@@ -532,12 +540,7 @@ class _MobileHomeLayoutState extends State<MobileHomeLayout> {
                     ),
                   ),
                 ),
-                onTap: () {
-                  ContentScrolling.autoScroll(
-                    scrollPosition: 4750,
-                    conn: _sController,
-                  );
-                },
+                onTap: () => _autoScroll(_resumeSectionKey),
               ),
               verticalSpaceMediumPlus,
               ListTile(
@@ -553,12 +556,7 @@ class _MobileHomeLayoutState extends State<MobileHomeLayout> {
                     ),
                   ),
                 ),
-                onTap: () {
-                  ContentScrolling.autoScroll(
-                    scrollPosition: _sController.position.maxScrollExtent,
-                    conn: _sController,
-                  );
-                },
+                onTap: () => _autoScroll(_contactSectionKey),
               ),
             ],
           ),
@@ -568,120 +566,160 @@ class _MobileHomeLayoutState extends State<MobileHomeLayout> {
         child: ResponsiveWebLayout.buildMobileLayout(
           context: context,
           largeMobileLayout: ListView(
+            cacheExtent: double.infinity,
             controller: _sController,
             children: [
               MobileHomeSection(
+                key: _homeSectionKey,
                 imgWidth: 360,
                 imgHeight: 380,
               ),
-              MobileTechStackSection(),
-              const Padding(
-                padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileAboutMeSection(),
+              verticalSpaceLargePlus,
+              MobileTechStackSection(
+                key: _techStackSectionKey,
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileProjectSection(),
+                child: MobileAboutMeSection(
+                  key: _aboutMeSectionKey,
+                ),
               ),
+              verticalSpaceLargePlus,
+              Padding(
+                padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
+                child: MobileProjectSection(
+                  key: _projectSectionKey,
+                ),
+              ),
+              verticalSpaceLargePlus,
               Padding(
                 padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
                 child: MobileResume(
+                  key: _resumeSectionKey,
                   totalLeftSpacing: horizontalSpaceTiny,
                   pdfViewHeight: 580,
                   pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
                 ),
               ),
               verticalSpaceMassive,
-              const Padding(
+              Padding(
                 padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileContactSection(),
+                child: MobileContactSection(
+                  key: _contactSectionKey,
+                ),
               ),
-              const MobileFooterSection(),
+              MobileFooterSection(
+                key: _footerSectionKey,
+              ),
             ],
           ),
           mediumMobileLayout: ListView(
+            cacheExtent: double.infinity,
             controller: _sController,
             children: [
-              const Padding(
+              Padding(
                 padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                 child: MobileHomeSection(
+                  key: _homeSectionKey,
                   totalLeftPadding: horizontalSpaceSmall,
-                  iconLeftPadding: horizontalSpaceSmall,
                   imgHeight: 230,
                   imgWidth: 220,
                 ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                 child: MobileTechStackSection(
+                  key: _techStackSectionKey,
                   totalLeftSpacing: horizontalSpaceSmallPlus,
                 ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileAboutMeSection(),
+                child: MobileAboutMeSection(
+                  key: _aboutMeSectionKey,
+                ),
               ),
-              const Padding(
+              verticalSpaceLarge,
+              Padding(
                 padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileProjectSection(),
+                child: MobileProjectSection(
+                  key: _projectSectionKey,
+                ),
               ),
+              verticalSpaceLarge,
               Padding(
                 padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
                 child: MobileResume(
+                  key: _resumeSectionKey,
                   totalLeftSpacing: horizontalSpaceTiny,
                   pdfViewHeight: 580,
                   pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
                 ),
               ),
               verticalSpaceMassive,
-              const Padding(
+              Padding(
                 padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileContactSection(),
+                child: MobileContactSection(
+                  key: _contactSectionKey,
+                ),
               ),
-              const MobileFooterSection(),
+              MobileFooterSection(
+                key: _footerSectionKey,
+              ),
             ],
           ),
           smallMobileLayout: ListView(
+            cacheExtent: double.infinity,
             controller: _sController,
             children: [
-              const Padding(
+              Padding(
                 padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
                 child: MobileHomeSection(
+                  key: _homeSectionKey,
                   totalLeftPadding: horizontalSpaceTiny,
-                  iconLeftPadding: horizontalSpaceTiny,
                   imgHeight: 190,
                   imgWidth: 180,
                   headerFontSize: 38,
                 ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.fromLTRB(24, 22, 13, 16),
                 child: MobileTechStackSection(
+                  key: _techStackSectionKey,
                   totalLeftSpacing: horizontalSpaceTiny,
                 ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileAboutMeSection(),
+                child: MobileAboutMeSection(
+                  key: _aboutMeSectionKey,
+                ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileProjectSection(),
+                child: MobileProjectSection(
+                  key: _projectSectionKey,
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
                 child: MobileResume(
+                  key: _resumeSectionKey,
                   totalLeftSpacing: horizontalSpaceTiny,
                   pdfViewHeight: 580,
                   pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
                 ),
               ),
               verticalSpaceMassive,
-              const Padding(
+              Padding(
                 padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileContactSection(),
+                child: MobileContactSection(
+                  key: _contactSectionKey,
+                ),
               ),
-              const MobileFooterSection(),
+              MobileFooterSection(
+                key: _footerSectionKey,
+              ),
             ],
           ),
         ),
@@ -690,7 +728,19 @@ class _MobileHomeLayoutState extends State<MobileHomeLayout> {
         elevation: 20,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
         backgroundColor: const Color(0XFF121212),
-        onPressed: _autoScroll,
+        onPressed: () {
+          if (_isFooterVisible()) {
+            _autoScroll(_homeSectionKey);
+            setState(() {
+              _scroller = false;
+            });
+          } else {
+            _autoScroll(_footerSectionKey);
+            setState(() {
+              _scroller = true;
+            });
+          }
+        },
         child: Center(
           child: ScaleOnHover(
             scale: 22,

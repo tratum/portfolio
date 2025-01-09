@@ -9,7 +9,6 @@ import '../../app/app.widgets.dart';
 
 class MobileHomeSection extends StatelessWidget {
   final Widget totalLeftPadding;
-  final Widget iconLeftPadding;
   final double imgHeight;
   final double imgWidth;
   final double headerFontSize;
@@ -17,7 +16,6 @@ class MobileHomeSection extends StatelessWidget {
   const MobileHomeSection({
     super.key,
     this.totalLeftPadding = horizontalSpaceMedium,
-    this.iconLeftPadding = horizontalSpaceMedium,
     this.imgWidth = 320,
     this.imgHeight = 300,
     this.headerFontSize = 42,
@@ -115,7 +113,7 @@ class MobileHomeSection extends StatelessWidget {
         verticalSpaceLarge,
         Row(
           children: [
-            iconLeftPadding,
+            totalLeftPadding,
             GestureDetector(
               child: const FaIcon(
                 FontAwesomeIcons.linkedin,
@@ -141,10 +139,11 @@ class MobileHomeSection extends StatelessWidget {
             )
           ],
         ),
-        verticalSpaceLargePlus,
+        verticalSpaceLarge,
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            totalLeftPadding,
             ElevatedButton(
               style: ButtonStyle(
                 backgroundColor: WidgetStateProperty.all(

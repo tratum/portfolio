@@ -259,7 +259,7 @@ class TabletTechStackSection extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Row(
               children:
-              devTechStack.map((item) => techStackBuilder(item)).toList(),
+                  devTechStack.map((item) => techStackBuilder(item)).toList(),
             ),
           ),
         ),
