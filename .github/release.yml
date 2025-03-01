@@ -1,0 +1,49 @@
+name: Web Build Release
+on:
+  push:
+    branches:
+      - v3.dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Fetching Latest Codebase
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Flutter Set-Up
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Get Dependency
+        run: flutter pub get && flutter pub upgrade
+
+      - name: Enable Web Support
+        run: flutter config --enable-web
+
+      - name: Build Web
+        run: flutter build web --release
+
+      - name: Checkout build.v3 branch
+        uses: actions/checkout@v3
+        with:
+          ref: build.v3
+          fetch-depth: 0
+          path: build-branch
+
+      - name: Sync build output to target branch
+        run: |
+          rsync -av --delete-after build/web/ build-branch/
+
+      - name: Commit and push changes
+        working-directory: build-branch
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add .          
+          git commit -m "latest v3 web release ${{ github.sha }}: ${{ github.event.head_commit.message }} [skip ci]" || echo "No changes to commit"
+          git push origin build.v3
