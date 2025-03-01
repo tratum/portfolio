@@ -36,7 +36,7 @@ class DesktopHomeSection extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            verticalSpace(150),
+            verticalSpace(100),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -104,14 +104,12 @@ class DesktopHomeSection extends StatelessWidget {
                             ),
                             WidgetSpan(
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 8.0),
+                                padding:  EdgeInsets.only(left: 8.0),
                                 child: GestureDetector(
                                   child: Image.network(
                                     "https://tratum.github.io/cloud-asset-storage/images/pin.webp",
-                                    cacheWidth: 28,
-                                    cacheHeight: 28,
-                                    height: 38,
-                                    width: 38,
+                                    height: iconSize,
+                                    width: iconSize,
                                   ),
                                   onTap: () async {
                                     return WebNavigator.openUrl(
@@ -130,7 +128,7 @@ class DesktopHomeSection extends StatelessWidget {
                 ),
               ],
             ),
-            verticalSpaceMedium,
+            verticalSpaceLarge,
             Row(
               children: [
                 totalLeftSpacing,
@@ -220,12 +218,19 @@ class DesktopHomeSection extends StatelessWidget {
 class DesktopTechStackSection extends StatelessWidget {
   final Widget totalLeftSpacing;
   final double headingFontSize;
+  final double iconSize;
+  final double iconContainer;
   final double sectionSpace;
+  final double dividerHeight;
 
   const DesktopTechStackSection({
     super.key,
     this.totalLeftSpacing = horizontalSpaceMassive,
     this.headingFontSize = 34,
+    this.iconSize = 34,
+    this.iconContainer = 55,
+    this.dividerHeight = 26,
+
     required this.sectionSpace,
   });
 
@@ -245,10 +250,10 @@ class DesktopTechStackSection extends StatelessWidget {
           ),
         ),
         horizontalSpaceMedium,
-        Container(
-          height: 26,
-          width: 3,
-          color: const Color(0XFF1B1B1B),
+        Divider(
+          height: dividerHeight,
+          thickness: 40,
+          color: Color(0XFF1B1B1B),
         ),
         horizontalSpaceMedium,
         Expanded(
@@ -256,7 +261,7 @@ class DesktopTechStackSection extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Row(
               children:
-                  devTechStack.map((item) => techStackBuilder(item)).toList(),
+                  devTechStack.map((item) => techStackBuilder(item,iconSize,iconContainer)).toList(),
             ),
           ),
         ),

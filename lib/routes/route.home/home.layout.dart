@@ -67,15 +67,20 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                   children: [
                     DesktopHomeSection(
                       key: _homeSectionKey,
-                      headerFontSize: 86,
-                      subTextFontSize: 48,
-                      iconSize: 56,
+                      headerFontSize: 96,
+                      subTextFontSize: 62,
+                      iconSize: 72,
                       profileWidth: 800,
                       profileHeight: 840,
                     ),
+                    verticalSpaceMassive,
                     DesktopTechStackSection(
                       key: _techStackSectionKey,
                       sectionSpace: 90,
+                      headingFontSize: 90,
+                      iconSize: 80,
+                      iconContainer: 110,
+                      dividerHeight: 90,
                     ),
                     DesktopAboutMeSection(
                       key: _aboutMeSectionKey,
@@ -108,7 +113,8 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                   children: [
                     DesktopHomeSection(
                       key: _homeSectionKey,
-                      subTextFontSize: 42,
+                      headerFontSize: 52,
+                      subTextFontSize: 38,
                       profileWidth: 680,
                       profileHeight: 700,
                     ),
@@ -162,12 +168,15 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                       key: _homeSectionKey,
                       totalLeftSpacing: horizontalSpaceExtraLarge,
                       iconSize: 46,
-                      subTextFontSize: 38,
-                      profileWidth: 680,
-                      profileHeight: 730,
+                      headerFontSize: 62,
+                      subTextFontSize: 32,
+                      profileWidth: 565,
+                      profileHeight: 620,
                     ),
+                    verticalSpaceLargePlus,
                     DesktopTechStackSection(
                       key: _techStackSectionKey,
+                      totalLeftSpacing: horizontalSpaceExtraLarge,
                       sectionSpace: 40,
                       headingFontSize: 42,
                     ),
@@ -223,6 +232,7 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                       subTextPadding: 50,
                       subTextFontSize: 26,
                     ),
+                    verticalSpaceLarge,
                     DesktopTechStackSection(
                       key: _techStackSectionKey,
                       totalLeftSpacing: horizontalSpaceLarge,
@@ -249,7 +259,7 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                     DesktopResume(
                       key: _resumeSectionKey,
                       sectionSpace: 200,
-                      totalLeftSpacing: horizontalSpaceExtraLarge,
+                      totalLeftSpacing: horizontalSpaceLarge,
                       pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
                     ),
                     DesktopContactSection(
@@ -265,14 +275,16 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
             ),
             Positioned(
               top: 0,
-              left: 110,
-              right: 40,
+              left: 0,
+              right: 0,
               child: Container(
                 color: const Color(0XFFfafafa),
                 padding: const EdgeInsets.fromLTRB(22, 22, 22, 22),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   mainAxisSize: MainAxisSize.max,
                   children: [
+                    horizontalSpaceExtraLarge,
                     const SelectableText(
                       'tratum.dev',
                       style: TextStyle(
@@ -362,6 +374,7 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                       ),
                       onTap: () => _autoScroll(_contactSectionKey),
                     ),
+                    horizontalSpaceExtraLarge,
                   ],
                 ),
               ),

@@ -13,7 +13,6 @@ dependencies:
   google_fonts:
   url_launcher:
   font_awesome_flutter:
-  cupertino_icons:
   responsive_web_layout:
     git:
       url: https://github.com/tratum/responsive-web-layout.git

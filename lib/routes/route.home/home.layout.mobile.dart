@@ -188,10 +188,14 @@ class MobileHomeSection extends StatelessWidget {
 
 class MobileTechStackSection extends StatelessWidget {
   final Widget totalLeftSpacing;
+  final double iconSize;
+  final double iconContainer;
 
   const MobileTechStackSection({
     super.key,
     this.totalLeftSpacing = horizontalSpaceMedium,
+    this.iconSize = 34,
+    this.iconContainer = 55,
   });
 
   @override
@@ -211,7 +215,7 @@ class MobileTechStackSection extends StatelessWidget {
           spacing: 22.5,
           runSpacing: 26,
           alignment: WrapAlignment.start,
-          children: devTechStack.map((item) => techStackBuilder(item)).toList(),
+          children: devTechStack.map((item) => techStackBuilder(item,iconSize,iconContainer)).toList(),
         ),
       ],
     );

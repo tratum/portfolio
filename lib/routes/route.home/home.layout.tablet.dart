@@ -225,11 +225,15 @@ class TabletHomeSection extends StatelessWidget {
 class TabletTechStackSection extends StatelessWidget {
   final Widget totalLeftSpacing;
   final double headingFontSize;
+  final double iconSize;
+  final double iconContainer;
 
   const TabletTechStackSection({
     super.key,
     this.totalLeftSpacing = horizontalSpaceMassive,
     this.headingFontSize = 34,
+    this.iconSize = 34,
+    this.iconContainer = 55,
   });
 
   @override
@@ -259,40 +263,11 @@ class TabletTechStackSection extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Row(
               children:
-                  devTechStack.map((item) => techStackBuilder(item)).toList(),
+                  devTechStack.map((item) => techStackBuilder(item, iconSize, iconContainer)).toList(),
             ),
           ),
         ),
       ],
     );
-    //   Column(
-    //   children: [
-    //     Row(
-    //       children: [
-    //         totalLeftSpacing,
-    //         SelectableText("Tech Stack",
-    //             style: TextStyle(
-    //               fontFamily: 'Afacad',
-    //               fontSize: headingFontSize,
-    //               fontWeight: FontWeight.w700,
-    //               color: const Color(0XFF1B1B1B),
-    //             )),
-    //       ],
-    //     ),
-    //     verticalSpaceMediumPlus,
-    //     Row(children: [
-    //       totalLeftSpacing,
-    //       Flexible(
-    //         child: Wrap(
-    //           spacing: 20,
-    //           runSpacing: 18,
-    //           alignment: WrapAlignment.start,
-    //           children:
-    //               devTechStack.map((item) => techStackBuilder(item)).toList(),
-    //         ),
-    //       ),
-    //     ]),
-    //   ],
-    // );
   }
 }

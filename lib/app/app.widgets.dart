@@ -41,14 +41,14 @@ final List<Map<String, String>> devTechStack = [
   },
 ];
 
-Widget techStackBuilder(Map<String, String> item) {
+Widget techStackBuilder(Map<String, String> item, double iconSize, double iconContainer) {
   return GestureDetector(
     onTap: () async => WebNavigator.openUrl(url: item['url']!),
     child: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Container(
-        width: 55,
-        height: 55,
+        width: iconContainer,
+        height: iconContainer,
         decoration: const BoxDecoration(
           shape: BoxShape.circle,
           color: Colors.black,
@@ -56,10 +56,10 @@ Widget techStackBuilder(Map<String, String> item) {
         child: Center(
           child: Image.network(
             item['icon']!,
-            cacheWidth: 34,
-            cacheHeight: 34,
-            height: 34,
-            width: 34,
+            cacheHeight: iconSize.toInt(),
+            cacheWidth: iconSize.toInt(),
+            height: iconSize,
+            width: iconSize,
           ),
         ),
       ),
