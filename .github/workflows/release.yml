@@ -28,16 +28,15 @@ jobs:
       - name: Build Web
         run: flutter build web --release
 
-      - name: Checkout build.v3 branch
+      - name: Checkout Repo in build-branch folder
         uses: actions/checkout@v3
         with:
-          ref: build.v3
           fetch-depth: 0
           path: build-branch
 
       - name: Switching to build.v3 branch
         working-directory: build-branch
-        run: git checkout -B build.v3 origin/build.v3 || git checkout -B build.v3
+        run: git checkout -B build.v3
 
       - name: Sync build output to target branch
         run: |
