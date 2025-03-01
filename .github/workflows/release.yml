@@ -6,7 +6,8 @@ on:
       - v3.dev
     tags:
       - 'v*'
-
+permissions:
+  contents: write
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -21,7 +22,7 @@ jobs:
           flutter-web: true
 
       - name: Install Dependencies
-        run: flutter pub get
+        run: flutter pub get && flutter pub upgrade
 
       - name: Build Web Release
         run: flutter build web --release
