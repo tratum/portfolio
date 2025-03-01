@@ -38,6 +38,12 @@ jobs:
           fetch-depth: 0
           path: build-branch
 
+      - name: Debug branch status
+        working-directory: build-branch
+        run: |
+          git branch -a  # List all branches
+          git remote -v  # Show remote URL
+
       - name: Switching to build.v3 branch
         working-directory: build-branch
         run: git checkout -B build.v3
