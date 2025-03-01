@@ -1,67 +1,35 @@
-name: Web Build Release
+name: Build and Deploy Flutter Web
+
 on:
   push:
     branches:
       - v3.dev
-  workflow_dispatch:
-
-permissions:
-  contents: write
+    tags:
+      - 'v*'
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-
-      - name: Fetching Latest Codebase
+      - name: Checkout Repository
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
-      - name: Flutter Set-Up
+      - name: Set Up Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
+          flutter-web: true
 
-      - name: Get Dependency
-        run: flutter pub get && flutter pub upgrade
+      - name: Install Dependencies
+        run: flutter pub get
 
-      - name: Enable Web Support
-        run: flutter config --enable-web
-
-      - name: Build Web
+      - name: Build Web Release
         run: flutter build web --release
 
-      - name: Checkout Repo in build-branch folder
-        uses: actions/checkout@v3
+      - name: Deploy to Build Branch
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          fetch-depth: 0
-          path: build-branch
-
-      - name: Debug branch status
-        working-directory: build-branch
-        run: |
-          git branch -a  # List all branches
-          git remote -v  # Show remote URL
-
-      - name: Switching to build.v3 branch
-        working-directory: build-branch
-        run: git checkout -B build.v3
-
-      - name: Sync build output to target branch
-        run: |
-          rsync -av --delete-after build/web/ build-branch/
-
-      - name: Commit and push changes
-        working-directory: build-branch
-        run: |
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git add .
-          if ! git diff-index --quiet HEAD --; then 
-            git commit -a -u -m "latest v3 web release [skip ci]"
-            git push -u origin build.v3 
-          else
-            echo "No changes to commit"
-          fi
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
+          publish_branch: build.v3
+          keep_files: false
