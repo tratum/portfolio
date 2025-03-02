@@ -27,7 +27,7 @@ jobs:
         run: flutter build web --release
 
       - name: Create CNAME File
-        run: echo "www.tratum.dev" > build/web/CNAME
+        run: echo "tratum.dev" > build/web/CNAME
 
       - name: Deploy to Build Branch
         uses: peaceiris/actions-gh-pages@v3
