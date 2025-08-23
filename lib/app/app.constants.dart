@@ -37,6 +37,19 @@ enum repos {
     "Apple Vision System leverages YOLOv8 and CNNs to automate ripeness assessment of an Apple. It employs a comprehensive dataset from Kaggle and the web, enhancing accuracy in real-world applications like sorting machines and consumer apps.",
     "https://tratum.github.io/cloud-asset-storage/images/project2.webp",
     "https://github.com/tratum/Apple-Vision",
+  ),
+  WanderLustExpedition(
+    "Wanderlust Expeditions",
+    "WanderLust Expeditions is a Travel Recommendation Website that beckons adventure seekers to explore the diverse tapestry of Bharat's destinations. Powered by Flutter for seamless cross-platform experience, it leverages GitHub Pages for backend management, employing web scraping and JSON for curated travel insights.",
+    "https://tratum.github.io/cloud-asset-storage/images/project3.webp",
+    "https://github.com/tratum/wanderlust-expeditions",
+    // Demo Site https://tratum.github.io/wanderlust-expeditions/
+  ),
+  ClimaTrend(
+    "ClimaTrend",
+    "ARIMA-Based Weather Forecasting of average temperatures in major Indian cities with Weather Prediction using ARIMA Model. Leveraging time series analysis and machine learning, the project utilizes Python, Pandas, and StatsModels for data manipulation, ARIMA modeling, and evaluation. Hardware and software requirements ensure seamless execution.",
+    "https://tratum.github.io/cloud-asset-storage/images/project4.webp",
+    "https://github.com/tratum/weather_prediction",
   );
 
   final String title;
