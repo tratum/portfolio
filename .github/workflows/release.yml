@@ -1,0 +1,38 @@
+name: Web Build Release
+on:
+  push:
+    branches:
+      - v4.dev
+    tags:
+      - 'v*'
+permissions:
+  contents: write
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetching Repository
+        uses: actions/checkout@v3
+
+      - name: Flutter Set Up
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-web: true
+
+      - name: Install Dependencies
+        run: flutter pub get && flutter pub upgrade
+
+      - name: Build Web Release
+        run: flutter build web --release --wasm --optimization-level 4 --base-href / 
+
+      - name: Create CNAME File
+        run: echo "www.tratum.dev" > build/web/CNAME
+
+      - name: Deploy to Build Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
+          publish_branch: prod
+          keep_files: false
