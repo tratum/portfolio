@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <base href="/">
+
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta content="tratum(Saksham Rawat)" name="author">
+    <meta content="This portfolio website is not just a digital footprint but a testament to the artistry and innovation that defines tratum.dev's i.e. my coding prowess."
+          name="description">
+    <meta content="Tratum.dev" property="og:title">
+    <meta content="website" property="og:type">
+    <meta content="https://tratum.github.io/cloud-asset-storage/images/portfolio_github_preview.webp"
+          property="og:image">
+    <meta content="https://www.tratum.dev" property="og:url">
+
+    <!-- twitter tags & icons -->
+    <meta content="https://www.tratum.dev" name="twitter:url">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="Tratum.dev" name="twitter:title">
+    <meta content="This portfolio website is not just a digital footprint but a testament to the artistry and innovation that defines tratum.dev's i.e. my coding prowess."
+          name="twitter:description">
+    <meta content="https://tratum.github.io/cloud-asset-storage/images/portfolio_github_preview.webp"
+          name="twitter:image">
+
+    <!-- iOS meta tags & icons -->
+    <meta content="yes" name="mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="tratum.dev" name="apple-mobile-web-app-title">
+    <link href="icons/Icon-192.png" rel="apple-touch-icon">
+
+    <!-- Favicon -->
+    <link href="favicon.png" rel="icon" type="image/png"/>
+
+    <title>tratum.dev</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="preload" href="loader.webp" as="image">
+
+    <!--Loader CSS -->
+    <style>
+        html,body{height:100%;margin:0;padding:0}
+        :root{--loader-bg:#ffffff}
+        @media (prefers-color-scheme: dark){:root{--loader-bg:#000000}}
+        #loader{
+          position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+          background:var(--loader-bg);z-index:99999;transition:opacity 700ms ease,transform 700ms ease;
+          -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+        }
+        .loader-center{display:flex;align-items:center;justify-content:center}
+        #loader-img{
+          display:block;width:560px;max-width:70vw;height:auto;border-radius:10px;background:transparent;
+          box-shadow:0 8px 28px rgba(0,0,0,0.28);
+        }
+        .fade-out{opacity:0;transform:translateY(-6px) scale(0.998);pointer-events:none}
+    </style>
+
+</head>
+<body>
+<!--Loader HTML -->
+<div id="loader" role="status" aria-hidden="false">
+    <div class="loader-center">
+        <picture>
+            <source srcset="loader.webp" type="image/webp">
+            <img id="loader-img" src="loader.webp" alt="">
+        </picture>
+    </div>
+</div>
+
+<script src="flutter_bootstrap.js"></script>
+
+<!-- Fallback Script -->
+<script>
+    (function(){
+    //If The Loader is still on the page after 20 sec then This Script fades it out and removes it
+      const LOADER_TIMEOUT_MS = 20000;
+      const loader = document.getElementById('loader');
+      function removeLoaderImmediate(){
+        if(!loader) return;
+        loader.classList.add('fade-out');
+        setTimeout(()=>{ try{ loader.remove(); }catch(e){} },1500);
+      }
+      setTimeout(()=>{ if(document.getElementById('loader')) removeLoaderImmediate(); }, LOADER_TIMEOUT_MS);
+    })();
+</script>
+
+</body>
+</html>
