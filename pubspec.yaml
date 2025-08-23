@@ -1,0 +1,36 @@
+name: portfolio
+description: "A web Portfolio of a Dev named tratum."
+publish_to: 'none'
+
+version: 4.0.0
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  web:
+  go_router:
+  flutter_svg:
+  google_fonts:
+  url_launcher:
+  font_awesome_flutter:
+  responsive_web_layout:
+    git:
+      url: https://github.com/tratum/responsive-web-layout.git
+      ref: main
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Afacad
+      fonts:
+        - asset: asset/fonts/Afacad/Afacad-VariableFont_wght.ttf
+        - asset: asset/fonts/Afacad/Afacad-Italic-VariableFont_wght.ttf
+    - family: Yatra
+      fonts:
+        - asset: asset/fonts/Yatra_One/YatraOne-Regular.ttf
+    - family: RussoOne
+      fonts:
+        - asset: asset/fonts/RussoOne/RussoOne-Regular.ttf
