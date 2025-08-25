@@ -124,7 +124,6 @@ vUltraMega(BuildContext c) => autoVSpace(c, whitespace.ultraMega.size);
 
 /// ------------------- Responsive fonts -------------------
 enum font {
-  xs(8),
   s(14.0),
   m(18.0),
   l(24.0),
@@ -135,9 +134,6 @@ enum font {
 
   const font(this.size);
 }
-
-double xsFont(BuildContext c) =>
-    autoScale(c, font.s.size, ScalingModes.diagonal);
 
 double sFont(BuildContext c) =>
     autoScale(c, font.s.size, ScalingModes.diagonal);

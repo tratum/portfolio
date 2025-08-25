@@ -76,227 +76,76 @@ Widget repoLayoutLeft(
   String title,
   String description,
   String imgLink,
-  bool showDemo,
   String repoLink,
 ) {
   // This Widget layouts the Project image to the left and the Project text to the right
-  if (showDemo) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //crossAxisAlignment: CrossAxisAlignment.baseline,
-      children: [
-        hMedium(context),
-        GestureDetector(
-          onTap: () async {
-            return ImageView.showImageDialog(context: context, imgPath: imgLink);
-          },
-          child: Container(
-            height: screenHeight(context) / 2,
-            width: screenWidth(context) / 2,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withValues(alpha: 0.5),
-                  spreadRadius: 5, // Spread radius
-                  blurRadius: 7, // Blur radius
-                  offset: const Offset(0, 3), // Offset position
-                ),
-              ],
-              image: DecorationImage(
-                image: NetworkImage(imgLink),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-        ),
-        hLarge(context),
-        Expanded(
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  const Spacer(),
-                  SelectableText(
-                    title,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'RussoOne',
-                      fontSize: mFont(context),
-                      fontWeight: FontWeight.w100,
-                      letterSpacing: 1.2,
-                      color: const Color(0XFF000000),
-                    ),
-                  ),
-                  const Spacer(),
-                ],
-              ),
-              vSmall(context),
-              SelectableText(
-                description,
-                textAlign: TextAlign.justify,
-                style: TextStyle(
-                  fontFamily: 'Afacad',
-                  fontSize: sFont(context),
-                  fontWeight: FontWeight.w700,
-                  color: const Color(0XFF3C4A53),
-                  overflow: TextOverflow.visible,
-                ),
-              ),
-              vXtraMedium(context),
-              Row(
-                children: [
-                  const Spacer(),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: WidgetStateProperty.all(
-                        const Color(0XFF000000),
-                      ),
-                    ),
-                    onPressed: () async {
-                      return WebNavigator.openUrl(url: repoLink);
-                    },
-                    child: Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Row(
-                          children: [
-                            Text(
-                              "Code",
-                              style: TextStyle(
-                                fontFamily: 'Afacad',
-                                fontSize: sFont(context) + 2,
-                                fontWeight: FontWeight.w900,
-                                color: const Color(0xFFFFFFFF),
-                              ),
-                            ),
-                            hXtraSmall(context),
-                            const FaIcon(
-                              FontAwesomeIcons.github,
-                              size: 32,
-                              color: Color(0xFFFFFFFF),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ).scaleOnHover(scale: 12),
-                  const Spacer(),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: WidgetStateProperty.all(
-                        const Color(0XFF000000),
-                      ),
-                    ),
-                    onPressed: () async {
-                      return WebNavigator.openUrl(
-                        url:
-                        "https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing",
-                      );
-                    },
-                    child: Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Row(
-                          children: [
-                            Text(
-                              "Demo",
-                              style: TextStyle(
-                                fontFamily: 'Afacad',
-                                fontSize: sFont(context) + 2,
-                                fontWeight: FontWeight.w900,
-                                color: const Color(0xFFFFFFFF),
-                              ),
-                            ),
-                            hXtraSmall(context),
-                            const Icon(
-                              Icons.open_in_new,
-                              size: 32,
-                              color: Color(0xFFFFFFFF),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ).scaleOnHover(scale: 12),
-                  const Spacer(),
-                ],
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //crossAxisAlignment: CrossAxisAlignment.baseline,
+    children: [
+      hMedium(context),
+      GestureDetector(
+        onTap: () async {
+          return ImageView.showImageDialog(context: context, imgPath: imgLink);
+        },
+        child: Container(
+          height: screenHeight(context) / 2,
+          width: screenWidth(context) / 2,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withValues(alpha: 0.5),
+                spreadRadius: 5, // Spread radius
+                blurRadius: 7, // Blur radius
+                offset: const Offset(0, 3), // Offset position
               ),
             ],
-          ),
-        ),
-        hMedium(context),
-      ],
-    );
-  }
-  else {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //crossAxisAlignment: CrossAxisAlignment.baseline,
-      children: [
-        hMedium(context),
-        GestureDetector(
-          onTap: () async {
-            return ImageView.showImageDialog(
-                context: context, imgPath: imgLink);
-          },
-          child: Container(
-            height: screenHeight(context) / 2,
-            width: screenWidth(context) / 2,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withValues(alpha: 0.5),
-                  spreadRadius: 5, // Spread radius
-                  blurRadius: 7, // Blur radius
-                  offset: const Offset(0, 3), // Offset position
-                ),
-              ],
-              image: DecorationImage(
-                image: NetworkImage(imgLink),
-                fit: BoxFit.cover,
-              ),
+            image: DecorationImage(
+              image: NetworkImage(imgLink),
+              fit: BoxFit.cover,
             ),
           ),
         ),
-        hLarge(context),
-        Expanded(
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  const Spacer(),
-                  SelectableText(
-                    title,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'RussoOne',
-                      fontSize: mFont(context),
-                      fontWeight: FontWeight.w100,
-                      letterSpacing: 1.2,
-                      color: const Color(0XFF000000),
-                    ),
+      ),
+      hLarge(context),
+      Expanded(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                const Spacer(),
+                SelectableText(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'RussoOne',
+                    fontSize: mFont(context),
+                    fontWeight: FontWeight.w100,
+                    letterSpacing: 1.2,
+                    color: const Color(0XFF000000),
                   ),
-                  const Spacer(),
-                ],
-              ),
-              vSmall(context),
-              SelectableText(
-                description,
-                textAlign: TextAlign.justify,
-                style: TextStyle(
-                  fontFamily: 'Afacad',
-                  fontSize: sFont(context),
-                  fontWeight: FontWeight.w700,
-                  color: const Color(0XFF3C4A53),
-                  overflow: TextOverflow.visible,
                 ),
+                const Spacer(),
+              ],
+            ),
+            vSmall(context),
+            SelectableText(
+              description,
+              textAlign: TextAlign.justify,
+              style: TextStyle(
+                fontFamily: 'Afacad',
+                fontSize: sFont(context),
+                fontWeight: FontWeight.w700,
+                color: const Color(0XFF3C4A53),
+                overflow: TextOverflow.visible,
               ),
-              vXtraMedium(context),
-              Align(
-                alignment: Alignment.center,
-                child: ElevatedButton(
+            ),
+            vXtraMedium(context),
+            Row(
+              children: [
+                const Spacer(),
+                ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all(
                       const Color(0XFF000000),
@@ -330,14 +179,53 @@ Widget repoLayoutLeft(
                     ),
                   ),
                 ).scaleOnHover(scale: 12),
-              ),
-            ],
-          ),
+                const Spacer(),
+                ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStateProperty.all(
+                      const Color(0XFF000000),
+                    ),
+                  ),
+                  onPressed: () async {
+                    return WebNavigator.openUrl(
+                      url:
+                          "https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing",
+                    );
+                  },
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Demo",
+                            style: TextStyle(
+                              fontFamily: 'Afacad',
+                              fontSize: sFont(context) + 2,
+                              fontWeight: FontWeight.w900,
+                              color: const Color(0xFFFFFFFF),
+                            ),
+                          ),
+                          hXtraSmall(context),
+                          const Icon(
+                            Icons.open_in_new,
+                            size: 32,
+                            color: Color(0xFFFFFFFF),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ).scaleOnHover(scale: 12),
+                const Spacer(),
+              ],
+            ),
+          ],
         ),
-        hMedium(context),
-      ],
-    );
-  }
+      ),
+      hMedium(context),
+    ],
+  );
 }
 
 Widget repoLayoutRight(
@@ -345,199 +233,51 @@ Widget repoLayoutRight(
   String title,
   String description,
   String imgLink,
-    bool showDemo,
-    String repoLink,
+  String repoLink,
 ) {
   // This Widget layouts the Project image to the right and the Project text to the left
-  if (showDemo) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //crossAxisAlignment: CrossAxisAlignment.baseline,
-      children: [
-        hMedium(context),
-        Expanded(
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  const Spacer(),
-                  SelectableText(
-                    title,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'RussoOne',
-                      fontSize: mFont(context),
-                      fontWeight: FontWeight.w100,
-                      letterSpacing: 1.2,
-                      color: const Color(0XFF000000),
-                    ),
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //crossAxisAlignment: CrossAxisAlignment.baseline,
+    children: [
+      hMedium(context),
+      Expanded(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                const Spacer(),
+                SelectableText(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'RussoOne',
+                    fontSize: mFont(context),
+                    fontWeight: FontWeight.w100,
+                    letterSpacing: 1.2,
+                    color: const Color(0XFF000000),
                   ),
-                  const Spacer(),
-                ],
-              ),
-              vSmall(context),
-              SelectableText(
-                description,
-                textAlign: TextAlign.justify,
-                style: TextStyle(
-                  fontFamily: 'Afacad',
-                  fontSize: sFont(context),
-                  fontWeight: FontWeight.w700,
-                  color: const Color(0XFF3C4A53),
-                  overflow: TextOverflow.visible,
                 ),
-              ),
-              vXtraMedium(context),
-              Row(
-                children: [
-                  const Spacer(),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: WidgetStateProperty.all(
-                        const Color(0XFF000000),
-                      ),
-                    ),
-                    onPressed: () async {
-                      return WebNavigator.openUrl(url: repoLink);
-                    },
-                    child: Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Row(
-                          children: [
-                            Text(
-                              "Code",
-                              style: TextStyle(
-                                fontFamily: 'Afacad',
-                                fontSize: sFont(context) + 2,
-                                fontWeight: FontWeight.w900,
-                                color: const Color(0xFFFFFFFF),
-                              ),
-                            ),
-                            hXtraSmall(context),
-                            const FaIcon(
-                              FontAwesomeIcons.github,
-                              size: 32,
-                              color: Color(0xFFFFFFFF),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ).scaleOnHover(scale: 12),
-                  const Spacer(),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: WidgetStateProperty.all(
-                        const Color(0XFF000000),
-                      ),
-                    ),
-                    onPressed: () async {
-                      return WebNavigator.openUrl(url: repoLink);
-                    },
-                    child: Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Row(
-                          children: [
-                            Text(
-                              "Demo",
-                              style: TextStyle(
-                                fontFamily: 'Afacad',
-                                fontSize: sFont(context) + 2,
-                                fontWeight: FontWeight.w900,
-                                color: const Color(0xFFFFFFFF),
-                              ),
-                            ),
-                            hXtraSmall(context),
-                            const Icon(
-                              Icons.open_in_new,
-                              size: 32,
-                              color: Color(0xFFFFFFFF),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ).scaleOnHover(scale: 12),
-                  const Spacer(),
-                ],
-              ),
-            ],
-          ),
-        ),
-        hLarge(context),
-        GestureDetector(
-          onTap: () async {
-            return ImageView.showImageDialog(
-                context: context, imgPath: imgLink);
-          },
-          child: Container(
-            height: screenHeight(context) / 2,
-            width: screenWidth(context) / 2,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withValues(alpha: 0.5),
-                  spreadRadius: 5, // Spread radius
-                  blurRadius: 7, // Blur radius
-                  offset: const Offset(0, 3), // Offset position
-                ),
+                const Spacer(),
               ],
-              image: DecorationImage(
-                image: NetworkImage(imgLink),
-                fit: BoxFit.cover,
+            ),
+            vSmall(context),
+            SelectableText(
+              description,
+              textAlign: TextAlign.justify,
+              style: TextStyle(
+                fontFamily: 'Afacad',
+                fontSize: sFont(context),
+                fontWeight: FontWeight.w700,
+                color: const Color(0XFF3C4A53),
+                overflow: TextOverflow.visible,
               ),
             ),
-          ),
-        ),
-        hMedium(context),
-      ],
-    );
-  }
-  else {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //crossAxisAlignment: CrossAxisAlignment.baseline,
-      children: [
-        hMedium(context),
-        Expanded(
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  const Spacer(),
-                  SelectableText(
-                    title,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'RussoOne',
-                      fontSize: mFont(context),
-                      fontWeight: FontWeight.w100,
-                      letterSpacing: 1.2,
-                      color: const Color(0XFF000000),
-                    ),
-                  ),
-                  const Spacer(),
-                ],
-              ),
-              vSmall(context),
-              SelectableText(
-                description,
-                textAlign: TextAlign.justify,
-                style: TextStyle(
-                  fontFamily: 'Afacad',
-                  fontSize: sFont(context),
-                  fontWeight: FontWeight.w700,
-                  color: const Color(0XFF3C4A53),
-                  overflow: TextOverflow.visible,
-                ),
-              ),
-              vXtraMedium(context),
-              Align(
-                alignment: Alignment.center,
-                child: ElevatedButton(
+            vXtraMedium(context),
+            Row(
+              children: [
+                const Spacer(),
+                ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all(
                       const Color(0XFF000000),
@@ -571,56 +311,73 @@ Widget repoLayoutRight(
                     ),
                   ),
                 ).scaleOnHover(scale: 12),
+                const Spacer(),
+                ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStateProperty.all(
+                      const Color(0XFF000000),
+                    ),
+                  ),
+                  onPressed: () async {
+                    return WebNavigator.openUrl(url: repoLink);
+                  },
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Demo",
+                            style: TextStyle(
+                              fontFamily: 'Afacad',
+                              fontSize: sFont(context) + 2,
+                              fontWeight: FontWeight.w900,
+                              color: const Color(0xFFFFFFFF),
+                            ),
+                          ),
+                          hXtraSmall(context),
+                          const Icon(
+                            Icons.open_in_new,
+                            size: 32,
+                            color: Color(0xFFFFFFFF),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ).scaleOnHover(scale: 12),
+                const Spacer(),
+              ],
+            ),
+          ],
+        ),
+      ),
+      hLarge(context),
+      GestureDetector(
+        onTap: () async {
+          return ImageView.showImageDialog(context: context, imgPath: imgLink);
+        },
+        child: Container(
+          height: screenHeight(context) / 2,
+          width: screenWidth(context) / 2,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withValues(alpha: 0.5),
+                spreadRadius: 5, // Spread radius
+                blurRadius: 7, // Blur radius
+                offset: const Offset(0, 3), // Offset position
               ),
             ],
-          ),
-        ),
-        hLarge(context),
-        GestureDetector(
-          onTap: () async {
-            return ImageView.showImageDialog(
-                context: context, imgPath: imgLink);
-          },
-          child: Container(
-            height: screenHeight(context) / 2,
-            width: screenWidth(context) / 2,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withValues(alpha: 0.5),
-                  spreadRadius: 5, // Spread radius
-                  blurRadius: 7, // Blur radius
-                  offset: const Offset(0, 3), // Offset position
-                ),
-              ],
-              image: DecorationImage(
-                image: NetworkImage(imgLink),
-                fit: BoxFit.cover,
-              ),
+            image: DecorationImage(
+              image: NetworkImage(imgLink),
+              fit: BoxFit.cover,
             ),
           ),
         ),
-        hMedium(context),
-      ],
-    );
-  }
-}
-
-Widget navbar(BuildContext c, String text, GlobalKey k) {
-  return GestureDetector(
-    child: ScaleOnHover(
-      scale: 12,
-      child: Text(
-        text,
-        style: TextStyle(
-          fontFamily: 'Afacad',
-          fontSize: sFont(c),
-          fontWeight: FontWeight.w600,
-          letterSpacing: 1.5,
-        ),
       ),
-    ),
-    onTap: () => ContentScrolling.autoScroll(k),
+      hMedium(context),
+    ],
   );
 }
