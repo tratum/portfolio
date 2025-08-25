@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:ui_web' as ui_web;
 
 import 'package:flutter/material.dart';
@@ -55,15 +56,28 @@ class ImageView {
 }
 
 class ContentScrolling {
-  static Future<void> autoScroll({
-    required double scrollPosition,
-    required ScrollController conn,
-  }) {
-    return conn.animateTo(
-      scrollPosition,
-      duration: const Duration(seconds: 2),
-      curve: Curves.fastOutSlowIn,
-    );
+  // static Future<void> autoScroll({
+  //   required double scrollPosition,
+  //   required ScrollController conn,
+  // }) {
+  //   return conn.animateTo(
+  //     scrollPosition,
+  //     duration: const Duration(seconds: 2),
+  //     curve: Curves.fastOutSlowIn,
+  //   );
+  // }
+  static void autoScroll(GlobalKey key) {
+    Future.delayed(Duration(milliseconds: 100), () {
+      if (key.currentContext != null) {
+        Scrollable.ensureVisible(
+          key.currentContext!,
+          duration: const Duration(milliseconds: 800),
+          curve: Curves.easeInOut,
+        );
+      } else {
+        log("The widget with the key $key is not available yet.");
+      }
+    });
   }
 }
 
