@@ -8,11 +8,23 @@ import '../../app/app.hover.extensions.dart';
 import '../../app/app.widgets.dart';
 
 class DesktopHomeSection extends StatelessWidget {
+  final double headerFontSize;
+  final double subTextPadding;
+  final double subTextFontSize;
   final double iconSize;
+  final double profileTopPadding;
+  final double profileWidth;
+  final double profileHeight;
 
   const DesktopHomeSection({
     super.key,
+    this.headerFontSize = 68,
+    this.subTextPadding = 250,
+    this.subTextFontSize = 32,
     this.iconSize = 36,
+    this.profileWidth = 640,
+    this.profileHeight = 700,
+    this.profileTopPadding = 60,
   });
 
   @override
@@ -32,8 +44,8 @@ class DesktopHomeSection extends StatelessWidget {
                   "F u l l - S t a c k",
                   style: TextStyle(
                     fontFamily: 'Afacad',
-                    fontSize: xlFont(context),
-                    fontWeight: FontWeight.bold,
+                    fontSize: headerFontSize,
+                    fontWeight: FontWeight.w900,
                     color: const Color(0XFF353839),
                     letterSpacing: 2,
                   ),
@@ -47,8 +59,8 @@ class DesktopHomeSection extends StatelessWidget {
                   "D e v",
                   style: TextStyle(
                     fontFamily: 'Afacad',
-                    fontSize: xlFont(context),
-                    fontWeight: FontWeight.bold,
+                    fontSize: headerFontSize,
+                    fontWeight: FontWeight.w900,
                     color: const Color(0XFF353839),
                     letterSpacing: 2,
                   ),
@@ -76,7 +88,7 @@ class DesktopHomeSection extends StatelessWidget {
                         text: TextSpan(
                           style: TextStyle(
                             fontFamily: 'Afacad',
-                            fontSize: sFont(context),
+                            fontSize: subTextFontSize,
                             fontWeight: FontWeight.w500,
                             color: Color(0XFF6A8292),
                           ),
@@ -162,7 +174,7 @@ class DesktopHomeSection extends StatelessWidget {
                             "Let's Connect",
                             style: TextStyle(
                               fontFamily: 'Afacad',
-                              fontSize: sFont(context) - 4,
+                              fontSize: subTextFontSize - 4,
                               fontWeight: FontWeight.w900,
                               color: const Color(0xFFFFFFFF),
                             ),
@@ -187,8 +199,8 @@ class DesktopHomeSection extends StatelessWidget {
           padding: EdgeInsets.only(top: whitespace.m.size),
           child: Image.network(
             "https://tratum.github.io/cloud-asset-storage/images/bitmoji-profile-sketch-animation.webp",
-            width: screenWidth(context) / 2.4,
-            height: screenHeight(context) / 1.1,
+            width: screenWidth(context) / 2.3,
+            height: screenHeight(context) / 1,
             fit: BoxFit.fill,
             repeat: ImageRepeat.repeat,
             gaplessPlayback: true,
@@ -441,7 +453,6 @@ class DesktopProjectSection extends StatelessWidget {
                 repos.Notely.title,
                 repos.Notely.description,
                 repos.Notely.imgLink,
-                true,
                 repos.Notely.repoLink,
               ),
               vLarge(context),
@@ -450,7 +461,6 @@ class DesktopProjectSection extends StatelessWidget {
                 repos.AppleVision.title,
                 repos.AppleVision.description,
                 repos.AppleVision.imgLink,
-                false,
                 repos.AppleVision.repoLink,
               ),
             ],
