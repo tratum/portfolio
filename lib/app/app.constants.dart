@@ -56,6 +56,7 @@ enum repos {
   final String description;
   final String imgLink;
   final String repoLink;
+
   const repos(this.title, this.description, this.imgLink, this.repoLink);
 }
 
@@ -92,6 +93,7 @@ enum skills {
 
   final String icon;
   final String url;
+
   const skills(this.icon, this.url);
 
   static List<Image> toImageList({

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../app/app.constants.dart';
 import '../../app/app.classes.dart';
+import '../../app/app.constants.dart';
 import '../../app/app.hover.extensions.dart';
 import '../../app/app.widgets.dart';
 

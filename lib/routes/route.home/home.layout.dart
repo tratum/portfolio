@@ -5,8 +5,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/app/app.widgets.dart';
 import 'package:responsive_web_layout/responsive_web_layout.dart';
 
-import '../../app/app.constants.dart';
 import '../../app/app.classes.dart';
+import '../../app/app.constants.dart';
 import '../../app/app.hover.extensions.dart';
 import '../../routes/route.home/home.layout.tablet.dart';
 import 'home.layout.desktop.dart';
@@ -66,10 +66,7 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                     //   headingFontSize: 42,
                     // ),
                     vLarge(context),
-                    DesktopContactSection(
-                      key: _contactSectionKey,
-                      sectionSpace: 200,
-                    ),
+                    DesktopContactSection(key: _contactSectionKey),
                     vLarge(context),
                     DesktopFooterSection(key: _footerSectionKey),
                   ],
@@ -84,12 +81,7 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                     vLarge(context),
                     DesktopAboutMeSection(key: _aboutMeSectionKey),
                     vLarge(context),
-                    DesktopProjectSection(
-                      key: _projectSectionKey,
-                      imgWidth: 800,
-                      imgHeight: 500,
-                      subHeadingFontSize: 38,
-                    ),
+                    DesktopProjectSection(key: _projectSectionKey),
                     // DesktopResume(
                     //   key: _resumeSectionKey,
                     //   sectionSpace: 320,
@@ -99,7 +91,6 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                     vLarge(context),
                     DesktopContactSection(
                       key: _contactSectionKey,
-                      sectionSpace: 250,
                       imgHeight: 42,
                       imgWidth: 42,
                     ),
@@ -117,11 +108,7 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                     vLarge(context),
                     DesktopAboutMeSection(key: _aboutMeSectionKey),
                     vLarge(context),
-                    DesktopProjectSection(
-                      key: _projectSectionKey,
-                      subHeadingFontSize: 38,
-                      imgWidth: 620,
-                    ),
+                    DesktopProjectSection(key: _projectSectionKey),
                     // DesktopResume(
                     //   key: _resumeSectionKey,
                     //   headingFontSize: 42,
@@ -129,10 +116,7 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                     //   pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
                     // ),
                     vLarge(context),
-                    DesktopContactSection(
-                      key: _contactSectionKey,
-                      sectionSpace: 250,
-                    ),
+                    DesktopContactSection(key: _contactSectionKey),
                     vLarge(context),
                     DesktopFooterSection(key: _footerSectionKey),
                   ],
@@ -147,21 +131,14 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                     vLarge(context),
                     DesktopAboutMeSection(key: _aboutMeSectionKey),
                     vLarge(context),
-                    DesktopProjectSection(
-                      key: _projectSectionKey,
-                      imgWidth: 400,
-                      imgHeight: 420,
-                    ),
+                    DesktopProjectSection(key: _projectSectionKey),
                     // DesktopResume(
                     //   key: _resumeSectionKey,
                     //   sectionSpace: 200,
                     //   pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
                     // ),
                     vLarge(context),
-                    DesktopContactSection(
-                      key: _contactSectionKey,
-                      sectionSpace: 250,
-                    ),
+                    DesktopContactSection(key: _contactSectionKey),
                     vLarge(context),
                     DesktopFooterSection(key: _footerSectionKey),
                   ],

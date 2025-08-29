@@ -1,9 +1,11 @@
 import 'dart:developer';
-import 'dart:ui_web' as ui_web;
 import 'dart:math' as math;
+import 'dart:ui_web' as ui_web;
+
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:web/web.dart' as web;
+
 import 'app.constants.dart';
 
 class ImageView {

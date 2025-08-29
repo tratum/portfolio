@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../app/app.hover.extensions.dart';
-import 'app.constants.dart';
 import 'app.classes.dart';
+import 'app.constants.dart';
 
 final List<Map<String, String>> teckStackList = [
   {
@@ -503,7 +503,7 @@ Widget repoLayoutRight(
     );
   } else {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.center,
       //crossAxisAlignment: CrossAxisAlignment.baseline,
       children: [
         hMedium(context),
@@ -546,6 +546,8 @@ Widget repoLayoutRight(
                     backgroundColor: WidgetStateProperty.all(
                       const Color(0XFF000000),
                     ),
+                    fixedSize: WidgetStateProperty.all(Size(200, 70)),
+                    padding: WidgetStateProperty.all(EdgeInsets.symmetric(horizontal: 12, vertical: 8)),
                   ),
                   onPressed: () async {
                     return WebNavigator.openUrl(url: repoLink);

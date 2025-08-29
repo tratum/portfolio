@@ -24,7 +24,7 @@ jobs:
         run: flutter pub get && flutter pub upgrade
 
       - name: Build Web Release
-        run: flutter build web --release --wasm --optimization-level 4 --base-href / 
+        run: flutter build web --release --wasm --optimization-level 4 --base-href /
 
       - name: Create CNAME File
         run: echo "www.tratum.dev" > build/web/CNAME

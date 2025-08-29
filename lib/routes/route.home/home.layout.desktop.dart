@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../app/app.constants.dart';
 import '../../app/app.classes.dart';
+import '../../app/app.constants.dart';
 import '../../app/app.hover.extensions.dart';
 import '../../app/app.widgets.dart';
 
@@ -324,16 +324,7 @@ class DesktopAboutMeSection extends StatelessWidget {
 }
 
 class DesktopProjectSection extends StatelessWidget {
-  final double subHeadingFontSize;
-  final double imgHeight;
-  final double imgWidth;
-
-  const DesktopProjectSection({
-    super.key,
-    this.subHeadingFontSize = 28,
-    this.imgHeight = 400,
-    this.imgWidth = 600,
-  });
+  const DesktopProjectSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -413,17 +404,13 @@ class DesktopProjectSection extends StatelessWidget {
 }
 
 class DesktopResume extends StatelessWidget {
-  final double sectionSpace;
   final double pdfViewHeight;
   final double pdfViewWidth;
-  final double headingFontSize;
 
   const DesktopResume({
     super.key,
-    required this.sectionSpace,
     this.pdfViewHeight = 800,
     this.pdfViewWidth = 800,
-    this.headingFontSize = 34,
   });
 
   @override
@@ -434,7 +421,6 @@ class DesktopResume extends StatelessWidget {
     );
     return Column(
       children: [
-        vSpace(sectionSpace),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -443,7 +429,7 @@ class DesktopResume extends StatelessWidget {
               "Resume",
               style: TextStyle(
                 fontFamily: 'RussoOne',
-                fontSize: headingFontSize,
+                fontSize: lFont(context),
                 fontWeight: FontWeight.w400,
                 letterSpacing: 1.2,
                 color: const Color(0XFF000000),
@@ -474,11 +460,9 @@ class DesktopResume extends StatelessWidget {
 class DesktopContactSection extends StatelessWidget {
   final double imgHeight;
   final double imgWidth;
-  final double sectionSpace;
 
   const DesktopContactSection({
     super.key,
-    required this.sectionSpace,
     this.imgHeight = 30,
     this.imgWidth = 30,
   });
@@ -491,7 +475,6 @@ class DesktopContactSection extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            vSpace(sectionSpace),
             SelectableText(
               "Let's build together",
               style: TextStyle(
