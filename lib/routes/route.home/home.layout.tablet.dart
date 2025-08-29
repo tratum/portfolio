@@ -201,7 +201,7 @@ class TabletHomeSection extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ).scaleOnHover(scale: 12),
+                  ).scaleOnHover(scale: 1.2),
                 ],
               ),
             ],

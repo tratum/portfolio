@@ -267,27 +267,27 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        elevation: 20,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
-        backgroundColor: const Color(0XFF121212),
-        onPressed: () {
-          if (_isFooterVisible()) {
-            ContentScrolling.autoScroll(_homeSectionKey);
-            setState(() {
-              _scroller = false;
-            });
-          } else {
-            ContentScrolling.autoScroll(_footerSectionKey);
-            setState(() {
-              _scroller = true;
-            });
-          }
-        },
-        child: Align(
-          alignment: Alignment.center,
-          child: ScaleOnHover(
-            scale: 22,
+      floatingActionButton: ScaleOnHover(
+        scale: 1.2,
+        child: FloatingActionButton(
+          elevation: 20,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+          backgroundColor: const Color(0XFF121212),
+          onPressed: () {
+            if (_isFooterVisible()) {
+              ContentScrolling.autoScroll(_homeSectionKey);
+              setState(() {
+                _scroller = false;
+              });
+            } else {
+              ContentScrolling.autoScroll(_footerSectionKey);
+              setState(() {
+                _scroller = true;
+              });
+            }
+          },
+          child: Align(
+            alignment: Alignment.center,
             child: FaIcon(
               _scroller
                   ? FontAwesomeIcons.chevronDown
@@ -378,7 +378,7 @@ class _MobileHomeLayoutState extends State<MobileHomeLayout> {
               vLarge(context),
               ListTile(
                 title: const ScaleOnHover(
-                  scale: 12,
+                  scale: 1.2,
                   child: Text(
                     'Home',
                     style: TextStyle(
@@ -394,7 +394,7 @@ class _MobileHomeLayoutState extends State<MobileHomeLayout> {
               vXtraMedium(context),
               ListTile(
                 title: const ScaleOnHover(
-                  scale: 12,
+                  scale: 1.2,
                   child: Text(
                     'About',
                     style: TextStyle(
@@ -410,7 +410,7 @@ class _MobileHomeLayoutState extends State<MobileHomeLayout> {
               vXtraMedium(context),
               ListTile(
                 title: const ScaleOnHover(
-                  scale: 12,
+                  scale: 1.2,
                   child: Text(
                     'Projects',
                     style: TextStyle(
@@ -426,7 +426,7 @@ class _MobileHomeLayoutState extends State<MobileHomeLayout> {
               // vXtraMedium(context),
               // ListTile(
               //   title: const ScaleOnHover(
-              //     scale: 12,
+              //     scale: 1.2,
               //     child: Text(
               //       'Resume',
               //       style: TextStyle(
@@ -442,7 +442,7 @@ class _MobileHomeLayoutState extends State<MobileHomeLayout> {
               vXtraMedium(context),
               ListTile(
                 title: const ScaleOnHover(
-                  scale: 12,
+                  scale: 1.2,
                   child: Text(
                     'Contact',
                     style: TextStyle(
@@ -584,26 +584,26 @@ class _MobileHomeLayoutState extends State<MobileHomeLayout> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        elevation: 20,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
-        backgroundColor: const Color(0XFF121212),
-        onPressed: () {
-          if (_isFooterVisible()) {
-            _autoScroll(_homeSectionKey);
-            setState(() {
-              _scroller = false;
-            });
-          } else {
-            _autoScroll(_footerSectionKey);
-            setState(() {
-              _scroller = true;
-            });
-          }
-        },
-        child: Center(
-          child: ScaleOnHover(
-            scale: 22,
+      floatingActionButton: ScaleOnHover(
+        scale: 1.2,
+        child: FloatingActionButton(
+          elevation: 20,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+          backgroundColor: const Color(0XFF121212),
+          onPressed: () {
+            if (_isFooterVisible()) {
+              _autoScroll(_homeSectionKey);
+              setState(() {
+                _scroller = false;
+              });
+            } else {
+              _autoScroll(_footerSectionKey);
+              setState(() {
+                _scroller = true;
+              });
+            }
+          },
+          child: Center(
             child: FaIcon(
               _scroller
                   ? FontAwesomeIcons.chevronUp
@@ -679,7 +679,7 @@ class _TabletHomeLayoutState extends State<TabletHomeLayout> {
               vLarge(context),
               ListTile(
                 title: const ScaleOnHover(
-                  scale: 12,
+                  scale: 1.2,
                   child: Text(
                     'Home',
                     style: TextStyle(
@@ -695,7 +695,7 @@ class _TabletHomeLayoutState extends State<TabletHomeLayout> {
               vXtraMedium(context),
               ListTile(
                 title: const ScaleOnHover(
-                  scale: 12,
+                  scale: 1.2,
                   child: Text(
                     'About',
                     style: TextStyle(
@@ -711,7 +711,7 @@ class _TabletHomeLayoutState extends State<TabletHomeLayout> {
               vXtraMedium(context),
               ListTile(
                 title: const ScaleOnHover(
-                  scale: 12,
+                  scale: 1.2,
                   child: Text(
                     'Projects',
                     style: TextStyle(
@@ -727,7 +727,7 @@ class _TabletHomeLayoutState extends State<TabletHomeLayout> {
               vXtraMedium(context),
               ListTile(
                 title: const ScaleOnHover(
-                  scale: 12,
+                  scale: 1.2,
                   child: Text(
                     'Resume',
                     style: TextStyle(
@@ -743,7 +743,7 @@ class _TabletHomeLayoutState extends State<TabletHomeLayout> {
               vXtraMedium(context),
               ListTile(
                 title: const ScaleOnHover(
-                  scale: 12,
+                  scale: 1.2,
                   child: Text(
                     'Contact',
                     style: TextStyle(
@@ -783,27 +783,27 @@ class _TabletHomeLayoutState extends State<TabletHomeLayout> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        elevation: 20,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
-        backgroundColor: const Color(0XFF121212),
-        onPressed: () {
-          if (_isFooterVisible()) {
-            ContentScrolling.autoScroll(_homeSectionKey);
-            setState(() {
-              _scroller = false;
-            });
-          } else {
-            ContentScrolling.autoScroll(_footerSectionKey);
-            setState(() {
-              _scroller = true;
-            });
-          }
-        },
-        child: Align(
-          alignment: Alignment.center,
-          child: ScaleOnHover(
-            scale: 22,
+      floatingActionButton: ScaleOnHover(
+        scale: 1.2,
+        child: FloatingActionButton(
+          elevation: 20,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+          backgroundColor: const Color(0XFF121212),
+          onPressed: () {
+            if (_isFooterVisible()) {
+              ContentScrolling.autoScroll(_homeSectionKey);
+              setState(() {
+                _scroller = false;
+              });
+            } else {
+              ContentScrolling.autoScroll(_footerSectionKey);
+              setState(() {
+                _scroller = true;
+              });
+            }
+          },
+          child: Align(
+            alignment: Alignment.center,
             child: FaIcon(
               _scroller
                   ? FontAwesomeIcons.chevronDown

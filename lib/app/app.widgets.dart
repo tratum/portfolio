@@ -180,7 +180,7 @@ Widget repoLayoutLeft(
                         ),
                       ),
                     ),
-                  ).scaleOnHover(scale: 12),
+                  ).scaleOnHover(scale: 1.2),
                   const Spacer(),
                   ElevatedButton(
                     style: ButtonStyle(
@@ -218,7 +218,7 @@ Widget repoLayoutLeft(
                         ),
                       ),
                     ),
-                  ).scaleOnHover(scale: 12),
+                  ).scaleOnHover(scale: 1.2),
                   const Spacer(),
                 ],
               ),
@@ -329,7 +329,7 @@ Widget repoLayoutLeft(
                       ),
                     ),
                   ),
-                ).scaleOnHover(scale: 12),
+                ).scaleOnHover(scale: 1.2),
               ),
             ],
           ),
@@ -424,7 +424,7 @@ Widget repoLayoutRight(
                         ),
                       ),
                     ),
-                  ).scaleOnHover(scale: 12),
+                  ).scaleOnHover(scale: 1.2),
                   const Spacer(),
                   ElevatedButton(
                     style: ButtonStyle(
@@ -459,7 +459,7 @@ Widget repoLayoutRight(
                         ),
                       ),
                     ),
-                  ).scaleOnHover(scale: 12),
+                  ).scaleOnHover(scale: 1.2),
                   const Spacer(),
                 ],
               ),
@@ -535,8 +535,7 @@ Widget repoLayoutRight(
                 ),
               ),
               vXtraMedium(context),
-              Align(
-                alignment: Alignment.center,
+              Center(
                 child: ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all(
@@ -550,6 +549,7 @@ Widget repoLayoutRight(
                     child: Padding(
                       padding: const EdgeInsets.all(8),
                       child: Row(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
                             "Code",
@@ -570,7 +570,7 @@ Widget repoLayoutRight(
                       ),
                     ),
                   ),
-                ).scaleOnHover(scale: 12),
+                ).scaleOnHover(scale: 1.2),
               ),
             ],
           ),
@@ -608,19 +608,23 @@ Widget repoLayoutRight(
 }
 
 Widget navbar(BuildContext c, String text, GlobalKey k) {
-  return GestureDetector(
-    child: ScaleOnHover(
-      scale: 12,
-      child: Text(
-        text,
-        style: TextStyle(
+  return ScaleOnHover(
+    scale: 1.2,
+    child: TextButton(
+      onPressed: () => ContentScrolling.autoScroll(k),
+      style: TextButton.styleFrom(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        foregroundColor: const Color(0XFF000000),
+        textStyle: TextStyle(
           fontFamily: 'Afacad',
           fontSize: sFont(c),
           fontWeight: FontWeight.w600,
           letterSpacing: 1.5,
         ),
       ),
+      child: Text(
+        text,
+      ),
     ),
-    onTap: () => ContentScrolling.autoScroll(k),
   );
 }

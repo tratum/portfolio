@@ -5,39 +5,31 @@ class ScaleOnHover extends StatefulWidget {
   final double scale;
   final Widget child;
 
-  // You can also pass the translation in here if you want to
-  const ScaleOnHover({super.key, required this.child, this.scale = 1.1});
+  const ScaleOnHover({super.key, required this.child, required this.scale});
 
   @override
   State<ScaleOnHover> createState() => _ScaleOnHoverState();
 }
 
 class _ScaleOnHoverState extends State<ScaleOnHover> {
-  final scaleTransform = Matrix4.identity()..scaleByDouble(1.1, 1.1, 1.1, 1.0);
-  final noScaleTransform = Matrix4.identity()
-    ..scaleByDouble(1.1, 1.1, 1.1, 1.0);
-
   bool _hovering = false;
 
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
-      onEnter: (e) => _mouseEnter(true),
-      onExit: (e) => _mouseEnter(false),
-      child: AnimatedContainer(
+      onEnter: (_) => _mouseEnter(true),
+      onExit: (_) => _mouseEnter(false),
+      child: AnimatedScale(
+        scale: _hovering ? widget.scale : 1.0,
         duration: const Duration(milliseconds: 350),
         curve: Curves.easeOutCirc,
-        transform: _hovering ? scaleTransform : noScaleTransform,
+        alignment: Alignment.center,
         child: widget.child,
       ),
     );
   }
 
-  void _mouseEnter(bool hover) {
-    setState(() {
-      _hovering = hover;
-    });
-  }
+  void _mouseEnter(bool hover) => setState(() => _hovering = hover);
 }
 
 class TranslateOnHover extends StatefulWidget {

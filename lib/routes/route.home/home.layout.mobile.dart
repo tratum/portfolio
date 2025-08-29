@@ -174,7 +174,7 @@ class MobileHomeSection extends StatelessWidget {
                   ),
                 ),
               ),
-            ).scaleOnHover(scale: 12),
+            ).scaleOnHover(scale: 1.2),
             const Spacer(),
           ],
         ),
@@ -480,7 +480,7 @@ class MobileProjectSection extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                  ).scaleOnHover(scale: 12),
+                                  ).scaleOnHover(scale: 1.2),
                                   const Spacer(),
                                   ElevatedButton(
                                     style: ButtonStyle(
@@ -518,7 +518,7 @@ class MobileProjectSection extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                  ).scaleOnHover(scale: 12),
+                                  ).scaleOnHover(scale: 1.2),
                                   const Spacer(),
                                 ],
                               ),
@@ -637,7 +637,7 @@ class MobileProjectSection extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                ).scaleOnHover(scale: 12),
+                                ).scaleOnHover(scale: 1.2),
                                 const Spacer(),
                               ],
                             ),
@@ -747,7 +747,7 @@ class MobileProjectSection extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ).scaleOnHover(scale: 12),
+                          ).scaleOnHover(scale: 1.2),
                           const Spacer(),
                           ElevatedButton(
                             style: ButtonStyle(
@@ -785,7 +785,7 @@ class MobileProjectSection extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ).scaleOnHover(scale: 12),
+                          ).scaleOnHover(scale: 1.2),
                           const Spacer(),
                         ],
                       ),
@@ -892,7 +892,7 @@ class MobileProjectSection extends StatelessWidget {
                             ),
                           ),
                         ),
-                      ).scaleOnHover(scale: 12),
+                      ).scaleOnHover(scale: 1.2),
                       const Spacer(),
                     ],
                   ),
@@ -1056,7 +1056,7 @@ class MobileContactSection extends StatelessWidget {
               ),
             ),
           ),
-        ).scaleOnHover(scale: 12),
+        ).scaleOnHover(scale: 1.2),
         vLarge(context),
         ElevatedButton(
           style: ButtonStyle(
@@ -1093,7 +1093,7 @@ class MobileContactSection extends StatelessWidget {
               ),
             ),
           ),
-        ).scaleOnHover(scale: 12),
+        ).scaleOnHover(scale: 1.2),
         vXtraLarge(context),
       ],
     );

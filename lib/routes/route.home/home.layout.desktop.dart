@@ -177,7 +177,7 @@ class DesktopHomeSection extends StatelessWidget {
                       ),
                     ),
                   ),
-                ).scaleOnHover(scale: 12),
+                ).scaleOnHover(scale: 1.2),
               ],
             ),
           ],
@@ -637,7 +637,7 @@ class DesktopContactSection extends StatelessWidget {
                       ),
                     ),
                   ),
-                ).scaleOnHover(scale: 12),
+                ).scaleOnHover(scale: 1.2),
                 // GestureDetector(
                 //   onTap: () {
                 //     WebNavigator.launchEmail("tratum.connect@gmail.com");
@@ -701,7 +701,7 @@ class DesktopContactSection extends StatelessWidget {
                       ),
                     ),
                   ),
-                ).scaleOnHover(scale: 12),
+                ).scaleOnHover(scale: 1.2),
                 // GestureDetector(
                 //   onTap: () async {
                 //     return WebNavigator.openUrl(
@@ -771,7 +771,7 @@ class DesktopFooterSection extends StatelessWidget {
                     return WebNavigator.openUrl(url: 'https://github.com/tratum');
                   },
                   child: const ScaleOnHover(
-                    scale: 12,
+                    scale: 1.2,
                     child: FaIcon(
                       FontAwesomeIcons.github,
                       color: Color(0XFFFFFFFF),
@@ -787,7 +787,7 @@ class DesktopFooterSection extends StatelessWidget {
                     );
                   },
                   child: const ScaleOnHover(
-                    scale: 12,
+                    scale: 1.2,
                     child: FaIcon(
                       FontAwesomeIcons.linkedin,
                       color: Color(0XFFFFFFFF),
