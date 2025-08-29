@@ -6,7 +6,7 @@ import 'package:portfolio/app/app.widgets.dart';
 import 'package:responsive_web_layout/responsive_web_layout.dart';
 
 import '../../app/app.constants.dart';
-import '../../app/app.functions.dart';
+import '../../app/app.classes.dart';
 import '../../app/app.hover.extensions.dart';
 import '../../routes/route.home/home.layout.tablet.dart';
 import 'home.layout.desktop.dart';
@@ -52,24 +52,11 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                   cacheExtent: double.infinity,
                   controller: _sController,
                   children: [
-                    DesktopHomeSection(
-                      key: _homeSectionKey,
-                      iconSize: 72,
-                    ),
+                    DesktopHomeSection(key: _homeSectionKey, iconSize: 72),
                     vLarge(context),
-                    DesktopTechStackSection(
-                      key: _techStackSectionKey,
-                      sectionSpace: 90,
-                      headingFontSize: 90,
-                      iconSize: 80,
-                      iconContainer: 110,
-                      dividerHeight: 90,
-                    ),
+                    DesktopTechStackSection(key: _techStackSectionKey),
                     vLarge(context),
-                    DesktopAboutMeSection(
-                      key: _aboutMeSectionKey,
-                      sectionSpace: 200,
-                    ),
+                    DesktopAboutMeSection(key: _aboutMeSectionKey),
                     vLarge(context),
                     DesktopProjectSection(key: _projectSectionKey),
                     // DesktopResume(
@@ -91,31 +78,17 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                   cacheExtent: double.infinity,
                   controller: _sController,
                   children: [
-                    DesktopHomeSection(
-                      key: _homeSectionKey,
-                    ),
+                    DesktopHomeSection(key: _homeSectionKey),
                     vLarge(context),
-                    DesktopTechStackSection(
-                      key: _techStackSectionKey,
-                      sectionSpace: 90,
-                      headingFontSize: 42,
-                    ),
+                    DesktopTechStackSection(key: _techStackSectionKey),
                     vLarge(context),
-                    DesktopAboutMeSection(
-                      key: _aboutMeSectionKey,
-                      sectionSpace: 200,
-                      headingFontSize: 42,
-                      subTextFontSize: 36,
-                    ),
+                    DesktopAboutMeSection(key: _aboutMeSectionKey),
                     vLarge(context),
                     DesktopProjectSection(
                       key: _projectSectionKey,
                       imgWidth: 800,
                       imgHeight: 500,
-                      headingFontSize: 42,
                       subHeadingFontSize: 38,
-                      projectHeadingFontSize: 40,
-                      projectSubTextFontSize: 36,
                     ),
                     // DesktopResume(
                     //   key: _resumeSectionKey,
@@ -127,7 +100,6 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                     DesktopContactSection(
                       key: _contactSectionKey,
                       sectionSpace: 250,
-                      headingFontSize: 42,
                       imgHeight: 42,
                       imgWidth: 42,
                     ),
@@ -139,32 +111,15 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                   cacheExtent: double.infinity,
                   controller: _sController,
                   children: [
-                    DesktopHomeSection(
-                      key: _homeSectionKey,
-                      iconSize: 46,
-                    ),
+                    DesktopHomeSection(key: _homeSectionKey, iconSize: 46),
                     vLarge(context),
-                    DesktopTechStackSection(
-                      key: _techStackSectionKey,
-                      sectionSpace: 40,
-                      headingFontSize: 42,
-                    ),
+                    DesktopTechStackSection(key: _techStackSectionKey),
                     vLarge(context),
-                    DesktopAboutMeSection(
-                      key: _aboutMeSectionKey,
-                      sectionSpace: 200,
-                      headingFontSize: 42,
-                      imgWidth: 650,
-                      imgHeight: 600,
-                      subTextFontSize: 28,
-                    ),
+                    DesktopAboutMeSection(key: _aboutMeSectionKey),
                     vLarge(context),
                     DesktopProjectSection(
                       key: _projectSectionKey,
-                      headingFontSize: 42,
                       subHeadingFontSize: 38,
-                      projectHeadingFontSize: 32,
-                      projectSubTextFontSize: 28,
                       imgWidth: 620,
                     ),
                     // DesktopResume(
@@ -177,8 +132,6 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                     DesktopContactSection(
                       key: _contactSectionKey,
                       sectionSpace: 250,
-                      headingFontSize: 42,
-                      subHeadingFontSize: 38,
                     ),
                     vLarge(context),
                     DesktopFooterSection(key: _footerSectionKey),
@@ -188,28 +141,16 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                   cacheExtent: double.infinity,
                   controller: _sController,
                   children: [
-                    DesktopHomeSection(
-                      key: _homeSectionKey,
-                    ),
+                    DesktopHomeSection(key: _homeSectionKey),
                     vLarge(context),
-                    DesktopTechStackSection(
-                      key: _techStackSectionKey,
-                      sectionSpace: 90,
-                    ),
+                    DesktopTechStackSection(key: _techStackSectionKey),
                     vLarge(context),
-                    DesktopAboutMeSection(
-                      key: _aboutMeSectionKey,
-                      sectionSpace: 200,
-                      imgHeight: 520,
-                      imgWidth: 400,
-                    ),
+                    DesktopAboutMeSection(key: _aboutMeSectionKey),
                     vLarge(context),
                     DesktopProjectSection(
                       key: _projectSectionKey,
                       imgWidth: 400,
                       imgHeight: 420,
-                      projectHeadingFontSize: 30,
-                      projectSubTextFontSize: 26,
                     ),
                     // DesktopResume(
                     //   key: _resumeSectionKey,
@@ -252,6 +193,8 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                     const Spacer(),
                     navbar(context, "Home", _homeSectionKey),
                     hSmall(context),
+                    navbar(context, "Skills", _techStackSectionKey),
+                    hSmall(context),
                     navbar(context, "About", _aboutMeSectionKey),
                     hSmall(context),
                     navbar(context, "Projects", _projectSectionKey),
@@ -271,7 +214,9 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
         scale: 1.2,
         child: FloatingActionButton(
           elevation: 20,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(40),
+          ),
           backgroundColor: const Color(0XFF121212),
           onPressed: () {
             if (_isFooterVisible()) {
@@ -588,7 +533,9 @@ class _MobileHomeLayoutState extends State<MobileHomeLayout> {
         scale: 1.2,
         child: FloatingActionButton(
           elevation: 20,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(40),
+          ),
           backgroundColor: const Color(0XFF121212),
           onPressed: () {
             if (_isFooterVisible()) {
@@ -777,7 +724,7 @@ class _TabletHomeLayoutState extends State<TabletHomeLayout> {
               vLarge(context),
               TabletTechStackSection(
                 key: _techStackSectionKey,
-                headingFontSize: 34
+                headingFontSize: 34,
               ),
             ],
           ),
@@ -787,7 +734,9 @@ class _TabletHomeLayoutState extends State<TabletHomeLayout> {
         scale: 1.2,
         child: FloatingActionButton(
           elevation: 20,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(40),
+          ),
           backgroundColor: const Color(0XFF121212),
           onPressed: () {
             if (_isFooterVisible()) {

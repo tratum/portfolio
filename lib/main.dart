@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'app/app.functions.dart';
+import 'app/app.classes.dart';
 import 'routes/route.404/404.layout.dart';
 import 'routes/route.home/home.view.dart';
 

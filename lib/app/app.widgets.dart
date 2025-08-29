@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../app/app.hover.extensions.dart';
 import 'app.constants.dart';
-import 'app.functions.dart';
+import 'app.classes.dart';
 
 final List<Map<String, String>> teckStackList = [
   {
@@ -88,7 +88,10 @@ Widget repoLayoutLeft(
         hMedium(context),
         GestureDetector(
           onTap: () async {
-            return ImageView.showImageDialog(context: context, imgPath: imgLink);
+            return ImageView.showImageDialog(
+              context: context,
+              imgPath: imgLink,
+            );
           },
           child: Container(
             height: screenHeight(context) / 2,
@@ -191,7 +194,7 @@ Widget repoLayoutLeft(
                     onPressed: () async {
                       return WebNavigator.openUrl(
                         url:
-                        "https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing",
+                            "https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing",
                       );
                     },
                     child: Center(
@@ -228,8 +231,7 @@ Widget repoLayoutLeft(
         hMedium(context),
       ],
     );
-  }
-  else {
+  } else {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       //crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -238,7 +240,9 @@ Widget repoLayoutLeft(
         GestureDetector(
           onTap: () async {
             return ImageView.showImageDialog(
-                context: context, imgPath: imgLink);
+              context: context,
+              imgPath: imgLink,
+            );
           },
           child: Container(
             height: screenHeight(context) / 2,
@@ -345,8 +349,8 @@ Widget repoLayoutRight(
   String title,
   String description,
   String imgLink,
-    bool showDemo,
-    String repoLink,
+  bool showDemo,
+  String repoLink,
 ) {
   // This Widget layouts the Project image to the right and the Project text to the left
   if (showDemo) {
@@ -470,7 +474,9 @@ Widget repoLayoutRight(
         GestureDetector(
           onTap: () async {
             return ImageView.showImageDialog(
-                context: context, imgPath: imgLink);
+              context: context,
+              imgPath: imgLink,
+            );
           },
           child: Container(
             height: screenHeight(context) / 2,
@@ -495,8 +501,7 @@ Widget repoLayoutRight(
         hMedium(context),
       ],
     );
-  }
-  else {
+  } else {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       //crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -579,7 +584,9 @@ Widget repoLayoutRight(
         GestureDetector(
           onTap: () async {
             return ImageView.showImageDialog(
-                context: context, imgPath: imgLink);
+              context: context,
+              imgPath: imgLink,
+            );
           },
           child: Container(
             height: screenHeight(context) / 2,
@@ -622,9 +629,7 @@ Widget navbar(BuildContext c, String text, GlobalKey k) {
           letterSpacing: 1.5,
         ),
       ),
-      child: Text(
-        text,
-      ),
+      child: Text(text),
     ),
   );
 }

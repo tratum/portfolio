@@ -3,17 +3,14 @@ import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../app/app.constants.dart';
-import '../../app/app.functions.dart';
+import '../../app/app.classes.dart';
 import '../../app/app.hover.extensions.dart';
 import '../../app/app.widgets.dart';
 
 class DesktopHomeSection extends StatelessWidget {
   final double iconSize;
 
-  const DesktopHomeSection({
-    super.key,
-    this.iconSize = 36,
-  });
+  const DesktopHomeSection({super.key, this.iconSize = 36});
 
   @override
   Widget build(BuildContext context) {
@@ -201,100 +198,60 @@ class DesktopHomeSection extends StatelessWidget {
 }
 
 class DesktopTechStackSection extends StatelessWidget {
-  final double headingFontSize;
-  final double iconSize;
-  final double iconContainer;
-  final double sectionSpace;
-  final double dividerHeight;
-
-  const DesktopTechStackSection({
-    super.key,
-    this.headingFontSize = 34,
-    this.iconSize = 50,
-    this.iconContainer = 74,
-    this.dividerHeight = 60,
-
-    required this.sectionSpace,
-  });
+  const DesktopTechStackSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        hMedium(context),
-        SelectableText(
+    return Center(
+      child: RotatingTechCircle(
+        size: screenWidth(context) / 2,
+        iconSize: 100,
+        icons: skills.toImageList(width: 100, height: 100),
+        secondsPerRevolution: 20,
+        spinIcons: false,
+        pauseOnHover: false,
+        centerWidget: Text(
           "Tech Stack",
           style: TextStyle(
-            fontFamily: 'Afacad',
-            fontSize: headingFontSize,
-            fontWeight: FontWeight.w900,
-            color: const Color(0XFF1B1B1B),
+            fontFamily: 'RussoOne',
+            fontSize: lFont(context),
+            fontWeight: FontWeight.w400,
+            letterSpacing: 1.2,
+            color: const Color(0XFF000000),
           ),
         ),
-        autoHSpace(context, whitespace.xs.size),
-        Divider(height: dividerHeight, thickness: 40, color: Color(0XFF1B1B1B)),
-        autoHSpace(context, whitespace.xs.size),
-        Expanded(
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: teckStackList
-                  .map(
-                    (item) => techStackBuilder(item, iconSize, iconContainer),
-                  )
-                  .toList(),
-            ),
-          ),
-        ),
-        hMedium(context),
-      ],
+        onTap: (index) async =>
+            await WebNavigator.openUrl(url: skills.values[index].url),
+      ),
     );
   }
 }
 
 class DesktopAboutMeSection extends StatelessWidget {
-  final double imgHeight;
-  final double imgWidth;
-  final double headingFontSize;
-  final double subTextFontSize;
-  final double sectionSpace;
-
-  const DesktopAboutMeSection({
-    super.key,
-    required this.sectionSpace,
-    this.imgHeight = 550,
-    this.imgWidth = 700,
-    this.headingFontSize = 34,
-    this.subTextFontSize = 22,
-  });
+  const DesktopAboutMeSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: sectionSpace),
+    return IntrinsicHeight(
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           hMedium(context),
-          Expanded(
-            child: Container(
-              height: imgHeight,
-              width: imgWidth,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                image: const DecorationImage(
-                  image: NetworkImage(
-                    "https://tratum.github.io/cloud-asset-storage/images/deskSetup.webp",
-                  ),
-                  fit: BoxFit.cover,
+          Container(
+            width: screenWidth(context) / 2.5,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              image: const DecorationImage(
+                image: NetworkImage(
+                  "https://tratum.github.io/cloud-asset-storage/images/deskSetup.webp",
                 ),
+                fit: BoxFit.cover,
               ),
             ),
           ),
           hXtraMedium(context),
           Expanded(
-            flex: 1,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -302,7 +259,7 @@ class DesktopAboutMeSection extends StatelessWidget {
                   "About Me :",
                   style: TextStyle(
                     fontFamily: 'RussoOne',
-                    fontSize: headingFontSize,
+                    fontSize: mFont(context),
                     fontWeight: FontWeight.w400,
                     letterSpacing: 1.2,
                     color: const Color(0XFF000000),
@@ -313,14 +270,14 @@ class DesktopAboutMeSection extends StatelessWidget {
                   text: TextSpan(
                     style: TextStyle(
                       fontFamily: 'Afacad',
-                      fontSize: subTextFontSize,
+                      fontSize: sFont(context),
                       fontWeight: FontWeight.w700,
                       color: const Color(0XFF3C4A53),
                     ),
                     children: const [
                       TextSpan(text: "Namaste ( "),
                       TextSpan(
-                        text: "NAH-muh-stay",
+                        text: "NAH-Muh-Stay",
                         style: TextStyle(
                           fontFamily: 'Afacad',
                           fontStyle: FontStyle.italic,
@@ -337,20 +294,20 @@ class DesktopAboutMeSection extends StatelessWidget {
                   "I possess an immense Zeal for crafting seamless digital experiences through writing a clean and optimized code. With a strong belief in the power of teamwork, I value open communication and diverse perspectives. Eager to contribute my skills and enthusiasm to innovative projects, I look forward to fostering a collaborative spirit while delivering a coding excellence.",
                   style: TextStyle(
                     fontFamily: 'Afacad',
-                    fontSize: subTextFontSize,
+                    fontSize: sFont(context),
                     fontWeight: FontWeight.w700,
                     color: const Color(0XFF3C4A53),
                     overflow: TextOverflow.visible,
                   ),
                   textAlign: TextAlign.justify,
                 ),
-                vTiny(context),
+                vMedium(context),
                 SelectableText(
-                  "Let's Build Something Extraordinary Together !!!!",
+                  "Let's Build Something Extraordinary Together !!",
                   style: TextStyle(
                     fontFamily: 'RussoOne',
-                    fontSize: subTextFontSize + 2,
-                    fontWeight: FontWeight.w400,
+                    fontSize: sFont(context) + 4,
+                    fontWeight: FontWeight.w600,
                     fontStyle: FontStyle.italic,
                     color: const Color(0XFFE53935),
                     letterSpacing: 1.2,
@@ -367,21 +324,15 @@ class DesktopAboutMeSection extends StatelessWidget {
 }
 
 class DesktopProjectSection extends StatelessWidget {
-  final double headingFontSize;
-  final double projectHeadingFontSize;
   final double subHeadingFontSize;
   final double imgHeight;
   final double imgWidth;
-  final double projectSubTextFontSize;
 
   const DesktopProjectSection({
     super.key,
-    this.headingFontSize = 34,
     this.subHeadingFontSize = 28,
     this.imgHeight = 400,
     this.imgWidth = 600,
-    this.projectHeadingFontSize = 26,
-    this.projectSubTextFontSize = 22,
   });
 
   @override
@@ -403,7 +354,7 @@ class DesktopProjectSection extends StatelessWidget {
                     "Portfolio: ",
                     style: TextStyle(
                       fontFamily: 'RussoOne',
-                      fontSize: headingFontSize,
+                      fontSize: mFont(context),
                       fontWeight: FontWeight.w400,
                       letterSpacing: 1.2,
                       color: const Color(0XFF000000),
@@ -420,7 +371,7 @@ class DesktopProjectSection extends StatelessWidget {
                     "Every project represents an original work of development.",
                     style: TextStyle(
                       fontFamily: 'Afacad',
-                      fontSize: subHeadingFontSize,
+                      fontSize: sFont(context),
                       fontWeight: FontWeight.w700,
                       color: const Color(0XFF3C4A53),
                     ),
@@ -521,8 +472,6 @@ class DesktopResume extends StatelessWidget {
 }
 
 class DesktopContactSection extends StatelessWidget {
-  final double headingFontSize;
-  final double subHeadingFontSize;
   final double imgHeight;
   final double imgWidth;
   final double sectionSpace;
@@ -530,8 +479,6 @@ class DesktopContactSection extends StatelessWidget {
   const DesktopContactSection({
     super.key,
     required this.sectionSpace,
-    this.headingFontSize = 34,
-    this.subHeadingFontSize = 24,
     this.imgHeight = 30,
     this.imgWidth = 30,
   });
@@ -549,7 +496,7 @@ class DesktopContactSection extends StatelessWidget {
               "Let's build together",
               style: TextStyle(
                 fontFamily: 'RussoOne',
-                fontSize: headingFontSize,
+                fontSize: mFont(context),
                 fontWeight: FontWeight.w400,
                 letterSpacing: 1.2,
                 color: const Color(0XFF000000),
@@ -562,7 +509,7 @@ class DesktopContactSection extends StatelessWidget {
                   "I'm always open to new projects and opportunities.",
                   style: TextStyle(
                     fontFamily: 'Afacad',
-                    fontSize: subHeadingFontSize,
+                    fontSize: sFont(context),
                     fontWeight: FontWeight.w900,
                     color: const Color(0XFF121212),
                   ),
@@ -572,7 +519,7 @@ class DesktopContactSection extends StatelessWidget {
                   "Drop a Hello,",
                   style: TextStyle(
                     fontFamily: 'Afacad',
-                    fontSize: subHeadingFontSize,
+                    fontSize: sFont(context),
                     fontWeight: FontWeight.w900,
                     color: const Color(0XFF121212),
                   ),
@@ -586,7 +533,7 @@ class DesktopContactSection extends StatelessWidget {
                   "Let's Collaborate and Grow!",
                   style: TextStyle(
                     fontFamily: 'Afacad',
-                    fontSize: subHeadingFontSize,
+                    fontSize: sFont(context),
                     fontWeight: FontWeight.w900,
                     color: const Color(0XFF121212),
                   ),
@@ -748,7 +695,10 @@ class DesktopFooterSection extends StatelessWidget {
     return Container(
       color: const Color(0XFF000000),
       child: Padding(
-        padding: EdgeInsets.only(left: whitespace.l.size, right: whitespace.l.size),
+        padding: EdgeInsets.only(
+          left: whitespace.l.size,
+          right: whitespace.l.size,
+        ),
         child: Column(
           children: [
             vSmall(context),
@@ -768,7 +718,9 @@ class DesktopFooterSection extends StatelessWidget {
                 const Spacer(),
                 GestureDetector(
                   onTap: () async {
-                    return WebNavigator.openUrl(url: 'https://github.com/tratum');
+                    return WebNavigator.openUrl(
+                      url: 'https://github.com/tratum',
+                    );
                   },
                   child: const ScaleOnHover(
                     scale: 1.2,

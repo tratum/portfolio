@@ -59,6 +59,59 @@ enum repos {
   const repos(this.title, this.description, this.imgLink, this.repoLink);
 }
 
+/// --------------- Tech Stack --------------------------
+enum skills {
+  HTML(
+    "https://tratum.github.io/cloud-asset-storage/images/html.webp",
+    "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  ),
+  CSS(
+    "https://tratum.github.io/cloud-asset-storage/images/css.webp",
+    'https://developer.mozilla.org/en-US/docs/Web/CSS',
+  ),
+  Python(
+    "https://tratum.github.io/cloud-asset-storage/images/python.webp",
+    "https://docs.python.org/3/",
+  ),
+  Flutter(
+    "https://tratum.github.io/cloud-asset-storage/images/flutter.webp",
+    "https://docs.flutter.dev/",
+  ),
+  Java(
+    "https://tratum.github.io/cloud-asset-storage/images/java.webp",
+    "https://docs.oracle.com/en/java/",
+  ),
+  MongoDB(
+    "https://tratum.github.io/cloud-asset-storage/images/mongodb.webp",
+    "https://www.mongodb.com/docs/compass/current/",
+  ),
+  Dart(
+    "https://tratum.github.io/cloud-asset-storage/images/dart.webp",
+    "https://dart.dev/guides",
+  );
+
+  final String icon;
+  final String url;
+  const skills(this.icon, this.url);
+
+  static List<Image> toImageList({
+    required double width,
+    required double height,
+  }) {
+    return values
+        .map(
+          (s) => Image.network(
+            s.icon,
+            width: width,
+            height: height,
+            fit: BoxFit.contain,
+            semanticLabel: s.name,
+          ),
+        )
+        .toList();
+  }
+}
+
 /// ------------------- Responsive WhiteSpace -------------------
 const double _baseScreenWidth = 375.0;
 const double _baseScreenHeight = 782.0;
