@@ -124,10 +124,10 @@ Widget repoLayoutLeft(
                     title,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: 'RussoOne',
+                      fontFamily: 'AfacadBlack',
                       fontSize: mFont(context),
-                      fontWeight: FontWeight.w100,
-                      letterSpacing: 1.2,
+                      //fontWeight: FontWeight.w100,
+                      //letterSpacing: 1.2,
                       color: const Color(0XFF000000),
                     ),
                   ),
@@ -168,7 +168,7 @@ Widget repoLayoutLeft(
                               "Code",
                               style: TextStyle(
                                 fontFamily: 'Afacad',
-                                fontSize: sFont(context) + 2,
+                                fontSize: sPlusFont(context),
                                 fontWeight: FontWeight.w900,
                                 color: const Color(0xFFFFFFFF),
                               ),
@@ -206,7 +206,7 @@ Widget repoLayoutLeft(
                               "Demo",
                               style: TextStyle(
                                 fontFamily: 'Afacad',
-                                fontSize: sFont(context) + 2,
+                                fontSize: sPlusFont(context),
                                 fontWeight: FontWeight.w900,
                                 color: const Color(0xFFFFFFFF),
                               ),
@@ -275,10 +275,10 @@ Widget repoLayoutLeft(
                     title,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: 'RussoOne',
+                      fontFamily: 'AfacadBlack',
                       fontSize: mFont(context),
-                      fontWeight: FontWeight.w100,
-                      letterSpacing: 1.2,
+                      // fontWeight: FontWeight.w100,
+                      // letterSpacing: 1.2,
                       color: const Color(0XFF000000),
                     ),
                   ),
@@ -318,7 +318,7 @@ Widget repoLayoutLeft(
                             "Code",
                             style: TextStyle(
                               fontFamily: 'Afacad',
-                              fontSize: sFont(context) + 2,
+                              fontSize: sPlusFont(context),
                               fontWeight: FontWeight.w900,
                               color: const Color(0xFFFFFFFF),
                             ),
@@ -369,10 +369,10 @@ Widget repoLayoutRight(
                     title,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: 'RussoOne',
+                      fontFamily: 'AfacadBlack',
                       fontSize: mFont(context),
-                      fontWeight: FontWeight.w100,
-                      letterSpacing: 1.2,
+                      // fontWeight: FontWeight.w100,
+                      // letterSpacing: 1.2,
                       color: const Color(0XFF000000),
                     ),
                   ),
@@ -413,7 +413,7 @@ Widget repoLayoutRight(
                               "Code",
                               style: TextStyle(
                                 fontFamily: 'Afacad',
-                                fontSize: sFont(context) + 2,
+                                fontSize: sPlusFont(context),
                                 fontWeight: FontWeight.w900,
                                 color: const Color(0xFFFFFFFF),
                               ),
@@ -448,7 +448,7 @@ Widget repoLayoutRight(
                               "Demo",
                               style: TextStyle(
                                 fontFamily: 'Afacad',
-                                fontSize: sFont(context) + 2,
+                                fontSize: sPlusFont(context),
                                 fontWeight: FontWeight.w900,
                                 color: const Color(0xFFFFFFFF),
                               ),
@@ -517,10 +517,10 @@ Widget repoLayoutRight(
                     title,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: 'RussoOne',
+                      fontFamily: 'AfacadBlack',
                       fontSize: mFont(context),
-                      fontWeight: FontWeight.w100,
-                      letterSpacing: 1.2,
+                      // fontWeight: FontWeight.w100,
+                      // letterSpacing: 1.2,
                       color: const Color(0XFF000000),
                     ),
                   ),
@@ -553,28 +553,27 @@ Widget repoLayoutRight(
                     return WebNavigator.openUrl(url: repoLink);
                   },
                   child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            "Code",
-                            style: TextStyle(
-                              fontFamily: 'Afacad',
-                              fontSize: sFont(context) + 2,
-                              fontWeight: FontWeight.w900,
-                              color: const Color(0xFFFFFFFF),
-                            ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Code",
+                          style: TextStyle(
+                            fontFamily: 'Afacad',
+                            fontSize: sPlusFont(context),
+                            fontWeight: FontWeight.w900,
+                            color: const Color(0xFFFFFFFF),
                           ),
-                          hXtraSmall(context),
-                          const FaIcon(
-                            FontAwesomeIcons.github,
-                            size: 32,
-                            color: Color(0xFFFFFFFF),
-                          ),
-                        ],
-                      ),
+                        ),
+                        hXtraSmall(context),
+                        const FaIcon(
+                          FontAwesomeIcons.github,
+                          size: 32,
+                          color: Color(0xFFFFFFFF),
+                        ),
+                      ],
                     ),
                   ),
                 ).scaleOnHover(scale: 1.2),

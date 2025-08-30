@@ -248,12 +248,7 @@ class TabletTechStackSection extends StatelessWidget {
         totalLeftSpacing,
         SelectableText(
           "Tech Stack",
-          style: TextStyle(
-            fontFamily: 'Afacad',
-            fontSize: headingFontSize,
-            fontWeight: FontWeight.w900,
-            color: const Color(0XFF1B1B1B),
-          ),
+          style: sectionHeading(context),
         ),
         hMedium(context),
         Container(height: 26, width: 3, color: const Color(0XFF1B1B1B)),

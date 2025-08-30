@@ -26,8 +26,14 @@ flutter:
   fonts:
     - family: Afacad
       fonts:
-        - asset: asset/fonts/Afacad/Afacad-VariableFont_wght.ttf
+        - asset: asset/fonts/Afacad/AfacadFlux-Variable.ttf
         - asset: asset/fonts/Afacad/Afacad-Italic-VariableFont_wght.ttf
+    - family: AfacadBlack
+      fonts:
+        - asset: asset/fonts/Afacad/Afacad-Black.ttf
+    - family: AfacadBold
+      fonts:
+        - asset: asset/fonts/Afacad/Afacad-Bold.ttf
     - family: Yatra
       fonts:
         - asset: asset/fonts/Yatra_One/YatraOne-Regular.ttf

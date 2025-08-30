@@ -135,6 +135,8 @@ enum whitespace {
   final double size;
 
   const whitespace(this.size);
+
+  static double responsiveSpace(BuildContext c, whitespace s) => autoScale(c, s.size, ScalingModes.diagonal);
 }
 
 double screenWidth(BuildContext context) => MediaQuery.of(context).size.width;
@@ -177,10 +179,38 @@ vSuperMassive(BuildContext c) => autoVSpace(c, whitespace.superMassive.size);
 vMega(BuildContext c) => autoVSpace(c, whitespace.mega.size);
 vUltraMega(BuildContext c) => autoVSpace(c, whitespace.ultraMega.size);
 
+/// ------------------- Font Styles -------------------
+TextStyle sectionHeading(BuildContext c) => TextStyle(
+  fontFamily: 'AfacadBlack',
+  fontSize: lFont(c),
+  letterSpacing: 1.5,
+  color: const Color(0XFF000000),
+);
+TextStyle sectionSubHeadings(BuildContext c) => TextStyle(
+  fontFamily: 'AfacadBold',
+  fontSize: mFont(c),
+  color: const Color(0XFF000000),
+);
+TextStyle smallTextStyle(BuildContext c) => TextStyle(
+  fontFamily: 'Afacad',
+  fontSize: sFont(c),
+  fontWeight: FontWeight.w700,
+  color: const Color(0XFF3C4A53),
+  overflow: TextOverflow.visible,
+);
+TextStyle xtraSmallTextStyle(BuildContext c) => TextStyle(
+  fontFamily: 'Afacad',
+  fontSize: xsFont(c),
+  fontWeight: FontWeight.w700,
+  color: const Color(0XFF3C4A53),
+  overflow: TextOverflow.visible,
+);
+
 /// ------------------- Responsive fonts -------------------
 enum font {
   xs(8),
   s(14.0),
+  sPlus(16.0),
   m(18.0),
   l(24.0),
   xl(28.0),
@@ -192,10 +222,13 @@ enum font {
 }
 
 double xsFont(BuildContext c) =>
-    autoScale(c, font.s.size, ScalingModes.diagonal);
+    autoScale(c, font.xs.size, ScalingModes.diagonal);
 
 double sFont(BuildContext c) =>
     autoScale(c, font.s.size, ScalingModes.diagonal);
+
+double sPlusFont(BuildContext c) =>
+    autoScale(c, font.sPlus.size, ScalingModes.diagonal);
 
 double mFont(BuildContext c) =>
     autoScale(c, font.m.size, ScalingModes.diagonal);
