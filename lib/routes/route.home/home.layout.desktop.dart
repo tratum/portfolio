@@ -266,7 +266,7 @@ class DesktopAboutMeSection extends StatelessWidget {
                   text: TextSpan(
                     style: TextStyle(
                       fontFamily: 'Afacad',
-                      fontSize: sFont(context),
+                      fontSize: sPlusFont(context),
                       fontWeight: FontWeight.w700,
                       color: const Color(0XFF3C4A53),
                     ),
