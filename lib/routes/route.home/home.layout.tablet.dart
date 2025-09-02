@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../app/app.classes.dart';
 import '../../app/app.constants.dart';
-import '../../app/app.functions.dart';
 import '../../app/app.hover.extensions.dart';
 import '../../app/app.widgets.dart';
 
@@ -201,7 +201,7 @@ class TabletHomeSection extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ).scaleOnHover(scale: 12),
+                  ).scaleOnHover(scale: 1.2),
                 ],
               ),
             ],
@@ -246,15 +246,7 @@ class TabletTechStackSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         totalLeftSpacing,
-        SelectableText(
-          "Tech Stack",
-          style: TextStyle(
-            fontFamily: 'Afacad',
-            fontSize: headingFontSize,
-            fontWeight: FontWeight.w900,
-            color: const Color(0XFF1B1B1B),
-          ),
-        ),
+        SelectableText("Tech Stack", style: sectionHeading(context)),
         hMedium(context),
         Container(height: 26, width: 3, color: const Color(0XFF1B1B1B)),
         hMedium(context),

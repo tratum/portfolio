@@ -2,37 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../app/app.classes.dart';
 import '../../app/app.constants.dart';
-import '../../app/app.functions.dart';
 import '../../app/app.hover.extensions.dart';
 import '../../app/app.widgets.dart';
 
 class DesktopHomeSection extends StatelessWidget {
-  final double headerFontSize;
-  final double subTextPadding;
-  final double subTextFontSize;
-  final double iconSize;
-  final double profileTopPadding;
-  final double profileWidth;
-  final double profileHeight;
-
-  const DesktopHomeSection({
-    super.key,
-    this.headerFontSize = 68,
-    this.subTextPadding = 250,
-    this.subTextFontSize = 32,
-    this.iconSize = 36,
-    this.profileWidth = 640,
-    this.profileHeight = 700,
-    this.profileTopPadding = 60,
-  });
+  const DesktopHomeSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        hMedium(context),
+        hXtraMedium(context),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -44,8 +27,8 @@ class DesktopHomeSection extends StatelessWidget {
                   "F u l l - S t a c k",
                   style: TextStyle(
                     fontFamily: 'Afacad',
-                    fontSize: headerFontSize,
-                    fontWeight: FontWeight.w900,
+                    fontSize: xlFont(context),
+                    fontWeight: FontWeight.bold,
                     color: const Color(0XFF353839),
                     letterSpacing: 2,
                   ),
@@ -59,8 +42,8 @@ class DesktopHomeSection extends StatelessWidget {
                   "D e v",
                   style: TextStyle(
                     fontFamily: 'Afacad',
-                    fontSize: headerFontSize,
-                    fontWeight: FontWeight.w900,
+                    fontSize: xlFont(context),
+                    fontWeight: FontWeight.bold,
                     color: const Color(0XFF353839),
                     letterSpacing: 2,
                   ),
@@ -88,7 +71,7 @@ class DesktopHomeSection extends StatelessWidget {
                         text: TextSpan(
                           style: TextStyle(
                             fontFamily: 'Afacad',
-                            fontSize: subTextFontSize,
+                            fontSize: sFont(context),
                             fontWeight: FontWeight.w500,
                             color: Color(0XFF6A8292),
                           ),
@@ -103,8 +86,16 @@ class DesktopHomeSection extends StatelessWidget {
                                 child: GestureDetector(
                                   child: Image.network(
                                     "https://tratum.github.io/cloud-asset-storage/images/pin.webp",
-                                    height: iconSize,
-                                    width: iconSize,
+                                    height: autoScale(
+                                      context,
+                                      18,
+                                      ScalingModes.diagonal,
+                                    ),
+                                    width: autoScale(
+                                      context,
+                                      18,
+                                      ScalingModes.diagonal,
+                                    ),
                                   ),
                                   onTap: () async {
                                     return WebNavigator.openUrl(
@@ -130,27 +121,27 @@ class DesktopHomeSection extends StatelessWidget {
                   child: FaIcon(
                     FontAwesomeIcons.linkedin,
                     color: Color(0XFF000000),
-                    size: iconSize,
+                    size: autoScale(context, 24, ScalingModes.diagonal),
                   ),
                   onTap: () async {
                     return WebNavigator.openUrl(
                       url: "https://www.linkedin.com/in/saksham-rawat-dev",
                     );
                   },
-                ),
+                ).scaleOnHover(scale: 1.2),
                 autoHSpace(context, whitespace.xs.size),
                 GestureDetector(
                   child: FaIcon(
                     FontAwesomeIcons.github,
                     color: Color(0XFF000000),
-                    size: iconSize,
+                    size: autoScale(context, 24, ScalingModes.diagonal),
                   ),
                   onTap: () async {
                     return WebNavigator.openUrl(
                       url: "https://github.com/tratum",
                     );
                   },
-                ),
+                ).scaleOnHover(scale: 1.2),
               ],
             ),
             vMedium(context),
@@ -174,22 +165,30 @@ class DesktopHomeSection extends StatelessWidget {
                             "Let's Connect",
                             style: TextStyle(
                               fontFamily: 'Afacad',
-                              fontSize: subTextFontSize - 4,
+                              fontSize: sFont(context) - 4,
                               fontWeight: FontWeight.w900,
                               color: const Color(0xFFFFFFFF),
                             ),
                           ),
                           hSmall(context),
-                          const Icon(
-                            Icons.send_sharp,
-                            size: 28,
-                            color: Color(0xFFFFFFFF),
+                          SvgPicture.asset(
+                            'asset/icons/paperplane.svg',
+                            width: autoScale(
+                              context,
+                              24,
+                              ScalingModes.diagonal,
+                            ),
+                            height: autoScale(
+                              context,
+                              24,
+                              ScalingModes.diagonal,
+                            ),
                           ),
                         ],
                       ),
                     ),
                   ),
-                ).scaleOnHover(scale: 12),
+                ).scaleOnHover(scale: 1.2),
               ],
             ),
           ],
@@ -199,140 +198,82 @@ class DesktopHomeSection extends StatelessWidget {
           padding: EdgeInsets.only(top: whitespace.m.size),
           child: Image.network(
             "https://tratum.github.io/cloud-asset-storage/images/bitmoji-profile-sketch-animation.webp",
-            width: screenWidth(context) / 2.3,
-            height: screenHeight(context) / 1,
+            width: screenWidth(context) / 2.4,
+            height: screenHeight(context) / 1.1,
             fit: BoxFit.fill,
             repeat: ImageRepeat.repeat,
             gaplessPlayback: true,
           ),
         ),
-        hMedium(context),
+        hXtraMedium(context),
       ],
     );
   }
 }
 
 class DesktopTechStackSection extends StatelessWidget {
-  final double headingFontSize;
-  final double iconSize;
-  final double iconContainer;
-  final double sectionSpace;
-  final double dividerHeight;
-
-  const DesktopTechStackSection({
-    super.key,
-    this.headingFontSize = 34,
-    this.iconSize = 50,
-    this.iconContainer = 74,
-    this.dividerHeight = 60,
-
-    required this.sectionSpace,
-  });
+  const DesktopTechStackSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        hMedium(context),
-        SelectableText(
-          "Tech Stack",
-          style: TextStyle(
-            fontFamily: 'Afacad',
-            fontSize: headingFontSize,
-            fontWeight: FontWeight.w900,
-            color: const Color(0XFF1B1B1B),
-          ),
-        ),
-        autoHSpace(context, whitespace.xs.size),
-        Divider(height: dividerHeight, thickness: 40, color: Color(0XFF1B1B1B)),
-        autoHSpace(context, whitespace.xs.size),
-        Expanded(
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: teckStackList
-                  .map(
-                    (item) => techStackBuilder(item, iconSize, iconContainer),
-                  )
-                  .toList(),
-            ),
-          ),
-        ),
-        hMedium(context),
-      ],
+    return Center(
+      child: RotatingTechCircle(
+        size: screenWidth(context) / 2,
+        iconSize: 100,
+        icons: skills.toImageList(width: 100, height: 100),
+        secondsPerRevolution: 20,
+        spinIcons: false,
+        pauseOnHover: false,
+        centerWidget: Text("Tech Stack", style: sectionHeading(context)),
+        onTap: (index) async =>
+            await WebNavigator.openUrl(url: skills.values[index].url),
+      ),
     );
   }
 }
 
 class DesktopAboutMeSection extends StatelessWidget {
-  final double imgHeight;
-  final double imgWidth;
-  final double headingFontSize;
-  final double subTextFontSize;
-  final double sectionSpace;
-
-  const DesktopAboutMeSection({
-    super.key,
-    required this.sectionSpace,
-    this.imgHeight = 550,
-    this.imgWidth = 700,
-    this.headingFontSize = 34,
-    this.subTextFontSize = 22,
-  });
+  const DesktopAboutMeSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: sectionSpace),
+    return IntrinsicHeight(
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          hMedium(context),
-          Expanded(
-            child: Container(
-              height: imgHeight,
-              width: imgWidth,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                image: const DecorationImage(
-                  image: NetworkImage(
-                    "https://tratum.github.io/cloud-asset-storage/images/deskSetup.webp",
-                  ),
-                  fit: BoxFit.cover,
+          hXtraMedium(context),
+          Container(
+            width: screenWidth(context) / 2.5,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              image: const DecorationImage(
+                image: NetworkImage(
+                  "https://tratum.github.io/cloud-asset-storage/images/deskSetup.webp",
                 ),
+                fit: BoxFit.cover,
               ),
             ),
           ),
           hXtraMedium(context),
           Expanded(
-            flex: 1,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SelectableText(
-                  "About Me :",
-                  style: TextStyle(
-                    fontFamily: 'RussoOne',
-                    fontSize: headingFontSize,
-                    fontWeight: FontWeight.w400,
-                    letterSpacing: 1.2,
-                    color: const Color(0XFF000000),
-                  ),
-                ),
+                SelectableText("About Me", style: sectionHeading(context)),
                 vMedium(context),
                 RichText(
                   text: TextSpan(
                     style: TextStyle(
                       fontFamily: 'Afacad',
-                      fontSize: subTextFontSize,
+                      fontSize: sFont(context),
                       fontWeight: FontWeight.w700,
                       color: const Color(0XFF3C4A53),
                     ),
                     children: const [
                       TextSpan(text: "Namaste ( "),
                       TextSpan(
-                        text: "NAH-muh-stay",
+                        text: "NAH-Muh-Stay",
                         style: TextStyle(
                           fontFamily: 'Afacad',
                           fontStyle: FontStyle.italic,
@@ -340,7 +281,7 @@ class DesktopAboutMeSection extends StatelessWidget {
                           color: Color(0XFF000000),
                         ),
                       ),
-                      TextSpan(text: " ) As a Junior Full Stack Developer"),
+                      TextSpan(text: " ) As a Full Stack Developer"),
                     ],
                   ),
                 ),
@@ -349,20 +290,20 @@ class DesktopAboutMeSection extends StatelessWidget {
                   "I possess an immense Zeal for crafting seamless digital experiences through writing a clean and optimized code. With a strong belief in the power of teamwork, I value open communication and diverse perspectives. Eager to contribute my skills and enthusiasm to innovative projects, I look forward to fostering a collaborative spirit while delivering a coding excellence.",
                   style: TextStyle(
                     fontFamily: 'Afacad',
-                    fontSize: subTextFontSize,
+                    fontSize: sFont(context),
                     fontWeight: FontWeight.w700,
                     color: const Color(0XFF3C4A53),
                     overflow: TextOverflow.visible,
                   ),
                   textAlign: TextAlign.justify,
                 ),
-                vTiny(context),
+                vMedium(context),
                 SelectableText(
-                  "Let's Build Something Extraordinary Together !!!!",
+                  "Let's Build Something Extraordinary Together !!",
                   style: TextStyle(
                     fontFamily: 'RussoOne',
-                    fontSize: subTextFontSize + 2,
-                    fontWeight: FontWeight.w400,
+                    fontSize: sFont(context) + 4,
+                    fontWeight: FontWeight.w600,
                     fontStyle: FontStyle.italic,
                     color: const Color(0XFFE53935),
                     letterSpacing: 1.2,
@@ -371,7 +312,7 @@ class DesktopAboutMeSection extends StatelessWidget {
               ],
             ),
           ),
-          hMedium(context),
+          hXtraMedium(context),
         ],
       ),
     );
@@ -379,22 +320,7 @@ class DesktopAboutMeSection extends StatelessWidget {
 }
 
 class DesktopProjectSection extends StatelessWidget {
-  final double headingFontSize;
-  final double projectHeadingFontSize;
-  final double subHeadingFontSize;
-  final double imgHeight;
-  final double imgWidth;
-  final double projectSubTextFontSize;
-
-  const DesktopProjectSection({
-    super.key,
-    this.headingFontSize = 34,
-    this.subHeadingFontSize = 28,
-    this.imgHeight = 400,
-    this.imgWidth = 600,
-    this.projectHeadingFontSize = 26,
-    this.projectSubTextFontSize = 22,
-  });
+  const DesktopProjectSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -408,42 +334,34 @@ class DesktopProjectSection extends StatelessWidget {
             children: [
               vMedium(context),
               Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  autoHSpace(context, whitespace.s.size),
-                  SelectableText(
-                    "Portfolio: ",
-                    style: TextStyle(
-                      fontFamily: 'RussoOne',
-                      fontSize: headingFontSize,
-                      fontWeight: FontWeight.w400,
-                      letterSpacing: 1.2,
-                      color: const Color(0XFF000000),
-                    ),
-                  ),
+                  hXtraMedium(context),
+                  SelectableText("Portfolio", style: sectionHeading(context)),
                 ],
               ),
               vXtraSmall(context),
               Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  autoHSpace(context, whitespace.s.size),
+                  hXtraMedium(context),
                   SelectableText(
-                    "Every project represents an original work of development.",
+                    "Every Project Represents an Original Work Of Development.",
                     style: TextStyle(
                       fontFamily: 'Afacad',
-                      fontSize: subHeadingFontSize,
+                      fontSize: mFont(context),
                       fontWeight: FontWeight.w700,
                       color: const Color(0XFF3C4A53),
                     ),
                   ),
-                  hSmall(context),
-                  Image.network(
-                    "https://tratum.github.io/cloud-asset-storage/images/glowingStar.webp",
-                    cacheWidth: 28,
-                    cacheHeight: 28,
-                    height: 40,
-                    width: 40,
+                  hTiny(context),
+                  Center(
+                    child: Image.network(
+                      "https://tratum.github.io/cloud-asset-storage/images/glowingStar.webp",
+                      cacheWidth: 50,
+                      cacheHeight: 50,
+                      height: 60,
+                      width: 60,
+                    ),
                   ),
                 ],
               ),
@@ -453,6 +371,7 @@ class DesktopProjectSection extends StatelessWidget {
                 repos.Notely.title,
                 repos.Notely.description,
                 repos.Notely.imgLink,
+                true,
                 repos.Notely.repoLink,
               ),
               vLarge(context),
@@ -461,6 +380,7 @@ class DesktopProjectSection extends StatelessWidget {
                 repos.AppleVision.title,
                 repos.AppleVision.description,
                 repos.AppleVision.imgLink,
+                false,
                 repos.AppleVision.repoLink,
               ),
             ],
@@ -472,17 +392,13 @@ class DesktopProjectSection extends StatelessWidget {
 }
 
 class DesktopResume extends StatelessWidget {
-  final double sectionSpace;
   final double pdfViewHeight;
   final double pdfViewWidth;
-  final double headingFontSize;
 
   const DesktopResume({
     super.key,
-    required this.sectionSpace,
     this.pdfViewHeight = 800,
     this.pdfViewWidth = 800,
-    this.headingFontSize = 34,
   });
 
   @override
@@ -493,21 +409,11 @@ class DesktopResume extends StatelessWidget {
     );
     return Column(
       children: [
-        vSpace(sectionSpace),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            hMedium(context),
-            SelectableText(
-              "Resume",
-              style: TextStyle(
-                fontFamily: 'RussoOne',
-                fontSize: headingFontSize,
-                fontWeight: FontWeight.w400,
-                letterSpacing: 1.2,
-                color: const Color(0XFF000000),
-              ),
-            ),
+            hXtraMedium(context),
+            SelectableText("Resume", style: sectionHeading(context)),
           ],
         ),
         vMedium(context),
@@ -531,222 +437,296 @@ class DesktopResume extends StatelessWidget {
 }
 
 class DesktopContactSection extends StatelessWidget {
-  final double headingFontSize;
-  final double subHeadingFontSize;
-  final double imgHeight;
-  final double imgWidth;
-  final double sectionSpace;
-
-  const DesktopContactSection({
-    super.key,
-    required this.sectionSpace,
-    this.headingFontSize = 34,
-    this.subHeadingFontSize = 24,
-    this.imgHeight = 30,
-    this.imgWidth = 30,
-  });
+  const DesktopContactSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        hMedium(context),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            vSpace(sectionSpace),
-            SelectableText(
-              "Let's build together",
-              style: TextStyle(
-                fontFamily: 'RussoOne',
-                fontSize: headingFontSize,
-                fontWeight: FontWeight.w400,
-                letterSpacing: 1.2,
-                color: const Color(0XFF000000),
-              ),
-            ),
-            vXtraSmall(context),
-            Row(
-              children: [
-                SelectableText(
-                  "I'm always open to new projects and opportunities.",
-                  style: TextStyle(
-                    fontFamily: 'Afacad',
-                    fontSize: subHeadingFontSize,
-                    fontWeight: FontWeight.w900,
-                    color: const Color(0XFF121212),
-                  ),
-                ),
-                hTiny(context),
-                SelectableText(
-                  "Drop a Hello,",
-                  style: TextStyle(
-                    fontFamily: 'Afacad',
-                    fontSize: subHeadingFontSize,
-                    fontWeight: FontWeight.w900,
-                    color: const Color(0XFF121212),
-                  ),
-                ),
-              ],
-            ),
-            vXtraSmall(context),
-            Row(
-              children: [
-                SelectableText(
-                  "Let's Collaborate and Grow!",
-                  style: TextStyle(
-                    fontFamily: 'Afacad',
-                    fontSize: subHeadingFontSize,
-                    fontWeight: FontWeight.w900,
-                    color: const Color(0XFF121212),
-                  ),
-                ),
-                hTiny(context),
-                Image.network(
-                  "https://tratum.github.io/cloud-asset-storage/images/pointingDown.webp",
-                  cacheWidth: 28,
-                  cacheHeight: 28,
-                  height: imgHeight,
-                  width: imgWidth,
-                ),
-              ],
-            ),
-            vLarge(context),
-            Row(
-              children: [
-                ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all(
-                      const Color(0XFF000000),
+    return Padding(
+      padding: EdgeInsets.only(
+        left: whitespace.responsiveSpace(context, whitespace.xm),
+        right: whitespace.responsiveSpace(context, whitespace.xm),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(child: Text("Get in touch", style: sectionHeading(context))),
+          vMedium(context),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Flexible(
+                fit: FlexFit.loose,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Let's build", style: sectionSubHeadings(context)),
+                    vSmall(context),
+                    Text(
+                      "I'm currently available to take on new projects, so feel free to send me a message about anything that you want me to work on. You can contact anytime.",
+                      style: smallTextStyle(context),
                     ),
-                  ),
-                  onPressed: () {
-                    WebNavigator.launchEmail("tratum.connect@gmail.com");
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.all(12),
-                    child: Center(
+                    vSmall(context),
+                    Container(
                       child: Row(
                         children: [
                           FaIcon(
                             FontAwesomeIcons.envelopeOpen,
                             size: 24,
-                            color: Color(0xFFFFFFFF),
+                            color: Color(0XFF000000),
                           ),
-                          hSmall(context),
+                          hTiny(context),
                           Text(
                             "tratum.connect@gmail.com",
                             style: TextStyle(
                               fontFamily: 'Afacad',
-                              fontSize: 24,
-                              fontWeight: FontWeight.w700,
-                              color: Color(0xFFDE3163),
+                              fontWeight: FontWeight.w600,
+                              fontSize: sFont(context),
+                              color: Color(0XFF3C4A53),
                             ),
                           ),
                         ],
                       ),
                     ),
-                  ),
-                ).scaleOnHover(scale: 12),
-                // GestureDetector(
-                //   onTap: () {
-                //     WebNavigator.launchEmail("tratum.connect@gmail.com");
-                //   },
-                //   child: const ScaleOnHover(
-                //     scale: 12,
-                //     child: Row(
-                //       children: [
-                //         Icon(
-                //           Icons.mail_outline_rounded,
-                //           size: 42,
-                //           color: Color(0XFF3498db),
-                //         ),
-                //         horizontalSpaceTiny,
-                //         Text(
-                //           "tratum.connect@gmail.com",
-                //           style: TextStyle(
-                //             fontFamily: 'Afacad',
-                //             fontSize: 24,
-                //             fontWeight: FontWeight.w700,
-                //             color: Color(0XFF121212),
-                //           ),
-                //         )
-                //       ],
-                //     ),
-                //   ),
-                // ),
-                hLarge(context),
-                ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all(
-                      const Color(0XFF000000),
-                    ),
-                  ),
-                  onPressed: () async {
-                    return WebNavigator.openUrl(
-                      url: 'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
-                    );
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.all(12),
-                    child: Center(
+                    vSmall(context),
+                    Container(
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.map_outlined,
-                            size: 26,
-                            color: Color(0xFFFFFFFF),
+                          FaIcon(
+                            FontAwesomeIcons.locationDot,
+                            size: 24,
+                            color: Color(0XFF000000),
                           ),
-                          hSmall(context),
+                          hTiny(context),
                           Text(
-                            "Jaipur, Rajasthan, India",
+                            "Jaipur, India",
                             style: TextStyle(
                               fontFamily: 'Afacad',
-                              fontSize: 24,
-                              fontWeight: FontWeight.w700,
-                              color: Color(0xFFD0F0C0),
+                              fontWeight: FontWeight.w600,
+                              fontSize: sFont(context),
+                              color: Color(0XFF3C4A53),
                             ),
                           ),
                         ],
                       ),
                     ),
-                  ),
-                ).scaleOnHover(scale: 12),
-                // GestureDetector(
-                //   onTap: () async {
-                //     return WebNavigator.openUrl(
-                //       url: 'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
-                //     );
-                //   },
-                //   child: const ScaleOnHover(
-                //     scale: 12,
-                //     child: Row(children: [
-                //       Icon(
-                //         Icons.map_outlined,
-                //         size: 42,
-                //         color: Color(0XFF00A86B),
-                //       ),
-                //       horizontalSpaceTiny,
-                //       SelectableText(
-                //         "Jaipur, Rajasthan, India",
-                //         style: TextStyle(
-                //           fontFamily: 'Afacad',
-                //           fontSize: 24,
-                //           fontWeight: FontWeight.w700,
-                //           color: Color(0XFF121212),
-                //         ),
-                //       ),
-                //     ]),
-                //   ),
-                // ),
-              ],
-            ),
-            vXtraLarge(context),
-          ],
-        ),
-        hMedium(context),
-      ],
+                  ],
+                ),
+              ),
+              hLarge(context),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Container(
+                      color: Colors.transparent,
+                      height: screenHeight(context) * 0.5,
+                      child: Placeholder(),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
+    //   Row(
+    //   children: [
+    //     hXtraMedium(context),
+    //     Column(
+    //       crossAxisAlignment: CrossAxisAlignment.start,
+    //       children: [
+    //         SelectableText(
+    //           "Let's build together",
+    //           style: sectionHeading(context),
+    //         ),
+    //         vXtraSmall(context),
+    //         Row(
+    //           children: [
+    //             SelectableText(
+    //               "I'm always open to new projects and opportunities.",
+    //               style: TextStyle(
+    //                 fontFamily: 'Afacad',
+    //                 fontSize: sFont(context),
+    //                 fontWeight: FontWeight.w900,
+    //                 color: const Color(0XFF121212),
+    //               ),
+    //             ),
+    //             hTiny(context),
+    //             SelectableText(
+    //               "Drop a Hello,",
+    //               style: TextStyle(
+    //                 fontFamily: 'Afacad',
+    //                 fontSize: sFont(context),
+    //                 fontWeight: FontWeight.w900,
+    //                 color: const Color(0XFF121212),
+    //               ),
+    //             ),
+    //           ],
+    //         ),
+    //         vXtraSmall(context),
+    //         Row(
+    //           children: [
+    //             SelectableText(
+    //               "Let's Collaborate and Grow!",
+    //               style: TextStyle(
+    //                 fontFamily: 'Afacad',
+    //                 fontSize: sFont(context),
+    //                 fontWeight: FontWeight.w900,
+    //                 color: const Color(0XFF121212),
+    //               ),
+    //             ),
+    //             hTiny(context),
+    //             Image.network(
+    //               "https://tratum.github.io/cloud-asset-storage/images/pointingDown.webp",
+    //               cacheWidth: 28,
+    //               cacheHeight: 28,
+    //               height: imgHeight,
+    //               width: imgWidth,
+    //             ),
+    //           ],
+    //         ),
+    //         vLarge(context),
+    //         Row(
+    //           children: [
+    //             ElevatedButton(
+    //               style: ButtonStyle(
+    //                 backgroundColor: WidgetStateProperty.all(
+    //                   const Color(0XFF000000),
+    //                 ),
+    //               ),
+    //               onPressed: () {
+    //                 WebNavigator.launchEmail("tratum.connect@gmail.com");
+    //               },
+    //               child: Padding(
+    //                 padding: EdgeInsets.all(12),
+    //                 child: Center(
+    //                   child: Row(
+    //                     children: [
+    //                       FaIcon(
+    //                         FontAwesomeIcons.envelopeOpen,
+    //                         size: 24,
+    //                         color: Color(0xFFFFFFFF),
+    //                       ),
+    //                       hSmall(context),
+    //                       Text(
+    //                         "tratum.connect@gmail.com",
+    //                         style: TextStyle(
+    //                           fontFamily: 'Afacad',
+    //                           fontSize: 24,
+    //                           fontWeight: FontWeight.w700,
+    //                           color: Color(0xFFDE3163),
+    //                         ),
+    //                       ),
+    //                     ],
+    //                   ),
+    //                 ),
+    //               ),
+    //             ).scaleOnHover(scale: 1.2),
+    //             // GestureDetector(
+    //             //   onTap: () {
+    //             //     WebNavigator.launchEmail("tratum.connect@gmail.com");
+    //             //   },
+    //             //   child: const ScaleOnHover(
+    //             //     scale: 12,
+    //             //     child: Row(
+    //             //       children: [
+    //             //         Icon(
+    //             //           Icons.mail_outline_rounded,
+    //             //           size: 42,
+    //             //           color: Color(0XFF3498db),
+    //             //         ),
+    //             //         horizontalSpaceTiny,
+    //             //         Text(
+    //             //           "tratum.connect@gmail.com",
+    //             //           style: TextStyle(
+    //             //             fontFamily: 'Afacad',
+    //             //             fontSize: 24,
+    //             //             fontWeight: FontWeight.w700,
+    //             //             color: Color(0XFF121212),
+    //             //           ),
+    //             //         )
+    //             //       ],
+    //             //     ),
+    //             //   ),
+    //             // ),
+    //             hLarge(context),
+    //             ElevatedButton(
+    //               style: ButtonStyle(
+    //                 backgroundColor: WidgetStateProperty.all(
+    //                   const Color(0XFF000000),
+    //                 ),
+    //               ),
+    //               onPressed: () async {
+    //                 return WebNavigator.openUrl(
+    //                   url: 'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
+    //                 );
+    //               },
+    //               child: Padding(
+    //                 padding: EdgeInsets.all(12),
+    //                 child: Center(
+    //                   child: Row(
+    //                     children: [
+    //                       Icon(
+    //                         Icons.map_outlined,
+    //                         size: 26,
+    //                         color: Color(0xFFFFFFFF),
+    //                       ),
+    //                       hSmall(context),
+    //                       Text(
+    //                         "Jaipur, Rajasthan, India",
+    //                         style: TextStyle(
+    //                           fontFamily: 'Afacad',
+    //                           fontSize: 24,
+    //                           fontWeight: FontWeight.w700,
+    //                           color: Color(0xFFD0F0C0),
+    //                         ),
+    //                       ),
+    //                     ],
+    //                   ),
+    //                 ),
+    //               ),
+    //             ).scaleOnHover(scale: 1.2),
+    //             // GestureDetector(
+    //             //   onTap: () async {
+    //             //     return WebNavigator.openUrl(
+    //             //       url: 'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
+    //             //     );
+    //             //   },
+    //             //   child: const ScaleOnHover(
+    //             //     scale: 12,
+    //             //     child: Row(children: [
+    //             //       Icon(
+    //             //         Icons.map_outlined,
+    //             //         size: 42,
+    //             //         color: Color(0XFF00A86B),
+    //             //       ),
+    //             //       horizontalSpaceTiny,
+    //             //       SelectableText(
+    //             //         "Jaipur, Rajasthan, India",
+    //             //         style: TextStyle(
+    //             //           fontFamily: 'Afacad',
+    //             //           fontSize: 24,
+    //             //           fontWeight: FontWeight.w700,
+    //             //           color: Color(0XFF121212),
+    //             //         ),
+    //             //       ),
+    //             //     ]),
+    //             //   ),
+    //             // ),
+    //           ],
+    //         ),
+    //         vXtraLarge(context),
+    //       ],
+    //     ),
+    //     hXtraMedium(context),
+    //   ],
+    // );
   }
 }
 
@@ -758,7 +738,10 @@ class DesktopFooterSection extends StatelessWidget {
     return Container(
       color: const Color(0XFF000000),
       child: Padding(
-        padding: EdgeInsets.only(left: whitespace.l.size, right: whitespace.l.size),
+        padding: EdgeInsets.only(
+          left: whitespace.l.size,
+          right: whitespace.l.size,
+        ),
         child: Column(
           children: [
             vSmall(context),
@@ -778,10 +761,12 @@ class DesktopFooterSection extends StatelessWidget {
                 const Spacer(),
                 GestureDetector(
                   onTap: () async {
-                    return WebNavigator.openUrl(url: 'https://github.com/tratum');
+                    return WebNavigator.openUrl(
+                      url: 'https://github.com/tratum',
+                    );
                   },
                   child: const ScaleOnHover(
-                    scale: 12,
+                    scale: 1.2,
                     child: FaIcon(
                       FontAwesomeIcons.github,
                       color: Color(0XFFFFFFFF),
@@ -797,7 +782,7 @@ class DesktopFooterSection extends StatelessWidget {
                     );
                   },
                   child: const ScaleOnHover(
-                    scale: 12,
+                    scale: 1.2,
                     child: FaIcon(
                       FontAwesomeIcons.linkedin,
                       color: Color(0XFFFFFFFF),

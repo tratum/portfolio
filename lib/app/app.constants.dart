@@ -56,7 +56,62 @@ enum repos {
   final String description;
   final String imgLink;
   final String repoLink;
+
   const repos(this.title, this.description, this.imgLink, this.repoLink);
+}
+
+/// --------------- Tech Stack --------------------------
+enum skills {
+  HTML(
+    "https://tratum.github.io/cloud-asset-storage/images/html.webp",
+    "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  ),
+  CSS(
+    "https://tratum.github.io/cloud-asset-storage/images/css.webp",
+    'https://developer.mozilla.org/en-US/docs/Web/CSS',
+  ),
+  Python(
+    "https://tratum.github.io/cloud-asset-storage/images/python.webp",
+    "https://docs.python.org/3/",
+  ),
+  Flutter(
+    "https://tratum.github.io/cloud-asset-storage/images/flutter.webp",
+    "https://docs.flutter.dev/",
+  ),
+  Java(
+    "https://tratum.github.io/cloud-asset-storage/images/java.webp",
+    "https://docs.oracle.com/en/java/",
+  ),
+  MongoDB(
+    "https://tratum.github.io/cloud-asset-storage/images/mongodb.webp",
+    "https://www.mongodb.com/docs/compass/current/",
+  ),
+  Dart(
+    "https://tratum.github.io/cloud-asset-storage/images/dart.webp",
+    "https://dart.dev/guides",
+  );
+
+  final String icon;
+  final String url;
+
+  const skills(this.icon, this.url);
+
+  static List<Image> toImageList({
+    required double width,
+    required double height,
+  }) {
+    return values
+        .map(
+          (s) => Image.network(
+            s.icon,
+            width: width,
+            height: height,
+            fit: BoxFit.contain,
+            semanticLabel: s.name,
+          ),
+        )
+        .toList();
+  }
 }
 
 /// ------------------- Responsive WhiteSpace -------------------
@@ -80,6 +135,9 @@ enum whitespace {
   final double size;
 
   const whitespace(this.size);
+
+  static double responsiveSpace(BuildContext c, whitespace s) =>
+      autoScale(c, s.size, ScalingModes.diagonal);
 }
 
 double screenWidth(BuildContext context) => MediaQuery.of(context).size.width;
@@ -122,9 +180,38 @@ vSuperMassive(BuildContext c) => autoVSpace(c, whitespace.superMassive.size);
 vMega(BuildContext c) => autoVSpace(c, whitespace.mega.size);
 vUltraMega(BuildContext c) => autoVSpace(c, whitespace.ultraMega.size);
 
+/// ------------------- Font Styles -------------------
+TextStyle sectionHeading(BuildContext c) => TextStyle(
+  fontFamily: 'AfacadBlack',
+  fontSize: lFont(c),
+  letterSpacing: 1.5,
+  color: const Color(0XFF000000),
+);
+TextStyle sectionSubHeadings(BuildContext c) => TextStyle(
+  fontFamily: 'AfacadBold',
+  fontSize: mFont(c),
+  color: const Color(0XFF000000),
+);
+TextStyle smallTextStyle(BuildContext c) => TextStyle(
+  fontFamily: 'Afacad',
+  fontSize: sFont(c),
+  fontWeight: FontWeight.w700,
+  color: const Color(0XFF3C4A53),
+  overflow: TextOverflow.visible,
+);
+TextStyle xtraSmallTextStyle(BuildContext c) => TextStyle(
+  fontFamily: 'Afacad',
+  fontSize: xsFont(c),
+  fontWeight: FontWeight.w700,
+  color: const Color(0XFF3C4A53),
+  overflow: TextOverflow.visible,
+);
+
 /// ------------------- Responsive fonts -------------------
 enum font {
+  xs(8),
   s(14.0),
+  sPlus(16.0),
   m(18.0),
   l(24.0),
   xl(28.0),
@@ -135,8 +222,14 @@ enum font {
   const font(this.size);
 }
 
+double xsFont(BuildContext c) =>
+    autoScale(c, font.xs.size, ScalingModes.diagonal);
+
 double sFont(BuildContext c) =>
     autoScale(c, font.s.size, ScalingModes.diagonal);
+
+double sPlusFont(BuildContext c) =>
+    autoScale(c, font.sPlus.size, ScalingModes.diagonal);
 
 double mFont(BuildContext c) =>
     autoScale(c, font.m.size, ScalingModes.diagonal);

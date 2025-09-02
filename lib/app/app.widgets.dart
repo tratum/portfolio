@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../app/app.hover.extensions.dart';
+import 'app.classes.dart';
 import 'app.constants.dart';
-import 'app.functions.dart';
 
 final List<Map<String, String>> teckStackList = [
   {
@@ -76,156 +76,285 @@ Widget repoLayoutLeft(
   String title,
   String description,
   String imgLink,
+  bool showDemo,
   String repoLink,
 ) {
   // This Widget layouts the Project image to the left and the Project text to the right
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //crossAxisAlignment: CrossAxisAlignment.baseline,
-    children: [
-      hMedium(context),
-      GestureDetector(
-        onTap: () async {
-          return ImageView.showImageDialog(context: context, imgPath: imgLink);
-        },
-        child: Container(
-          height: screenHeight(context) / 2,
-          width: screenWidth(context) / 2,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withValues(alpha: 0.5),
-                spreadRadius: 5, // Spread radius
-                blurRadius: 7, // Blur radius
-                offset: const Offset(0, 3), // Offset position
+  if (showDemo) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //crossAxisAlignment: CrossAxisAlignment.baseline,
+      children: [
+        hXtraMedium(context),
+        GestureDetector(
+          onTap: () async {
+            return ImageView.showImageDialog(
+              context: context,
+              imgPath: imgLink,
+            );
+          },
+          child: Container(
+            height: screenHeight(context) / 2,
+            width: screenWidth(context) / 2,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withValues(alpha: 0.5),
+                  spreadRadius: 5, // Spread radius
+                  blurRadius: 7, // Blur radius
+                  offset: const Offset(0, 3), // Offset position
+                ),
+              ],
+              image: DecorationImage(
+                image: NetworkImage(imgLink),
+                fit: BoxFit.cover,
               ),
-            ],
-            image: DecorationImage(
-              image: NetworkImage(imgLink),
-              fit: BoxFit.cover,
             ),
           ),
         ),
-      ),
-      hLarge(context),
-      Expanded(
-        child: Column(
-          children: [
-            Row(
-              children: [
-                const Spacer(),
-                SelectableText(
-                  title,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'RussoOne',
-                    fontSize: mFont(context),
-                    fontWeight: FontWeight.w100,
-                    letterSpacing: 1.2,
-                    color: const Color(0XFF000000),
+        hLarge(context),
+        Expanded(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  const Spacer(),
+                  SelectableText(
+                    title,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'AfacadBlack',
+                      fontSize: mFont(context),
+                      //fontWeight: FontWeight.w100,
+                      //letterSpacing: 1.2,
+                      color: const Color(0XFF000000),
+                    ),
                   ),
+                  const Spacer(),
+                ],
+              ),
+              vSmall(context),
+              SelectableText(
+                description,
+                textAlign: TextAlign.justify,
+                style: TextStyle(
+                  fontFamily: 'Afacad',
+                  fontSize: sFont(context),
+                  fontWeight: FontWeight.w700,
+                  color: const Color(0XFF3C4A53),
+                  overflow: TextOverflow.visible,
                 ),
-                const Spacer(),
+              ),
+              vXtraMedium(context),
+              Row(
+                children: [
+                  const Spacer(),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStateProperty.all(
+                        const Color(0XFF000000),
+                      ),
+                    ),
+                    onPressed: () async {
+                      return WebNavigator.openUrl(url: repoLink);
+                    },
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Code",
+                              style: TextStyle(
+                                fontFamily: 'Afacad',
+                                fontSize: sPlusFont(context),
+                                fontWeight: FontWeight.w900,
+                                color: const Color(0xFFFFFFFF),
+                              ),
+                            ),
+                            hXtraSmall(context),
+                            const FaIcon(
+                              FontAwesomeIcons.github,
+                              size: 32,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ).scaleOnHover(scale: 1.2),
+                  const Spacer(),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStateProperty.all(
+                        const Color(0XFF000000),
+                      ),
+                    ),
+                    onPressed: () async {
+                      return WebNavigator.openUrl(
+                        url:
+                            "https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing",
+                      );
+                    },
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Demo",
+                              style: TextStyle(
+                                fontFamily: 'Afacad',
+                                fontSize: sPlusFont(context),
+                                fontWeight: FontWeight.w900,
+                                color: const Color(0xFFFFFFFF),
+                              ),
+                            ),
+                            hXtraSmall(context),
+                            FaIcon(
+                              FontAwesomeIcons.arrowUpRightFromSquare,
+                              color: Color(0xFFFFFFFF),
+                              size: 30,
+                            ),
+                            // const Icon(
+                            //   Icons.open_in_new,
+                            //   size: 32,
+                            //   color: Color(0xFFFFFFFF),
+                            // ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ).scaleOnHover(scale: 1.2),
+                  const Spacer(),
+                ],
+              ),
+            ],
+          ),
+        ),
+        hXtraMedium(context),
+      ],
+    );
+  } else {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //crossAxisAlignment: CrossAxisAlignment.baseline,
+      children: [
+        hXtraMedium(context),
+        GestureDetector(
+          onTap: () async {
+            return ImageView.showImageDialog(
+              context: context,
+              imgPath: imgLink,
+            );
+          },
+          child: Container(
+            height: screenHeight(context) / 2,
+            width: screenWidth(context) / 2,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withValues(alpha: 0.5),
+                  spreadRadius: 5, // Spread radius
+                  blurRadius: 7, // Blur radius
+                  offset: const Offset(0, 3), // Offset position
+                ),
               ],
-            ),
-            vSmall(context),
-            SelectableText(
-              description,
-              textAlign: TextAlign.justify,
-              style: TextStyle(
-                fontFamily: 'Afacad',
-                fontSize: sFont(context),
-                fontWeight: FontWeight.w700,
-                color: const Color(0XFF3C4A53),
-                overflow: TextOverflow.visible,
+              image: DecorationImage(
+                image: NetworkImage(imgLink),
+                fit: BoxFit.cover,
               ),
             ),
-            vXtraMedium(context),
-            Row(
-              children: [
-                const Spacer(),
-                ElevatedButton(
+          ),
+        ),
+        hLarge(context),
+        Expanded(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  const Spacer(),
+                  SelectableText(
+                    title,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'AfacadBlack',
+                      fontSize: mFont(context),
+                      // fontWeight: FontWeight.w100,
+                      // letterSpacing: 1.2,
+                      color: const Color(0XFF000000),
+                    ),
+                  ),
+                  const Spacer(),
+                ],
+              ),
+              vSmall(context),
+              SelectableText(
+                description,
+                textAlign: TextAlign.justify,
+                style: TextStyle(
+                  fontFamily: 'Afacad',
+                  fontSize: sFont(context),
+                  fontWeight: FontWeight.w700,
+                  color: const Color(0XFF3C4A53),
+                  overflow: TextOverflow.visible,
+                ),
+              ),
+              vXtraMedium(context),
+              Center(
+                child: ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all(
                       const Color(0XFF000000),
+                    ),
+                    fixedSize: WidgetStateProperty.all(
+                      Size(
+                        autoScale(context, 80, ScalingModes.diagonal),
+                        autoScale(context, 30, ScalingModes.diagonal),
+                      ),
+                    ),
+                    padding: WidgetStateProperty.all(
+                      EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     ),
                   ),
                   onPressed: () async {
                     return WebNavigator.openUrl(url: repoLink);
                   },
                   child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Code",
-                            style: TextStyle(
-                              fontFamily: 'Afacad',
-                              fontSize: sFont(context) + 2,
-                              fontWeight: FontWeight.w900,
-                              color: const Color(0xFFFFFFFF),
-                            ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Code",
+                          style: TextStyle(
+                            fontFamily: 'Afacad',
+                            fontSize: sPlusFont(context),
+                            fontWeight: FontWeight.w900,
+                            color: const Color(0xFFFFFFFF),
                           ),
-                          hXtraSmall(context),
-                          const FaIcon(
-                            FontAwesomeIcons.github,
-                            size: 32,
-                            color: Color(0xFFFFFFFF),
-                          ),
-                        ],
-                      ),
+                        ),
+                        hXtraSmall(context),
+                        const FaIcon(
+                          FontAwesomeIcons.github,
+                          size: 32,
+                          color: Color(0xFFFFFFFF),
+                        ),
+                      ],
                     ),
                   ),
-                ).scaleOnHover(scale: 12),
-                const Spacer(),
-                ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all(
-                      const Color(0XFF000000),
-                    ),
-                  ),
-                  onPressed: () async {
-                    return WebNavigator.openUrl(
-                      url:
-                          "https://drive.google.com/file/d/144agJN8F9uTBahio33sbb6eEoqbn3kJF/view?usp=sharing",
-                    );
-                  },
-                  child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Demo",
-                            style: TextStyle(
-                              fontFamily: 'Afacad',
-                              fontSize: sFont(context) + 2,
-                              fontWeight: FontWeight.w900,
-                              color: const Color(0xFFFFFFFF),
-                            ),
-                          ),
-                          hXtraSmall(context),
-                          const Icon(
-                            Icons.open_in_new,
-                            size: 32,
-                            color: Color(0xFFFFFFFF),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ).scaleOnHover(scale: 12),
-                const Spacer(),
-              ],
-            ),
-          ],
+                ).scaleOnHover(scale: 1.2),
+              ),
+            ],
+          ),
         ),
-      ),
-      hMedium(context),
-    ],
-  );
+        hXtraMedium(context),
+      ],
+    );
+  }
 }
 
 Widget repoLayoutRight(
@@ -233,151 +362,299 @@ Widget repoLayoutRight(
   String title,
   String description,
   String imgLink,
+  bool showDemo,
   String repoLink,
 ) {
   // This Widget layouts the Project image to the right and the Project text to the left
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //crossAxisAlignment: CrossAxisAlignment.baseline,
-    children: [
-      hMedium(context),
-      Expanded(
-        child: Column(
-          children: [
-            Row(
-              children: [
-                const Spacer(),
-                SelectableText(
-                  title,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'RussoOne',
-                    fontSize: mFont(context),
-                    fontWeight: FontWeight.w100,
-                    letterSpacing: 1.2,
-                    color: const Color(0XFF000000),
+  if (showDemo) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        hXtraMedium(context),
+        Expanded(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  const Spacer(),
+                  SelectableText(
+                    title,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'AfacadBlack',
+                      fontSize: mFont(context),
+                      // fontWeight: FontWeight.w100,
+                      // letterSpacing: 1.2,
+                      color: const Color(0XFF000000),
+                    ),
                   ),
-                ),
-                const Spacer(),
-              ],
-            ),
-            vSmall(context),
-            SelectableText(
-              description,
-              textAlign: TextAlign.justify,
-              style: TextStyle(
-                fontFamily: 'Afacad',
-                fontSize: sFont(context),
-                fontWeight: FontWeight.w700,
-                color: const Color(0XFF3C4A53),
-                overflow: TextOverflow.visible,
+                  const Spacer(),
+                ],
               ),
-            ),
-            vXtraMedium(context),
-            Row(
-              children: [
-                const Spacer(),
-                ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all(
-                      const Color(0XFF000000),
-                    ),
-                  ),
-                  onPressed: () async {
-                    return WebNavigator.openUrl(url: repoLink);
-                  },
-                  child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Code",
-                            style: TextStyle(
-                              fontFamily: 'Afacad',
-                              fontSize: sFont(context) + 2,
-                              fontWeight: FontWeight.w900,
-                              color: const Color(0xFFFFFFFF),
-                            ),
-                          ),
-                          hXtraSmall(context),
-                          const FaIcon(
-                            FontAwesomeIcons.github,
-                            size: 32,
-                            color: Color(0xFFFFFFFF),
-                          ),
-                        ],
+              vSmall(context),
+              SelectableText(
+                description,
+                textAlign: TextAlign.justify,
+                style: TextStyle(
+                  fontFamily: 'Afacad',
+                  fontSize: sFont(context),
+                  fontWeight: FontWeight.w700,
+                  color: const Color(0XFF3C4A53),
+                  overflow: TextOverflow.visible,
+                ),
+              ),
+              vXtraMedium(context),
+              Row(
+                children: [
+                  const Spacer(),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStateProperty.all(
+                        const Color(0XFF000000),
                       ),
                     ),
-                  ),
-                ).scaleOnHover(scale: 12),
-                const Spacer(),
-                ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all(
-                      const Color(0XFF000000),
-                    ),
-                  ),
-                  onPressed: () async {
-                    return WebNavigator.openUrl(url: repoLink);
-                  },
-                  child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Demo",
-                            style: TextStyle(
-                              fontFamily: 'Afacad',
-                              fontSize: sFont(context) + 2,
-                              fontWeight: FontWeight.w900,
-                              color: const Color(0xFFFFFFFF),
+                    onPressed: () async {
+                      return WebNavigator.openUrl(url: repoLink);
+                    },
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Code",
+                              style: TextStyle(
+                                fontFamily: 'Afacad',
+                                fontSize: sPlusFont(context),
+                                fontWeight: FontWeight.w900,
+                                color: const Color(0xFFFFFFFF),
+                              ),
                             ),
-                          ),
-                          hXtraSmall(context),
-                          const Icon(
-                            Icons.open_in_new,
-                            size: 32,
-                            color: Color(0xFFFFFFFF),
-                          ),
-                        ],
+                            hXtraSmall(context),
+                            const FaIcon(
+                              FontAwesomeIcons.github,
+                              size: 32,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ).scaleOnHover(scale: 12),
-                const Spacer(),
-              ],
-            ),
-          ],
-        ),
-      ),
-      hLarge(context),
-      GestureDetector(
-        onTap: () async {
-          return ImageView.showImageDialog(context: context, imgPath: imgLink);
-        },
-        child: Container(
-          height: screenHeight(context) / 2,
-          width: screenWidth(context) / 2,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withValues(alpha: 0.5),
-                spreadRadius: 5, // Spread radius
-                blurRadius: 7, // Blur radius
-                offset: const Offset(0, 3), // Offset position
+                  ).scaleOnHover(scale: 1.2),
+                  const Spacer(),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStateProperty.all(
+                        const Color(0XFF000000),
+                      ),
+                    ),
+                    onPressed: () async {
+                      return WebNavigator.openUrl(url: repoLink);
+                    },
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Demo",
+                              style: TextStyle(
+                                fontFamily: 'Afacad',
+                                fontSize: sPlusFont(context),
+                                fontWeight: FontWeight.w900,
+                                color: const Color(0xFFFFFFFF),
+                              ),
+                            ),
+                            hXtraSmall(context),
+                            FaIcon(
+                              FontAwesomeIcons.arrowUpRightFromSquare,
+                              color: Color(0xFFFFFFFF),
+                              size: 30,
+                            ),
+                            // const Icon(
+                            //   Icons.open_in_new,
+                            //   size: 32,
+                            //   color: Color(0xFFFFFFFF),
+                            // ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ).scaleOnHover(scale: 1.2),
+                  const Spacer(),
+                ],
               ),
             ],
-            image: DecorationImage(
-              image: NetworkImage(imgLink),
-              fit: BoxFit.cover,
+          ),
+        ),
+        hLarge(context),
+        GestureDetector(
+          onTap: () async {
+            return ImageView.showImageDialog(
+              context: context,
+              imgPath: imgLink,
+            );
+          },
+          child: Container(
+            height: screenHeight(context) / 2,
+            width: screenWidth(context) / 2,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withValues(alpha: 0.5),
+                  spreadRadius: 5, // Spread radius
+                  blurRadius: 7, // Blur radius
+                  offset: const Offset(0, 3), // Offset position
+                ),
+              ],
+              image: DecorationImage(
+                image: NetworkImage(imgLink),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),
+        hXtraMedium(context),
+      ],
+    );
+  } else {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      //crossAxisAlignment: CrossAxisAlignment.baseline,
+      children: [
+        hXtraMedium(context),
+        Expanded(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  const Spacer(),
+                  SelectableText(
+                    title,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'AfacadBlack',
+                      fontSize: mFont(context),
+                      // fontWeight: FontWeight.w100,
+                      // letterSpacing: 1.2,
+                      color: const Color(0XFF000000),
+                    ),
+                  ),
+                  const Spacer(),
+                ],
+              ),
+              vSmall(context),
+              SelectableText(
+                description,
+                textAlign: TextAlign.justify,
+                style: TextStyle(
+                  fontFamily: 'Afacad',
+                  fontSize: sFont(context),
+                  fontWeight: FontWeight.w700,
+                  color: const Color(0XFF3C4A53),
+                  overflow: TextOverflow.visible,
+                ),
+              ),
+              vXtraMedium(context),
+              Center(
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStateProperty.all(
+                      const Color(0XFF000000),
+                    ),
+                    fixedSize: WidgetStateProperty.all(
+                      Size(
+                        autoScale(context, 80, ScalingModes.diagonal),
+                        autoScale(context, 30, ScalingModes.diagonal),
+                      ),
+                    ),
+                    padding: WidgetStateProperty.all(
+                      EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    ),
+                  ),
+                  onPressed: () async {
+                    return WebNavigator.openUrl(url: repoLink);
+                  },
+                  child: Center(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Code",
+                          style: TextStyle(
+                            fontFamily: 'Afacad',
+                            fontSize: sPlusFont(context),
+                            fontWeight: FontWeight.w900,
+                            color: const Color(0xFFFFFFFF),
+                          ),
+                        ),
+                        hXtraSmall(context),
+                        const FaIcon(
+                          FontAwesomeIcons.github,
+                          size: 32,
+                          color: Color(0xFFFFFFFF),
+                        ),
+                      ],
+                    ),
+                  ),
+                ).scaleOnHover(scale: 1.2),
+              ),
+            ],
+          ),
+        ),
+        hLarge(context),
+        GestureDetector(
+          onTap: () async {
+            return ImageView.showImageDialog(
+              context: context,
+              imgPath: imgLink,
+            );
+          },
+          child: Container(
+            height: screenHeight(context) / 2,
+            width: screenWidth(context) / 2,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withValues(alpha: 0.5),
+                  spreadRadius: 5, // Spread radius
+                  blurRadius: 7, // Blur radius
+                  offset: const Offset(0, 3), // Offset position
+                ),
+              ],
+              image: DecorationImage(
+                image: NetworkImage(imgLink),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+        hXtraMedium(context),
+      ],
+    );
+  }
+}
+
+Widget navbar(BuildContext c, String text, GlobalKey k) {
+  return ScaleOnHover(
+    scale: 1.2,
+    child: TextButton(
+      onPressed: () => ContentScrolling.autoScroll(k),
+      style: TextButton.styleFrom(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        foregroundColor: const Color(0XFF000000),
+        textStyle: TextStyle(
+          fontFamily: 'Afacad',
+          fontSize: sFont(c),
+          fontWeight: FontWeight.w600,
+          letterSpacing: 1.5,
+        ),
       ),
-      hMedium(context),
-    ],
+      child: Text(text),
+    ),
   );
 }

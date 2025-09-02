@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../app/app.classes.dart';
 import '../../app/app.constants.dart';
-import '../../app/app.functions.dart';
 import '../../app/app.hover.extensions.dart';
 import '../../app/app.widgets.dart';
 
@@ -174,7 +174,7 @@ class MobileHomeSection extends StatelessWidget {
                   ),
                 ),
               ),
-            ).scaleOnHover(scale: 12),
+            ).scaleOnHover(scale: 1.2),
             const Spacer(),
           ],
         ),
@@ -198,15 +198,7 @@ class MobileTechStackSection extends StatelessWidget {
     return Column(
       children: [
         vMedium(context),
-        const SelectableText(
-          "Tech Stack",
-          style: TextStyle(
-            fontFamily: 'Afacad',
-            fontSize: 26,
-            fontWeight: FontWeight.w700,
-            color: Color(0XFF1B1B1B),
-          ),
-        ),
+        SelectableText("Tech Stack", style: sectionHeading(context)),
         vMedium(context),
         Wrap(
           spacing: 22.5,
@@ -237,12 +229,12 @@ class MobileAboutMeSection extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SelectableText(
-                  "About Me :",
+                  "About Me",
                   style: TextStyle(
-                    fontFamily: 'RussoOne',
+                    fontFamily: 'AfacadBlack',
                     fontSize: 32,
-                    fontWeight: FontWeight.w400,
-                    letterSpacing: 1.2,
+                    // fontWeight: FontWeight.w400,
+                    // letterSpacing: 1.2,
                     color: Color(0XFF000000),
                   ),
                 ),
@@ -288,7 +280,7 @@ class MobileAboutMeSection extends StatelessWidget {
                           color: Color(0XFF000000),
                         ),
                       ),
-                      TextSpan(text: " ) As a Junior Full Stack Developer"),
+                      TextSpan(text: " ) As a Full Stack Developer"),
                       TextSpan(
                         text:
                             "I possess an immense Zeal for crafting seamless digital experiences through writing a clean and optimized code. With a strong belief in the power of teamwork, I value open communication and diverse perspectives. Eager to contribute my skills and enthusiasm to innovative projects, I look forward to fostering a collaborative spirit while delivering a coding excellence.",
@@ -333,12 +325,12 @@ class MobileProjectSection extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SelectableText(
-                    "Portfolio: ",
+                    "Portfolio",
                     style: TextStyle(
-                      fontFamily: 'RussoOne',
+                      fontFamily: 'AfacadBlack',
                       fontSize: 32,
-                      fontWeight: FontWeight.w400,
-                      letterSpacing: 1.2,
+                      // fontWeight: FontWeight.w400,
+                      // letterSpacing: 1.2,
                       color: Color(0XFF000000),
                     ),
                   ),
@@ -386,11 +378,11 @@ class MobileProjectSection extends StatelessWidget {
                       "Notely",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontFamily: 'RussoOne',
+                        fontFamily: 'AfacadBlack',
                         fontSize: 24,
-                        fontWeight: FontWeight.w100,
+                        // fontWeight: FontWeight.w100,
+                        // letterSpacing: 1.2,
                         color: Color(0XFF000000),
-                        letterSpacing: 1.2,
                       ),
                     ),
                   ),
@@ -480,7 +472,7 @@ class MobileProjectSection extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                  ).scaleOnHover(scale: 12),
+                                  ).scaleOnHover(scale: 1.2),
                                   const Spacer(),
                                   ElevatedButton(
                                     style: ButtonStyle(
@@ -518,7 +510,7 @@ class MobileProjectSection extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                  ).scaleOnHover(scale: 12),
+                                  ).scaleOnHover(scale: 1.2),
                                   const Spacer(),
                                 ],
                               ),
@@ -541,11 +533,11 @@ class MobileProjectSection extends StatelessWidget {
                         child: SelectableText(
                           "Smart Apple Ripeness Detection System",
                           style: TextStyle(
-                            fontFamily: 'RussoOne',
+                            fontFamily: 'AfacadBlack',
                             fontSize: 24,
-                            fontWeight: FontWeight.w100,
+                            // fontWeight: FontWeight.w100,
+                            // letterSpacing: 1.2,
                             color: Color(0XFF000000),
-                            letterSpacing: 1.2,
                           ),
                           textAlign: TextAlign.start,
                         ),
@@ -637,7 +629,7 @@ class MobileProjectSection extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                ).scaleOnHover(scale: 12),
+                                ).scaleOnHover(scale: 1.2),
                                 const Spacer(),
                               ],
                             ),
@@ -658,11 +650,11 @@ class MobileProjectSection extends StatelessWidget {
                       "Wanderlust Expeditions",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontFamily: 'RussoOne',
+                        fontFamily: 'AfacadBlack',
                         fontSize: 24,
-                        fontWeight: FontWeight.w100,
+                        // fontWeight: FontWeight.w100,
+                        // letterSpacing: 1.2,
                         color: Color(0XFF000000),
-                        letterSpacing: 1.2,
                       ),
                     ),
                   ),
@@ -747,7 +739,7 @@ class MobileProjectSection extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ).scaleOnHover(scale: 12),
+                          ).scaleOnHover(scale: 1.2),
                           const Spacer(),
                           ElevatedButton(
                             style: ButtonStyle(
@@ -785,7 +777,7 @@ class MobileProjectSection extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ).scaleOnHover(scale: 12),
+                          ).scaleOnHover(scale: 1.2),
                           const Spacer(),
                         ],
                       ),
@@ -804,10 +796,10 @@ class MobileProjectSection extends StatelessWidget {
                         child: SelectableText(
                           "ClimaTrend",
                           style: TextStyle(
-                            fontFamily: 'RussoOne',
+                            fontFamily: 'AfacadBlack',
                             fontSize: 24,
-                            fontWeight: FontWeight.w100,
-                            letterSpacing: 1.2,
+                            // fontWeight: FontWeight.w100,
+                            // letterSpacing: 1.2,
                             color: Color(0XFF000000),
                           ),
                         ),
@@ -892,7 +884,7 @@ class MobileProjectSection extends StatelessWidget {
                             ),
                           ),
                         ),
-                      ).scaleOnHover(scale: 12),
+                      ).scaleOnHover(scale: 1.2),
                       const Spacer(),
                     ],
                   ),
@@ -932,10 +924,10 @@ class MobileResume extends StatelessWidget {
             const SelectableText(
               "Resume",
               style: TextStyle(
-                fontFamily: 'RussoOne',
+                fontFamily: 'AfacadBlack',
                 fontSize: 32,
-                fontWeight: FontWeight.w400,
-                letterSpacing: 1.2,
+                // fontWeight: FontWeight.w400,
+                // letterSpacing: 1.2,
                 color: Color(0XFF000000),
               ),
             ),
@@ -973,10 +965,10 @@ class MobileContactSection extends StatelessWidget {
         const SelectableText(
           "Let's build together",
           style: TextStyle(
-            fontFamily: 'RussoOne',
+            fontFamily: 'AfacadBlack',
             fontSize: 32,
-            fontWeight: FontWeight.w400,
-            letterSpacing: 1.2,
+            // fontWeight: FontWeight.w400,
+            // letterSpacing: 1.2,
             color: Color(0XFF000000),
           ),
         ),
@@ -1056,7 +1048,7 @@ class MobileContactSection extends StatelessWidget {
               ),
             ),
           ),
-        ).scaleOnHover(scale: 12),
+        ).scaleOnHover(scale: 1.2),
         vLarge(context),
         ElevatedButton(
           style: ButtonStyle(
@@ -1093,7 +1085,7 @@ class MobileContactSection extends StatelessWidget {
               ),
             ),
           ),
-        ).scaleOnHover(scale: 12),
+        ).scaleOnHover(scale: 1.2),
         vXtraLarge(context),
       ],
     );
