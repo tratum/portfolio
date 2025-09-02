@@ -22,7 +22,9 @@ dependencies:
       ref: main
 
 flutter:
-  uses-material-design: true
+  uses-material-design: false
+  assets:
+    - asset/icons/
   fonts:
     - family: Afacad
       fonts:

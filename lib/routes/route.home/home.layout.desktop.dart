@@ -122,7 +122,7 @@ class DesktopHomeSection extends StatelessWidget {
                       url: "https://www.linkedin.com/in/saksham-rawat-dev",
                     );
                   },
-                ),
+                ).scaleOnHover(scale: 1.2),
                 autoHSpace(context, whitespace.xs.size),
                 GestureDetector(
                   child: FaIcon(
@@ -135,7 +135,7 @@ class DesktopHomeSection extends StatelessWidget {
                       url: "https://github.com/tratum",
                     );
                   },
-                ),
+                ).scaleOnHover(scale: 1.2),
               ],
             ),
             vMedium(context),
@@ -165,11 +165,7 @@ class DesktopHomeSection extends StatelessWidget {
                             ),
                           ),
                           hSmall(context),
-                          const Icon(
-                            Icons.send_sharp,
-                            size: 28,
-                            color: Color(0xFFFFFFFF),
-                          ),
+                          SvgPicture.asset('asset/icons/paperplane.svg', width: 38,height: 38,)
                         ],
                       ),
                     ),

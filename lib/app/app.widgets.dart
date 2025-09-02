@@ -212,11 +212,16 @@ Widget repoLayoutLeft(
                               ),
                             ),
                             hXtraSmall(context),
-                            const Icon(
-                              Icons.open_in_new,
-                              size: 32,
-                              color: Color(0xFFFFFFFF),
-                            ),
+                            FaIcon(
+                              FontAwesomeIcons.arrowUpRightFromSquare,
+                              color:  Color(0xFFFFFFFF),
+                              size: 30,
+                            )
+                            // const Icon(
+                            //   Icons.open_in_new,
+                            //   size: 32,
+                            //   color: Color(0xFFFFFFFF),
+                            // ),
                           ],
                         ),
                       ),
@@ -454,11 +459,16 @@ Widget repoLayoutRight(
                               ),
                             ),
                             hXtraSmall(context),
-                            const Icon(
-                              Icons.open_in_new,
-                              size: 32,
-                              color: Color(0xFFFFFFFF),
-                            ),
+                            FaIcon(
+                              FontAwesomeIcons.arrowUpRightFromSquare,
+                              color:  Color(0xFFFFFFFF),
+                              size: 30,
+                            )
+                            // const Icon(
+                            //   Icons.open_in_new,
+                            //   size: 32,
+                            //   color: Color(0xFFFFFFFF),
+                            // ),
                           ],
                         ),
                       ),
