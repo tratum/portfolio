@@ -8,16 +8,14 @@ import '../../app/app.hover.extensions.dart';
 import '../../app/app.widgets.dart';
 
 class DesktopHomeSection extends StatelessWidget {
-  final double iconSize;
-
-  const DesktopHomeSection({super.key, this.iconSize = 36});
+  const DesktopHomeSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        hMedium(context),
+        hXtraMedium(context),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -88,8 +86,16 @@ class DesktopHomeSection extends StatelessWidget {
                                 child: GestureDetector(
                                   child: Image.network(
                                     "https://tratum.github.io/cloud-asset-storage/images/pin.webp",
-                                    height: iconSize,
-                                    width: iconSize,
+                                    height: autoScale(
+                                      context,
+                                      18,
+                                      ScalingModes.diagonal,
+                                    ),
+                                    width: autoScale(
+                                      context,
+                                      18,
+                                      ScalingModes.diagonal,
+                                    ),
                                   ),
                                   onTap: () async {
                                     return WebNavigator.openUrl(
@@ -115,7 +121,7 @@ class DesktopHomeSection extends StatelessWidget {
                   child: FaIcon(
                     FontAwesomeIcons.linkedin,
                     color: Color(0XFF000000),
-                    size: iconSize,
+                    size: autoScale(context, 24, ScalingModes.diagonal),
                   ),
                   onTap: () async {
                     return WebNavigator.openUrl(
@@ -128,7 +134,7 @@ class DesktopHomeSection extends StatelessWidget {
                   child: FaIcon(
                     FontAwesomeIcons.github,
                     color: Color(0XFF000000),
-                    size: iconSize,
+                    size: autoScale(context, 24, ScalingModes.diagonal),
                   ),
                   onTap: () async {
                     return WebNavigator.openUrl(
@@ -165,7 +171,19 @@ class DesktopHomeSection extends StatelessWidget {
                             ),
                           ),
                           hSmall(context),
-                          SvgPicture.asset('asset/icons/paperplane.svg', width: 38,height: 38,)
+                          SvgPicture.asset(
+                            'asset/icons/paperplane.svg',
+                            width: autoScale(
+                              context,
+                              24,
+                              ScalingModes.diagonal,
+                            ),
+                            height: autoScale(
+                              context,
+                              24,
+                              ScalingModes.diagonal,
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -187,7 +205,7 @@ class DesktopHomeSection extends StatelessWidget {
             gaplessPlayback: true,
           ),
         ),
-        hMedium(context),
+        hXtraMedium(context),
       ],
     );
   }
@@ -224,7 +242,7 @@ class DesktopAboutMeSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          hMedium(context),
+          hXtraMedium(context),
           Container(
             width: screenWidth(context) / 2.5,
             decoration: BoxDecoration(
@@ -294,7 +312,7 @@ class DesktopAboutMeSection extends StatelessWidget {
               ],
             ),
           ),
-          hMedium(context),
+          hXtraMedium(context),
         ],
       ),
     );
@@ -316,18 +334,16 @@ class DesktopProjectSection extends StatelessWidget {
             children: [
               vMedium(context),
               Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  autoHSpace(context, whitespace.s.size),
+                  hXtraMedium(context),
                   SelectableText("Portfolio", style: sectionHeading(context)),
                 ],
               ),
               vXtraSmall(context),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-
                 children: [
-                  autoHSpace(context, whitespace.s.size),
+                  hXtraMedium(context),
                   SelectableText(
                     "Every Project Represents an Original Work Of Development.",
                     style: TextStyle(
@@ -396,7 +412,7 @@ class DesktopResume extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            hMedium(context),
+            hXtraMedium(context),
             SelectableText("Resume", style: sectionHeading(context)),
           ],
         ),
@@ -421,21 +437,14 @@ class DesktopResume extends StatelessWidget {
 }
 
 class DesktopContactSection extends StatelessWidget {
-  final double imgHeight;
-  final double imgWidth;
-
-  const DesktopContactSection({
-    super.key,
-    this.imgHeight = 30,
-    this.imgWidth = 30,
-  });
+  const DesktopContactSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        left: whitespace.responsiveSpace(context, whitespace.m),
-        right: whitespace.responsiveSpace(context, whitespace.m),
+        left: whitespace.responsiveSpace(context, whitespace.xm),
+        right: whitespace.responsiveSpace(context, whitespace.xm),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -470,7 +479,15 @@ class DesktopContactSection extends StatelessWidget {
                             color: Color(0XFF000000),
                           ),
                           hTiny(context),
-                          Text("tratum.connect@gmail.com", style: TextStyle(fontFamily: 'Afacad', fontWeight: FontWeight.w600, fontSize: sFont(context), color: Color(0XFF3C4A53)),)
+                          Text(
+                            "tratum.connect@gmail.com",
+                            style: TextStyle(
+                              fontFamily: 'Afacad',
+                              fontWeight: FontWeight.w600,
+                              fontSize: sFont(context),
+                              color: Color(0XFF3C4A53),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -484,7 +501,15 @@ class DesktopContactSection extends StatelessWidget {
                             color: Color(0XFF000000),
                           ),
                           hTiny(context),
-                          Text("Jaipur, India", style: TextStyle(fontFamily: 'Afacad', fontWeight: FontWeight.w600, fontSize: sFont(context), color: Color(0XFF3C4A53)),)
+                          Text(
+                            "Jaipur, India",
+                            style: TextStyle(
+                              fontFamily: 'Afacad',
+                              fontWeight: FontWeight.w600,
+                              fontSize: sFont(context),
+                              color: Color(0XFF3C4A53),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -512,7 +537,7 @@ class DesktopContactSection extends StatelessWidget {
     );
     //   Row(
     //   children: [
-    //     hMedium(context),
+    //     hXtraMedium(context),
     //     Column(
     //       crossAxisAlignment: CrossAxisAlignment.start,
     //       children: [
@@ -699,7 +724,7 @@ class DesktopContactSection extends StatelessWidget {
     //         vXtraLarge(context),
     //       ],
     //     ),
-    //     hMedium(context),
+    //     hXtraMedium(context),
     //   ],
     // );
   }

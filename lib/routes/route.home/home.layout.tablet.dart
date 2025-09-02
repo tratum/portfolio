@@ -246,10 +246,7 @@ class TabletTechStackSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         totalLeftSpacing,
-        SelectableText(
-          "Tech Stack",
-          style: sectionHeading(context),
-        ),
+        SelectableText("Tech Stack", style: sectionHeading(context)),
         hMedium(context),
         Container(height: 26, width: 3, color: const Color(0XFF1B1B1B)),
         hMedium(context),

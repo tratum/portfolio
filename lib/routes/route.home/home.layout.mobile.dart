@@ -198,10 +198,7 @@ class MobileTechStackSection extends StatelessWidget {
     return Column(
       children: [
         vMedium(context),
-        SelectableText(
-          "Tech Stack",
-          style: sectionHeading(context),
-        ),
+        SelectableText("Tech Stack", style: sectionHeading(context)),
         vMedium(context),
         Wrap(
           spacing: 22.5,

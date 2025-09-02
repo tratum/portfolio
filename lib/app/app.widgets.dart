@@ -85,7 +85,7 @@ Widget repoLayoutLeft(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       //crossAxisAlignment: CrossAxisAlignment.baseline,
       children: [
-        hMedium(context),
+        hXtraMedium(context),
         GestureDetector(
           onTap: () async {
             return ImageView.showImageDialog(
@@ -214,9 +214,9 @@ Widget repoLayoutLeft(
                             hXtraSmall(context),
                             FaIcon(
                               FontAwesomeIcons.arrowUpRightFromSquare,
-                              color:  Color(0xFFFFFFFF),
+                              color: Color(0xFFFFFFFF),
                               size: 30,
-                            )
+                            ),
                             // const Icon(
                             //   Icons.open_in_new,
                             //   size: 32,
@@ -233,7 +233,7 @@ Widget repoLayoutLeft(
             ],
           ),
         ),
-        hMedium(context),
+        hXtraMedium(context),
       ],
     );
   } else {
@@ -241,7 +241,7 @@ Widget repoLayoutLeft(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       //crossAxisAlignment: CrossAxisAlignment.baseline,
       children: [
-        hMedium(context),
+        hXtraMedium(context),
         GestureDetector(
           onTap: () async {
             return ImageView.showImageDialog(
@@ -343,7 +343,7 @@ Widget repoLayoutLeft(
             ],
           ),
         ),
-        hMedium(context),
+        hXtraMedium(context),
       ],
     );
   }
@@ -361,9 +361,8 @@ Widget repoLayoutRight(
   if (showDemo) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //crossAxisAlignment: CrossAxisAlignment.baseline,
       children: [
-        hMedium(context),
+        hXtraMedium(context),
         Expanded(
           child: Column(
             children: [
@@ -461,9 +460,9 @@ Widget repoLayoutRight(
                             hXtraSmall(context),
                             FaIcon(
                               FontAwesomeIcons.arrowUpRightFromSquare,
-                              color:  Color(0xFFFFFFFF),
+                              color: Color(0xFFFFFFFF),
                               size: 30,
-                            )
+                            ),
                             // const Icon(
                             //   Icons.open_in_new,
                             //   size: 32,
@@ -508,7 +507,7 @@ Widget repoLayoutRight(
             ),
           ),
         ),
-        hMedium(context),
+        hXtraMedium(context),
       ],
     );
   } else {
@@ -516,7 +515,7 @@ Widget repoLayoutRight(
       mainAxisAlignment: MainAxisAlignment.center,
       //crossAxisAlignment: CrossAxisAlignment.baseline,
       children: [
-        hMedium(context),
+        hXtraMedium(context),
         Expanded(
           child: Column(
             children: [
@@ -557,7 +556,9 @@ Widget repoLayoutRight(
                       const Color(0XFF000000),
                     ),
                     fixedSize: WidgetStateProperty.all(Size(200, 70)),
-                    padding: WidgetStateProperty.all(EdgeInsets.symmetric(horizontal: 12, vertical: 8)),
+                    padding: WidgetStateProperty.all(
+                      EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    ),
                   ),
                   onPressed: () async {
                     return WebNavigator.openUrl(url: repoLink);
@@ -619,7 +620,7 @@ Widget repoLayoutRight(
             ),
           ),
         ),
-        hMedium(context),
+        hXtraMedium(context),
       ],
     );
   }

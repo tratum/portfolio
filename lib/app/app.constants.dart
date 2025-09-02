@@ -136,7 +136,8 @@ enum whitespace {
 
   const whitespace(this.size);
 
-  static double responsiveSpace(BuildContext c, whitespace s) => autoScale(c, s.size, ScalingModes.diagonal);
+  static double responsiveSpace(BuildContext c, whitespace s) =>
+      autoScale(c, s.size, ScalingModes.diagonal);
 }
 
 double screenWidth(BuildContext context) => MediaQuery.of(context).size.width;

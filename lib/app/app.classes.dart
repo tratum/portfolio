@@ -57,16 +57,6 @@ class ImageView {
 }
 
 class ContentScrolling {
-  // static Future<void> autoScroll({
-  //   required double scrollPosition,
-  //   required ScrollController conn,
-  // }) {
-  //   return conn.animateTo(
-  //     scrollPosition,
-  //     duration: const Duration(seconds: 2),
-  //     curve: Curves.fastOutSlowIn,
-  //   );
-  // }
   static void autoScroll(GlobalKey key) {
     Future.delayed(Duration(milliseconds: 100), () {
       if (key.currentContext != null) {
@@ -79,6 +69,12 @@ class ContentScrolling {
         log("The widget with the key $key is not available yet.");
       }
     });
+  }
+
+  static bool isFooterVisible(ScrollController s) {
+    final position = s.position.pixels;
+    final maxScroll = s.position.maxScrollExtent;
+    return position >= (maxScroll - 50);
   }
 }
 

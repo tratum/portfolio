@@ -31,12 +31,6 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
 
   bool _scroller = true;
 
-  bool _isFooterVisible() {
-    final position = _sController.position.pixels;
-    final maxScroll = _sController.position.maxScrollExtent;
-    return position >= (maxScroll - 50);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,119 +38,41 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
       body: SafeArea(
         child: Stack(
           children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
-              child: ResponsiveWebLayout.buildDesktopLayout(
-                context: context,
-                quadHDLayout: ListView(
-                  cacheExtent: double.infinity,
-                  controller: _sController,
-                  children: [
-                    DesktopHomeSection(key: _homeSectionKey, iconSize: 72),
-                    vLarge(context),
-                    DesktopTechStackSection(key: _techStackSectionKey),
-                    vLarge(context),
-                    DesktopAboutMeSection(key: _aboutMeSectionKey),
-                    vLarge(context),
-                    DesktopProjectSection(key: _projectSectionKey),
-                    // DesktopResume(
-                    //   key: _resumeSectionKey,
-                    //   sectionSpace: 320,
-                    //   pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
-                    //   headingFontSize: 42,
-                    // ),
-                    vLarge(context),
-                    DesktopContactSection(key: _contactSectionKey),
-                    vLarge(context),
-                    DesktopFooterSection(key: _footerSectionKey),
-                  ],
-                ),
-                fullHDLayout: ListView(
-                  cacheExtent: double.infinity,
-                  controller: _sController,
-                  children: [
-                    DesktopHomeSection(key: _homeSectionKey),
-                    vLarge(context),
-                    DesktopTechStackSection(key: _techStackSectionKey),
-                    vLarge(context),
-                    DesktopAboutMeSection(key: _aboutMeSectionKey),
-                    vLarge(context),
-                    DesktopProjectSection(key: _projectSectionKey),
-                    // DesktopResume(
-                    //   key: _resumeSectionKey,
-                    //   sectionSpace: 320,
-                    //   pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
-                    //   headingFontSize: 42,
-                    // ),
-                    vLarge(context),
-                    DesktopContactSection(
-                      key: _contactSectionKey,
-                      imgHeight: 42,
-                      imgWidth: 42,
-                    ),
-                    vLarge(context),
-                    DesktopFooterSection(key: _footerSectionKey),
-                  ],
-                ),
-                hdLayout: ListView(
-                  cacheExtent: double.infinity,
-                  controller: _sController,
-                  children: [
-                    DesktopHomeSection(key: _homeSectionKey, iconSize: 46),
-                    vLarge(context),
-                    DesktopTechStackSection(key: _techStackSectionKey),
-                    vLarge(context),
-                    DesktopAboutMeSection(key: _aboutMeSectionKey),
-                    vLarge(context),
-                    DesktopProjectSection(key: _projectSectionKey),
-                    // DesktopResume(
-                    //   key: _resumeSectionKey,
-                    //   headingFontSize: 42,
-                    //   sectionSpace: 200,
-                    //   pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
-                    // ),
-                    vLarge(context),
-                    DesktopContactSection(key: _contactSectionKey),
-                    vLarge(context),
-                    DesktopFooterSection(key: _footerSectionKey),
-                  ],
-                ),
-                sdLayout: ListView(
-                  cacheExtent: double.infinity,
-                  controller: _sController,
-                  children: [
-                    DesktopHomeSection(key: _homeSectionKey),
-                    vLarge(context),
-                    DesktopTechStackSection(key: _techStackSectionKey),
-                    vLarge(context),
-                    DesktopAboutMeSection(key: _aboutMeSectionKey),
-                    vLarge(context),
-                    DesktopProjectSection(key: _projectSectionKey),
-                    // DesktopResume(
-                    //   key: _resumeSectionKey,
-                    //   sectionSpace: 200,
-                    //   pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
-                    // ),
-                    vLarge(context),
-                    DesktopContactSection(key: _contactSectionKey),
-                    vLarge(context),
-                    DesktopFooterSection(key: _footerSectionKey),
-                  ],
-                ),
-              ),
+            ListView(
+              cacheExtent: double.infinity,
+              scrollDirection: Axis.vertical,
+              controller: _sController,
+              children: [
+                DesktopHomeSection(key: _homeSectionKey),
+                vXtraLarge(context),
+                DesktopTechStackSection(key: _techStackSectionKey),
+                vXXLarge(context),
+                DesktopAboutMeSection(key: _aboutMeSectionKey),
+                vXtraLarge(context),
+                DesktopProjectSection(key: _projectSectionKey),
+                // DesktopResume(
+                //   key: _resumeSectionKey,
+                //   sectionSpace: 320,
+                //   pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
+                //   headingFontSize: 42,
+                // ),
+                vMassive(context),
+                DesktopContactSection(key: _contactSectionKey),
+                vXtraLarge(context),
+                DesktopFooterSection(key: _footerSectionKey),
+              ],
             ),
             Positioned(
-              top: 0,
+              top: 24,
               left: 0,
               right: 0,
               child: Container(
                 color: const Color(0XFFfafafa),
-                padding: const EdgeInsets.fromLTRB(22, 22, 22, 22),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    hMedium(context),
+                    hXtraMedium(context),
                     SelectableText(
                       'tratum.dev',
                       style: TextStyle(
@@ -196,7 +112,7 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
           ),
           backgroundColor: const Color(0XFF121212),
           onPressed: () {
-            if (_isFooterVisible()) {
+            if (ContentScrolling.isFooterVisible(_sController)) {
               ContentScrolling.autoScroll(_homeSectionKey);
               setState(() {
                 _scroller = false;
