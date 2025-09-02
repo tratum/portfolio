@@ -303,39 +303,47 @@ Widget repoLayoutLeft(
                 ),
               ),
               vXtraMedium(context),
-              Align(
-                alignment: Alignment.center,
+              Center(
                 child: ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all(
                       const Color(0XFF000000),
+                    ),
+                    fixedSize: WidgetStateProperty.all(
+                      Size(
+                        autoScale(context, 80, ScalingModes.diagonal),
+                        autoScale(context, 30, ScalingModes.diagonal),
+                      ),
+                    ),
+                    padding: WidgetStateProperty.all(
+                      EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     ),
                   ),
                   onPressed: () async {
                     return WebNavigator.openUrl(url: repoLink);
                   },
                   child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Code",
-                            style: TextStyle(
-                              fontFamily: 'Afacad',
-                              fontSize: sPlusFont(context),
-                              fontWeight: FontWeight.w900,
-                              color: const Color(0xFFFFFFFF),
-                            ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Code",
+                          style: TextStyle(
+                            fontFamily: 'Afacad',
+                            fontSize: sPlusFont(context),
+                            fontWeight: FontWeight.w900,
+                            color: const Color(0xFFFFFFFF),
                           ),
-                          hXtraSmall(context),
-                          const FaIcon(
-                            FontAwesomeIcons.github,
-                            size: 32,
-                            color: Color(0xFFFFFFFF),
-                          ),
-                        ],
-                      ),
+                        ),
+                        hXtraSmall(context),
+                        const FaIcon(
+                          FontAwesomeIcons.github,
+                          size: 32,
+                          color: Color(0xFFFFFFFF),
+                        ),
+                      ],
                     ),
                   ),
                 ).scaleOnHover(scale: 1.2),
@@ -555,7 +563,12 @@ Widget repoLayoutRight(
                     backgroundColor: WidgetStateProperty.all(
                       const Color(0XFF000000),
                     ),
-                    fixedSize: WidgetStateProperty.all(Size(200, 70)),
+                    fixedSize: WidgetStateProperty.all(
+                      Size(
+                        autoScale(context, 80, ScalingModes.diagonal),
+                        autoScale(context, 30, ScalingModes.diagonal),
+                      ),
+                    ),
                     padding: WidgetStateProperty.all(
                       EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     ),
