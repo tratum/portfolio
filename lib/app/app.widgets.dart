@@ -174,9 +174,9 @@ Widget repoLayoutLeft(
                               ),
                             ),
                             hXtraSmall(context),
-                            const FaIcon(
+                            FaIcon(
                               FontAwesomeIcons.github,
-                              size: 32,
+                              size: autoScale(context, 16, ScalingModes.diagonal),
                               color: Color(0xFFFFFFFF),
                             ),
                           ],
@@ -215,7 +215,7 @@ Widget repoLayoutLeft(
                             FaIcon(
                               FontAwesomeIcons.arrowUpRightFromSquare,
                               color: Color(0xFFFFFFFF),
-                              size: 30,
+                              size: autoScale(context, 16, ScalingModes.diagonal),
                             ),
                             // const Icon(
                             //   Icons.open_in_new,
@@ -338,9 +338,9 @@ Widget repoLayoutLeft(
                           ),
                         ),
                         hXtraSmall(context),
-                        const FaIcon(
+                        FaIcon(
                           FontAwesomeIcons.github,
-                          size: 32,
+                          size: autoScale(context, 16, ScalingModes.diagonal),
                           color: Color(0xFFFFFFFF),
                         ),
                       ],
@@ -431,9 +431,9 @@ Widget repoLayoutRight(
                               ),
                             ),
                             hXtraSmall(context),
-                            const FaIcon(
+                            FaIcon(
                               FontAwesomeIcons.github,
-                              size: 32,
+                              size: autoScale(context, 16, ScalingModes.diagonal),
                               color: Color(0xFFFFFFFF),
                             ),
                           ],
@@ -469,7 +469,7 @@ Widget repoLayoutRight(
                             FaIcon(
                               FontAwesomeIcons.arrowUpRightFromSquare,
                               color: Color(0xFFFFFFFF),
-                              size: 30,
+                              size: autoScale(context, 16, ScalingModes.diagonal),
                             ),
                             // const Icon(
                             //   Icons.open_in_new,
@@ -592,9 +592,9 @@ Widget repoLayoutRight(
                           ),
                         ),
                         hXtraSmall(context),
-                        const FaIcon(
+                        FaIcon(
                           FontAwesomeIcons.github,
-                          size: 32,
+                          size: autoScale(context, 16, ScalingModes.diagonal),
                           color: Color(0xFFFFFFFF),
                         ),
                       ],

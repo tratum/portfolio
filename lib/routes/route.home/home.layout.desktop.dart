@@ -475,7 +475,7 @@ class DesktopContactSection extends StatelessWidget {
                         children: [
                           FaIcon(
                             FontAwesomeIcons.solidEnvelopeOpen,
-                            size: 24,
+                            size: autoScale(context, 16, ScalingModes.diagonal),
                             color: Color(0XFF2D68C4),
                           ),
                           hTiny(context),
@@ -497,10 +497,10 @@ class DesktopContactSection extends StatelessWidget {
                         children: [
                           FaIcon(
                             FontAwesomeIcons.locationDot,
-                            size: 24,
+                            size: autoScale(context, 16, ScalingModes.diagonal),
                             color: Color(0XFFE23D28),
                           ),
-                          hTiny(context),
+                          hXtraSmall(context),
                           SelectableText(
                             "Jaipur, India",
                             style: TextStyle(
@@ -765,12 +765,12 @@ class DesktopFooterSection extends StatelessWidget {
                       url: 'https://github.com/tratum',
                     );
                   },
-                  child: const ScaleOnHover(
+                  child: ScaleOnHover(
                     scale: 1.2,
                     child: FaIcon(
                       FontAwesomeIcons.github,
                       color: Color(0XFFFFFFFF),
-                      size: 36,
+                      size: autoScale(context, 12, ScalingModes.diagonal),
                     ),
                   ),
                 ),
@@ -781,12 +781,12 @@ class DesktopFooterSection extends StatelessWidget {
                       url: 'https://www.linkedin.com/in/saksham-rawat-dev/',
                     );
                   },
-                  child: const ScaleOnHover(
+                  child: ScaleOnHover(
                     scale: 1.2,
                     child: FaIcon(
                       FontAwesomeIcons.linkedin,
                       color: Color(0XFFFFFFFF),
-                      size: 36,
+                      size: autoScale(context, 12, ScalingModes.diagonal),
                     ),
                   ),
                 ),
