@@ -48,7 +48,7 @@ class DesktopHomeSection extends StatelessWidget {
                     letterSpacing: 2,
                   ),
                 ),
-                const SizedBox(width: 25),
+                hSmall(context),
                 SvgPicture.network(
                   'https://tratum.github.io/cloud-asset-storage/svg/waving-hand.svg',
                   semanticsLabel: "Hi From My Side",
@@ -474,18 +474,18 @@ class DesktopContactSection extends StatelessWidget {
                       child: Row(
                         children: [
                           FaIcon(
-                            FontAwesomeIcons.envelopeOpen,
+                            FontAwesomeIcons.solidEnvelopeOpen,
                             size: 24,
-                            color: Color(0XFF000000),
+                            color: Color(0XFF2D68C4),
                           ),
                           hTiny(context),
-                          Text(
+                          SelectableText(
                             "tratum.connect@gmail.com",
                             style: TextStyle(
                               fontFamily: 'Afacad',
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w700,
                               fontSize: sFont(context),
-                              color: Color(0XFF3C4A53),
+                              color: Color(0XFF111111),
                             ),
                           ),
                         ],
@@ -498,16 +498,16 @@ class DesktopContactSection extends StatelessWidget {
                           FaIcon(
                             FontAwesomeIcons.locationDot,
                             size: 24,
-                            color: Color(0XFF000000),
+                            color: Color(0XFFE23D28),
                           ),
                           hTiny(context),
-                          Text(
+                          SelectableText(
                             "Jaipur, India",
                             style: TextStyle(
                               fontFamily: 'Afacad',
                               fontWeight: FontWeight.w600,
                               fontSize: sFont(context),
-                              color: Color(0XFF3C4A53),
+                              color: Color(0XFF111111),
                             ),
                           ),
                         ],

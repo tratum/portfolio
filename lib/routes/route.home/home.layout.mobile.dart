@@ -31,7 +31,7 @@ class MobileHomeSection extends StatelessWidget {
               "F u l l - S t a c k",
               style: TextStyle(
                 fontFamily: 'Afacad',
-                fontSize: headerFontSize,
+                fontSize: xlFont(context),
                 fontWeight: FontWeight.w900,
                 color: const Color(0XFF353839),
                 letterSpacing: 2,
@@ -47,13 +47,13 @@ class MobileHomeSection extends StatelessWidget {
               "D e v",
               style: TextStyle(
                 fontFamily: 'Afacad',
-                fontSize: headerFontSize,
-                fontWeight: FontWeight.w900,
+                fontSize: xlFont(context),
+                fontWeight: FontWeight.bold,
                 color: const Color(0XFF353839),
                 letterSpacing: 2,
               ),
             ),
-            const SizedBox(width: 25),
+            hSmall(context),
             SvgPicture.network(
               'https://tratum.github.io/cloud-asset-storage/svg/waving-hand.svg',
               semanticsLabel: "Hi From My Side",
@@ -63,84 +63,104 @@ class MobileHomeSection extends StatelessWidget {
             ),
           ],
         ),
-        vLarge(context),
+        vSmall(context),
         Row(
           children: [
-            autoHSpace(context, whitespace.m.size),
-            Flexible(
-              child: RichText(
-                text: TextSpan(
-                  style: const TextStyle(
-                    fontFamily: 'Afacad',
-                    fontSize: 23,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0XFF6A8292),
-                  ),
-                  children: [
-                    const TextSpan(
-                      text:
-                          "Hi, I'm Saksham Rawat. A passionate Full-Stack Developer based in Jaipur, India",
-                    ),
-                    WidgetSpan(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 8.0, top: 8.0),
-                        child: GestureDetector(
-                          child: Image.network(
-                            "https://tratum.github.io/cloud-asset-storage/images/pin.webp",
-                            cacheWidth: 28,
-                            cacheHeight: 28,
-                            height: 25,
-                            width: 25,
-                          ),
-                          onTap: () async {
-                            return WebNavigator.openUrl(
-                              url: 'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
-                            );
-                            // return _urlRedirect(url);
-                          },
-                        ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width / 2.5,
+              child: Wrap(
+                runSpacing: 4.0, // Optional spacing between lines
+                children: [
+                  autoHSpace(context, whitespace.s.size),
+                  RichText(
+                    text: TextSpan(
+                      style: TextStyle(
+                        fontFamily: 'Afacad',
+                        fontSize: sFont(context),
+                        fontWeight: FontWeight.w500,
+                        color: Color(0XFF6A8292),
                       ),
+                      children: [
+                        const TextSpan(
+                          text:
+                          "Hi, I'm Saksham Rawat. Open-Source Tinkerer & Full-Stack Dev who likes clean code and fast apps. Based in Jaipur, India.",
+                        ),
+                        WidgetSpan(
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 8.0),
+                            child: GestureDetector(
+                              child: Image.network(
+                                "https://tratum.github.io/cloud-asset-storage/images/pin.webp",
+                                height: autoScale(
+                                  context,
+                                  18,
+                                  ScalingModes.diagonal,
+                                ),
+                                width: autoScale(
+                                  context,
+                                  18,
+                                  ScalingModes.diagonal,
+                                ),
+                              ),
+                              onTap: () async {
+                                return WebNavigator.openUrl(
+                                  url:
+                                  'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
+                                );
+                              },
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ],
         ),
         vLarge(context),
+        Image.network(
+          "https://tratum.github.io/cloud-asset-storage/images/bitmoji-profile-sketch-animation.webp",
+          width: screenWidth(context) / 2.4,
+          height: screenHeight(context) / 1.1,
+          fit: BoxFit.fill,
+          repeat: ImageRepeat.repeat,
+          gaplessPlayback: true,
+        ),
+        vMedium(context),
         Row(
           children: [
-            autoHSpace(context, whitespace.m.size),
             GestureDetector(
-              child: const FaIcon(
+              child: FaIcon(
                 FontAwesomeIcons.linkedin,
                 color: Color(0XFF000000),
-                size: 36,
+                size: autoScale(context, 24, ScalingModes.diagonal),
               ),
               onTap: () async {
                 return WebNavigator.openUrl(
                   url: "https://www.linkedin.com/in/saksham-rawat-dev",
                 );
               },
-            ),
-            hMedium(context),
+            ).scaleOnHover(scale: 1.2),
+            autoHSpace(context, whitespace.xs.size),
             GestureDetector(
-              child: const FaIcon(
+              child: FaIcon(
                 FontAwesomeIcons.github,
                 color: Color(0XFF000000),
-                size: 36,
+                size: autoScale(context, 24, ScalingModes.diagonal),
               ),
               onTap: () async {
-                return WebNavigator.openUrl(url: "https://github.com/tratum");
+                return WebNavigator.openUrl(
+                  url: "https://github.com/tratum",
+                );
               },
-            ),
+            ).scaleOnHover(scale: 1.2),
           ],
         ),
-        vLarge(context),
+        vMedium(context),
         Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            autoHSpace(context, whitespace.m.size),
             ElevatedButton(
               style: ButtonStyle(
                 backgroundColor: WidgetStateProperty.all(
@@ -150,7 +170,7 @@ class MobileHomeSection extends StatelessWidget {
               onPressed: () {
                 WebNavigator.launchEmail("tratum.connect@gmail.com");
               },
-              child: FittedBox(
+              child: Center(
                 child: Padding(
                   padding: const EdgeInsets.all(8),
                   child: Row(
@@ -159,23 +179,30 @@ class MobileHomeSection extends StatelessWidget {
                         "Let's Connect",
                         style: TextStyle(
                           fontFamily: 'Afacad',
-                          fontSize: headerFontSize - 22,
+                          fontSize: sFont(context) - 4,
                           fontWeight: FontWeight.w900,
                           color: const Color(0xFFFFFFFF),
                         ),
                       ),
                       hSmall(context),
-                      const Icon(
-                        Icons.send_sharp,
-                        size: 28,
-                        color: Color(0xFFFFFFFF),
+                      SvgPicture.asset(
+                        'asset/icons/paperplane.svg',
+                        width: autoScale(
+                          context,
+                          24,
+                          ScalingModes.diagonal,
+                        ),
+                        height: autoScale(
+                          context,
+                          24,
+                          ScalingModes.diagonal,
+                        ),
                       ),
                     ],
                   ),
                 ),
               ),
             ).scaleOnHover(scale: 1.2),
-            const Spacer(),
           ],
         ),
       ],
