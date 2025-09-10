@@ -43,7 +43,7 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
               scrollDirection: Axis.vertical,
               controller: _sController,
               children: [
-                vLarge(context),
+                vMedium(context),
                 DesktopHomeSection(key: _homeSectionKey),
                 vXtraLarge(context),
                 DesktopTechStackSection(key: _techStackSectionKey),
