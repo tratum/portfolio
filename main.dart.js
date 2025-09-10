@@ -83473,7 +83473,7 @@ A.my.prototype={
 ao(){var s=null,r=t.A
 return new A.RQ(A.v4(),new A.aS(s,r),new A.aS(s,r),new A.aS(s,r),new A.aS(s,r),new A.aS(s,r),new A.aS(s,r),new A.aS(s,r))}}
 A.RQ.prototype={
-M(a){var s=this,r=null,q=A.ao(4294638330),p=s.e,o=s.f,n=s.r,m=s.w,l=s.y,k=t.p,j=A.le(1/0,A.b([A.X(r,A.P(a,50,B.e),r),new A.K1(p),A.X(r,A.P(a,80,B.e),r),new A.K3(o),A.X(r,A.P(a,100,B.e),r),new A.JZ(n),A.X(r,A.P(a,80,B.e),r),new A.K2(m),A.X(r,A.P(a,120,B.e),r),new A.K_(l),A.X(r,A.P(a,80,B.e),r),new A.K0(s.z)],k),s.d,B.a9,!1),i=A.X(r,r,A.P(a,30,B.e)),h=A.P(a,18,B.e)
+M(a){var s=this,r=null,q=A.ao(4294638330),p=s.e,o=s.f,n=s.r,m=s.w,l=s.y,k=t.p,j=A.le(1/0,A.b([A.X(r,A.P(a,25,B.e),r),new A.K1(p),A.X(r,A.P(a,80,B.e),r),new A.K3(o),A.X(r,A.P(a,100,B.e),r),new A.JZ(n),A.X(r,A.P(a,80,B.e),r),new A.K2(m),A.X(r,A.P(a,120,B.e),r),new A.K_(l),A.X(r,A.P(a,80,B.e),r),new A.K0(s.z)],k),s.d,B.a9,!1),i=A.X(r,r,A.P(a,30,B.e)),h=A.P(a,18,B.e)
 k=A.v0(!0,A.qT(B.e3,A.b([j,A.ac_(r,A.eu(A.b8(A.b([i,A.d1("tratum.dev",A.bm(r,r,A.ao(4281677881),r,r,r,r,r,"Yatra",r,r,h,r,r,B.bQ,r,r,!0,r,1,r,r,r,r,r,r),r),B.ad,A.Zs(a,"Home",p),A.X(r,r,A.P(a,15,B.e)),A.Zs(a,"Skills",o),A.X(r,r,A.P(a,15,B.e)),A.Zs(a,"About",n),A.X(r,r,A.P(a,15,B.e)),A.Zs(a,"Projects",m),A.X(r,r,A.P(a,15,B.e)),A.Zs(a,"Contact",l),A.X(r,r,A.P(a,15,B.e))],k),B.p,B.eM,B.o),B.v,B.dk,r,r,r,r,r),r,r,0,0,24,r)],k),B.X,B.cX),B.aw,!0)
 l=A.et(40)
 return A.v1(r,q,k,r,new A.bV(1.2,A.auU(B.dh,new A.dx(B.x,r,r,A.fa(s.Q?B.k8:B.k9,B.dk,18),r),20,new A.alW(s),new A.cl(l,B.u)),r))}}
