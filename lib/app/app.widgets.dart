@@ -176,7 +176,11 @@ Widget repoLayoutLeft(
                             hXtraSmall(context),
                             FaIcon(
                               FontAwesomeIcons.github,
-                              size: autoScale(context, 16, ScalingModes.diagonal),
+                              size: autoScale(
+                                context,
+                                16,
+                                ScalingModes.diagonal,
+                              ),
                               color: Color(0xFFFFFFFF),
                             ),
                           ],
@@ -215,7 +219,11 @@ Widget repoLayoutLeft(
                             FaIcon(
                               FontAwesomeIcons.arrowUpRightFromSquare,
                               color: Color(0xFFFFFFFF),
-                              size: autoScale(context, 16, ScalingModes.diagonal),
+                              size: autoScale(
+                                context,
+                                16,
+                                ScalingModes.diagonal,
+                              ),
                             ),
                             // const Icon(
                             //   Icons.open_in_new,
@@ -433,7 +441,11 @@ Widget repoLayoutRight(
                             hXtraSmall(context),
                             FaIcon(
                               FontAwesomeIcons.github,
-                              size: autoScale(context, 16, ScalingModes.diagonal),
+                              size: autoScale(
+                                context,
+                                16,
+                                ScalingModes.diagonal,
+                              ),
                               color: Color(0xFFFFFFFF),
                             ),
                           ],
@@ -469,7 +481,11 @@ Widget repoLayoutRight(
                             FaIcon(
                               FontAwesomeIcons.arrowUpRightFromSquare,
                               color: Color(0xFFFFFFFF),
-                              size: autoScale(context, 16, ScalingModes.diagonal),
+                              size: autoScale(
+                                context,
+                                16,
+                                ScalingModes.diagonal,
+                              ),
                             ),
                             // const Icon(
                             //   Icons.open_in_new,
@@ -639,7 +655,7 @@ Widget repoLayoutRight(
   }
 }
 
-Widget navbar(BuildContext c, String text, GlobalKey k) {
+Widget navbar(BuildContext c, String text, GlobalKey k, double fontSize) {
   return ScaleOnHover(
     scale: 1.2,
     child: TextButton(
@@ -649,7 +665,7 @@ Widget navbar(BuildContext c, String text, GlobalKey k) {
         foregroundColor: const Color(0XFF000000),
         textStyle: TextStyle(
           fontFamily: 'Afacad',
-          fontSize: sFont(c),
+          fontSize: fontSize,
           fontWeight: FontWeight.w600,
           letterSpacing: 1.5,
         ),

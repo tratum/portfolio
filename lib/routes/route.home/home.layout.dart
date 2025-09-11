@@ -85,17 +85,37 @@ class _DesktopHomeLayoutState extends State<DesktopHomeLayout> {
                       ),
                     ),
                     const Spacer(),
-                    navbar(context, "Home", _homeSectionKey),
+                    navbar(context, "Home", _homeSectionKey, sFont(context)),
                     hSmall(context),
-                    navbar(context, "Skills", _techStackSectionKey),
+                    navbar(
+                      context,
+                      "Skills",
+                      _techStackSectionKey,
+                      sFont(context),
+                    ),
                     hSmall(context),
-                    navbar(context, "About", _aboutMeSectionKey),
+                    navbar(
+                      context,
+                      "About",
+                      _aboutMeSectionKey,
+                      sFont(context),
+                    ),
                     hSmall(context),
-                    navbar(context, "Projects", _projectSectionKey),
+                    navbar(
+                      context,
+                      "Projects",
+                      _projectSectionKey,
+                      sFont(context),
+                    ),
                     // hSmall(context),
                     // navbar(context, "Resume", _resumeSectionKey),
                     hSmall(context),
-                    navbar(context, "Contact", _contactSectionKey),
+                    navbar(
+                      context,
+                      "Contact",
+                      _contactSectionKey,
+                      sFont(context),
+                    ),
                     hSmall(context),
                   ],
                 ),
@@ -150,6 +170,7 @@ class MobileHomeLayout extends StatefulWidget {
 
 class _MobileHomeLayoutState extends State<MobileHomeLayout> {
   final ScrollController _sController = ScrollController();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final GlobalKey _homeSectionKey = GlobalKey();
   final GlobalKey _techStackSectionKey = GlobalKey();
   final GlobalKey _aboutMeSectionKey = GlobalKey();
@@ -183,6 +204,7 @@ class _MobileHomeLayoutState extends State<MobileHomeLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: Color(0XFFfafafa),
       appBar: AppBar(
         surfaceTintColor: const Color(0XFFFFFFFF),
@@ -205,222 +227,66 @@ class _MobileHomeLayoutState extends State<MobileHomeLayout> {
         elevation: 20,
         // shadowColor: const Color(0XFFfafafa),
         iconTheme: const IconThemeData(color: Color(0XFF353839)),
+        actions: [
+          GestureDetector(
+            onTap: () => _scaffoldKey.currentState?.openEndDrawer(),
+            child: FaIcon(
+              FontAwesomeIcons.barsStaggered,
+              size: autoScale(context, 24, ScalingModes.diagonal),
+              color: Color(0XFF000000),
+            ),
+          ),
+          hSmall(context)
+        ],
       ),
       endDrawer: Drawer(
         backgroundColor: const Color(0XFFFFFFFF),
         surfaceTintColor: const Color(0XFFFFFFFF),
-        width: 180,
-        child: Padding(
-          padding: const EdgeInsets.only(left: 28, top: 28),
-          child: ListView(
-            children: [
-              vLarge(context),
-              ListTile(
-                title: const ScaleOnHover(
-                  scale: 1.2,
-                  child: Text(
-                    'Home',
-                    style: TextStyle(
-                      fontFamily: 'Afacad',
-                      fontSize: 22,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 1.5,
-                    ),
-                  ),
-                ),
-                onTap: () => _autoScroll(_homeSectionKey),
-              ),
-              vXtraMedium(context),
-              ListTile(
-                title: const ScaleOnHover(
-                  scale: 1.2,
-                  child: Text(
-                    'About',
-                    style: TextStyle(
-                      fontFamily: 'Afacad',
-                      fontSize: 22,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 1.5,
-                    ),
-                  ),
-                ),
-                onTap: () => _autoScroll(_aboutMeSectionKey),
-              ),
-              vXtraMedium(context),
-              ListTile(
-                title: const ScaleOnHover(
-                  scale: 1.2,
-                  child: Text(
-                    'Projects',
-                    style: TextStyle(
-                      fontFamily: 'Afacad',
-                      fontSize: 22,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 1.5,
-                    ),
-                  ),
-                ),
-                onTap: () => _autoScroll(_projectSectionKey),
-              ),
-              // vXtraMedium(context),
-              // ListTile(
-              //   title: const ScaleOnHover(
-              //     scale: 1.2,
-              //     child: Text(
-              //       'Resume',
-              //       style: TextStyle(
-              //         fontFamily: 'Afacad',
-              //         fontSize: 22,
-              //         fontWeight: FontWeight.w600,
-              //         letterSpacing: 1.5,
-              //       ),
-              //     ),
-              //   ),
-              //   onTap: () => _autoScroll(_resumeSectionKey),
-              // ),
-              vXtraMedium(context),
-              ListTile(
-                title: const ScaleOnHover(
-                  scale: 1.2,
-                  child: Text(
-                    'Contact',
-                    style: TextStyle(
-                      fontFamily: 'Afacad',
-                      fontSize: 22,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 1.5,
-                    ),
-                  ),
-                ),
-                onTap: () => _autoScroll(_contactSectionKey),
-              ),
-            ],
-          ),
+        width: 140,
+        child: ListView(
+          children: [
+            vLarge(context),
+            navbar(context, "Home", _homeSectionKey, mFont(context)),
+            vLarge(context),
+            navbar(context, "Skills", _techStackSectionKey, mFont(context)),
+            vLarge(context),
+            navbar(context, "About", _aboutMeSectionKey, mFont(context)),
+            vLarge(context),
+            navbar(context, "Projects", _projectSectionKey, mFont(context)),
+            // hSmall(context),
+            // navbar(context, "Resume", _resumeSectionKey),
+            vLarge(context),
+            navbar(context, "Contact", _contactSectionKey, mFont(context)),
+            vLarge(context),
+          ],
         ),
       ),
       body: SafeArea(
-        child: ResponsiveWebLayout.buildMobileLayout(
-          context: context,
-          largeMobileLayout: ListView(
-            cacheExtent: double.infinity,
-            controller: _sController,
-            children: [
-              MobileHomeSection(
-                key: _homeSectionKey,
-                imgWidth: 360,
-                imgHeight: 380,
-              ),
-              vXtraLarge(context),
-              MobileTechStackSection(key: _techStackSectionKey),
-              Padding(
-                padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileAboutMeSection(key: _aboutMeSectionKey),
-              ),
-              vXtraLarge(context),
-              Padding(
-                padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileProjectSection(key: _projectSectionKey),
-              ),
-              // vXtraLarge(context),
-              // Padding(
-              //   padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
-              //   child: MobileResume(
-              //     key: _resumeSectionKey,
-              //     pdfViewHeight: 580,
-              //     pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
-              //   ),
-              // ),
-              vMassive(context),
-              Padding(
-                padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileContactSection(key: _contactSectionKey),
-              ),
-              MobileFooterSection(key: _footerSectionKey),
-            ],
-          ),
-          mediumMobileLayout: ListView(
-            cacheExtent: double.infinity,
-            controller: _sController,
-            children: [
-              Padding(
-                padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileHomeSection(
-                  key: _homeSectionKey,
-                  imgHeight: 230,
-                  imgWidth: 220,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileTechStackSection(key: _techStackSectionKey),
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileAboutMeSection(key: _aboutMeSectionKey),
-              ),
-              vLarge(context),
-              Padding(
-                padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileProjectSection(key: _projectSectionKey),
-              ),
-              // vLarge(context),
-              // Padding(
-              //   padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
-              //   child: MobileResume(
-              //     key: _resumeSectionKey,
-              //     pdfViewHeight: 580,
-              //     pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
-              //   ),
-              // ),
-              vMassive(context),
-              Padding(
-                padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileContactSection(key: _contactSectionKey),
-              ),
-              MobileFooterSection(key: _footerSectionKey),
-            ],
-          ),
-          smallMobileLayout: ListView(
-            cacheExtent: double.infinity,
-            controller: _sController,
-            children: [
-              Padding(
-                padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileHomeSection(
-                  key: _homeSectionKey,
-                  imgHeight: 190,
-                  imgWidth: 180,
-                  headerFontSize: 38,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(24, 22, 13, 16),
-                child: MobileTechStackSection(key: _techStackSectionKey),
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileAboutMeSection(key: _aboutMeSectionKey),
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileProjectSection(key: _projectSectionKey),
-              ),
-              // Padding(
-              //   padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
-              //   child: MobileResume(
-              //     key: _resumeSectionKey,
-              //     pdfViewHeight: 580,
-              //     pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
-              //   ),
-              // ),
-              vMassive(context),
-              Padding(
-                padding: EdgeInsets.fromLTRB(24, 22, 24, 16),
-                child: MobileContactSection(key: _contactSectionKey),
-              ),
-              MobileFooterSection(key: _footerSectionKey),
-            ],
-          ),
+        child: ListView(
+          cacheExtent: double.infinity,
+          controller: _sController,
+          children: [
+            MobileHomeSection(key: _homeSectionKey),
+            vXtraLarge(context),
+            MobileTechStackSection(key: _techStackSectionKey),
+            vXtraLarge(context),
+            MobileAboutMeSection(key: _aboutMeSectionKey),
+            vXtraLarge(context),
+            MobileProjectSection(key: _projectSectionKey),
+            // vLarge(context),
+            // Padding(
+            //   padding: const EdgeInsets.fromLTRB(24, 22, 24, 16),
+            //   child: MobileResume(
+            //     key: _resumeSectionKey,
+            //     pdfViewHeight: 580,
+            //     pdfViewWidth: MediaQuery.of(context).size.width / 1.2,
+            //   ),
+            // ),
+            vXtraLarge(context),
+            MobileContactSection(key: _contactSectionKey),
+            vXtraLarge(context),
+            MobileFooterSection(key: _footerSectionKey),
+          ],
         ),
       ),
       floatingActionButton: ScaleOnHover(

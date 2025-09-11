@@ -5,28 +5,27 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../app/app.classes.dart';
 import '../../app/app.constants.dart';
 import '../../app/app.hover.extensions.dart';
-import '../../app/app.widgets.dart';
 
 class MobileHomeSection extends StatelessWidget {
-  final double imgHeight;
-  final double imgWidth;
-  final double headerFontSize;
-
-  const MobileHomeSection({
-    super.key,
-    this.imgWidth = 320,
-    this.imgHeight = 300,
-    this.headerFontSize = 42,
-  });
+  const MobileHomeSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Image.network(
+          "https://tratum.github.io/cloud-asset-storage/images/bitmoji-profile-sketch-animation.webp",
+          width: screenWidth(context) / 1.4,
+          height: screenHeight(context) / 2.8,
+          fit: BoxFit.fill,
+          repeat: ImageRepeat.repeat,
+          gaplessPlayback: true,
+        ),
+        vLarge(context),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            autoHSpace(context, whitespace.m.size),
+            hMedium(context),
             SelectableText(
               "F u l l - S t a c k",
               style: TextStyle(
@@ -42,7 +41,7 @@ class MobileHomeSection extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            autoHSpace(context, whitespace.m.size),
+            hMedium(context),
             SelectableText(
               "D e v",
               style: TextStyle(
@@ -66,8 +65,9 @@ class MobileHomeSection extends StatelessWidget {
         vSmall(context),
         Row(
           children: [
+            hMedium(context),
             SizedBox(
-              width: MediaQuery.of(context).size.width / 2.5,
+              width: MediaQuery.of(context).size.width / 1.2,
               child: Wrap(
                 runSpacing: 4.0, // Optional spacing between lines
                 children: [
@@ -83,7 +83,7 @@ class MobileHomeSection extends StatelessWidget {
                       children: [
                         const TextSpan(
                           text:
-                          "Hi, I'm Saksham Rawat. Open-Source Tinkerer & Full-Stack Dev who likes clean code and fast apps. Based in Jaipur, India.",
+                              "Hi, I'm Saksham Rawat. Open-Source Tinkerer & Full-Stack Dev who likes clean code and fast apps. Based in Jaipur, India.",
                         ),
                         WidgetSpan(
                           child: Padding(
@@ -105,7 +105,7 @@ class MobileHomeSection extends StatelessWidget {
                               onTap: () async {
                                 return WebNavigator.openUrl(
                                   url:
-                                  'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
+                                      'https://maps.app.goo.gl/XYfaosAzrCmg8rmG8',
                                 );
                               },
                             ),
@@ -119,18 +119,10 @@ class MobileHomeSection extends StatelessWidget {
             ),
           ],
         ),
-        vLarge(context),
-        Image.network(
-          "https://tratum.github.io/cloud-asset-storage/images/bitmoji-profile-sketch-animation.webp",
-          width: screenWidth(context) / 2.4,
-          height: screenHeight(context) / 1.1,
-          fit: BoxFit.fill,
-          repeat: ImageRepeat.repeat,
-          gaplessPlayback: true,
-        ),
         vMedium(context),
         Row(
           children: [
+            hMedium(context),
             GestureDetector(
               child: FaIcon(
                 FontAwesomeIcons.linkedin,
@@ -151,16 +143,15 @@ class MobileHomeSection extends StatelessWidget {
                 size: autoScale(context, 24, ScalingModes.diagonal),
               ),
               onTap: () async {
-                return WebNavigator.openUrl(
-                  url: "https://github.com/tratum",
-                );
+                return WebNavigator.openUrl(url: "https://github.com/tratum");
               },
             ).scaleOnHover(scale: 1.2),
           ],
         ),
-        vMedium(context),
+        vXtraLarge(context),
         Row(
           children: [
+            hMedium(context),
             ElevatedButton(
               style: ButtonStyle(
                 backgroundColor: WidgetStateProperty.all(
@@ -172,14 +163,14 @@ class MobileHomeSection extends StatelessWidget {
               },
               child: Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(4),
                   child: Row(
                     children: [
                       Text(
                         "Let's Connect",
                         style: TextStyle(
                           fontFamily: 'Afacad',
-                          fontSize: sFont(context) - 4,
+                          fontSize: sFont(context),
                           fontWeight: FontWeight.w900,
                           color: const Color(0xFFFFFFFF),
                         ),
@@ -187,16 +178,8 @@ class MobileHomeSection extends StatelessWidget {
                       hSmall(context),
                       SvgPicture.asset(
                         'asset/icons/paperplane.svg',
-                        width: autoScale(
-                          context,
-                          24,
-                          ScalingModes.diagonal,
-                        ),
-                        height: autoScale(
-                          context,
-                          24,
-                          ScalingModes.diagonal,
-                        ),
+                        width: autoScale(context, 24, ScalingModes.diagonal),
+                        height: autoScale(context, 24, ScalingModes.diagonal),
                       ),
                     ],
                   ),
@@ -211,31 +194,25 @@ class MobileHomeSection extends StatelessWidget {
 }
 
 class MobileTechStackSection extends StatelessWidget {
-  final double iconSize;
-  final double iconContainer;
 
   const MobileTechStackSection({
     super.key,
-    this.iconSize = 34,
-    this.iconContainer = 55,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        vMedium(context),
-        SelectableText("Tech Stack", style: sectionHeading(context)),
-        vMedium(context),
-        Wrap(
-          spacing: 22.5,
-          runSpacing: 26,
-          alignment: WrapAlignment.start,
-          children: teckStackList
-              .map((item) => techStackBuilder(item, iconSize, iconContainer))
-              .toList(),
-        ),
-      ],
+    return Center(
+      child: RotatingTechCircle(
+        size: screenWidth(context),
+        iconSize: autoScale(context, 28, ScalingModes.diagonal),
+        icons: skills.toImageList(width: autoScale(context, 32, ScalingModes.diagonal), height: autoScale(context, 32, ScalingModes.diagonal)),
+        secondsPerRevolution: 20,
+        spinIcons: false,
+        pauseOnHover: false,
+        centerWidget: Text("Tech Stack", style: sectionHeading(context)),
+        onTap: (index) async =>
+        await WebNavigator.openUrl(url: skills.values[index].url),
+      ),
     );
   }
 }
